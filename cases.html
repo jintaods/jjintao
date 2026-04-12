@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>成功案例 - 上海京涛营销策划</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #0d1b2a;
+            --secondary: #1b263b;
+            --accent: #e63946;
+            --text: #333;
+            --text-light: #666;
+            --bg: #fff;
+            --bg-light: #f8f9fa;
+        }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; line-height: 1.6; color: var(--text); }
+        a { text-decoration: none; color: inherit; }
+        
+        nav { background: white; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); }
+        .logo span { color: var(--accent); }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+        .nav-cta { background: var(--accent); color: white; padding: 0.6rem 1.5rem; border-radius: 5px; font-weight: 600; }
+        
+        .page-header { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; padding: 6rem 5% 4rem; text-align: center; }
+        .page-header h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .page-header p { opacity: 0.9; max-width: 600px; margin: 0 auto; }
+        
+        .filter-tabs { display: flex; justify-content: center; gap: 1rem; padding: 2rem 5%; flex-wrap: wrap; }
+        .filter-tab { padding: 0.6rem 1.5rem; border: 2px solid #ddd; border-radius: 25px; cursor: pointer; transition: all 0.3s; }
+        .filter-tab:hover, .filter-tab.active { border-color: var(--accent); color: var(--accent); }
+        
+        section { padding: 3rem 5%; }
+        .cases-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
+        .case-card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.08); transition: all 0.3s; }
+        .case-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.15); }
+        .case-image { height: 220px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; }
+        .case-info { padding: 1.5rem; }
+        .case-info h3 { color: var(--primary); margin-bottom: 0.5rem; font-size: 1.3rem; }
+        .case-info p { color: var(--text-light); margin-bottom: 1rem; }
+        .case-result { background: var(--bg-light); padding: 1rem; border-radius: 5px; margin-bottom: 1rem; }
+        .case-result strong { color: var(--accent); }
+        .case-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+        .tag { background: var(--bg-light); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.85rem; color: var(--text-light); }
+        
+        .case-detail { background: var(--bg-light); padding: 4rem 5%; }
+        .case-detail-content { max-width: 900px; margin: 0 auto; }
+        .case-detail h2 { font-size: 2rem; color: var(--primary); margin-bottom: 1rem; }
+        .case-detail .challenge { margin-bottom: 2rem; }
+        .case-detail .challenge h3 { color: var(--accent); margin-bottom: 0.5rem; }
+        .case-detail .solution { margin-bottom: 2rem; }
+        .case-detail .solution h3 { color: var(--accent); margin-bottom: 0.5rem; }
+        .case-detail .result h3 { color: var(--accent); margin-bottom: 0.5rem; }
+        .case-detail .result ul { list-style: none; }
+        .case-detail .result li { padding: 0.5rem 0; border-bottom: 1px solid #ddd; }
+        .case-detail .result li:before { content: "✓ "; color: var(--accent); font-weight: bold; }
+        
+        footer { background: var(--primary); color: white; padding: 3rem 5%; text-align: center; }
+        
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">京涛<span>营销</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="services.html">服务项目</a></li>
+            <li><a href="cases.html" class="active">成功案例</a></li>
+            <li><a href="about.html">关于我们</a></li>
+            <li><a href="contact.html">联系我们</a></li>
+        </ul>
+        <a href="contact.html" class="nav-cta">免费咨询</a>
+    </nav>
+
+    <div class="page-header">
+        <h1>成功案例</h1>
+        <p>用结果说话，每个案例都是我们的名片</p>
+    </div>
+
+    <div class="filter-tabs">
+        <div class="filter-tab active">全部</div>
+        <div class="filter-tab">品牌全案</div>
+        <div class="filter-tab">视觉设计</div>
+        <div class="filter-tab">新媒体运营</div>
+        <div class="filter-tab">营销推广</div>
+    </div>
+
+    <section>
+        <div class="cases-grid">
+            <div class="case-card">
+                <div class="case-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">🧴</div>
+                <div class="case-info">
+                    <h3>VARZORE 焕琢 - 护肤品牌从 0 到 1 全案</h3>
+                    <p>完成品牌定位、VI 系统、产品策划及上市推广，打造高端抗垮护肤品牌</p>
+                    <div class="case-result">
+                        <strong>首月销售额突破 200 万</strong>
+                    </div>
+                    <div class="case-tags">
+                        <span class="tag">品牌全案</span>
+                        <span class="tag">VI 设计</span>
+                        <span class="tag">新品上市</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-card">
+                <div class="case-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">☕</div>
+                <div class="case-info">
+                    <h3>某精品咖啡连锁 - 品牌升级与营销</h3>
+                    <p>帮助区域咖啡品牌完成品牌升级，重塑品牌形象，提升门店客流与客单价</p>
+                    <div class="case-result">
+                        <strong>客流提升 40%，客单价提升 25%</strong>
+                    </div>
+                    <div class="case-tags">
+                        <span class="tag">品牌升级</span>
+                        <span class="tag">营销策划</span>
+                        <span class="tag">空间设计</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-card">
+                <div class="case-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">💻</div>
+                <div class="case-info">
+                    <h3>某 SaaS 科技企业 - 获客体系搭建</h3>
+                    <p>重构企业官网并搭建内容营销体系，提升自然搜索流量与获客效率</p>
+                    <div class="case-result">
+                        <strong>搜索流量增长 300%，获客成本降低 60%</strong>
+                    </div>
+                    <div class="case-tags">
+                        <span class="tag">内容营销</span>
+                        <span class="tag">SEO</span>
+                        <span class="tag">官网设计</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-card">
+                <div class="case-image" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">🍜</div>
+                <div class="case-info">
+                    <h3>某新式面馆 - 小红书从 0 起号</h3>
+                    <p>3 个月打造品牌小红书账号，积累 5 万 + 粉丝，成为区域热门打卡地</p>
+                    <div class="case-result">
+                        <strong>3 个月涨粉 5 万 +，单篇笔记曝光 100 万+</strong>
+                    </div>
+                    <div class="case-tags">
+                        <span class="tag">新媒体运营</span>
+                        <span class="tag">小红书</span>
+                        <span class="tag">内容策划</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-card">
+                <div class="case-image" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">👗</div>
+                <div class="case-info">
+                    <h3>某设计师女装品牌 - 抖音直播带货</h3>
+                    <p>策划并执行抖音直播带货项目，单场 GMV 突破 50 万</p>
+                    <div class="case-result">
+                        <strong>单场 GMV 50 万 +，ROI 1:8</strong>
+                    </div>
+                    <div class="case-tags">
+                        <span class="tag">直播带货</span>
+                        <span class="tag">抖音运营</span>
+                        <span class="tag">电商策划</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-card">
+                <div class="case-image" style="background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%);">🏠</div>
+                <div class="case-info">
+                    <h3>某家居品牌 - 双 11 整合营销</h3>
+                    <p>策划双 11 全渠道营销活动，整合线上线下资源，实现销售爆发</p>
+                    <div class="case-result">
+                        <strong>双 11 销售额 1200 万，同比增长 180%</strong>
+                    </div>
+                    <div class="case-tags">
+                        <span class="tag">整合营销</span>
+                        <span class="tag">活动策划</span>
+                        <span class="tag">电商运营</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="case-detail">
+        <div class="case-detail-content">
+            <h2>为什么客户选择京涛营销？</h2>
+            <div class="challenge">
+                <h3>🎯 深度洞察，精准定位</h3>
+                <p>我们不做拍脑袋的决策。每个项目开始前，都会进行深度市场调研和竞品分析，确保策略有据可依。</p>
+            </div>
+            <div class="solution">
+                <h3>💡 创意驱动，落地为王</h3>
+                <p>好的创意不止于 PPT。我们有专业的执行团队，确保每一个创意都能高质量落地，产生实际效果。</p>
+            </div>
+            <div class="result">
+                <h3>📈 数据说话，效果可见</h3>
+                <ul>
+                    <li>500+ 服务品牌，覆盖美妆、食品、科技、家居等多个行业</li>
+                    <li>98% 客户续约率，长期陪伴品牌成长</li>
+                    <li>累计助力客户营收增长 50 亿+</li>
+                    <li>10 年行业经验，团队核心成员均来自 4A 广告公司</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 上海京涛营销策划有限公司 | 沪 ICP 备 16888888 号</p>
+    </footer>
+</body>
+</html>
