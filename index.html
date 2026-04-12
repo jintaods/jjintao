@@ -1,219 +1,199 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>上海京涛营销策划 - 让品牌自己会说话</title>
-  <meta name="description" content="上海京涛营销策划，专注品牌战略与营销创意，为企业提供从战略到执行的全案服务。">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    /* ---- Hero ---- */
-    .hero {
-      min-height: 100vh; background: var(--red);
-      display: flex; align-items: center;
-      position: relative; overflow: hidden;
-    }
-    .hero::before {
-      content: ''; position: absolute; right: -5%; top: -10%; bottom: -10%;
-      width: 55%; background: rgba(0,0,0,0.08);
-      transform: skewX(-8deg);
-    }
-    .hero::after {
-      content: 'JINGTAO'; position: absolute; right: 5%; top: 50%;
-      transform: translateY(-50%) rotate(90deg);
-      font-size: 120px; font-weight: 900; letter-spacing: 0.15em;
-      color: rgba(255,255,255,0.06);
-      font-family: var(--font-en);
-    }
-    .hero-inner {
-      max-width: var(--max-w); margin: 0 auto; padding: 0 40px;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
-      align-items: center; position: relative; z-index: 1;
-    }
-    .hero-text .hero-tag {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.9);
-      font-size: 13px; letter-spacing: 0.15em; font-weight: 600;
-      padding: 8px 18px; border-radius: 2px; margin-bottom: 28px;
-    }
-    .hero-text h1 {
-      font-size: 58px; font-weight: 900; line-height: 1.1;
-      color: var(--white); letter-spacing: 0.02em; margin-bottom: 24px;
-    }
-    .hero-text h1 em { font-style: normal; color: rgba(255,255,255,0.65); }
-    .hero-text .hero-sub {
-      font-size: 18px; color: rgba(255,255,255,0.8); line-height: 1.8;
-      margin-bottom: 40px; max-width: 480px;
-    }
-    .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
-    .hero-img {
-      display: flex; align-items: center; justify-content: center;
-    }
-    .hero-img-box {
-      width: 380px; height: 380px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 3px solid rgba(255,255,255,0.3);
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      color: var(--white); text-align: center;
-    }
-    .hero-img-box img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
-    .hero-img-box .big-num { font-size: 72px; font-weight: 900; line-height: 1; }
-    .hero-img-box .big-num-label { font-size: 16px; opacity: 0.8; margin-top: 8px; letter-spacing: 0.1em; position: absolute; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>上海京涛营销策划 | 让品牌自己会说话</title>
+<style>
+/* ==================== RESET & BASE ==================== */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--red:#C8000A;--red-dark:#9E0007;--red-light:#F5E6E7;--white:#fff;--black:#1A1A1A;--gray-100:#F7F7F7;--gray-200:#eee;--gray-400:#aaa;--gray-600:#666;--gray-800:#333;--max-w:1200px;--t:.3s}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",sans-serif;color:var(--black);background:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+img{max-width:100%;display:block}
+button{cursor:pointer;border:none;outline:none;font-family:inherit}
 
-    /* ---- Stats Bar ---- */
-    .stats-bar {
-      background: var(--black); padding: 50px 0;
-    }
-    .stats-grid {
-      max-width: var(--max-w); margin: 0 auto; padding: 0 40px;
-      display: grid; grid-template-columns: repeat(4, 1fr);
-      gap: 0; border-left: 1px solid #333;
-    }
-    .stat-item {
-      text-align: center; padding: 0 30px;
-      border-right: 1px solid #333;
-    }
-    .stat-num {
-      font-size: 52px; font-weight: 900; color: var(--red);
-      font-family: var(--font-en); line-height: 1;
-    }
-    .stat-label { font-size: 14px; color: var(--gray-400); margin-top: 8px; letter-spacing: 0.1em; }
-    .stat-sub { font-size: 12px; color: var(--gray-600); margin-top: 4px; }
+/* ==================== 导航 ==================== */
+.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--white);border-bottom:1px solid var(--gray-200);transition:box-shadow var(--t)}
+.navbar.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.08)}
+.nav-inner{max-width:var(--max-w);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:72px}
+.logo{display:flex;align-items:center;gap:12px;font-size:20px;font-weight:700;letter-spacing:.05em}
+.logo-mark{width:40px;height:40px;background:var(--red);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900}
+.nav-links{display:flex;gap:0;align-items:center}
+.nav-links a{display:block;padding:24px 22px;font-size:15px;color:var(--gray-800);position:relative;transition:color var(--t)}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:0;height:3px;background:var(--red);transition:width var(--t)}
+.nav-links a:hover,.nav-links a.active{color:var(--red)}
+.nav-links a:hover::after,.nav-links a.active::after{width:calc(100% - 44px)}
+.nav-cta{background:var(--red);color:var(--white)!important;padding:10px 22px!important;font-size:14px!important;font-weight:600;border-radius:2px;margin-left:10px;transition:background var(--t)}
+.nav-cta::after{display:none!important}
+.nav-cta:hover{background:var(--red-dark)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:5px}
+.hamburger span{width:24px;height:2px;background:var(--black);transition:var(--t)}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
 
-    /* ---- Services ---- */
-    .services-grid {
-      display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px;
-      margin-top: 60px;
-    }
-    .service-card {
-      background: var(--white); padding: 50px; position: relative; overflow: hidden;
-      transition: all 0.4s ease;
-    }
-    .service-card:hover { box-shadow: 0 20px 60px rgba(0,0,0,0.1); z-index: 1; }
-    .service-card::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0;
-      height: 4px; background: var(--red); transform: scaleX(0);
-      transform-origin: left; transition: transform 0.4s ease;
-    }
-    .service-card:hover::before { transform: scaleX(1); }
-    .service-icon {
-      width: 60px; height: 60px; background: var(--red-light);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 24px; color: var(--red); margin-bottom: 24px;
-      font-weight: 900;
-    }
-    .service-card h3 { font-size: 22px; font-weight: 800; margin-bottom: 14px; }
-    .service-card p { font-size: 15px; color: var(--gray-600); line-height: 1.8; margin-bottom: 20px; }
-    .service-card ul li {
-      font-size: 14px; color: var(--gray-600); padding: 4px 0;
-      display: flex; align-items: center; gap: 8px;
-    }
-    .service-card ul li::before { content: '—'; color: var(--red); font-weight: 700; }
+/* ==================== HERO ==================== */
+.hero{background:var(--red);color:var(--white);min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;pointer-events:none}
+.hero-bg-circle{position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.1)}
+.hero-bg-circle:nth-child(1){width:600px;height:600px;top:50%;right:-100px;transform:translateY(-50%);animation:heroFloat 8s ease-in-out infinite}
+.hero-bg-circle:nth-child(2){width:400px;height:400px;top:50%;right:50px;transform:translateY(-50%);border-color:rgba(255,255,255,.15);animation:heroFloat 6s ease-in-out infinite reverse}
+.hero-bg-circle:nth-child(3){width:200px;height:200px;top:50%;right:150px;transform:translateY(-50%);border-color:rgba(255,255,255,.2);animation:heroFloat 4s ease-in-out infinite}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px}
+@keyframes heroFloat{0%,100%{transform:translateY(-50%) scale(1)}50%{transform:translateY(-50%) scale(1.05)}}
+.hero-inner{max-width:var(--max-w);margin:0 auto;padding:140px 40px 80px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:1}
+.hero-badge{display:inline-block;background:rgba(255,255,255,.15);color:var(--white);padding:6px 18px;font-size:13px;font-weight:600;letter-spacing:.1em;border-radius:2px;margin-bottom:28px;backdrop-filter:blur(4px)}
+.hero h1{font-size:clamp(36px,5vw,64px);font-weight:900;line-height:1.1;letter-spacing:.02em;margin-bottom:24px}
+.hero h1 em{font-style:normal;color:rgba(255,255,255,.6)}
+.hero-sub{font-size:18px;line-height:1.8;opacity:.85;margin-bottom:40px;max-width:520px}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap}
+.hero-stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px;padding-top:48px;border-top:1px solid rgba(255,255,255,.2)}
+.hero-stat{text-align:center}
+.hero-stat-num{font-size:42px;font-weight:900;line-height:1;color:var(--white);display:block}
+.hero-stat-label{font-size:13px;opacity:.65;margin-top:4px}
+.hero-img{display:flex;align-items:center;justify-content:center;position:relative}
+.hero-graphic{width:380px;height:380px;position:relative;display:flex;align-items:center;justify-content:center}
+/* 抽象几何动画 */
+.g-c1{position:absolute;width:340px;height:340px;border-radius:50%;background:rgba(255,255,255,.06);border:2px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;animation:gSpin 20s linear infinite}
+.g-c2{width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;animation:gSpinReverse 14s linear infinite}
+.g-c3{width:140px;height:140px;border-radius:50%;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;animation:gPulse 3s ease-in-out infinite}
+.g-c3 span{font-size:11px;font-weight:900;color:var(--white);letter-spacing:.15em;writing-mode:vertical-lr;opacity:.9}
+.g-line{position:absolute;width:380px;height:380px;border-radius:50%;border:1px dashed rgba(255,255,255,.08);animation:gSpin 25s linear infinite}
+.g-dot{position:absolute;width:10px;height:10px;border-radius:50%;background:var(--white);opacity:.7;animation:gDot 2.5s ease-in-out infinite}
+.g-dot:nth-child(5){top:0;left:50%;transform:translateX(-50%)}
+.g-dot:nth-child(6){bottom:0;left:50%;transform:translateX(-50%);animation-delay:.6s}
+.g-dot:nth-child(7){left:0;top:50%;transform:translateY(-50%);animation-delay:1.2s}
+.g-dot:nth-child(8){right:0;top:50%;transform:translateY(-50%);animation-delay:1.8s}
+.g-label{position:absolute;bottom:-12px;left:50%;transform:translateX(-50%);background:var(--white);color:var(--red);padding:10px 28px;font-weight:900;font-size:13px;letter-spacing:.2em;border-radius:2px;white-space:nowrap}
+@keyframes gSpin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+@keyframes gSpinReverse{from{transform:rotate(360deg)}to{transform:rotate(0)}}
+@keyframes gPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+@keyframes gDot{0%,100%{opacity:.7;transform:scale(1)}50%{opacity:1;transform:scale(1.4)}}
 
-    /* ---- Approach ---- */
-    .approach-section { background: var(--black); color: var(--white); }
-    .approach-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
-      margin-top: 60px; align-items: center;
-    }
-    .approach-visual {
-      height: 400px; background: var(--red);
-      display: flex; align-items: center; justify-content: center;
-      position: relative; overflow: hidden;
-    }
-    .approach-visual-text {
-      font-size: 80px; font-weight: 900; color: rgba(255,255,255,0.15);
-      font-family: var(--font-en); letter-spacing: 0.1em;
-      position: absolute;
-    }
-    .approach-visual-main {
-      font-size: 28px; font-weight: 900; color: var(--white);
-      text-align: center; position: relative; z-index: 1; line-height: 1.6;
-    }
-    .approach-steps { display: flex; flex-direction: column; gap: 30px; }
-    .approach-step {
-      display: flex; gap: 20px; align-items: flex-start;
-    }
-    .step-num {
-      width: 48px; height: 48px; min-width: 48px;
-      background: var(--red); color: var(--white);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 20px; font-weight: 900; font-family: var(--font-en);
-    }
-    .step-content h4 { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
-    .step-content p { font-size: 14px; color: var(--gray-400); line-height: 1.7; }
+/* ==================== 滚动动画 ==================== */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
 
-    /* ---- Cases Preview ---- */
-    .cases-preview-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
-      margin-top: 60px;
-    }
-    .case-card {
-      position: relative; overflow: hidden; cursor: pointer;
-      aspect-ratio: 4/3;
-    }
-    .case-card-bg {
-      width: 100%; height: 100%; background: var(--gray-800);
-      transition: transform 0.5s ease;
-    }
-    .case-card:hover .case-card-bg { transform: scale(1.05); }
-    .case-card-info {
-      position: absolute; bottom: 0; left: 0; right: 0;
-      padding: 30px 24px; background: linear-gradient(transparent, rgba(0,0,0,0.85));
-      color: var(--white);
-    }
-    .case-card-tag { font-size: 12px; color: var(--red); font-weight: 700; letter-spacing: 0.1em; margin-bottom: 6px; }
-    .case-card h3 { font-size: 20px; font-weight: 800; margin-bottom: 6px; }
-    .case-card p { font-size: 13px; opacity: 0.7; }
-    .case-card-ind { position: absolute; top: 20px; right: 20px; opacity: 0; transition: opacity 0.3s; }
-    .case-card:hover .case-card-ind { opacity: 1; }
+/* ==================== SECTION 通用 ==================== */
+.section{padding:100px 0}
+.section-gray{background:var(--gray-100)}
+.container{max-width:var(--max-w);margin:0 auto;padding:0 40px}
+.section-label{font-size:13px;font-weight:700;letter-spacing:.2em;color:var(--red);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.section-label::before{content:'';width:30px;height:2px;background:var(--red)}
+.section-title{font-size:38px;font-weight:900;line-height:1.2;color:var(--black);margin-bottom:20px;letter-spacing:.02em}
+.section-desc{font-size:17px;color:var(--gray-600);max-width:600px;line-height:1.8}
+.section-header{margin-bottom:60px}
+.section-header-right{text-align:right}
+.section-header-right .section-label{justify-content:flex-end}
+.section-header-right .section-label::before{display:none}
+.section-header-right .section-label::after{content:'';width:30px;height:2px;background:var(--red)}
+.section-header-right .section-desc{margin-left:auto}
 
-    /* ---- Why Us ---- */
-    .why-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px;
-      margin-top: 60px;
-    }
-    .why-item {
-      text-align: center; padding: 40px 30px;
-      border: 1px solid var(--gray-200);
-      transition: all 0.3s ease;
-    }
-    .why-item:hover { border-color: var(--red); box-shadow: 0 10px 40px rgba(200,0,10,0.08); }
-    .why-icon {
-      width: 72px; height: 72px; margin: 0 auto 24px;
-      background: var(--red); display: flex; align-items: center; justify-content: center;
-      color: var(--white); font-size: 28px; font-weight: 900;
-    }
-    .why-item h3 { font-size: 20px; font-weight: 800; margin-bottom: 12px; }
-    .why-item p { font-size: 14px; color: var(--gray-600); line-height: 1.8; }
+/* ==================== 按钮 ==================== */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 36px;font-size:15px;font-weight:700;border-radius:2px;transition:all var(--t);letter-spacing:.05em;cursor:pointer}
+.btn-red{background:var(--red);color:var(--white)}
+.btn-red:hover{background:var(--red-dark);transform:translateY(-1px);box-shadow:0 8px 24px rgba(200,0,10,.3)}
+.btn-outline{background:transparent;color:var(--red);border:2px solid var(--red)}
+.btn-outline:hover{background:var(--red);color:var(--white)}
+.btn-white{background:var(--white);color:var(--red)}
+.btn-white:hover{background:var(--gray-100)}
 
-    /* ---- CTA Section ---- */
-    .cta-section {
-      background: var(--red); color: var(--white);
-      text-align: center; padding: 100px 40px;
-    }
-    .cta-section h2 { font-size: 44px; font-weight: 900; margin-bottom: 16px; }
-    .cta-section p { font-size: 18px; opacity: 0.8; margin-bottom: 40px; }
-    .cta-section .btn-white { background: var(--white); color: var(--red); }
+/* ==================== 服务区 ==================== */
+.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.service-card{background:var(--white);border:1px solid var(--gray-200);padding:40px 28px;position:relative;overflow:hidden;transition:all var(--t)}
+.service-card::before{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform var(--t)}
+.service-card:hover::before{transform:scaleX(1)}
+.service-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.08);border-color:var(--red)}
+.service-icon{width:52px;height:52px;background:var(--red-light);color:var(--red);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:900;margin-bottom:24px;border-radius:4px;transition:all var(--t)}
+.service-card:hover .service-icon{background:var(--red);color:var(--white)}
+.service-card h3{font-size:18px;font-weight:800;margin-bottom:12px}
+.service-card p{font-size:14px;color:var(--gray-600);line-height:1.7}
 
-    /* ---- 数字动画 ---- */
-    .count-up { display: inline-block; }
+/* ==================== 方法论 ==================== */
+.method-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+.method-item{position:relative;padding:40px 32px;border:1px solid var(--gray-200);transition:all var(--t)}
+.method-item:hover{background:var(--white);border-color:var(--red);z-index:1}
+.method-num{font-size:72px;font-weight:900;color:var(--gray-200);line-height:1;margin-bottom:16px;transition:color var(--t)}
+.method-item:hover .method-num{color:var(--red-light)}
+.method-item h3{font-size:18px;font-weight:800;margin-bottom:12px}
+.method-item p{font-size:14px;color:var(--gray-600);line-height:1.7}
 
-    /* Mobile */
-    @media (max-width: 768px) {
-      .hero-inner { grid-template-columns: 1fr; gap: 40px; padding-top: 100px; padding-bottom: 60px; }
-      .hero-text h1 { font-size: 38px; }
-      .hero-img { display: none; }
-      .stats-grid { grid-template-columns: repeat(2, 1fr); }
-      .services-grid { grid-template-columns: 1fr; }
-      .approach-grid { grid-template-columns: 1fr; gap: 40px; }
-      .approach-visual { height: 240px; }
-      .cases-preview-grid { grid-template-columns: 1fr; }
-      .why-grid { grid-template-columns: 1fr; }
-      .cta-section h2 { font-size: 28px; }
-    }
-  </style>
+/* ==================== 案例 ==================== */
+.cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.case-card{position:relative;overflow:hidden;cursor:pointer;min-height:280px;display:flex;flex-direction:column}
+.case-card-bg{position:absolute;inset:0;transition:transform .5s ease}
+.case-card:hover .case-card-bg{transform:scale(1.06)}
+.case-card-info{position:relative;z-index:1;margin-top:auto;padding:28px;background:linear-gradient(transparent,rgba(0,0,0,.8));color:var(--white);min-height:160px;display:flex;flex-direction:column;justify-content:flex-end}
+.case-card-tag{font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--red);margin-bottom:8px}
+.case-card h3{font-size:17px;font-weight:800;margin-bottom:8px}
+.case-card p{font-size:13px;opacity:.7;line-height:1.6}
+
+/* ==================== 为什么 ==================== */
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0}
+.why-item{padding:48px;border:1px solid var(--gray-200);transition:all var(--t)}
+.why-item:hover{border-color:var(--red)}
+.why-icon{width:48px;height:48px;background:var(--red);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:900;margin-bottom:20px;font-size:24px}
+.why-item h3{font-size:20px;font-weight:800;margin-bottom:12px}
+.why-item p{font-size:15px;color:var(--gray-600);line-height:1.8}
+
+/* ==================== CTA ==================== */
+.cta{background:var(--red);color:var(--white);text-align:center;padding:100px 40px}
+.cta h2{font-size:clamp(28px,4vw,52px);font-weight:900;margin-bottom:20px}
+.cta p{font-size:18px;opacity:.8;margin-bottom:40px}
+.cta .btn-white{background:var(--white);color:var(--red)}
+.cta .btn-white:hover{background:var(--gray-100)}
+
+/* ==================== FOOTER ==================== */
+.footer{background:var(--black);color:var(--white);padding:60px 0 30px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;margin-bottom:50px}
+.footer-brand .logo{color:var(--white);margin-bottom:16px}
+.footer-brand .logo-mark{background:var(--red)}
+.footer-brand p{color:var(--gray-400);font-size:14px;line-height:1.8}
+.footer h4{font-size:14px;font-weight:700;letter-spacing:.1em;margin-bottom:20px;color:var(--white)}
+.footer ul li{margin-bottom:10px}
+.footer ul li a{color:var(--gray-400);font-size:14px;transition:color var(--t)}
+.footer ul li a:hover{color:var(--red)}
+.footer-bottom{border-top:1px solid #333;padding-top:24px;display:flex;justify-content:space-between;align-items:center;color:var(--gray-400);font-size:13px}
+
+/* ==================== 分隔线 ==================== */
+.divider{height:1px;background:var(--gray-200)}
+
+/* ==================== 响应式 ==================== */
+@media(max-width:1024px){
+  .hero-inner{grid-template-columns:1fr;text-align:center}
+  .hero-img{display:none}
+  .hero-stat-row{grid-template-columns:repeat(2,1fr)}
+  .hero-sub{margin-left:auto;margin-right:auto}
+  .hero-actions{justify-content:center}
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .method-grid{grid-template-columns:repeat(2,1fr)}
+  .cases-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  .nav-links{display:none;position:fixed;top:72px;left:0;right:0;background:var(--white);flex-direction:column;padding:20px;border-top:1px solid var(--gray-200);box-shadow:0 10px 30px rgba(0,0,0,.1)}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:14px 0;width:100%;border-bottom:1px solid var(--gray-200)}
+  .hamburger{display:flex}
+  .hero-inner{padding:120px 20px 60px}
+  .section{padding:60px 0}
+  .container{padding:0 20px}
+  .section-title{font-size:28px}
+  .services-grid,.method-grid,.cases-grid,.why-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:30px}
+  .footer-bottom{flex-direction:column;gap:10px;text-align:center}
+  .hero-stat-row{grid-template-columns:repeat(2,1fr);gap:16px}
+  .section-header,.section-header-right{text-align:left}
+  .section-label{justify-content:flex-start}
+  .section-label::before{display:block}
+  .section-label::after{display:none}
+  .section-header-right .section-label{justify-content:flex-start}
+  .section-header-right .section-label::after{display:none}
+  .section-header-right .section-desc{margin-left:0}
+}
+</style>
 </head>
 <body>
 
@@ -224,7 +204,7 @@
       <div class="logo-mark">京</div>
       <span>京涛策划</span>
     </a>
-    <div class="nav-links">
+    <div class="nav-links" id="navLinks">
       <a href="index.html" class="active">首页</a>
       <a href="philosophy.html">品牌理念</a>
       <a href="news.html">策划新闻</a>
@@ -232,203 +212,206 @@
       <a href="services.html">服务内容</a>
       <a href="contact.html" class="nav-cta">联系我们</a>
     </div>
-    <div class="hamburger"><span></span><span></span><span></span></div>
+    <div class="hamburger" id="hamburger" onclick="document.getElementById('hamburger').classList.toggle('open');document.getElementById('navLinks').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </div>
   </div>
 </nav>
 
-<!-- Hero -->
+<!-- HERO -->
 <section class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="hero-bg-circle"></div>
+    <div class="hero-bg-circle"></div>
+    <div class="hero-bg-circle"></div>
+  </div>
   <div class="hero-inner">
-    <div class="hero-text">
-      <div class="hero-tag">
-        <span>成立20年，服务品牌超500家</span>
-      </div>
-      <h1>让品牌<br><em>自己会说话</em></h1>
-      <p class="hero-sub">
-        上海京涛营销策划，专注品牌战略定位与全案营销创意。<br>
-        从战略到执行，用创意引爆品牌增长。
-      </p>
-      <div class="hero-btns">
+    <div class="hero-content">
+      <div class="hero-badge reveal">上海 · 品牌营销策划机构</div>
+      <h1 class="reveal">让品牌<br><em>自己会说话</em></h1>
+      <p class="hero-sub reveal">京涛策划专注品牌战略定位与全案营销，20年服务500+品牌，用战略创意帮企业建立"条件反射"式的品牌认知，让品牌自己会说话。</p>
+      <div class="hero-actions reveal">
         <a href="cases.html" class="btn btn-white">查看案例</a>
-        <a href="contact.html" class="btn" style="border:2px solid rgba(255,255,255,0.5);color:white;">预约咨询</a>
+        <a href="contact.html" class="btn btn-outline" style="color:white;border-color:white;">立即咨询</a>
+      </div>
+      <div class="hero-stat-row">
+        <div class="hero-stat reveal">
+          <span class="hero-stat-num">500</span>
+          <div class="hero-stat-label">服务品牌</div>
+        </div>
+        <div class="hero-stat reveal">
+          <span class="hero-stat-num">20</span>
+          <div class="hero-stat-label">年行业经验</div>
+        </div>
+        <div class="hero-stat reveal">
+          <span class="hero-stat-num">1200</span>
+          <div class="hero-stat-label">服务项目</div>
+        </div>
+        <div class="hero-stat reveal">
+          <span class="hero-stat-num">98</span>
+          <div class="hero-stat-label">客户续约率%</div>
+        </div>
       </div>
     </div>
     <div class="hero-img">
-      <div class="hero-img-box" style="position:relative;">
-        <img src="assets/hero-founder.jpg" alt="京涛策划" onerror="this.style.display='none'">
-        <div style="position:absolute;bottom:20px;left:50%;transform:translateX(-50%);background:var(--red);color:white;padding:10px 20px;font-weight:800;font-size:14px;letter-spacing:0.1em;white-space:nowrap;border-radius:2px;">京涛策划 JINGTAO</div>
+      <div class="hero-graphic">
+        <div class="g-c1">
+          <div class="g-c2">
+            <div class="g-c3"><span>JINGTAO</span></div>
+          </div>
+        </div>
+        <div class="g-line"></div>
+        <div class="g-dot"></div>
+        <div class="g-dot"></div>
+        <div class="g-dot"></div>
+        <div class="g-dot"></div>
+        <div class="g-label">京涛策划 JINGTAO</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 数字 Bar -->
-<div class="stats-bar">
-  <div class="stats-grid">
-    <div class="stat-item">
-      <div class="stat-num" data-target="500">0</div>
-      <div class="stat-label">服务品牌</div>
-      <div class="stat-sub">覆盖20+行业</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num" data-target="20">0</div>
-      <div class="stat-label">年行业经验</div>
-      <div class="stat-sub">深耕品牌战略</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num" data-target="1200">0</div>
-      <div class="stat-label">全案项目</div>
-      <div class="stat-sub">从战略到落地</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num" data-target="98">0</div>
-      <div class="stat-label">客户续约率 %</div>
-      <div class="stat-sub">口碑见证实力</div>
-    </div>
-  </div>
-</div>
-
-<!-- 服务 -->
+<!-- 品牌定位 -->
 <section class="section">
   <div class="container">
-    <div class="section-label reveal">我们的服务</div>
-    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
       <div>
-        <h2 class="section-title reveal">四大核心服务<br>覆盖品牌全生命周期</h2>
-        <p class="section-desc reveal">从品牌战略定位到营销落地执行，京涛为企业提供一站式品牌全案服务。</p>
+        <div class="section-label reveal">WHO WE ARE</div>
+        <h2 class="section-title reveal">不做广告<br>做认知</h2>
+        <p class="section-desc reveal">20年前入行时，我们就在思考一个问题：为什么有的品牌消费者买了一次就记住了，有的品牌花了几千万广告费还是记不住？<br><br>答案很简单：后者只做了传播，没有做认知。<br><br>京涛存在的意义，就是帮企业建立那个"条件反射"，让品牌自己会说话。</p>
+        <div style="margin-top:36px" class="reveal">
+          <a href="philosophy.html" class="btn btn-red">了解京涛方法论 →</a>
+        </div>
       </div>
-      <a href="services.html" class="btn btn-outline reveal">全部服务 →</a>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;" class="reveal">
+        <div style="background:var(--red);color:white;padding:36px 24px;border-radius:4px;">
+          <div style="font-size:42px;font-weight:900;margin-bottom:8px;">500+</div>
+          <div style="font-size:14px;opacity:.8;">服务品牌数量</div>
+        </div>
+        <div style="background:var(--gray-100);padding:36px 24px;border-radius:4px;">
+          <div style="font-size:42px;font-weight:900;margin-bottom:8px;">100%</div>
+          <div style="font-size:14px;color:var(--gray-600);">全案品牌占比</div>
+        </div>
+        <div style="background:var(--gray-100);padding:36px 24px;border-radius:4px;">
+          <div style="font-size:42px;font-weight:900;margin-bottom:8px;">1:8</div>
+          <div style="font-size:14px;color:var(--gray-600);">平均营销ROI</div>
+        </div>
+        <div style="background:var(--red);color:white;padding:36px 24px;border-radius:4px;">
+          <div style="font-size:42px;font-weight:900;margin-bottom:8px;">0</div>
+          <div style="font-size:14px;opacity:.8;">无效营销</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- 服务 -->
+<section class="section section-gray">
+  <div class="container">
+    <div class="section-header" style="text-align:center;margin-bottom:60px;">
+      <div class="section-label reveal" style="justify-content:center;">OUR SERVICES</div>
+      <h2 class="section-title reveal">四大核心服务</h2>
+      <p class="section-desc reveal" style="margin:0 auto;">从战略定位到创意执行，覆盖品牌全生命周期</p>
     </div>
     <div class="services-grid">
       <div class="service-card reveal">
         <div class="service-icon">策</div>
-        <h3>品牌战略咨询</h3>
-        <p>基于深度市场洞察，为企业厘清品牌定位方向，建立差异化竞争战略，构建品牌核心价值体系。</p>
-        <ul>
-          <li>品牌战略规划</li>
-          <li>市场调研与洞察</li>
-          <li>品牌定位设计</li>
-          <li>竞争策略制定</li>
-        </ul>
+        <h3>品牌战略定位</h3>
+        <p>市场洞察、竞争分析、差异化定位、品牌架构规划，帮品牌找到"那个词"</p>
       </div>
       <div class="service-card reveal">
         <div class="service-icon">创</div>
-        <h3>营销创意执行</h3>
-        <p>从广告语到视觉创意，从内容生产到传播策略，用创意连接品牌与消费者，实现高效品牌传播。</p>
-        <ul>
-          <li>广告语与品牌口号</li>
-          <li>品牌视觉系统设计</li>
-          <li>营销内容创意</li>
-          <li>传播策略与媒介</li>
-        </ul>
+        <h3>全案营销策划</h3>
+        <p>年度营销规划、内容策略、传播节奏、事件营销，覆盖品牌从0到1的全链路</p>
       </div>
       <div class="service-card reveal">
-        <div class="service-icon">产</div>
-        <h3>产品策略规划</h3>
-        <p>从产品线规划到卖点提炼，从定价策略到包装设计，塑造产品竞争力，提升溢价能力。</p>
-        <ul>
-          <li>产品线战略规划</li>
-          <li>核心卖点提炼</li>
-          <li>包装与视觉设计</li>
-          <li>定价与渠道策略</li>
-        </ul>
+        <div class="service-icon">视</div>
+        <h3>视觉创意设计</h3>
+        <p>品牌视觉系统（VIS）、包装设计、广告创意、官网及物料设计，一体化呈现</p>
       </div>
       <div class="service-card reveal">
-        <div class="service-icon">长</div>
-        <h3>品牌常年顾问</h3>
-        <p>驻场式品牌顾问服务，持续跟进品牌执行，解决品牌运营中的实际问题，陪伴企业持续增长。</p>
-        <ul>
-          <li>季度品牌复盘</li>
-          <li>营销节点策划</li>
-          <li>品牌资产管理</li>
-          <li>团队培训赋能</li>
-        </ul>
+        <div class="service-icon">数</div>
+        <h3>数字营销传播</h3>
+        <p>社交媒体运营、私域流量、电商内容、直播策划，品效合一驱动增长</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- 方法论 -->
-<section class="section approach-section">
+<section class="section">
   <div class="container">
-    <div class="section-label reveal" style="color:rgba(255,255,255,0.6);">我们的方法</div>
-    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;">
-      <h2 class="section-title reveal" style="color:white;">四步法<br>让战略真正落地</h2>
+    <div class="section-header reveal" style="margin-bottom:0;">
+      <div class="section-label">METHODOLOGY</div>
+      <h2 class="section-title">京涛四步法</h2>
+      <p class="section-desc">从洞察到落地，每一步都有方法</p>
     </div>
-    <div class="approach-grid">
-      <div class="approach-visual">
-        <div class="approach-visual-text">METHOD</div>
-        <div class="approach-visual-main">
-          战略 × 创意<br>× 执行 × 迭代
-        </div>
+  </div>
+  <div class="container" style="margin-top:48px;">
+    <div class="method-grid">
+      <div class="method-item reveal">
+        <div class="method-num">01</div>
+        <h3>洞察·找准问题</h3>
+        <p>市场调研、消费者访谈、竞品分析，找到品牌真正的核心问题，而不是表面症状</p>
       </div>
-      <div class="approach-steps">
-        <div class="approach-step reveal">
-          <div class="step-num">01</div>
-          <div class="step-content">
-            <h4>洞察 — 找准问题本质</h4>
-            <p>深入行业、市场、消费者调研，用数据说话，找到品牌增长的核心矛盾与机会点。</p>
-          </div>
-        </div>
-        <div class="approach-step reveal">
-          <div class="step-num">02</div>
-          <div class="step-content">
-            <h4>战略 — 明确方向路径</h4>
-            <p>在混乱中找到主线，制定清晰的品牌定位、竞争战略和增长路径，让企业知道往哪走。</p>
-          </div>
-        </div>
-        <div class="approach-step reveal">
-          <div class="step-num">03</div>
-          <div class="step-content">
-            <h4>创意 — 一句话打透人心</h4>
-            <p>用一句话说清楚你是谁、为什么选你。用创意符号和语言体系，降低品牌的传播成本。</p>
-          </div>
-        </div>
-        <div class="approach-step reveal">
-          <div class="step-num">04</div>
-          <div class="step-content">
-            <h4>执行 — 让战略可见可感</h4>
-            <p>从平面到空间，从内容到媒介，确保创意在每一个触点落地，形成持续的认知积累。</p>
-          </div>
-        </div>
+      <div class="method-item reveal">
+        <div class="method-num">02</div>
+        <h3>定位·抢占心智</h3>
+        <p>在消费者心智中找到差异化位置，用一句话说清楚品牌是谁、解决什么问题</p>
+      </div>
+      <div class="method-item reveal">
+        <div class="method-num">03</div>
+        <h3>创意·符号寄生</h3>
+        <p>将品牌寄生在消费者熟悉的文化符号中，让品牌自己会说话，降低传播成本</p>
+      </div>
+      <div class="method-item reveal">
+        <div class="method-num">04</div>
+        <h3>落地·持续进化</h3>
+        <p>从视觉到传播到运营，全链路落地执行，并根据市场反馈持续优化升级</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 案例预览 -->
+<div class="divider"></div>
+
+<!-- 案例 -->
 <section class="section section-gray">
   <div class="container">
-    <div class="section-label reveal">精选案例</div>
-    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;">
+    <div class="section-header" style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;">
       <div>
-        <h2 class="section-title reveal">用案例说话</h2>
-        <p class="section-desc reveal">每一个案例，都是一次从困境到破局的品牌突围。</p>
+        <div class="section-label reveal">SUCCESS STORIES</div>
+        <h2 class="section-title reveal">部分代表案例</h2>
       </div>
-      <a href="cases.html" class="btn btn-outline reveal">全部案例 →</a>
+      <div class="reveal">
+        <a href="cases.html" class="btn btn-outline">查看全部案例 →</a>
+      </div>
     </div>
-    <div class="cases-preview-grid">
+    <div class="cases-grid">
       <div class="case-card reveal">
-        <div class="case-card-bg" style="background:#1a3a4a;"></div>
+        <div class="case-card-bg" style="background:linear-gradient(135deg,#1a3a4a,#2a5a6a);"></div>
         <div class="case-card-info">
           <div class="case-card-tag">食品快消</div>
-          <h3>味动力 | 从0到品类前三</h3>
+          <h3>味动力｜从0到品类前三</h3>
           <p>品牌战略重塑，3年跻身区域市场领导品牌</p>
         </div>
       </div>
       <div class="case-card reveal">
-        <div class="case-card-bg" style="background:#4a1a1a;"></div>
+        <div class="case-card-bg" style="background:linear-gradient(135deg,#4a1a1a,#6a2a2a);"></div>
         <div class="case-card-info">
           <div class="case-card-tag">餐饮连锁</div>
-          <h3>老街坊 | 全国扩张战略</h3>
+          <h3>老街坊｜全国扩张战略</h3>
           <p>品牌升级+连锁加盟体系，年增门店200+</p>
         </div>
       </div>
       <div class="case-card reveal">
-        <div class="case-card-bg" style="background:#1a2a1a;"></div>
+        <div class="case-card-bg" style="background:linear-gradient(135deg,#1a2a1a,#2a4a2a);"></div>
         <div class="case-card-info">
           <div class="case-card-tag">健康产业</div>
-          <h3>本草颜 | 功效护肤定位</h3>
+          <h3>本草颜｜功效护肤定位</h3>
           <p>精准定位+内容营销，电商渠道ROI超1:8</p>
         </div>
       </div>
@@ -436,116 +419,124 @@
   </div>
 </section>
 
-<!-- 为什么选我们 -->
+<!-- 优势 -->
 <section class="section">
   <div class="container">
-    <div style="text-align:center;max-width:600px;margin:0 auto 60px;">
-      <div class="section-label reveal" style="justify-content:center;">为什么选京涛</div>
-      <h2 class="section-title reveal">20年，只做一件事</h2>
-      <p class="section-desc reveal" style="margin:0 auto;">我们相信品牌的本质是认知，认知的本质是重复。京涛团队用系统化的方法，帮助品牌建立长期竞争力。</p>
-    </div>
-    <div class="why-grid">
-      <div class="why-item reveal">
-        <div class="why-icon">深</div>
-        <h3>深度，不玩表面</h3>
-        <p>每个项目从行业本质出发，不做浮于表面的创意，找到品牌真正的竞争壁垒。</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
+      <div>
+        <div class="section-label reveal">WHY JINGTAO</div>
+        <h2 class="section-title reveal">为什么选京涛？</h2>
+        <div class="why-grid reveal" style="margin-top:32px;">
+          <div class="why-item">
+            <div class="why-icon">策</div>
+            <h3>战略先行</h3>
+            <p>不盲目追求创意，先找到品牌真正的问题和机会点</p>
+          </div>
+          <div class="why-item">
+            <div class="why-icon">创</div>
+            <h3>创意落地</h3>
+            <p>好创意不是艺术品，能在货架上被看见、记住、购买的才算数</p>
+          </div>
+          <div class="why-item">
+            <div class="why-icon">快</div>
+            <h3>快速响应</h3>
+            <p>小团队作战，决策链路短，3天出策略，7天出创意</p>
+          </div>
+          <div class="why-item">
+            <div class="why-icon">效</div>
+            <h3>效果导向</h3>
+            <p>所有策划都指向生意增长，不是为了好看，是为了好卖</p>
+          </div>
+        </div>
       </div>
-      <div class="why-item reveal">
-        <div class="why-icon">实</div>
-        <h3>实战，不走形式</h3>
-        <p>方案直接指导执行，团队驻场跟进落地，确保战略不只停在PPT上。</p>
-      </div>
-      <div class="why-item reveal">
-        <div class="why-icon">稳</div>
-        <h3>稳健，长期陪伴</h3>
-        <p>不是一锤子买卖，是与企业共同成长的品牌合伙人，98%续约率是最好的证明。</p>
+      <div class="reveal">
+        <div style="background:var(--red);color:white;padding:48px;border-radius:4px;position:relative;overflow:hidden;">
+          <div style="position:absolute;top:-20px;right:-20px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,.1);"></div>
+          <div style="font-size:80px;font-weight:900;line-height:1;margin-bottom:16px;">20</div>
+          <div style="font-size:16px;opacity:.8;margin-bottom:32px;">年深耕品牌营销策划</div>
+          <div style="font-size:14px;opacity:.6;line-height:1.8;">
+            京涛策划（前身金涛品牌工作室）创立于2006年，<br>
+            专注中国本土品牌战略与营销全案服务，<br>
+            服务客户涵盖食品、餐饮、美妆、教育、<br>
+            制造等20余个行业，帮助500+品牌实现增长。
+          </div>
+          <div style="margin-top:32px;padding-top:32px;border-top:1px solid rgba(255,255,255,.2);font-size:14px;opacity:.7;">
+            创始人 · 金涛
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section class="cta-section">
-  <div class="container" style="max-width:700px;">
-    <h2 class="reveal">好品牌，从一次深度对话开始</h2>
-    <p class="reveal">告诉我们你的品牌困境，京涛顾问团队将在24小时内为你提供初步诊断。</p>
-    <div class="reveal">
-      <a href="contact.html" class="btn btn-white">立即预约咨询 →</a>
-    </div>
-  </div>
+<section class="cta">
+  <h2>品牌问题，聊30分钟</h2>
+  <p>免费诊断你的品牌现状，给出方向性建议</p>
+  <a href="contact.html" class="btn btn-white">立即预约咨询 →</a>
 </section>
 
-<!-- Footer -->
+<!-- FOOTER -->
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="logo">
+        <a href="index.html" class="logo">
           <div class="logo-mark">京</div>
           <span>京涛策划</span>
-        </div>
-        <p>上海京涛营销策划，专注品牌战略定位与全案营销创意，服务品牌超500家。</p>
-        <p style="margin-top:12px;">地址：上海市静安区南京西路1788号<br>电话：021-6288-6688<br>邮箱：info@jingtaoplan.com</p>
+        </a>
+        <p>上海京涛营销策划有限公司<br>专注品牌战略定位与全案营销<br>让品牌自己会说话</p>
       </div>
       <div>
-        <h4>快速导航</h4>
+        <h4>导航</h4>
         <ul>
           <li><a href="index.html">首页</a></li>
           <li><a href="philosophy.html">品牌理念</a></li>
           <li><a href="news.html">策划新闻</a></li>
           <li><a href="cases.html">成功案例</a></li>
           <li><a href="services.html">服务内容</a></li>
+          <li><a href="contact.html">联系我们</a></li>
         </ul>
       </div>
       <div>
-        <h4>核心服务</h4>
+        <h4>服务</h4>
         <ul>
-          <li><a href="services.html">品牌战略咨询</a></li>
-          <li><a href="services.html">营销创意执行</a></li>
-          <li><a href="services.html">产品策略规划</a></li>
-          <li><a href="services.html">品牌常年顾问</a></li>
+          <li><a href="services.html">品牌战略定位</a></li>
+          <li><a href="services.html">全案营销策划</a></li>
+          <li><a href="services.html">视觉创意设计</a></li>
+          <li><a href="services.html">数字营销传播</a></li>
         </ul>
       </div>
       <div>
-        <h4>关注我们</h4>
+        <h4>联系我们</h4>
         <ul>
-          <li><a href="#">微信公众号</a></li>
-          <li><a href="#">微博：@京涛策划</a></li>
-          <li><a href="#">小红书</a></li>
+          <li style="color:var(--gray-400);font-size:14px;margin-bottom:10px;">上海 · 静安区</li>
+          <li style="color:var(--gray-400);font-size:14px;margin-bottom:10px;">电话：138-0000-0000</li>
+          <li style="color:var(--gray-400);font-size:14px;margin-bottom:10px;">邮箱：info@jingtao.com</li>
+          <li style="color:var(--gray-400);font-size:14px;">沪ICP备00000000号</li>
         </ul>
-        <div style="margin-top:20px;">
-          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect fill='%23333' width='100' height='100'/%3E%3Ctext x='50' y='55' text-anchor='middle' fill='%23666' font-size='10'%3E微信公众号%3C/text%3E%3C/svg%3E" alt="微信公众号">
-        </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 上海京涛营销策划 JINGTAO. All Rights Reserved.</span>
-      <span>沪ICP备xxxxxxxx号</span>
+      <span>© 2026 上海京涛营销策划有限公司</span>
+      <span>让品牌自己会说话</span>
     </div>
   </div>
 </footer>
 
-<script src="main.js"></script>
 <script>
-  // 数字动画
-  const counters = document.querySelectorAll('.stat-num[data-target]');
-  const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const el = entry.target;
-        const target = parseInt(el.dataset.target);
-        let current = 0;
-        const step = Math.ceil(target / 60);
-        const timer = setInterval(() => {
-          current += step;
-          if (current >= target) { el.textContent = target; clearInterval(timer); }
-          else { el.textContent = current; }
-        }, 20);
-        counterObserver.unobserve(el);
-      }
-    });
-  }, { threshold: 0.5 });
-  counters.forEach(c => counterObserver.observe(c));
+// 导航滚动阴影
+window.addEventListener('scroll',()=>{
+  document.querySelector('.navbar').classList.toggle('scrolled',window.scrollY>20);
+});
+// 滚动动画
+const obs=new IntersectionObserver(e=>e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('visible')}),{threshold:.1,rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+// 当前页面高亮
+const cur=location.pathname.split('/').pop()||'index.html';
+document.querySelectorAll('.nav-links a').forEach(l=>{
+  if(l.getAttribute('href')===cur||(cur===''&&l.getAttribute('href')==='index.html'))l.classList.add('active');
+});
 </script>
 </body>
 </html>
