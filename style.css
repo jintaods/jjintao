@@ -58,28 +58,27 @@ button { cursor: pointer; border: none; outline: none; font-family: var(--font-z
   text-decoration: none;
 }
 .logo-mark {
-  width: 48px; height: 48px;
-  background: var(--red);
-  display: flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px;
   flex-shrink: 0;
   position: relative;
-  overflow: hidden;
-}
-.logo-mark::before {
-  content: '';
-  position: absolute;
-  width: 24px; height: 24px;
-  border: 2px solid rgba(255,255,255,0.35);
-  transform: rotate(45deg);
+  display: flex; align-items: center; justify-content: center;
 }
 .logo-mark-inner {
   font-family: 'Noto Serif SC', serif;
-  font-size: 22px; font-weight: 900;
-  color: var(--white);
+  font-size: 28px; font-weight: 900;
+  color: var(--red);
   line-height: 1;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.04em;
+  margin-top: 2px;
 }
-.logo-text { display: flex; flex-direction: column; gap: 3px; }
+.logo-mark-accent {
+  position: absolute;
+  right: 0; bottom: 2px;
+  width: 10px; height: 10px;
+  background: var(--red);
+  border-radius: 50%;
+}
+.logo-text { display: flex; flex-direction: column; gap: 2px; }
 .logo-name {
   font-family: 'Noto Serif SC', serif;
   font-size: 20px; font-weight: 900;
@@ -89,9 +88,9 @@ button { cursor: pointer; border: none; outline: none; font-family: var(--font-z
 }
 .logo-sub {
   font-family: 'Noto Sans SC', sans-serif;
-  font-size: 10px; font-weight: 500;
-  letter-spacing: 0.22em;
-  color: var(--red);
+  font-size: 9px; font-weight: 500;
+  letter-spacing: 0.18em;
+  color: var(--gray-500);
   text-transform: uppercase;
   line-height: 1;
 }
