@@ -12,7 +12,7 @@
     .filter-btn:hover, .filter-btn.active { background: var(--red); color: var(--white); border-color: var(--red); }
 
     .cases-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-    .case-card { background: var(--white); overflow: hidden; cursor: pointer; transition: all 0.3s; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+    .case-card { background: var(--white); overflow: hidden; cursor: pointer; transition: all 0.3s; box-shadow: 0 2px 12px rgba(0,0,0,0.06); text-decoration: none; color: inherit; display: block; }
     .case-card:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(0,0,0,0.12); }
     .case-card-img { height: 240px; position: relative; overflow: hidden; }
     .case-card-img-bg { width: 100%; height: 100%; transition: transform 0.5s; }
@@ -28,28 +28,8 @@
     .result-num { font-size: 22px; font-weight: 900; color: var(--red); font-family: var(--font-en); }
     .result-label { font-size: 11px; color: var(--gray-400); margin-top: 2px; }
 
-    .case-detail-banner { height: 400px; background: var(--black); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
-    .case-detail-banner-bg { position: absolute; width: 100%; height: 100%; opacity: 0.3; }
-    .case-detail-banner-text { position: relative; z-index: 1; text-align: center; color: var(--white); }
-    .case-detail-banner-text .industry { background: var(--red); padding: 6px 16px; font-size: 13px; font-weight: 700; display: inline-block; margin-bottom: 16px; }
-    .case-detail-banner-text h1 { font-size: 44px; font-weight: 900; margin-bottom: 12px; }
-    .case-detail-banner-text p { font-size: 18px; opacity: 0.7; }
-
-    .case-detail-content { max-width: 800px; margin: 0 auto; padding: 80px 40px; }
-    .case-section { margin-bottom: 50px; }
-    .case-section h2 { font-size: 24px; font-weight: 800; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 3px solid var(--red); display: inline-block; }
-    .case-section p { font-size: 16px; color: var(--gray-600); line-height: 1.9; margin-bottom: 16px; }
-    .case-highlight { background: var(--red-light); padding: 30px; border-left: 4px solid var(--red); margin: 30px 0; }
-    .case-highlight p { color: var(--black); font-size: 17px; font-weight: 600; margin: 0; }
-
-    .result-big-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 40px 0; }
-    .result-big { background: var(--black); color: var(--white); text-align: center; padding: 30px; }
-    .result-big .num { font-size: 48px; font-weight: 900; color: var(--red); font-family: var(--font-en); }
-    .result-big .label { font-size: 14px; opacity: 0.7; margin-top: 6px; }
-
     @media (max-width: 768px) {
       .cases-grid { grid-template-columns: 1fr; }
-      .result-big-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -61,7 +41,7 @@
     <div class="nav-links">
       <a href="index.html">首页</a>
       <a href="philosophy.html">品牌理念</a>
-      <a href="news.html">策划新闻</a>
+      <a href="news.html">公司新闻</a>
       <a href="cases.html" class="active">成功案例</a>
       <a href="services.html">服务内容</a>
       <a href="contact.html" class="nav-cta">联系我们</a>
@@ -93,14 +73,14 @@
       <button class="filter-btn">健康产业</button>
       <button class="filter-btn">家居建材</button>
       <button class="filter-btn">教育培训</button>
-      <button class="filter-btn">更多行业</button>
     </div>
 
     <div class="cases-grid">
-      <!-- Case 1 -->
-      <div class="case-card reveal">
+
+      <!-- Case 1: 味动力 -->
+      <a href="case-weidongli.html" class="case-card reveal">
         <div class="case-card-img">
-          <div class="case-card-img-bg" style="background:url('case-food.png') center/cover no-repeat;"></div>
+          <div class="case-card-img-bg" style="background:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80') center/cover no-repeat;"></div>
           <div class="case-card-industry">食品快消</div>
         </div>
         <div class="case-card-body">
@@ -116,12 +96,12 @@
             <div class="result-item"><div class="result-num">品类TOP3</div><div class="result-label">华东市场</div></div>
           </div>
         </div>
-      </div>
+      </a>
 
-      <!-- Case 2 -->
-      <div class="case-card reveal">
+      <!-- Case 2: 老街坊 -->
+      <a href="case-laojiefang.html" class="case-card reveal">
         <div class="case-card-img">
-          <div class="case-card-img-bg" style="background:url('case-restaurant.jpg') center/cover no-repeat;"></div>
+          <div class="case-card-img-bg" style="background:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80') center/cover no-repeat;"></div>
           <div class="case-card-industry">餐饮连锁</div>
         </div>
         <div class="case-card-body">
@@ -137,12 +117,12 @@
             <div class="result-item"><div class="result-num">28省</div><div class="result-label">覆盖范围</div></div>
           </div>
         </div>
-      </div>
+      </a>
 
-      <!-- Case 3 -->
-      <div class="case-card reveal">
+      <!-- Case 3: 本草颜 -->
+      <a href="case-bencaoyan.html" class="case-card reveal">
         <div class="case-card-img">
-          <div class="case-card-img-bg" style="background:url('case-skincare.jpg') center/cover no-repeat;"></div>
+          <div class="case-card-img-bg" style="background:url('https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600&q=80') center/cover no-repeat;"></div>
           <div class="case-card-industry">健康产业</div>
         </div>
         <div class="case-card-body">
@@ -158,12 +138,12 @@
             <div class="result-item"><div class="result-num">1000万+</div><div class="result-label">月销（天猫）</div></div>
           </div>
         </div>
-      </div>
+      </a>
 
-      <!-- Case 4 -->
-      <div class="case-card reveal">
+      <!-- Case 4: 诺梵门窗 -->
+      <a href="case-nuofan.html" class="case-card reveal">
         <div class="case-card-img">
-          <div class="case-card-img-bg" style="background:url('case-home.png') center/cover no-repeat;"></div>
+          <div class="case-card-img-bg" style="background:url('https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&q=80') center/cover no-repeat;"></div>
           <div class="case-card-industry">家居建材</div>
         </div>
         <div class="case-card-body">
@@ -179,17 +159,17 @@
             <div class="result-item"><div class="result-num">150家</div><div class="result-label">新开零售店</div></div>
           </div>
         </div>
-      </div>
+      </a>
 
-      <!-- Case 5 -->
-      <div class="case-card reveal">
+      <!-- Case 5: 启明学院 -->
+      <a href="case-qiming.html" class="case-card reveal">
         <div class="case-card-img">
           <div class="case-card-img-bg" style="background:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80') center/cover no-repeat;"></div>
           <div class="case-card-industry">教育培训</div>
         </div>
         <div class="case-card-body">
           <h3>启明学院｜成人职业教育定位</h3>
-          <div class="case-brief">聚焦"技能变现"核心诉求，差异化于传统学历教育，私域转化率行业第一。</div>
+          <div class="case-brief">聚焦"技能变现"核心诉求，差异化于传统学历教育，私域转化率行业领先。</div>
           <div class="case-card-tags">
             <span class="case-tag">定位策略</span>
             <span class="case-tag">私域运营</span>
@@ -197,13 +177,13 @@
           </div>
           <div class="case-card-result">
             <div class="result-item"><div class="result-num">+320%</div><div class="result-label">咨询转化率</div></div>
-            <div class="result-item"><div class="result-num">行业第一</div><div class="result-label">私域转化</div></div>
+            <div class="result-item"><div class="result-num">TOP 1</div><div class="result-label">私域转化率</div></div>
           </div>
         </div>
-      </div>
+      </a>
 
-      <!-- Case 6 -->
-      <div class="case-card reveal">
+      <!-- Case 6: 壹号卤味 -->
+      <a href="case-yihao.html" class="case-card reveal">
         <div class="case-card-img">
           <div class="case-card-img-bg" style="background:url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=80') center/cover no-repeat;"></div>
           <div class="case-card-industry">食品快消</div>
@@ -221,7 +201,8 @@
             <div class="result-item"><div class="result-num">80+</div><div class="result-label">全国门店</div></div>
           </div>
         </div>
-      </div>
+      </a>
+
     </div>
 
     <div style="text-align:center;margin-top:60px;" class="reveal">
@@ -239,7 +220,7 @@
         <p>上海京涛品牌策划，专注品牌战略定位与全案营销创意，服务品牌超500家。</p>
         <p style="margin-top:12px;">地址：上海市静安区南京西路1788号<br>电话：021-6288-6688<br>邮箱：info@jingtaoplan.com</p>
       </div>
-      <div><h4>快速导航</h4><ul><li><a href="index.html">首页</a></li><li><a href="philosophy.html">品牌理念</a></li><li><a href="news.html">策划新闻</a></li><li><a href="cases.html">成功案例</a></li><li><a href="services.html">服务内容</a></li></ul></div>
+      <div><h4>快速导航</h4><ul><li><a href="index.html">首页</a></li><li><a href="philosophy.html">品牌理念</a></li><li><a href="news.html">公司新闻</a></li><li><a href="cases.html">成功案例</a></li><li><a href="services.html">服务内容</a></li></ul></div>
       <div><h4>核心服务</h4><ul><li><a href="services.html">品牌战略咨询</a></li><li><a href="services.html">营销创意执行</a></li><li><a href="services.html">产品策略规划</a></li><li><a href="services.html">品牌常年顾问</a></li></ul></div>
       <div><h4>关注我们</h4><ul><li><a href="#">微信公众号</a></li><li><a href="#">微博：@京涛品牌策划</a></li><li><a href="#">小红书</a></li></ul></div>
     </div>
