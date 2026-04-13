@@ -237,19 +237,19 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
       </div>
       <div class="hero-stat-row">
         <div class="hero-stat reveal">
-          <span class="hero-stat-num">500</span>
+          <span class="hero-stat-num counter" data-target="500">500</span>
           <div class="hero-stat-label">服务品牌</div>
         </div>
         <div class="hero-stat reveal">
-          <span class="hero-stat-num">20</span>
+          <span class="hero-stat-num counter" data-target="20">20</span>
           <div class="hero-stat-label">年行业经验</div>
         </div>
         <div class="hero-stat reveal">
-          <span class="hero-stat-num">1200</span>
+          <span class="hero-stat-num counter" data-target="1200">1200</span>
           <div class="hero-stat-label">服务项目</div>
         </div>
         <div class="hero-stat reveal">
-          <span class="hero-stat-num">98</span>
+          <span class="hero-stat-num counter" data-target="98">98</span>
           <div class="hero-stat-label">客户续约率%</div>
         </div>
       </div>
@@ -532,6 +532,18 @@ window.addEventListener('scroll',()=>{
 // 滚动动画
 const obs=new IntersectionObserver(e=>e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('visible')}),{threshold:.1,rootMargin:'0px 0px -50px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+// 数字滚动
+function runCounter(el){
+  const t=parseInt(el.dataset.target),dur=1800,start=performance.now();
+  function upd(n){
+    const p=Math.min((n-start)/dur,1),eased=1-Math.pow(1-p,3);
+    el.textContent=Math.floor(eased*t).toLocaleString();
+    if(p<1)requestAnimationFrame(upd);else el.textContent=t+(t>=100?'+':' ');
+  }
+  requestAnimationFrame(upd);
+}
+const cObs=new IntersectionObserver(e=>{if(e[0].isIntersecting&&!e[0].target.classList.contains('counted')){e[0].target.classList.add('counted');runCounter(e[0].target);}},{threshold:.5});
+document.querySelectorAll('.counter').forEach(el=>cObs.observe(el));
 // 当前页面高亮
 const cur=location.pathname.split('/').pop()||'index.html';
 document.querySelectorAll('.nav-links a').forEach(l=>{
