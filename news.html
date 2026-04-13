@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>策划新闻 - 上海京涛品牌策划</title>
+  <title>公司新闻 - 上海京涛品牌策划</title>
   <link rel="stylesheet" href="style.css">
   <style>
     .news-page { padding: 80px 0; }
@@ -15,8 +15,8 @@
     .news-featured-overlay .tag { background: var(--red); font-size: 12px; padding: 4px 10px; font-weight: 700; margin-bottom: 10px; display: inline-block; }
     .news-featured-overlay h3 { font-size: 24px; font-weight: 800; margin-bottom: 8px; }
     .news-featured-overlay p { font-size: 14px; opacity: 0.7; }
-    .news-featured-list { display: flex; flex-direction: column; gap: 16px; }
-    .news-item-h { display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--gray-200); cursor: pointer; }
+    .news-featured-list { display: flex; flex-direction: column; gap: 0; }
+    .news-item-h { display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--gray-200); cursor: pointer; text-decoration: none; color: inherit; }
     .news-item-h:hover .news-item-h-title { color: var(--red); }
     .news-item-h-img { width: 100px; min-width: 100px; height: 72px; background: var(--gray-800); overflow: hidden; }
     .news-item-h-title { font-size: 15px; font-weight: 700; margin-bottom: 6px; transition: color 0.3s; }
@@ -28,13 +28,13 @@
     .filter-btn:hover, .filter-btn.active { background: var(--red); color: var(--white); border-color: var(--red); }
 
     .news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-    .news-card { cursor: pointer; }
+    .news-card { cursor: pointer; text-decoration: none; color: inherit; display: block; }
     .news-card:hover .news-card-img { transform: scale(1.03); }
+    .news-card:hover h3 { color: var(--red); }
     .news-card-img-wrap { overflow: hidden; height: 200px; background: var(--gray-800); margin-bottom: 16px; }
     .news-card-img { width: 100%; height: 100%; transition: transform 0.5s; }
     .news-card .tag { background: var(--red-light); color: var(--red); font-size: 12px; padding: 3px 10px; font-weight: 600; display: inline-block; margin-bottom: 8px; }
     .news-card h3 { font-size: 17px; font-weight: 800; margin-bottom: 8px; line-height: 1.4; transition: color 0.3s; }
-    .news-card:hover h3 { color: var(--red); }
     .news-card p { font-size: 14px; color: var(--gray-600); line-height: 1.7; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
     .news-card-meta { font-size: 12px; color: var(--gray-400); margin-top: 10px; }
     @media (max-width: 768px) {
@@ -51,7 +51,7 @@
     <div class="nav-links">
       <a href="index.html">首页</a>
       <a href="philosophy.html">品牌理念</a>
-      <a href="news.html" class="active">策划新闻</a>
+      <a href="news.html" class="active">公司新闻</a>
       <a href="cases.html">成功案例</a>
       <a href="services.html">服务内容</a>
       <a href="contact.html" class="nav-cta">联系我们</a>
@@ -69,57 +69,59 @@
   </div>
   <div class="page-hero-content">
     <div class="page-hero-badge">03</div>
-    <h1>策划新闻</h1>
+    <h1>公司新闻</h1>
     <p>行业洞察 · 方法论分享 · 品牌动态</p>
   </div>
 </div>
 
 <section class="news-page">
   <div class="container">
+
     <!-- 精选 -->
     <div class="news-featured reveal">
-      <div class="news-featured-main">
-        <img class="news-bg" src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80" alt="" style="width:100%;height:100%;object-fit:cover;">
-        <div class="news-bg" style="background:#2a1a3a;display:none;"></div>
-        <div class="news-featured-overlay">
-          <div class="tag">行业洞察</div>
-          <h3>2026品牌营销趋势：从流量竞争到心智竞争</h3>
-          <p>当流量成本逐年翻倍，品牌的"认知复利"才是企业最值钱的资产。京涛品牌策划发布年度白皮书，解读这场竞争的底层逻辑。</p>
+      <a href="news-brand-positioning.html" style="display:block;text-decoration:none;color:inherit;">
+        <div class="news-featured-main">
+          <img class="news-bg" src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80" alt="" style="width:100%;height:100%;object-fit:cover;">
+          <div class="news-featured-overlay">
+            <div class="tag">方法论</div>
+            <h3>为什么90%的品牌定位都是自嗨？</h3>
+            <p>定位不是写广告语，是找那个消费者愿意为它多付钱、竞争对手听了心里咯噔一下的词。</p>
+          </div>
         </div>
-      </div>
+      </a>
       <div class="news-featured-list">
-        <div class="news-item-h">
+        <a href="news-yuanzhen.html" class="news-item-h">
           <div class="news-item-h-img"><img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=200&q=80" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
           <div>
             <div class="news-item-h-meta">2026-04-08</div>
             <div class="news-item-h-title">京涛品牌策划签约上海元真食品，达成全案战略合作</div>
             <p>京涛将为元真食品提供从品牌战略到营销落地全链路服务，助力食品快消赛道差异化突围。</p>
           </div>
-        </div>
-        <div class="news-item-h">
+        </a>
+        <a href="news-brand-psychology.html" class="news-item-h">
           <div class="news-item-h-img"><img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=200&q=80" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
           <div>
-            <div class="news-item-h-meta">2026-03-15</div>
-            <div class="news-item-h-title">为什么你的品牌定位总是不管用？</div>
-            <p>定位不只是一句话，是一套系统。三个企业最常踩的坑，第yi条几乎人人都中。</p>
+            <div class="news-item-h-meta">2026-03-22</div>
+            <div class="news-item-h-title">消费者做决定的那0.3秒，品牌在想什么？</div>
+            <p>消费行为的本质，是情绪的产物。理性只是用来事后解释自己的决定的。</p>
           </div>
-        </div>
-        <div class="news-item-h">
+        </a>
+        <a href="case-weidongli.html" class="news-item-h">
           <div class="news-item-h-img"><img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=200&q=80" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
           <div>
             <div class="news-item-h-meta">2026-03-08</div>
-            <div class="news-item-h-title">京涛全案｜味动力：从区域品牌到全国前三的路径</div>
+            <div class="news-item-h-title">京涛全案｜味动力：从区域品牌到品类前三的路径</div>
             <p>一个地方饮料品牌，如何用两年时间完成战略升级，实现渠道与品牌双重突破。</p>
           </div>
-        </div>
-        <div class="news-item-h">
+        </a>
+        <a href="news-ad-slogan.html" class="news-item-h">
           <div class="news-item-h-img"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=200&q=80" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
           <div>
             <div class="news-item-h-meta">2026-02-28</div>
             <div class="news-item-h-title">广告语的生死线：能卖货的一句话，是怎么诞生的？</div>
             <p>广告语不是文字游戏，是战略的表达。京涛方法论首次公开。</p>
           </div>
-        </div>
+        </a>
       </div>
     </div>
 
@@ -135,56 +137,55 @@
 
     <!-- 列表 -->
     <div class="news-grid">
-      <!-- 元真食品合作新闻 - 置顶最新 -->
-      <div class="news-card reveal">
+
+      <a href="news-yuanzhen.html" class="news-card reveal">
         <div class="news-card-img-wrap"><img class="news-card-img" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&q=80" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
         <div class="tag">品牌动态</div>
         <h3>京涛品牌策划签约上海元真食品，达成全案战略合作</h3>
-        <p>4月8日，京涛品牌策划与上海元真食品正式签署品牌全案战略合作协议。京涛品牌策划创始人金涛携核心团队出席签约仪式，将为元真食品提供从品牌战略定位到营销落地执行的全链路服务，助力其在竞争激烈的食品快消赛道中建立差异化竞争优势。</p>
+        <p>4月8日，京涛品牌策划与上海元真食品正式签署品牌全案战略合作协议。京涛将为元真食品提供从品牌战略定位到营销落地执行的全链路服务，助力其在竞争激烈的食品快消赛道中建立差异化竞争优势。</p>
         <div class="news-card-meta">2026-04-08 · 浏览 1,420</div>
-      </div>
-      <div class="news-card reveal">
-        <div class="news-card-img-wrap"><img class="news-card-img" src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600&q=80" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
-        <div class="tag">行业洞察</div>
-        <h3>2026年中国快消品品牌竞争格局报告</h3>
-        <p>基于对200+快消品牌的深度追踪，解析当前市场竞争的核心矛盾与突围路径。</p>
-        <div class="news-card-meta">2026-04-02 · 浏览 3,280</div>
-      </div>
-      <div class="news-card reveal">
-        <div class="news-card-img-wrap"><img class="news-card-img" src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&q=80" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+      </a>
+
+      <a href="news-brand-positioning.html" class="news-card reveal">
+        <div class="news-card-img-wrap"><img class="news-card-img" src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
         <div class="tag">方法论</div>
-        <h3>如何用一句话构建品牌战略壁垒</h3>
-        <p>好的广告语不是文字游戏，是战略的一字版本。拆解三种有效表达范式，看懂了可以直接套用。</p>
-        <div class="news-card-meta">2026-03-25 · 浏览 2,156</div>
-      </div>
-      <div class="news-card reveal">
+        <h3>为什么90%的品牌定位都是自嗨？</h3>
+        <p>定位不是写广告语，是找那个消费者愿意为它多付钱、竞争对手听了心里咯噔一下的词。三个最容易踩的坑，第一条几乎每个企业都中。</p>
+        <div class="news-card-meta">2026-04-05 · 浏览 3,108</div>
+      </a>
+
+      <a href="news-brand-psychology.html" class="news-card reveal">
+        <div class="news-card-img-wrap"><img class="news-card-img" src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+        <div class="tag">行业洞察</div>
+        <h3>消费者做决定的那0.3秒，品牌在想什么？</h3>
+        <p>消费行为的本质，是情绪的产物。理性只是用来事后解释自己的决定的。这个结论如何改变了我们对品牌传播的理解。</p>
+        <div class="news-card-meta">2026-03-22 · 浏览 2,887</div>
+      </a>
+
+      <a href="case-weidongli.html" class="news-card reveal">
         <div class="news-card-img-wrap"><img class="news-card-img" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
         <div class="tag">案例复盘</div>
         <h3>老街坊餐饮品牌升级全程复盘</h3>
-        <p>从品牌诊断到VI重塑，从加盟体系到营销策略——一个餐饮品牌重生的完整记录。</p>
+        <p>从品牌诊断到VI重塑，从加盟体系到营销策略——一个餐饮品牌重生的完整记录，踩过的坑比经验值钱。</p>
         <div class="news-card-meta">2026-03-18 · 浏览 1,892</div>
-      </div>
-      <div class="news-card reveal">
-        <div class="news-card-img-wrap"><img class="news-card-img" src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&q=80" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+      </a>
+
+      <a href="news-logo-design.html" class="news-card reveal">
+        <div class="news-card-img-wrap"><img class="news-card-img" src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=600&q=80" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
         <div class="tag">观点评论</div>
-        <h3>叶茂中之后，谁来定义中国品牌营销？</h3>
-        <p>冲突理论过时了吗？本土方法论正在崛起，背后的逻辑是什么？这篇文章给你一个思考框架。</p>
-        <div class="news-card-meta">2026-03-10 · 浏览 4,102</div>
-      </div>
-      <div class="news-card reveal">
-        <div class="news-card-img-wrap"><img class="news-card-img" src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
-        <div class="tag">品牌动态</div>
-        <h3>京涛品牌策划与三家快消品牌达成年度战略合作</h3>
-        <p>2026年Q1，京涛品牌策划正式签约三家快消品牌，为其提供全年品牌战略顾问服务。</p>
-        <div class="news-card-meta">2026-03-05 · 浏览 876</div>
-      </div>
-      <div class="news-card reveal">
+        <h3>一个好Logo，抵得过一千万广告费</h3>
+        <p>LOGO不是设计的起点，是战略的终点。搞反了这件事，花再多钱改版都是白搭。</p>
+        <div class="news-card-meta">2026-03-12 · 浏览 4,102</div>
+      </a>
+
+      <a href="news-packaging.html" class="news-card reveal">
         <div class="news-card-img-wrap"><img class="news-card-img" src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=600&q=80" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
         <div class="tag">方法论</div>
         <h3>包装设计如何影响消费者决策</h3>
-        <p>线下货架战场上，包装是唯一24小时不间断工作的销售员。5个经过市场验证的包装设计原则，第yi条最容易被忽视。</p>
+        <p>线下货架战场上，包装是唯一24小时不间断工作的销售员。5个经过市场验证的包装设计原则，第一条最容易被忽视。</p>
         <div class="news-card-meta">2026-02-20 · 浏览 1,567</div>
-      </div>
+      </a>
+
     </div>
 
     <!-- 分页 -->
@@ -205,7 +206,7 @@
         <p>上海京涛品牌策划，专注品牌战略定位与全案营销创意，服务品牌超500家。</p>
         <p style="margin-top:12px;">地址：上海市静安区南京西路1788号<br>电话：021-6288-6688<br>邮箱：info@jingtaoplan.com</p>
       </div>
-      <div><h4>快速导航</h4><ul><li><a href="index.html">首页</a></li><li><a href="philosophy.html">品牌理念</a></li><li><a href="news.html">策划新闻</a></li><li><a href="cases.html">成功案例</a></li><li><a href="services.html">服务内容</a></li></ul></div>
+      <div><h4>快速导航</h4><ul><li><a href="index.html">首页</a></li><li><a href="philosophy.html">品牌理念</a></li><li><a href="news.html">公司新闻</a></li><li><a href="cases.html">成功案例</a></li><li><a href="services.html">服务内容</a></li></ul></div>
       <div><h4>核心服务</h4><ul><li><a href="services.html">品牌战略咨询</a></li><li><a href="services.html">营销创意执行</a></li><li><a href="services.html">产品策略规划</a></li><li><a href="services.html">品牌常年顾问</a></li></ul></div>
       <div><h4>关注我们</h4><ul><li><a href="#">微信公众号</a></li><li><a href="#">微博：@京涛品牌策划</a></li><li><a href="#">小红书</a></li></ul></div>
     </div>
