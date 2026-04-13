@@ -102,7 +102,7 @@ button { cursor: pointer; border: none; outline: none; font-family: var(--font-z
   color: var(--white);
   position: relative;
   overflow: hidden;
-  min-height: 340px;
+  min-height: 320px;
   display: flex;
   align-items: center;
 }
@@ -112,22 +112,47 @@ button { cursor: pointer; border: none; outline: none; font-family: var(--font-z
 .page-hero-bg-circle:nth-child(2) { width: 300px; height: 300px; top: 50%; right: 30px; transform: translateY(-50%); border-color: rgba(255,255,255,.15); animation: heroFloat 6s ease-in-out infinite reverse; }
 .page-hero-bg-circle:nth-child(3) { width: 150px; height: 150px; top: 50%; right: 120px; transform: translateY(-50%); border-color: rgba(255,255,255,.2); animation: heroFloat 4s ease-in-out infinite; }
 .page-hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px); background-size: 60px 60px; }
-.page-hero-inner { position: relative; z-index: 1; max-width: var(--max-w); margin: 0 auto; padding: 120px 40px 60px; width: 100%; display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: end; }
-.page-hero-text {}
-.page-hero-breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,.6); margin-bottom: 20px; }
-.page-hero-breadcrumb a { color: rgba(255,255,255,.6); transition: color .3s; }
-.page-hero-breadcrumb a:hover { color: var(--white); }
-.page-hero-breadcrumb span { opacity: .4; }
-.page-hero h1 { font-size: clamp(36px,5vw,64px); font-weight: 900; letter-spacing: .02em; margin-bottom: 16px; line-height: 1.1; }
-.page-hero p { font-size: 17px; opacity: .75; max-width: 500px; line-height: 1.7; }
-.page-hero-num { font-size: 160px; font-weight: 900; color: rgba(255,255,255,.07); line-height: 1; letter-spacing: -.05em; white-space: nowrap; user-select: none; align-self: center; }
+.page-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 120px 40px 60px;
+  width: 100%;
+  text-align: center;
+}
+.page-hero-badge {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .15em;
+  color: rgba(255,255,255,.55);
+  margin-bottom: 16px;
+  border: 1px solid rgba(255,255,255,.25);
+  padding: 5px 16px;
+  border-radius: 2px;
+}
+.page-hero h1 {
+  font-size: clamp(36px,5vw,58px);
+  font-weight: 900;
+  letter-spacing: .02em;
+  margin-bottom: 16px;
+  line-height: 1.1;
+}
+.page-hero p {
+  font-size: 17px;
+  opacity: .75;
+  line-height: 1.7;
+}
 
 @media (max-width: 768px) {
   .page-hero { min-height: 240px; }
-  .page-hero-inner { grid-template-columns: 1fr; padding: 100px 20px 40px; gap: 0; }
-  .page-hero-num { display: none; }
-  .page-hero h1 { font-size: 32px; }
-  .page-hero p { font-size: 15px; }
+  .page-hero-content { padding: 110px 20px 50px; }
+  .page-hero h1 { font-size: 30px; }
+  .page-hero p { font-size: 14px; }
+  .page-hero-bg-circle:nth-child(1) { width: 260px; height: 260px; right: -100px; }
+  .page-hero-bg-circle:nth-child(2) { width: 160px; height: 160px; right: -40px; }
+  .page-hero-bg-circle:nth-child(3) { display: none; }
 }
 
 /* ---- 通用容器 ---- */
