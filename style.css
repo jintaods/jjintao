@@ -1,6 +1,7 @@
 /* =============================================
-   上海京涛营销策划 - 公共样式表
+   上海京涛品牌策划 - 公共样式表
    ============================================= */
+@import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@400;500;700;900&display=swap');
 
 /* ---- CSS Reset & Base ---- */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -57,7 +58,7 @@ button { cursor: pointer; border: none; outline: none; font-family: var(--font-z
   text-decoration: none;
 }
 .logo-mark {
-  width: 44px; height: 44px;
+  width: 48px; height: 48px;
   background: var(--red);
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
@@ -67,26 +68,29 @@ button { cursor: pointer; border: none; outline: none; font-family: var(--font-z
 .logo-mark::before {
   content: '';
   position: absolute;
-  width: 22px; height: 22px;
-  border: 2px solid rgba(255,255,255,0.4);
+  width: 24px; height: 24px;
+  border: 2px solid rgba(255,255,255,0.35);
   transform: rotate(45deg);
 }
 .logo-mark-inner {
-  font-size: 20px; font-weight: 900;
+  font-family: 'Noto Serif SC', serif;
+  font-size: 22px; font-weight: 900;
   color: var(--white);
   line-height: 1;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
 }
-.logo-text { display: flex; flex-direction: column; gap: 1px; }
+.logo-text { display: flex; flex-direction: column; gap: 3px; }
 .logo-name {
-  font-size: 18px; font-weight: 800;
-  letter-spacing: 0.08em;
+  font-family: 'Noto Serif SC', serif;
+  font-size: 20px; font-weight: 900;
+  letter-spacing: 0.06em;
   color: var(--gray-900);
   line-height: 1.1;
 }
 .logo-sub {
-  font-size: 10px; font-weight: 600;
-  letter-spacing: 0.18em;
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 10px; font-weight: 500;
+  letter-spacing: 0.22em;
   color: var(--red);
   text-transform: uppercase;
   line-height: 1;
