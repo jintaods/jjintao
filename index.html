@@ -19,8 +19,13 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
 .navbar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--white);border-bottom:1px solid var(--gray-200);transition:box-shadow var(--t)}
 .navbar.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.08)}
 .nav-inner{max-width:var(--max-w);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:72px}
-.logo{display:flex;align-items:center;gap:12px;font-size:20px;font-weight:700;letter-spacing:.05em}
-.logo-mark{width:40px;height:40px;background:var(--red);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900}
+.logo{display:flex;align-items:center;gap:14px;text-decoration:none}
+.logo-mark{width:44px;height:44px;flex-shrink:0;position:relative;display:flex;align-items:center;justify-content:center}
+.logo-mark-inner{font-family:'Songti SC','STSong','Georgia',serif;font-size:28px;font-weight:900;color:var(--red);line-height:1;letter-spacing:-0.04em;margin-top:2px}
+.logo-mark-accent{position:absolute;right:0;bottom:2px;width:10px;height:10px;background:var(--red);border-radius:50%}
+.logo-text{display:flex;flex-direction:column;gap:2px}
+.logo-name{font-family:'Songti SC','STSong','Georgia',serif;font-size:20px;font-weight:900;letter-spacing:.06em;color:var(--gray-800);line-height:1.1}
+.logo-sub{font-family:'PingFang SC','Helvetica Neue',sans-serif;font-size:9px;font-weight:500;letter-spacing:.18em;color:var(--gray-500);text-transform:uppercase;line-height:1}
 .nav-links{display:flex;gap:0;align-items:center}
 .nav-links a{display:block;padding:24px 22px;font-size:15px;color:var(--gray-800);position:relative;transition:color var(--t)}
 .nav-links a::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:0;height:3px;background:var(--red);transition:width var(--t)}
@@ -229,7 +234,7 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
     <div class="hero-content">
       <div class="hero-badge reveal">上海 · 品牌营销策划机构</div>
       <h1 class="reveal">让品牌<br><em>自己会说话</em></h1>
-      <p class="hero-sub reveal">京涛品牌策划专注品牌战略定位与全案营销，20年服务500+品牌，用战略创意帮企业建立"条件反射"式的品牌认知，让品牌自己会说话。</p>
+      <p class="hero-sub reveal">京涛品牌策划专注品牌战略定位与全案营销，20年服务500+品牌。用一个词占领消费者心智，让品牌像"可口可乐"一样，即使 blind test 也能被认出来。</p>
       <div class="hero-actions reveal">
         <a href="cases.html" class="btn btn-white">查看案例</a>
         <a href="contact.html" class="btn btn-outline" style="color:white;border-color:white;">立即咨询</a>
@@ -277,8 +282,8 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
       <div>
         <div class="section-label reveal">WHO WE ARE</div>
-        <h2 class="section-title reveal">不做广告<br>做认知</h2>
-        <p class="section-desc reveal">20年前入行时，我们就在思考一个问题：为什么有的品牌消费者买了一次就记住了，有的品牌花了几千万广告费还是记不住？答案很简单：后者只做了传播，没有做认知。</p>
+        <h2 class="section-title reveal">战略不对<br>传播白费</h2>
+        <p class="section-desc reveal">见过太多企业砸钱做广告却打水漂——不是创意不够，是战略没找对。传播可以外包，战略必须自己想清楚。我们用20年经验，帮品牌找到那个"一击即中"的定位，然后把所有资源押上去。</p>
         <div style="margin-top:36px" class="reveal">
           <a href="philosophy.html" class="btn btn-red">了解京涛方法论 →</a>
         </div>
@@ -289,12 +294,12 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
           <div style="font-size:13px;opacity:.8;">服务品牌数量</div>
         </div>
         <div style="background:var(--gray-100);padding:28px 20px;border-radius:4px;">
-          <div style="font-size:36px;font-weight:900;margin-bottom:6px;">100%</div>
-          <div style="font-size:13px;color:var(--gray-600);">全案品牌占比</div>
+          <div style="font-size:36px;font-weight:900;margin-bottom:6px;">1:8</div>
+          <div style="font-size:13px;color:var(--gray-600);">客户平均营销ROI</div>
         </div>
         <div style="background:var(--gray-100);padding:28px 20px;border-radius:4px;">
-          <div style="font-size:36px;font-weight:900;margin-bottom:6px;">1:8</div>
-          <div style="font-size:13px;color:var(--gray-600);">平均营销ROI</div>
+          <div style="font-size:36px;font-weight:900;margin-bottom:6px;">500+</div>
+          <div style="font-size:13px;color:var(--gray-600);">品牌深度服务</div>
         </div>
         <div style="background:var(--red);color:white;padding:28px 20px;border-radius:4px;">
           <div style="font-size:36px;font-weight:900;margin-bottom:6px;">0</div>
@@ -439,7 +444,7 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
           <div class="why-item">
             <div class="why-icon">快</div>
             <h3>快速响应</h3>
-            <p>小团队作战，决策链路短，3天出策略，7天出创意</p>
+            <p>小团队作战，决策链路短，需求当天响应，策略方案按约定周期交付</p>
           </div>
           <div class="why-item">
             <div class="why-icon">效</div>
@@ -471,7 +476,7 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
 <!-- CTA -->
 <section class="cta">
   <h2>品牌问题，聊30分钟</h2>
-  <p>免费诊断你的品牌现状，给出方向性建议</p>
+  <p>不收费，不套路，先诊断清楚再谈合作方式</p>
   <a href="contact.html" class="btn btn-white">立即预约咨询 →</a>
 </section>
 
@@ -480,7 +485,7 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="index.html" class="logo"><div class="logo-mark"><div class="logo-mark-inner">京</div><div class="logo-mark-accent"></div></div><div class="logo-text"><div class="logo-name">京涛品牌策划</div><div class="logo-sub">branding</div></div></a>
+        <a href="index.html" class="logo"><div class="logo-mark"><div class="logo-mark-inner">京</div><div class="logo-mark-accent"></div></div><div class="logo-text"><div class="logo-name">京涛品牌策划</div><div class="logo-sub">brand strategy</div></div></a>
         <p>上海京涛品牌策划有限公司<br>专注品牌战略定位与全案营销<br>让品牌自己会说话</p>
       </div>
       <div>
