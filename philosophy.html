@@ -6,40 +6,208 @@
   <title>品牌理念 - 上海京涛品牌策划</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    .philo-hero{ min-height: 70vh; background: var(--red); display: flex; align-items: center; padding: 0 5%; position: relative; overflow: hidden; }
-    .philo-hero-content { position: relative; z-index: 1; max-width: 800px; }
-    .philo-hero h1 { font-size: 56px; font-weight: 900; color: var(--white); line-height: 1.15; margin-bottom: 24px; }
-    .philo-hero h1 span { color: var(--red); }
-    .philo-hero p { font-size: 20px; color: var(--gray-400); line-height: 1.8; max-width: 600px; }
-    .philo-quote { background: var(--red); color: var(--white); padding: 80px 5%; text-align: center; }
-    .philo-quote p { font-size: 30px; font-weight: 900; line-height: 1.5; max-width: 800px; margin: 0 auto; }
-    .philo-quote .from { font-size: 16px; font-weight: 400; opacity: 0.7; margin-top: 16px; }
-    .philo-body { padding: 100px 5%; max-width: 900px; margin: 0 auto; }
-    .philo-section { margin-bottom: 70px; }
-    .philo-section h2 { font-size: 28px; font-weight: 900; margin-bottom: 20px; color: var(--black); }
-    .philo-section p { font-size: 17px; color: var(--gray-700); line-height: 2; margin-bottom: 16px; }
-    .philo-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 30px; }
-    .philo-card { border: 1px solid var(--gray-200); padding: 32px; transition: all 0.3s; }
-    .philo-card:hover { border-color: var(--red); box-shadow: 0 8px 30px rgba(0,0,0,0.08); }
-    .philo-card h3 { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: var(--red); }
-    .philo-card p { font-size: 15px; color: var(--gray-600); line-height: 1.8; margin: 0; }
-    .philo-method { background: var(--gray-50); padding: 60px 5%; }
-    .philo-method h2 { font-size: 32px; font-weight: 900; text-align: center; margin-bottom: 50px; }
-    .method-steps { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 0; }
-    .method-step { display: flex; gap: 30px; padding: 30px 0; border-bottom: 1px solid var(--gray-200); position: relative; }
-    .method-step:last-child { border-bottom: none; }
-    .step-num { font-size: 56px; font-weight: 900; color: var(--gray-200); font-family: var(--font-en); min-width: 80px; line-height: 1; }
-    .step-content h3 { font-size: 22px; font-weight: 800; margin-bottom: 10px; }
-    .step-content p { font-size: 16px; color: var(--gray-600); line-height: 1.8; margin: 0; }
-    .philo-cta { background: var(--black); color: var(--white); padding: 80px 5%; text-align: center; }
-    .philo-cta h2 { font-size: 36px; font-weight: 900; margin-bottom: 16px; }
-    .philo-cta p { font-size: 18px; color: var(--gray-400); margin-bottom: 30px; }
-    @media(max-width:768px){
-      .philo-hero h1 { font-size: 32px; }
-      .philo-quote p { font-size: 22px; }
-      .philo-cards { grid-template-columns: 1fr; }
-      .method-step { flex-direction: column; gap: 10px; }
-      .step-num { font-size: 36px; }
+    .philo-hero {
+      min-height: 70vh;
+      background: var(--red);
+      display: flex;
+      align-items: center;
+      padding: 0 5%;
+      position: relative;
+      overflow: hidden;
+    }
+    .philo-hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      padding-top: 72px;
+    }
+    .philo-hero h1 {
+      font-size: 56px;
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+    .philo-hero h1 span {
+      color: #FFD700;
+    }
+    .philo-hero p {
+      font-size: 20px;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.8;
+      max-width: 600px;
+    }
+    .philo-quote {
+      background: #9E0007;
+      color: var(--white);
+      padding: 80px 5%;
+      text-align: center;
+    }
+    .philo-quote p {
+      font-size: 30px;
+      font-weight: 900;
+      line-height: 1.5;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .philo-quote .from {
+      font-size: 16px;
+      font-weight: 400;
+      opacity: 0.7;
+      margin-top: 16px;
+    }
+    .philo-body {
+      padding: 100px 5%;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .philo-section {
+      margin-bottom: 70px;
+    }
+    .philo-section h2 {
+      font-size: 28px;
+      font-weight: 900;
+      margin-bottom: 20px;
+      color: var(--red);
+    }
+    .philo-section p {
+      font-size: 17px;
+      color: var(--gray-600);
+      line-height: 2;
+      margin-bottom: 16px;
+    }
+    .philo-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 30px;
+    }
+    .philo-card {
+      border: 1px solid var(--gray-200);
+      padding: 32px;
+      transition: all 0.3s;
+    }
+    .philo-card:hover {
+      border-color: var(--red);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    }
+    .philo-card h3 {
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: var(--red);
+    }
+    .philo-card p {
+      font-size: 15px;
+      color: var(--gray-600);
+      line-height: 1.8;
+      margin: 0;
+    }
+    .philo-method {
+      background: var(--gray-100);
+      padding: 60px 5%;
+    }
+    .philo-method h2 {
+      font-size: 32px;
+      font-weight: 900;
+      text-align: center;
+      margin-bottom: 50px;
+      color: var(--red);
+    }
+    .method-steps {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .method-step {
+      display: flex;
+      gap: 30px;
+      padding: 30px 0;
+      border-bottom: 1px solid var(--gray-200);
+      position: relative;
+    }
+    .method-step:last-child {
+      border-bottom: none;
+    }
+    .step-num {
+      font-size: 56px;
+      font-weight: 900;
+      color: var(--gray-200);
+      font-family: var(--font-en);
+      min-width: 80px;
+      line-height: 1;
+    }
+    .step-content h3 {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 10px;
+      color: var(--black);
+    }
+    .step-content p {
+      font-size: 16px;
+      color: var(--gray-600);
+      line-height: 1.8;
+      margin: 0;
+    }
+    .philo-cta {
+      background: var(--black);
+      color: var(--white);
+      padding: 80px 5%;
+      text-align: center;
+    }
+    .philo-cta h2 {
+      font-size: 36px;
+      font-weight: 900;
+      margin-bottom: 16px;
+      color: var(--white);
+    }
+    .philo-cta p {
+      font-size: 18px;
+      color: var(--gray-400);
+      margin-bottom: 30px;
+    }
+    /* 手机端 */
+    @media(max-width: 768px){
+      .philo-hero {
+        min-height: 60vh;
+        padding-top: 72px;
+      }
+      .philo-hero-content {
+        padding-top: 72px;
+      }
+      .philo-hero h1 {
+        font-size: 30px;
+      }
+      .philo-hero p {
+        font-size: 16px;
+      }
+      .philo-quote {
+        padding: 50px 5%;
+      }
+      .philo-quote p {
+        font-size: 20px;
+      }
+      .philo-body {
+        padding: 60px 5%;
+      }
+      .philo-section h2 {
+        font-size: 22px;
+      }
+      .philo-cards {
+        grid-template-columns: 1fr;
+      }
+      .method-step {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .step-num {
+        font-size: 36px;
+      }
+      .philo-cta h2 {
+        font-size: 26px;
+      }
     }
   </style>
 </head>
@@ -47,7 +215,16 @@
 
 <nav class="navbar">
   <div class="nav-inner">
-    <a href="index.html" class="logo"><div class="logo-mark"><div class="logo-mark-inner">京</div><div class="logo-mark-accent"></div></div><div class="logo-text"><div class="logo-name">京涛品牌策划</div><div class="logo-sub">brand strategy</div></div></a>
+    <a href="index.html" class="logo">
+      <div class="logo-mark">
+        <div class="logo-mark-inner">京</div>
+        <div class="logo-mark-accent"></div>
+      </div>
+      <div class="logo-text">
+        <div class="logo-name">京涛品牌策划</div>
+        <div class="logo-sub">brand strategy</div>
+      </div>
+    </a>
     <div class="nav-links">
       <a href="index.html">首页</a>
       <a href="philosophy.html" class="active">品牌理念</a>
@@ -147,17 +324,45 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="logo"><div class="logo-mark"><div class="logo-mark-inner">京</div><div class="logo-mark-accent"></div></div><div class="logo-text"><div class="logo-name">京涛品牌策划</div><div class="logo-sub">brand strategy</div></div></div>
-        <p>上海京涛品牌策划，专注品牌战略定位与全案营销创意，服务品牌超500家。</p>
-        <p style="margin-top:12px;">地址：上海市静安区南京西路1788号<br>电话：021-6288-6688<br>邮箱：info@jingtaoplan.com</p>
+        <div class="logo">
+          <div class="logo-mark">
+            <div class="logo-mark-inner">京</div>
+            <div class="logo-mark-accent"></div>
+          </div>
+          <div class="logo-text">
+            <div class="logo-name">京涛品牌策划</div>
+            <div class="logo-sub">brand strategy</div>
+          </div>
+        </div>
+        <p>上海京涛品牌策划，专注品牌战略定位与全案营销创意。</p>
+        <p style="margin-top:12px;">地址：上海市虹桥路999弄161号 TCAT创意园4号楼<br>电话：021-56481419<br>咨询邮箱：850096552@qq.com</p>
       </div>
-      <div><h4>快速导航</h4><ul><li><a href="index.html">首页</a></li><li><a href="philosophy.html">品牌理念</a></li><li><a href="news.html">公司新闻</a></li><li><a href="cases.html">成功案例</a></li><li><a href="services.html">服务内容</a></li></ul></div>
-      <div><h4>核心服务</h4><ul><li><a href="services.html">品牌战略咨询</a></li><li><a href="services.html">营销创意执行</a></li><li><a href="services.html">产品策略规划</a></li><li><a href="services.html">品牌常年顾问</a></li></ul></div>
-      <div><h4>关注我们</h4><ul><li><a href="#">微信公众号</a></li><li><a href="#">微博：@京涛品牌策划</a></li><li><a href="#">小红书</a></li></ul></div>
+      <div><h4>快速导航</h4><ul>
+        <li><a href="index.html">首页</a></li>
+        <li><a href="philosophy.html">品牌理念</a></li>
+        <li><a href="news.html">公司新闻</a></li>
+        <li><a href="cases.html">成功案例</a></li>
+        <li><a href="services.html">服务内容</a></li>
+      </ul></div>
+      <div><h4>核心服务</h4><ul>
+        <li><a href="services.html">品牌战略咨询</a></li>
+        <li><a href="services.html">营销创意执行</a></li>
+        <li><a href="services.html">产品策略规划</a></li>
+        <li><a href="services.html">品牌常年顾问</a></li>
+      </ul></div>
+      <div><h4>联系我们</h4><ul>
+        <li><a href="tel:021-56481419">电话：021-56481419</a></li>
+        <li><a href="tel:137-7435-0323">热线：137-7435-0323</a></li>
+        <li><a href="mailto:850096552@qq.com">咨询邮箱</a></li>
+      </ul></div>
     </div>
-    <div class="footer-bottom"><span>© 2026 上海京涛品牌策划 JINGTAO. All Rights Reserved.</span><span>沪ICP备xxxxxxxx号</span></div>
+    <div class="footer-bottom">
+      <span>© 2026 上海京涛品牌策划 JINGTAO. All Rights Reserved.</span>
+      <span>沪ICP备20260123号</span>
+    </div>
   </div>
 </footer>
+
 <script src="main.js"></script>
 </body>
 </html>
