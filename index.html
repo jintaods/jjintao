@@ -25,7 +25,7 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
 .logo-mark-accent{position:absolute;right:0;bottom:2px;width:10px;height:10px;background:var(--red);border-radius:50%}
 .logo-text{display:flex;flex-direction:column;gap:2px}
 .logo-name{font-family:'Songti SC','STSong','Georgia',serif;font-size:20px;font-weight:900;letter-spacing:.06em;color:var(--gray-800);line-height:1.1}
-.logo-sub{font-family:'PingFang SC','Helvetica Neue',sans-serif;font-size:9px;font-weight:500;letter-spacing:.18em;color:var(--gray-500);text-transform:uppercase;line-height:1}
+.logo-sub{font-family:'PingFang SC','Helvetica Neue',sans-serif;font-size:7px;font-weight:500;letter-spacing:.18em;color:var(--gray-500);text-transform:uppercase;line-height:1}
 .nav-links{display:flex;gap:0;align-items:center}
 .nav-links a{display:block;padding:24px 22px;font-size:15px;color:var(--gray-800);position:relative;transition:color var(--t)}
 .nav-links a::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:0;height:3px;background:var(--red);transition:width var(--t)}
@@ -207,11 +207,11 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
 <!-- 导航 -->
 <nav class="navbar">
   <div class="nav-inner">
-    <a href="index.html" class="logo"><div class="logo-mark"><div class="logo-mark-inner">京</div><div class="logo-mark-accent"></div></div><div class="logo-text"><div class="logo-name">京涛品牌策划</div><div class="logo-sub">brand strategy</div></div></a>
+    <a href="index.html" class="logo"><div class="logo-mark"><div class="logo-mark-inner">京</div><div class="logo-mark-accent"></div></div><div class="logo-text"><div class="logo-name">京涛品牌策划</div><div class="logo-sub">the brand strategy</div></div></a>
     <div class="nav-links" id="navLinks">
       <a href="index.html" class="active">首页</a>
       <a href="philosophy.html">品牌理念</a>
-      <a href="news.html">策划新闻</a>
+      <a href="news.html">公司新闻</a>
       <a href="cases.html">成功案例</a>
       <a href="services.html">服务内容</a>
       <a href="contact.html" class="nav-cta">联系我们</a>
@@ -423,6 +423,81 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
   </div>
 </section>
 
+<!-- 金句区 -->
+<section class="section" style="background:var(--black);color:white;">
+  <div class="container" style="text-align:center;max-width:860px;">
+    <p class="reveal" style="font-size:clamp(22px,3vw,38px);font-weight:900;line-height:1.4;letter-spacing:.02em;margin-bottom:40px;">
+      "品牌的终极目标，不是让消费者记住你的产品，<br>是让消费者在产生需求的那个瞬间，<br class="br-hide">脑子里第一个浮现的就是你。"
+    </p>
+    <p class="reveal" style="font-size:15px;opacity:.5;">— 京涛品牌策划方法论</p>
+  </div>
+</section>
+
+<!-- 公司新闻 -->
+<section class="section section-gray">
+  <div class="container">
+    <div class="section-header" style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;">
+      <div>
+        <div class="section-label reveal">COMPANY NEWS</div>
+        <h2 class="section-title reveal">公司新闻</h2>
+      </div>
+      <div class="reveal">
+        <a href="news.html" class="btn btn-outline">查看全部 →</a>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:32px;">
+      <a href="news-brand-positioning.html" class="reveal" style="display:block;text-decoration:none;color:inherit;background:white;overflow:hidden;transition:transform .3s;box-shadow:0 2px 12px rgba(0,0,0,.06);" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='none'">
+        <div style="height:220px;overflow:hidden;">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80" alt="" style="width:100%;height:100%;object-fit:cover;transition:transform .5s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='none'">
+        </div>
+        <div style="padding:24px;">
+          <div style="display:inline-block;background:var(--red);color:white;font-size:12px;font-weight:700;padding:3px 10px;margin-bottom:12px;">方法论</div>
+          <h3 style="font-size:18px;font-weight:800;margin-bottom:10px;line-height:1.4;">为什么90%的品牌定位都是自嗨？</h3>
+          <p style="font-size:13px;color:var(--gray-600);line-height:1.7;">定位不是写广告语，是找那个消费者愿意为它多付钱、竞争对手听了心里咯噔一下的词。京涛方法论首度公开。</p>
+          <div style="font-size:12px;color:var(--gray-400);margin-top:16px;">2026-04-10 · 8分钟阅读</div>
+        </div>
+      </a>
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <a href="news-brand-psychology.html" class="reveal" style="display:flex;gap:16px;background:white;padding:20px;text-decoration:none;color:inherit;transition:all .3s;box-shadow:0 2px 8px rgba(0,0,0,.04);" onmouseover="this.style.borderLeft='3px solid var(--red)';this.style.transform='translateX(4px)'" onmouseout="this.style.borderLeft='3px solid transparent';this.style.transform='none'">
+          <div style="width:80px;min-width:80px;height:80px;overflow:hidden;">
+            <img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=200&q=80" alt="" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div>
+            <div style="font-size:12px;color:var(--red);font-weight:700;margin-bottom:6px;">行业洞察</div>
+            <h4 style="font-size:14px;font-weight:800;line-height:1.4;margin-bottom:6px;">消费者做决定的那0.3秒，品牌在想什么？</h4>
+            <div style="font-size:11px;color:var(--gray-400);">2026-04-05 · 7分钟</div>
+          </div>
+        </a>
+        <a href="news-logo-design.html" class="reveal" style="display:flex;gap:16px;background:white;padding:20px;text-decoration:none;color:inherit;transition:all .3s;box-shadow:0 2px 8px rgba(0,0,0,.04);" onmouseover="this.style.borderLeft='3px solid var(--red)';this.style.transform='translateX(4px)'" onmouseout="this.style.borderLeft='3px solid transparent';this.style.transform='none'">
+          <div style="width:80px;min-width:80px;height:80px;overflow:hidden;">
+            <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=200&q=80" alt="" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div>
+            <div style="font-size:12px;color:var(--red);font-weight:700;margin-bottom:6px;">方法论</div>
+            <h4 style="font-size:14px;font-weight:800;line-height:1.4;margin-bottom:6px;">一个好Logo，抵得过一千万广告费</h4>
+            <div style="font-size:11px;color:var(--gray-400);">2026-03-28 · 6分钟</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 品牌理念入口 -->
+<section class="section" style="background:var(--red);color:white;">
+  <div class="container" style="display:flex;align-items:center;gap:60px;">
+    <div style="flex:1;">
+      <div style="font-size:13px;font-weight:700;letter-spacing:.2em;opacity:.6;margin-bottom:12px;">PHILOSOPHY</div>
+      <h2 style="font-size:clamp(28px,4vw,44px);font-weight:900;line-height:1.2;margin-bottom:16px;">战略不对<br>传播白费</h2>
+      <p style="font-size:17px;opacity:.85;line-height:1.8;max-width:520px;margin-bottom:32px;">京涛方法论的核心：先找准问题，再集中所有资源押注一个方向。20年服务500+品牌的经验总结，看完你就知道好品牌是怎么诞生的。</p>
+      <a href="philosophy.html" class="btn btn-white">了解京涛方法论 →</a>
+    </div>
+    <div style="flex:0 0 280px;display:none;" class="philo-quote show-desktop">
+      <div style="background:rgba(255,255,255,.1);padding:40px;border-radius:4px;font-size:48px;font-weight:900;opacity:.2;text-align:center;line-height:1;">策</div>
+    </div>
+  </div>
+</section>
+
 <!-- 优势 -->
 <section class="section">
   <div class="container">
@@ -485,7 +560,7 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="index.html" class="logo"><div class="logo-mark"><div class="logo-mark-inner">京</div><div class="logo-mark-accent"></div></div><div class="logo-text"><div class="logo-name">京涛品牌策划</div><div class="logo-sub">brand strategy</div></div></a>
+        <a href="index.html" class="logo"><div class="logo-mark"><div class="logo-mark-inner">京</div><div class="logo-mark-accent"></div></div><div class="logo-text"><div class="logo-name">京涛品牌策划</div><div class="logo-sub">BRAND STRATEGY</div></div></a>
         <p>上海京涛品牌策划有限公司<br>专注品牌战略定位与全案营销<br>让品牌自己会说话</p>
       </div>
       <div>
@@ -493,7 +568,7 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
         <ul>
           <li><a href="index.html">首页</a></li>
           <li><a href="philosophy.html">品牌理念</a></li>
-          <li><a href="news.html">策划新闻</a></li>
+          <li><a href="news.html">公司新闻</a></li>
           <li><a href="cases.html">成功案例</a></li>
           <li><a href="services.html">服务内容</a></li>
           <li><a href="contact.html">联系我们</a></li>
