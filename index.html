@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
@@ -19,13 +19,15 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
 .navbar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--white);border-bottom:1px solid var(--gray-200);transition:box-shadow var(--t)}
 .navbar.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.08)}
 .nav-inner{max-width:var(--max-w);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:72px}
-.logo{display:flex;align-items:center;gap:14px;text-decoration:none}
-.logo-mark{width:44px;height:44px;flex-shrink:0;position:relative;display:flex;align-items:center;justify-content:center}
-.logo-mark-inner{font-family:'Songti SC','STSong','Georgia',serif;font-size:28px;font-weight:900;color:var(--red);line-height:1;letter-spacing:-0.04em;margin-top:2px}
-.logo-mark-accent{position:absolute;right:0;bottom:2px;width:10px;height:10px;background:var(--red);border-radius:50%}
-.logo-text{display:flex;flex-direction:column;gap:2px}
-.logo-name{font-family:'Songti SC','STSong','Georgia',serif;font-size:20px;font-weight:900;letter-spacing:.06em;color:var(--gray-800);line-height:1.1}
-.logo-sub{font-family:'PingFang SC','Helvetica Neue',sans-serif;font-size:7px;font-weight:500;letter-spacing:.18em;color:var(--gray-500);text-transform:uppercase;line-height:1}
+.logo{display:flex;align-items:center;gap:16px;text-decoration:none}
+.logo-mark{width:48px;height:48px;flex-shrink:0}
+.logo-mark svg{width:48px;height:48px;display:block}
+.logo-mark-inner{display:none}
+.logo-mark-accent{display:none}
+.logo-divider{width:1px;height:36px;background:var(--gray-200);flex-shrink:0}
+.logo-text{display:flex;flex-direction:column;gap:4px}
+.logo-name{font-family:'Noto Serif SC',serif;font-size:18px;font-weight:700;letter-spacing:.14em;color:var(--black);line-height:1}
+.logo-sub{font-family:'Arial','Helvetica Neue',sans-serif;font-size:9px;font-weight:400;letter-spacing:.22em;color:var(--gray-400);text-transform:uppercase;line-height:1}
 .nav-links{display:flex;gap:0;align-items:center}
 .nav-links a{display:block;padding:24px 22px;font-size:15px;color:var(--gray-800);position:relative;transition:color var(--t)}
 .nav-links a::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:0;height:3px;background:var(--red);transition:width var(--t)}
@@ -207,7 +209,7 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
 <!-- 导航 -->
 <nav class="navbar">
   <div class="nav-inner">
-    <a href="index.html" class="logo"><div class="logo-mark"><div class="logo-mark-inner">京</div><div class="logo-mark-accent"></div></div><div class="logo-text"><div class="logo-name">京涛品牌策划</div><div class="logo-sub">the brand strategy</div></div></a>
+    <a href="index.html" class="logo"><div class="logo-mark"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="46" height="46" stroke="#C8000A" stroke-width="1.5" fill="none"/><rect x="5" y="5" width="38" height="38" stroke="#C8000A" stroke-width="0.5" fill="none" opacity="0.3"/><text x="24" y="31" font-family="Georgia,serif" font-size="19" font-weight="700" fill="#C8000A" text-anchor="middle" letter-spacing="-1">JT</text></svg></div><div class="logo-divider"></div><div class="logo-text"><div class="logo-name">京涛品牌策划</div><div class="logo-sub">BRAND STRATEGY</div></div></a>
     <div class="nav-links" id="navLinks">
       <a href="index.html" class="active">首页</a>
       <a href="philosophy.html">品牌理念</a>
@@ -560,7 +562,7 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="index.html" class="logo"><div class="logo-mark"><div class="logo-mark-inner">京</div><div class="logo-mark-accent"></div></div><div class="logo-text"><div class="logo-name">京涛品牌策划</div><div class="logo-sub">BRAND STRATEGY</div></div></a>
+        <a href="index.html" class="logo"><div class="logo-mark"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="46" height="46" stroke="#C8000A" stroke-width="1.5" fill="none"/><rect x="5" y="5" width="38" height="38" stroke="#C8000A" stroke-width="0.5" fill="none" opacity="0.3"/><text x="24" y="31" font-family="Georgia,serif" font-size="19" font-weight="700" fill="#C8000A" text-anchor="middle" letter-spacing="-1">JT</text></svg></div><div class="logo-divider"></div><div class="logo-text"><div class="logo-name">京涛品牌策划</div><div class="logo-sub">BRAND STRATEGY</div></div></a>
         <p>上海京涛品牌策划有限公司<br>专注品牌战略定位与全案营销<br>让品牌自己会说话</p>
       </div>
       <div>
