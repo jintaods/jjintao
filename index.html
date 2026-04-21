@@ -119,13 +119,24 @@
             position: absolute; top: 0; left: 0;
             width: 100%; height: 100%;
             opacity: 0;
-            transition: opacity 0.9s ease-in-out;
+            transform: scale(1.05);
+            transition: opacity 0.8s ease-in-out, transform 1.2s ease-out;
+            z-index: 1;
         }
-        .slide-item.active { opacity: 1; z-index: 10; }
+        .slide-item.active { 
+            opacity: 1; 
+            z-index: 10;
+            transform: scale(1);
+        }
         .slide-item img {
             width: 100%; height: 420px;
             object-fit: cover;
             background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+            animation: kenBurns 8s ease-out forwards;
+        }
+        @keyframes kenBurns {
+            0% { transform: scale(1.1); }
+            100% { transform: scale(1); }
         }
         /* 轮播渐变遮罩 */
         .slider-wrapper::before {
@@ -259,23 +270,14 @@
         }
         .article-body img {
             max-width: 100%;
-            width: auto;
-            max-height: 280px;
+            width: 100%;
             margin: 12px auto;
             border-radius: 8px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.08);
             transition: transform 0.45s ease, box-shadow 0.45s ease;
             display: block;
-            object-fit: contain;
+            object-fit: cover;
             background: linear-gradient(135deg, #f8f8f8, #f0f0f0);
-        }
-        /* 迪士尼案例 - 宽图横幅样式 */
-        .article-item:first-child .article-body img {
-            max-height: none;
-            width: 100%;
-            max-width: 100%;
-            height: auto;
-            border-radius: 6px;
         }
         .article-body:hover img {
             transform: translateY(-4px) scale(1.02);
@@ -476,7 +478,7 @@
         </p>
         <div class="article-body">
             <a href="case-disney.html" target="_blank">
-                <img src="all_extracted_images/首页_thumb_IMG_8573_102.jpg.jpg" alt="">
+                <img src="all_extracted_images/首页_i1.jpg.jpg" alt="迪斯尼上海度假区">
                 <br><span class="read-more">Read More..</span>
             </a>
         </div>
