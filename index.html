@@ -240,22 +240,28 @@
         }
         .article-meta a { color: #c41e3a; font-weight: 500; }
 
+        .article-body {
+            text-align: center;
+        }
         .article-body img {
             max-width: 100%;
-            width: 100%;
-            margin: 8px auto;
+            width: auto;
+            max-height: 280px;
+            margin: 12px auto;
             border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
             transition: transform 0.45s ease, box-shadow 0.45s ease;
-            min-height: 200px;
-            background: linear-gradient(135deg, #f5f5f5, #eee);
+            display: block;
+            object-fit: contain;
+            background: linear-gradient(135deg, #f8f8f8, #f0f0f0);
         }
         .article-body:hover img {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.11);
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.12);
         }
-        .article-body img[src=""] {
-            background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+        .article-body a {
+            display: block;
+            text-align: center;
         }
 
         .read-more {
