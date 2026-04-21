@@ -1,194 +1,113 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>联系我们 - 上海京涛品牌策划</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    .contact-hero{ min-height: 55vh; background: var(--red); display: flex; align-items: center; justify-content: center; text-align: center; position: relative; overflow: hidden; }
-    .contact-hero::before { content: ''; position: absolute; width: 600px; height: 600px; background: radial-gradient(circle, rgba(200,0,0,0.15) 0%, transparent 70%); top: 50%; left: 50%; transform: translate(-50%,-50%); }
-    .contact-hero h1 { font-size: 52px; font-weight: 900; color: var(--white); position: relative; }
-    .contact-hero p { color: var(--gray-400); font-size: 18px; margin-top: 12px; position: relative; }
-    .contact-body { padding: 80px 0; }
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
-    .contact-info h2 { font-size: 28px; font-weight: 900; margin-bottom: 30px; }
-    .contact-item { display: flex; gap: 16px; margin-bottom: 28px; align-items: flex-start; }
-    .contact-icon { width: 44px; height: 44px; background: var(--red-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 18px; }
-    .contact-item-label { font-size: 12px; color: var(--gray-400); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
-    .contact-item-value { font-size: 16px; font-weight: 600; color: var(--black); }
-    .contact-divider { width: 60px; height: 3px; background: var(--red); margin: 30px 0; }
-    .contact-hours { font-size: 15px; color: var(--gray-600); line-height: 1.8; }
-    .contact-form-wrap { background: var(--white); padding: 48px; box-shadow: 0 4px 30px rgba(0,0,0,0.08); }
-    .contact-form-wrap h2 { font-size: 24px; font-weight: 900; margin-bottom: 30px; }
-    .form-group { margin-bottom: 20px; }
-    .form-group label { display: block; font-size: 13px; font-weight: 700; color: var(--gray-800); margin-bottom: 8px; }
-    .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 12px 16px; border: 1px solid var(--gray-200); font-size: 15px; outline: none; transition: border 0.2s; font-family: inherit; box-sizing: border-box; }
-    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--red); }
-    .form-group textarea { height: 120px; resize: vertical; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .form-submit { width: 100%; padding: 16px; background: var(--red); color: var(--white); font-size: 16px; font-weight: 700; border: none; cursor: pointer; transition: background 0.2s; font-family: inherit; }
-    .form-submit:hover { background: var(--black); }
-    .form-note { font-size: 12px; color: var(--gray-400); margin-top: 12px; text-align: center; }
-    .contact-map { margin-top: 60px; background: var(--gray-800); height: 380px; position: relative; overflow: hidden; }
-    .contact-map iframe { width: 100%; height: 100%; border: none; }
-    @media (max-width: 768px) {
-      .contact-grid { grid-template-columns: 1fr; }
-      .contact-hero h1 { font-size: 32px; }
-      .form-row { grid-template-columns: 1fr; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系京涛策划 - 上海京涛营销策划公司</title>
+    <meta name="keywords" content="联系京涛,上海京涛电话,京涛策划联系方式,营销策划公司电话">
+    <meta name="description" content="联系上海京涛策划 — 电话：021-51089180，地址：上海市云岭东路599号11号楼10层。">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{font-size:16px;scroll-behavior:smooth}
+        body{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:1.8;color:#333;background:#fff;-webkit-font-smoothing:antialiased}
+        a{text-decoration:none;color:inherit;transition:color .2s}a:hover{color:#c41e3a}
+        img{max-width:100%;display:block;border:0}
+        .top-bar{width:100%;height:5px;background:linear-gradient(90deg,#b01830 0%,#e63946 40%,#c41e3a 70%,#b01830 100%)}
+        .container{width:980px;margin:0 auto;padding:0 15px}
+
+        /* 头部 */
+        .header{background:#fff;border-bottom:1px solid #e5e5e5}
+        .header table{width:100%;border-collapse:collapse}
+        .header td{vertical-align:bottom;padding:12px 0}
+        .header td:first-child{width:220px}.header td:first-child img{height:52px;object-fit:contain}
+        .nav-link{font-size:14px;color:#333;padding:8px 16px;display:inline-block;white-space:nowrap}
+        .nav-link:hover,.nav-link.active{color:#c41e3a;font-weight:bold}
+        .header td:last-child{width:80px;text-align:right}.header td:last-child img{height:42px;vertical-align:bottom}
+
+        /* 主体 */
+        .main-body{padding:20px 0 50px;background:#fafafa;min-height:600px}
+
+        /* 联系我们区域 */
+        .contact-area{background:#fff;padding:25px 35px 35px;border:1px solid #e8e8e8}
+
+        /* 大图 */
+        .contact-hero{text-align:center;margin-bottom:25px}
+        .contact-hero img{max-width:920px;width:100%;height:auto;border:1px solid #eee;margin:0 auto;display:block}
+
+        /* 联系信息 */
+        .contact-info{padding:10px 20px;line-height:2.4;font-size:14.5px;color:#333}
+        .contact-info h3{font-size:16px;font-weight:bold;color:#222;margin-bottom:15px;padding-bottom:10px;border-bottom:2px solid #c41e3a;display:inline-block}
+        .contact-info p{margin-bottom:6px}
+        .contact-info b{color:#222}
+        .contact-info a{color:#c41e3a}.contact-info a:hover{text-decoration:underline}
+
+        /* 页脚 */
+        .footer{background:#333;color:#aaa;padding:25px 0;text-align:center;font-size:12px;line-height:22px}
+        .footer a{color:#ccc;margin:0 8px}.footer a:hover{color:#fff}
+    </style>
 </head>
 <body>
 
-<nav class="navbar">
-  <div class="nav-inner">
-    <a href="index.html" class="logo"><div class="logo-mark"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="46" height="46" stroke="#C8000A" stroke-width="1.5" fill="none"/><rect x="5" y="5" width="38" height="38" stroke="#C8000A" stroke-width="0.5" fill="none" opacity="0.3"/><text x="24" y="31" font-family="Georgia,serif" font-size="19" font-weight="700" fill="#C8000A" text-anchor="middle" letter-spacing="-1">JT</text></svg></div><div class="logo-divider"></div><div class="logo-text"><div class="logo-name">京涛品牌策划</div><div class="logo-sub">BRAND STRATEGY</div></div></a>
-    <div class="nav-links">
-      <a href="index.html">首页</a>
-      <a href="philosophy.html">品牌理念</a>
-      <a href="news.html">公司新闻</a>
-      <a href="cases.html">成功案例</a>
-      <a href="services.html">服务内容</a>
-      <a href="contact.html" class="active nav-cta">联系我们</a>
-    </div>
-    <div class="hamburger"><span></span><span></span><span></span></div>
-  </div>
-</nav>
+<div class="top-bar"></div>
 
-<div class="contact-hero">
-  <div>
-    <h1>联系我们</h1>
-    <p>不收费，不套路，先聊清楚再谈合作</p>
-  </div>
+<!-- 头部（统一） -->
+<div class="header">
+    <div class="container">
+        <table><tr>
+            <td><a href="index.html"><img src="all_extracted_images/logo.gif.gif" alt="上海京涛策划"></a></td>
+            <td><span class="nav-link"><a href="index.html">首&nbsp;&nbsp;页</a></span></td>
+            <td><span class="nav-link"><a href="cases.html">案例中心</a></span></td>
+            <td><span class="nav-link"><a href="news.html">公司新闻</a></span></td>
+            <td><span class="nav-link"><a href="views.html">京涛观点</a></span></td>
+            <td><span class="nav-link"><a href="services.html">服务项目</a></span></td>
+            <td><span class="nav-link"><a href="about.html">关于我们</a></span></td>
+            <td><span class="nav-link active"><a href="contact.html">联系我们</a></span></td>
+            <td><img src="all_extracted_images/tel.gif.gif" alt="联系电话"></td>
+        </tr></table>
+    </div>
 </div>
 
-<section class="contact-body">
-  <div class="container">
-    <div class="contact-grid reveal">
+<div class="main-body">
+    <div class="container">
 
-      <!-- 左：联系信息 -->
-      <div class="contact-info">
-        <h2>找到我们</h2>
-        <div class="contact-item">
-          <div class="contact-icon">📍</div>
-          <div>
-            <div class="contact-item-label">地址</div>
-            <div class="contact-item-value">上海市虹桥路999弄161号<br>TCAT创意园4号楼</div>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">🏢</div>
-          <div>
-            <div class="contact-item-label">公司电话</div>
-            <div class="contact-item-value">021-56481419</div>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">📞</div>
-          <div>
-            <div class="contact-item-label">24H热线</div>
-            <div class="contact-item-value">173-3629-1308</div>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">✉️</div>
-          <div>
-            <div class="contact-item-label">商务邮箱</div>
-            <div class="contact-item-value">yuanlaijt001@163.com</div>
-          </div>
-        </div>
+        <div class="contact-area">
 
-
-        <div class="contact-divider"></div>
-
-        <div class="contact-hours">
-          <strong>工作时间</strong><br>
-          周一至周五：9:00 - 18:00<br>
-          周六：10:00 - 16:00<br>
-          周日：仅接待预约客户
-        </div>
-      </div>
-
-      <!-- 右：表单 -->
-      <div class="contact-form-wrap">
-        <h2>预约咨询</h2>
-        <form>
-          <div class="form-row">
-            <div class="form-group">
-              <label>您的姓名 *</label>
-              <input type="text" placeholder="请输入姓名" required>
+            <!-- 大图 -->
+            <div class="contact-hero">
+                <img src="all_extracted_images/联系我们_201603071546493268.jpg.jpg alt="联系京涛策划" width="920" height="414">
             </div>
-            <div class="form-group">
-              <label>公司名称</label>
-              <input type="text" placeholder="请输入公司名称">
+
+            <!-- 联系方式 -->
+            <div class="contact-info">
+                <h3>上海公司：</h3>
+                
+                <p><b>&nbsp;&nbsp;&nbsp;&nbsp;Tel：</b> 021-51089180</p>
+                <p><b>&nbsp;&nbsp;&nbsp;&nbsp;Fax：</b> 021-62104772</p>
+                <p><b>&nbsp;&nbsp;&nbsp;&nbsp;Address：</b> 10rd floor, Building 11, No. 599 East Yunling Road, Shanghai</p>
+                
+                <p style="margin-top:12px;"><b>&nbsp;&nbsp;&nbsp;&nbsp;电话：</b><b>021-</b><b>51089180</b></p>
+                <p><b>&nbsp;&nbsp;&nbsp;&nbsp;传真：</b><b>021-</b><b>62104772</b></p>
+                
+                <p style="margin-top:12px;"><b>&nbsp;&nbsp;&nbsp;&nbsp;地址：</b><a href="#">上海市</a>云岭东路599号11号楼10层</p>
+                
+                <p style="margin-top:12px;"><b>&nbsp;&nbsp;&nbsp;&nbsp;邮箱：</b><a href="mailto:jintaocehua001@126.com">jintaocehua001@126.com</a></p>
             </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label>手机号码 *</label>
-              <input type="tel" placeholder="请输入手机号" required>
-            </div>
-            <div class="form-group">
-              <label>品牌阶段</label>
-              <select>
-                <option value="">请选择</option>
-                <option>品牌初创期</option>
-                <option>品牌成长期</option>
-                <option>品牌成熟期</option>
-                <option>品牌转型期</option>
-                <option>其他</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group">
-            <label>想解决的问题</label>
-            <select>
-              <option value="">请选择</option>
-              <option>品牌定位不清晰</option>
-              <option>产品卖不出去</option>
-              <option>包装/视觉升级</option>
-              <option>广告语/传播策略</option>
-              <option>渠道策略规划</option>
-              <option>全案品牌策划</option>
-              <option>品牌常年顾问</option>
-              <option>其他问题</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>补充说明（选填）</label>
-            <textarea placeholder="简要描述您的品牌现状和想要解决的问题，我们会在24小时内回复您。"></textarea>
-          </div>
-          <a href="mailto:yuanlaijt001@163.com?subject=品牌咨询预约" class="form-submit" style="display:block;text-align:center;text-decoration:none;">提交咨询申请</a>
-          <div class="form-note">提交后24小时内必有回复 · 信息严格保密 · 也可直接打电话预约</div>
-        </form>
-      </div>
+
+        </div><!-- end contact-area -->
 
     </div>
+</div>
 
-    <!-- 地图 -->
-    <div class="contact-map reveal">
-      <iframe src="https://www.amap.com/search?query=上海市虹桥路999弄161号TCAT创意园" loading="lazy"></iframe>
+<!-- 页脚 -->
+<div class="footer">
+    <div class="container">
+        <p>Copyright 2006-2026 jintao.cn. All Rights Reserved &nbsp;&nbsp;|&nbsp;&nbsp; 上海京涛企业管理咨询有限公司</p>
+        <p style="margin-top:8px;">
+            <a href="index.html">首页</a><a href="cases.html">案例中心</a><a href="news.html">公司新闻</a>
+            <a href="views.html">京涛观点</a><a href="services.html">服务项目</a><a href="about.html">关于我们</a><a href="contact.html">联系我们</a>
+        </p>
     </div>
+</div>
 
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="logo"><div class="logo-mark"><div class="logo-mark-inner">京</div><div class="logo-mark-accent"></div></div><div class="logo-text"><div class="logo-name">京涛品牌策划</div><div class="logo-sub">BRAND STRATEGY</div></div></div>
-        <p>上海京涛品牌策划，专注品牌战略定位与全案营销创意，服务品牌超500家。</p>
-        <p style="margin-top:12px;">地址：上海市虹桥路999弄161号 TCAT创意园4号楼<br>电话：021-56481419<br>咨询邮箱：yuanlaijt001@163.com</p>
-      </div>
-      <div><h4>快速导航</h4><ul><li><a href="index.html">首页</a></li><li><a href="philosophy.html">品牌理念</a></li><li><a href="news.html">公司新闻</a></li><li><a href="cases.html">成功案例</a></li><li><a href="services.html">服务内容</a></li></ul></div>
-      <div><h4>核心服务</h4><ul><li><a href="services.html">品牌战略咨询</a></li><li><a href="services.html">营销创意执行</a></li><li><a href="services.html">产品策略规划</a></li><li><a href="services.html">品牌常年顾问</a></li></ul></div>
-      <div><h4>关注我们</h4><ul><li><a href="#">微信公众号</a></li><li><a href="#">微博：@京涛品牌策划</a></li><li><a href="#">小红书</a></li></ul></div>
-    </div>
-    <div class="footer-bottom"><span>© 2026 上海京涛品牌策划 JINGTAO. All Rights Reserved.</span><span>沪ICP备20260123号</span></div>
-  </div>
-</footer>
-<script src="main.js"></script>
 </body>
 </html>
