@@ -68,12 +68,22 @@
             font-weight: bold;
         }
         .header td:last-child {
-            width: 80px;
+            width: 100px;
             text-align: right;
         }
         .header td:last-child img {
-            height: 42px;
+            height: 52px;
             vertical-align: bottom;
+        }
+        @media(max-width:768px){
+            .container{width:100%;padding:0 10px}
+            .header table{table-layout:fixed}
+            .header td{padding:8px 2px}
+            .header td:first-child{width:120px}
+            .nav-link{padding:6px 4px;font-size:12px}
+            .header td:first-child img{height:36px}
+            .header td:last-child{width:60px}
+            .header td:last-child img{height:40px}
         }
 
         /* ===== 主体区域 ===== */
