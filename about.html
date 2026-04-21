@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>关于我们 - 上海京涛营销策划公司</title>
+    <title>关于京涛策划 - 上海京涛营销策划公司</title>
     <meta name="keywords" content="上海京涛,关于京涛,营销策划,品牌策划,策划公司">
-    <meta name="description" content="了解上海京涛品牌策划公司 — 十五年国际品牌策划经验，中国高端营销策划领先机构。">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <meta name="description" content="了解上海京涛品牌策划公司 — 开创中国策划新奇迹，13年时间、120个客户、500多个品牌。">
     <style>
         /* ===== 基础重置 ===== */
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -14,364 +13,181 @@
         html { font-size: 16px; scroll-behavior: smooth; }
         
         body {
-            font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+            font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
             font-size: 14px;
-            line-height: 1.7;
+            line-height: 1.8;
             color: #333;
             background: #fff;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
 
-        a { text-decoration: none; color: inherit; transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1); }
-        img { max-width: 100%; display: block; }
+        a { text-decoration: none; color: inherit; transition: color 0.2s; }
+        a:hover { color: #c41e3a; }
+        img { max-width: 100%; display: block; border: 0; }
 
         /* ===== 红色顶栏 ===== */
         .top-bar {
             width: 100%;
             height: 5px;
             background: linear-gradient(90deg, #b01830 0%, #e63946 40%, #c41e3a 70%, #b01830 100%);
-            position: relative;
-        }
-        .top-bar::after {
-            content: '';
-            position: absolute;
-            bottom: -3px; left: 0; right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, rgba(196,30,58,0.15), transparent);
         }
 
         /* ===== 容器 ===== */
-        .container { width: 1080px; margin: 0 auto; padding: 0 20px; }
+        .container { width: 980px; margin: 0 auto; padding: 0 15px; }
 
-        /* ===== 头部 ===== */
+        /* ===== 头部（与首页一致） ===== */
         .header {
-            padding: 0;
             background: #fff;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.06);
-            position: relative;
-            z-index: 100;
+            border-bottom: 1px solid #e5e5e5;
         }
-        .header-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 72px;
-        }
-        .logo { 
-            display: flex;
-            align-items: center;
-        }
-        .logo img { 
-            height: 46px; 
-            object-fit: contain;
-            transition: opacity 0.3s ease;
-        }
-        .logo:hover img { opacity: 0.8; }
-
-        .nav-menu {
-            display: flex;
-            gap: 0;
-            flex: 1;
-            justify-content: center;
-        }
-        .nav-menu a {
-            font-size: 14.5px;
-            color: #444;
-            padding: 0 26px;
-            height: 72px;
-            line-height: 72px;
-            position: relative;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            transition: all 0.3s ease;
-        }
-        .nav-menu a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #c41e3a, #e63946);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            transform: translateX(-50%);
-            border-radius: 2px 2px 0 0;
-        }
-        .nav-menu a:hover { 
-            color: #c41e3a; 
-            background: rgba(196,30,58,0.02);
-        }
-        .nav-menu a:hover::after {
-            width: 60%;
-        }
-        .nav-menu a.active { 
-            color: #c41e3a; 
-            font-weight: 600;
-        }
-        .nav-menu a.active::after {
-            width: 60%;
-        }
-
-        .tel-icon { 
-            display: flex; 
-            align-items: center;
-            padding-left: 25px;
-            border-left: 1px solid #eee;
-            margin-left: 15px;
-            height: 36px;
-        }
-        .tel-icon img { height: 34px; opacity: 0.9; transition: opacity 0.3s; }
-        .tel-icon:hover img { opacity: 1; }
-
-        /* ===== 页面横幅 ===== */
-        .page-banner {
+        .header table {
             width: 100%;
-            height: 280px;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            border-collapse: collapse;
         }
-        .page-banner::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: url('all_extracted_images/关于我们_201603071454528330.jpg.jpg') center/cover no-repeat;
-            opacity: 0.25;
+        .header td {
+            vertical-align: bottom;
+            padding: 12px 0;
         }
-        .page-banner::after {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 0; right: 0;
-            height: 100px;
-            background: linear-gradient(transparent, rgba(0,0,0,0.3));
+        .header td:first-child {
+            width: 220px;
         }
-        .banner-content {
-            position: relative;
-            z-index: 10;
-            text-align: center;
-            color: #fff;
+        .header td:first-child img {
+            height: 52px;
+            object-fit: contain;
         }
-        .banner-content h1 {
-            font-size: 42px;
-            font-weight: 700;
-            letter-spacing: 8px;
-            margin-bottom: 12px;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        .nav-link {
+            font-size: 14px;
+            color: #333;
+            padding: 8px 16px;
+            display: inline-block;
+            white-space: nowrap;
         }
-        .banner-content p {
-            font-size: 16px;
-            letter-spacing: 4px;
-            color: rgba(255,255,255,0.8);
+        .nav-link:hover,
+        .nav-link.active {
+            color: #c41e3a;
+            font-weight: bold;
         }
-        .banner-line {
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(90deg, #c41e3a, #e63946);
-            margin: 16px auto 0;
-            border-radius: 2px;
+        .header td:last-child {
+            width: 80px;
+            text-align: right;
+        }
+        .header td:last-child img {
+            height: 42px;
+            vertical-align: bottom;
         }
 
-        /* ===== 面包屑 ===== */
-        .breadcrumb {
-            background: #f8f8f8;
-            padding: 14px 0;
-            border-bottom: 1px solid #eee;
+        /* ===== 主体区域 ===== */
+        .main-body {
+            padding: 25px 0 50px;
+            background: #fafafa;
+            min-height: 600px;
         }
-        .breadcrumb-inner {
-            font-size: 13px;
+
+        /* ===== 文章内容 ===== */
+        .post-area {
+            background: #fff;
+            padding: 30px 35px 45px;
+            border: 1px solid #e8e8e8;
+        }
+
+        /* 标题 */
+        .post-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #222;
+            margin-bottom: 10px;
+            line-height: 1.4;
+            letter-spacing: 1px;
+        }
+        .post-title a {
+            color: #222;
+        }
+        .post-title a:hover {
+            color: #c41e3a;
+        }
+
+        /* 发布信息 */
+        .post-meta {
+            font-size: 12px;
+            color: #999;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .post-meta .date {
             color: #888;
         }
-        .breadcrumb-inner a {
-            color: #666;
-        }
-        .breadcrumb-inner a:hover {
+        .post-meta .category a {
             color: #c41e3a;
         }
-        .breadcrumb-inner span {
-            margin: 0 8px;
-            color: #ccc;
+
+        /* 大图 */
+        .post-hero-image {
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        .post-hero-image img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #eee;
         }
 
-        /* ===== 内容区域 ===== */
-        .content-area { padding: 50px 0 60px; }
-
-        .section-title {
-            font-size: 20px;
-            font-weight: 700;
-            color: #222;
-            padding-bottom: 14px;
-            margin-bottom: 35px;
-            letter-spacing: 2px;
-            position: relative;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .section-title::before {
-            content: '';
-            width: 4px;
-            height: 22px;
-            background: linear-gradient(180deg, #c41e3a, #e63946);
-            border-radius: 2px;
-        }
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 0;
-            width: 60px; height: 3px;
-            background: linear-gradient(90deg, #c41e3a, #e63946);
-            border-radius: 2px;
-        }
-
-        /* 关于我们内容 */
-        .about-intro {
-            background: #fff;
-            border-radius: 12px;
-            padding: 40px 45px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
-            border: 1px solid #f0f0f0;
-            margin-bottom: 40px;
-        }
-        .about-intro p {
-            font-size: 15px;
+        /* 正文文字 */
+        .post-content {
+            font-size: 14.5px;
             line-height: 2;
-            color: #444;
-            text-align: justify;
-            margin-bottom: 20px;
+            color: #333;
         }
-        .about-intro p:last-child {
+        .post-content p {
+            margin-bottom: 18px;
+            text-indent: 2em;
+            text-align: justify;
+        }
+        .post-content p:last-child {
             margin-bottom: 0;
         }
-        .about-intro p strong {
+        .post-content a {
             color: #c41e3a;
-            font-weight: 600;
+            font-weight: 500;
         }
 
-        /* 数据统计 */
-        .stats-bar {
-            display: flex;
-            justify-content: space-around;
-            background: linear-gradient(135deg, #c41e3a, #e63946);
-            border-radius: 12px;
-            padding: 40px 30px;
-            margin-bottom: 45px;
-            box-shadow: 0 8px 30px rgba(196,30,58,0.2);
+        /* 分隔线 */
+        .post-divider {
+            height: 1px;
+            background: none;
+            border: 0;
+            border-top: 1px dashed #ddd;
+            margin: 30px 0;
         }
-        .stat-item {
+
+        /* 办公楼图片区 */
+        .office-images {
+            margin-top: 20px;
             text-align: center;
-            color: #fff;
-            position: relative;
         }
-        .stat-item:not(:last-child)::after {
-            content: '';
-            position: absolute;
-            right: -50%;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 1px;
-            height: 50px;
-            background: rgba(255,255,255,0.3);
+        .office-images-title {
+            font-size: 15px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
         }
-        .stat-number {
-            font-size: 42px;
-            font-weight: 700;
-            line-height: 1;
-            margin-bottom: 8px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        .office-images img {
+            display: inline-block;
+            margin: 0 auto 15px;
+            border: 1px solid #eee;
+            max-width: 90%;
         }
-        .stat-label {
-            font-size: 14px;
-            opacity: 0.9;
-            letter-spacing: 2px;
-        }
-
-        /* 办公环境 */
-        .office-section {
-            margin-bottom: 40px;
-        }
-        .office-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 20px;
-        }
-        .office-grid .office-img {
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            transition: all 0.4s ease;
-        }
-        .office-grid .office-img:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 35px rgba(0,0,0,0.12);
-        }
-        .office-grid .office-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            min-height: 280px;
-        }
-        .office-grid .office-img.small img {
-            min-height: 130px;
-        }
-        .office-right {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        /* 理念卡片 */
-        .philosophy-cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            margin-bottom: 40px;
-        }
-        .phil-card {
-            background: #fff;
-            border-radius: 12px;
-            padding: 35px 28px;
-            text-align: center;
-            border: 1px solid #f0f0f0;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
-            transition: all 0.35s ease;
-        }
-        .phil-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 35px rgba(0,0,0,0.08);
-            border-color: rgba(196,30,58,0.1);
-        }
-        .phil-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #c41e3a, #e63946);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 18px;
-            font-size: 24px;
-            color: #fff;
-        }
-        .phil-card h3 {
-            font-size: 17px;
-            color: #222;
-            margin-bottom: 12px;
-            font-weight: 600;
-        }
-        .phil-card p {
+        .office-caption {
             font-size: 13.5px;
-            color: #666;
-            line-height: 1.8;
+            color: #555;
+            margin-top: 10px;
         }
 
         /* ===== 页脚 ===== */
         .footer {
             background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%);
-            padding: 40px 0 30px;
+            padding: 28px 0 24px;
             text-align: center;
             position: relative;
         }
@@ -384,184 +200,113 @@
         }
         .footer p {
             color: #aaa;
-            font-size: 13px;
-            line-height: 28px;
+            font-size: 12.5px;
+            line-height: 26px;
             letter-spacing: 0.5px;
         }
         .footer a {
             color: #ccc;
-            margin: 0 14px;
-            position: relative;
-            font-size: 13.5px;
-            transition: color 0.3s ease;
+            margin: 0 12px;
+            font-size: 13px;
+            transition: color 0.2s;
         }
         .footer a:hover { 
             color: #e63946; 
-        }
-
-        /* ===== 响应式 ===== */
-        @media (max-width: 1100px) {
-            .container { width: 96%; padding: 0 15px; }
-            .page-banner { height: 220px; }
-            .banner-content h1 { font-size: 32px; letter-spacing: 4px; }
-        }
-
-        @media (max-width: 768px) {
-            .container { width: 100%; padding: 0 15px; }
-            .header-inner { flex-direction: column; height: auto; padding: 10px 0; }
-            .nav-menu { flex-wrap: wrap; width: 100%; padding-top: 8px; }
-            .nav-menu a { font-size: 13px; padding: 8px 14px; height: auto; line-height: 1.5; }
-            .nav-menu a::after { display: none; }
-            .tel-icon { display: none; }
-            
-            .page-banner { height: 180px; }
-            .banner-content h1 { font-size: 26px; letter-spacing: 3px; }
-            .banner-content p { font-size: 14px; }
-            
-            .content-area { padding: 30px 0 40px; }
-            .section-title { font-size: 17px; margin-bottom: 25px; }
-            
-            .about-intro { padding: 25px 22px; }
-            .about-intro p { font-size: 14px; }
-            
-            .stats-bar { flex-direction: column; gap: 25px; padding: 30px 20px; }
-            .stat-item:not(:last-child)::after { display: none; }
-            .stat-number { font-size: 36px; }
-            
-            .office-grid { grid-template-columns: 1fr; }
-            .office-grid .office-img img { min-height: 200px; }
-            
-            .philosophy-cards { grid-template-columns: 1fr; gap: 16px; }
-            
-            .footer { padding: 30px 0 25px; }
-            .footer p { font-size: 12px; }
-            .footer a { margin: 0 8px; font-size: 12px; }
         }
     </style>
 </head>
 <body>
 
-<!-- 红色渐变顶栏 -->
+<!-- 红色顶栏 -->
 <div class="top-bar"></div>
 
 <!-- 头部导航 -->
 <div class="header">
-    <div class="container header-inner">
-        <div class="logo"><a href="index.html"><img src="all_extracted_images/首页_logo.gif.gif" alt="京涛策划"></a></div>
-        <div class="nav-menu">
-            <a href="index.html">首&nbsp;&nbsp;页</a>
-            <a href="cases.html">案例中心</a>
-            <a href="news.html">公司新闻</a>
-            <a href="views.html">京涛观点</a>
-            <a href="services.html">服务项目</a>
-            <a href="about.html" class="active">关于我们</a>
-            <a href="contact.html">联系我们</a>
-        </div>
-        <div class="tel-icon"><img src="all_extracted_images/首页_tel1.gif.gif" alt="电话"></div>
+    <div class="container">
+        <table>
+            <tr>
+                <td><a href="index.html"><img src="all_extracted_images/首页_logo.gif.gif" alt="上海京涛营销策划公司"></a></td>
+                <td>
+                    <span class="nav-link">首&nbsp;&nbsp;&nbsp;页</span>
+                    <a href="cases.html" class="nav-link">案例中心</a>
+                    <a href="news.html" class="nav-link">公司新闻</a>
+                    <a href="views.html" class="nav-link">京涛观点</a>
+                    <a href="services.html" class="nav-link">服务项目</a>
+                    <a href="about.html" class="nav-link active">关于我们</a>
+                    <a href="contact.html" class="nav-link">联系我们</a>
+                </td>
+                <td><img src="all_extracted_images/首页_tel1.gif.gif" alt="电话"></td>
+            </tr>
+        </table>
     </div>
 </div>
 
-<!-- 页面横幅 -->
-<div class="page-banner">
-    <div class="banner-content">
-        <h1>关于京涛</h1>
-        <p>ABOUT JINTAO</p>
-        <div class="banner-line"></div>
-    </div>
-</div>
+<!-- 主体内容 -->
+<div class="main-body">
+    <div class="container">
 
-<!-- 面包屑 -->
-<div class="breadcrumb">
-    <div class="container breadcrumb-inner">
-        <a href="index.html">首页</a>
-        <span>&gt;</span>
-        <span style="color:#c41e3a;">关于我们</span>
-    </div>
-</div>
+        <!-- 文章区域 -->
+        <div class="post-area">
 
-<!-- 内容区域 -->
-<div class="container content-area">
+            <!-- 标题 -->
+            <h2 class="post-title"><a href="about.html">关于京涛策划</a></h2>
 
-    <h2 class="section-title">公司介绍</h2>
+            <!-- 发布信息 -->
+            <p class="post-meta">
+                <span class="date">2004-03-28</span> &nbsp;&nbsp;
+                <span class="category"><a href="#">其他</a></span>
+            </p>
 
-    <!-- 数据统计 -->
-    <div class="stats-bar">
-        <div class="stat-item">
-            <div class="stat-number">20+</div>
-            <div class="stat-label">年行业经验</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-number">120+</div>
-            <div class="stat-label">服务客户</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-number">500+</div>
-            <div class="stat-label">品牌案例</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-number">85%</div>
-            <div class="stat-label">4A背景团队</div>
-        </div>
-    </div>
-
-    <!-- 公司介绍 -->
-    <div class="about-intro">
-        <p>上海京涛策划，拥有国际化视野、熟悉中国本土市场，<strong>85%的员工拥有全球4A背景</strong>，现已成为上海乃至中国最大的高端营销策划全案服务公司，并于2014年经过两次资本整合，成立了以上海京涛策划为主的集团公司，总体注册资金2000万，下辖3个子公司，并在香港和米兰成立分公司。</p>
-        
-        <p>业务块面涉及<strong>战略咨询、营销策划、品牌传播、创意视觉、网站建设、网络营销及终端空间设计</strong>等，多年来主要合作策划的客户，除了中国诸多知名品牌，还包括意大利、法国、德国、西班牙、美国等高端品牌，服务的产业包括高端珠宝营销策划、日化品全案策划、顶级奢侈品营销策划、高端服装及箱包等各种涉及高端产业的品牌服务。</p>
-        
-        <p>上海京涛策划公司坚持以人为本、以市场为根、以中国消费者为主要研究对象，在多年合作国内外高端客户的同时，也在不断的研究着中国市场高端消费人群的购买行为变化，多年来上海京涛对国内的高端顾客购物心理有着完善与系统、成体系的研究，掌握着强大的消费者数据库，这也为每一位要进入高端品牌策划领域的国内外企业，提供最坚实、可靠和鲜活的中国市场顾客数据。</p>
-        
-        <p>高端策划服务的背后始终有着一颗平实之心，<strong>"任何营销策划都要接地气"</strong>，同时，面对每一个高端客户的产品，都要当作一件伟大的艺术工程来对待，这种精神源于上海京涛策划公司创始之初，本着对奢侈品和高端品牌策划的热爱，于是策划成功了数百个国内外知名品牌。<strong>上海京涛策划，时刻都在创造着高端品牌奇迹！</strong></p>
-    </div>
-
-    <h2 class="section-title">核心理念</h2>
-
-    <!-- 理念卡片 -->
-    <div class="philosophy-cards">
-        <div class="phil-card">
-            <div class="phil-icon">人</div>
-            <h3>以人为本</h3>
-            <p>坚持以人才为核心驱动力，汇聚业内顶尖策划精英，打造国际化专业团队</p>
-        </div>
-        <div class="phil-card">
-            <div class="phil-icon">市</div>
-            <h3>以市场为根</h3>
-            <p>深耕中国市场二十余年，精准把握高端消费趋势，提供接地气的营销方案</p>
-        </div>
-        <div class="phil-card">
-            <div class="phil-icon">艺</div>
-            <h3>艺术工程</h3>
-            <p>将每个品牌项目视为艺术工程，以匠心精神缔造国内外知名品牌的创意之源</p>
-        </div>
-    </div>
-
-    <h2 class="section-title">办公环境</h2>
-
-    <!-- 办公环境图片 -->
-    <div class="office-section">
-        <div class="office-grid">
-            <div class="office-img">
-                <img src="all_extracted_images/关于我们_bangonglo.jpg.jpg" alt="京涛策划办公环境">
+            <!-- 大图 -->
+            <div class="post-hero-image">
+                <img src="all_extracted_images/关于我们_201603071454528330.jpg.jpg" alt="上海京涛策划公司" width="920" height="414">
             </div>
-            <div class="office-right">
-                <div class="office-img small">
-                    <img src="all_extracted_images/关于我们_bangonghuanj1.jpg.jpg" alt="京涛策划办公楼">
-                </div>
-                <div class="office-img small">
-                    <img src="all_extracted_images/关于我们_201603071454528330.jpg.jpg" alt="京涛策划公司总部">
-                </div>
-            </div>
-        </div>
-    </div>
 
-</div><!-- end container -->
+            <!-- 正文内容 -->
+            <div class="post-content">
+                
+<p><span style="font-size: 15.5px;"><span style="font-family: Arial;">13年时间、120个客户、500多个品牌，<strong>上海京涛策划，拥有国际化视野、熟悉中国本土市场，85%的员工拥有全球4A背景</strong>，现已成为上海乃至中国最大的高端<strong><a href="index.html">营销策划全案服务公司</a></strong>，并于2014年经过两次资本整合，成立了以上海京涛策划为主的集团公司，总体注册资金2000万，下辖3个子公司，并在香港和米兰成立分公司。</span></span></p>
+
+<p><span style="font-size: 15.5px;"><span style="font-family: Arial;">业务块面涉及<strong>战略咨询、营销策划、品牌传播、创意视觉、网站建设、网络营销及终端空间设计</strong>等，多年来主要合作策划的客户，除了中国诸多知名品牌，还包括意大利、法国、德国、西班牙、美国等高端品牌，服务的产业包括高端珠宝营销策划、日化品全案策划、顶级奢侈品营销策划、高端服装及箱包等各种涉及高端产业的品牌服务。</span></span></p>
+
+<p><span style="font-size: 15.5px;"><span style="font-family: Arial;">上海京涛策划公司坚持以人为本、以市场为根、以中国消费者为主要研究对象，在多年合作国内外高端客户的同时，也在不断的研究着中国市场高端消费人群的购买行为变化，多年来上海京涛对国内的高端顾客购物心理有着完善与系统、成体系的研究，掌握着强大的消费者数据库，这也为每一位要进入高端品牌策划领域的国内外企业，提供最坚实、可靠和鲜活的中国市场顾客数据。</span></span></p>
+
+<p><span style="font-size: 15.5px;"><span style="font-family: Arial;">高端策划服务的背后始终有着一颗平实之心，<strong>"任何营销策划都要接地气"</strong>，同时，面对每一个高端客户的产品，都要当作一件伟大的艺术工程来对待，这种精神源于上海<a href="about.html">策划公司</a>创始之初，本着对奢侈品和高端品牌策划的热爱，于是策划成功了数百个国内外知名品牌。<strong>上海京涛策划，时刻都在创造着高端品牌奇迹！</strong></span></span></p>
+
+                <hr class="post-divider">
+
+                <!-- 办公楼图片 -->
+                <div class="office-images">
+                    <p style="text-indent:0;">
+                        <a href="index.html">上海京涛策划</a>公司总部办公空间，
+                        编织国内外知名品牌的创意之源 &nbsp;
+                        &nbsp; &nbsp; &nbsp;
+                        <br><br>
+                    </p>
+                    
+                    <div style="background:#fff; line-height:22px; text-align:left; padding-left:60px;">
+                        <img src="all_extracted_images/关于我们_bangonghuanj1.jpg.jpg" alt="京涛策划办公楼" width="489" height="749">
+                        
+                        <br><br>
+                        
+                        <img src="all_extracted_images/关于我们_bangonglo.jpg.jpg" alt="京涛策划办公室" width="423" height="344">
+                        
+                        <p class="office-caption">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;地处上海核心CBD的京涛策划公司豪华办公楼</p>
+                    </div>
+                </div>
+
+            </div><!-- end post-content -->
+
+        </div><!-- end post-area -->
+
+    </div><!-- end container -->
+</div><!-- end main-body -->
 
 <!-- 页脚 -->
 <div class="footer">
     <div class="container">
         <p>Copyright 2006-2026 jintao.cn. All Rights Reserved &nbsp;&nbsp;|&nbsp;&nbsp; 上海京涛企业管理咨询有限公司</p>
-        <p style="margin-top:10px;">
+        <p style="margin-top:8px;">
             <a href="index.html">首页</a>
             <a href="cases.html">案例中心</a>
             <a href="news.html">公司新闻</a>
