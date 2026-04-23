@@ -1,7 +1,6 @@
 /* =============================================
-   上海京涛品牌策划 - 公共样式表
+   上海京涛营销策划 - 公共样式表
    ============================================= */
-@import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@400;500;700;900&display=swap');
 
 /* ---- CSS Reset & Base ---- */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -54,40 +53,15 @@ button { cursor: pointer; border: none; outline: none; font-family: var(--font-z
 }
 
 .logo {
-  display: flex; align-items: center; gap: 16px;
-  text-decoration: none;
+  display: flex; align-items: center; gap: 12px;
+  font-size: 20px; font-weight: 700; letter-spacing: 0.05em;
 }
 .logo-mark {
-  width: 48px; height: 48px;
+  width: 40px; height: 40px;
+  background: var(--red); color: var(--white);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; font-weight: 900;
   flex-shrink: 0;
-}
-.logo-mark svg {
-  width: 48px; height: 48px;
-  display: block;
-}
-.logo-mark-inner { display: none; }
-.logo-mark-accent { display: none; }
-
-.logo-divider {
-  width: 1px; height: 36px;
-  background: var(--gray-200);
-  flex-shrink: 0;
-}
-.logo-text { display: flex; flex-direction: column; gap: 4px; }
-.logo-name {
-  font-family: 'Noto Serif SC', serif;
-  font-size: 18px; font-weight: 700;
-  letter-spacing: 0.14em;
-  color: var(--black);
-  line-height: 1;
-}
-.logo-sub {
-  font-family: 'Arial', 'Helvetica Neue', sans-serif;
-  font-size: 9px; font-weight: 400;
-  letter-spacing: 0.22em;
-  color: var(--gray-400);
-  text-transform: uppercase;
-  line-height: 1;
 }
 
 .nav-links { display: flex; gap: 0; align-items: center; }
@@ -121,65 +95,14 @@ button { cursor: pointer; border: none; outline: none; font-family: var(--font-z
 .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
 /* ---- 页面公共头部 ---- */
-/* ---- 内页大页眉 ---- */
 .page-hero {
-  padding: 0;
+  padding: 140px 40px 80px;
   background: var(--red);
   color: var(--white);
-  position: relative;
-  overflow: hidden;
-  min-height: 320px;
-  display: flex;
-  align-items: center;
-}
-.page-hero-bg { position: absolute; inset: 0; pointer-events: none; }
-.page-hero-bg-circle { position: absolute; border-radius: 50%; border: 1px solid rgba(255,255,255,.1); }
-.page-hero-bg-circle:nth-child(1) { width: 500px; height: 500px; top: 50%; right: -80px; transform: translateY(-50%); animation: heroFloat 9s ease-in-out infinite; }
-.page-hero-bg-circle:nth-child(2) { width: 300px; height: 300px; top: 50%; right: 30px; transform: translateY(-50%); border-color: rgba(255,255,255,.15); animation: heroFloat 6s ease-in-out infinite reverse; }
-.page-hero-bg-circle:nth-child(3) { width: 150px; height: 150px; top: 50%; right: 120px; transform: translateY(-50%); border-color: rgba(255,255,255,.2); animation: heroFloat 4s ease-in-out infinite; }
-.page-hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px); background-size: 60px 60px; }
-.page-hero-content {
-  position: relative;
-  z-index: 1;
-  max-width: var(--max-w);
-  margin: 0 auto;
-  padding: 120px 40px 60px;
-  width: 100%;
   text-align: center;
 }
-.page-hero-badge {
-  display: inline-block;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: .15em;
-  color: rgba(255,255,255,.55);
-  margin-bottom: 16px;
-  border: 1px solid rgba(255,255,255,.25);
-  padding: 5px 16px;
-  border-radius: 2px;
-}
-.page-hero h1 {
-  font-size: clamp(36px,5vw,58px);
-  font-weight: 900;
-  letter-spacing: .02em;
-  margin-bottom: 16px;
-  line-height: 1.1;
-}
-.page-hero p {
-  font-size: 17px;
-  opacity: .75;
-  line-height: 1.7;
-}
-
-@media (max-width: 768px) {
-  .page-hero { min-height: 240px; }
-  .page-hero-content { padding: 110px 20px 50px; }
-  .page-hero h1 { font-size: 30px; }
-  .page-hero p { font-size: 14px; }
-  .page-hero-bg-circle:nth-child(1) { width: 260px; height: 260px; right: -100px; }
-  .page-hero-bg-circle:nth-child(2) { width: 160px; height: 160px; right: -40px; }
-  .page-hero-bg-circle:nth-child(3) { display: none; }
-}
+.page-hero h1 { font-size: 48px; font-weight: 900; letter-spacing: 0.1em; margin-bottom: 16px; }
+.page-hero p { font-size: 18px; opacity: 0.85; max-width: 600px; margin: 0 auto; }
 
 /* ---- 通用容器 ---- */
 .container { max-width: var(--max-w); margin: 0 auto; padding: 0 40px; }
@@ -243,6 +166,8 @@ button { cursor: pointer; border: none; outline: none; font-family: var(--font-z
   .nav-links.open { display: flex; }
   .nav-links a { padding: 14px 0; width: 100%; border-bottom: 1px solid var(--gray-200); }
   .hamburger { display: flex; }
+  .page-hero { padding: 120px 20px 60px; }
+  .page-hero h1 { font-size: 32px; }
   .section { padding: 60px 0; }
   .section-title { font-size: 28px; }
   .container { padding: 0 20px; }

@@ -1,15 +1,6 @@
 /* =============================================
-  上海京涛营销策划 - 公共脚本
-  ============================================= */
-
-// 滚动进度条
-const scrollIndicator = document.getElementById('scrollIndicator');
-window.addEventListener('scroll', () => {
-  const scrollTop = window.scrollY;
-  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const scrollPct = (scrollTop / docHeight) * 100;
-  if (scrollIndicator) scrollIndicator.style.width = scrollPct + '%';
-});
+   上海京涛营销策划 - 公共脚本
+   ============================================= */
 
 // 导航栏滚动效果
 window.addEventListener('scroll', () => {
@@ -43,34 +34,6 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 reveals.forEach(el => revealObserver.observe(el));
 
-// 数字滚动动画
-function animateCounter(el) {
-  const target = parseInt(el.dataset.target);
-  const duration = 1800;
-  const start = performance.now();
-  function update(now) {
-    const elapsed = now - start;
-    const progress = Math.min(elapsed / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3);
-    const current = Math.floor(eased * target);
-    el.textContent = current.toLocaleString();
-    if (progress < 1) requestAnimationFrame(update);
-    else el.textContent = target >= 100 ? target + '+' : target;
-  }
-  requestAnimationFrame(update);
-}
-
-const statsObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
-      entry.target.classList.add('counted');
-      animateCounter(entry.target);
-    }
-  });
-}, { threshold: 0.5 });
-
-document.querySelectorAll('.stat-num[data-target]').forEach(el => statsObserver.observe(el));
-
 // 当前页面高亮
 const currentPage = location.pathname.split('/').pop() || 'index.html';
 document.querySelectorAll('.nav-links a').forEach(link => {
@@ -88,6 +51,7 @@ if (contactForm) {
     const name = contactForm.querySelector('[name="name"]')?.value.trim();
     const phone = contactForm.querySelector('[name="phone"]')?.value.trim();
     const msg = contactForm.querySelector('[name="message"]')?.value.trim();
+
     if (!name || !phone || !msg) {
       alert('请填写姓名、电话和留言内容');
       return;
