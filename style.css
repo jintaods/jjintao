@@ -40,52 +40,60 @@ button { cursor: pointer; border: none; outline: none; font-family: var(--font-z
 /* ---- 导航栏 ---- */
 .navbar {
   position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-  background: var(--white);
-  border-bottom: 1px solid var(--gray-200);
-  transition: box-shadow var(--transition);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(200, 0, 10, 0.08);
+  transition: box-shadow var(--transition), background var(--transition), border-color var(--transition);
 }
-.navbar.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.92);
+  border-bottom-color: rgba(200, 0, 10, 0.14);
+  box-shadow: 0 12px 34px rgba(0,0,0,0.08);
+}
 
 .nav-inner {
   max-width: var(--max-w); margin: 0 auto;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 0 40px; height: 72px;
+  padding: 0 44px; height: 82px;
 }
 
 .logo {
   display: flex; align-items: center; gap: 12px;
-  font-size: 20px; font-weight: 700; letter-spacing: 0.05em;
+  font-size: 18px; font-weight: 800; letter-spacing: 0.12em;
 }
 .logo-mark {
-  width: 40px; height: 40px;
-  background: var(--red); color: var(--white);
+  width: 42px; height: 42px;
+  background: linear-gradient(145deg, #D3000B, #8F0006); color: var(--white);
   display: flex; align-items: center; justify-content: center;
-  font-size: 18px; font-weight: 900;
+  font-size: 18px; font-weight: 900; border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(200, 0, 10, 0.28);
   flex-shrink: 0;
 }
 
-.nav-links { display: flex; gap: 0; align-items: center; }
+.nav-links { display: flex; gap: 6px; align-items: center; }
 .nav-links a {
-  display: block; padding: 24px 22px;
-  font-size: 15px; color: var(--gray-800);
-  position: relative; transition: color var(--transition);
+  display: block; padding: 10px 16px;
+  font-size: 14px; font-weight: 600; color: var(--gray-800);
+  position: relative; border-radius: 999px;
+  transition: color var(--transition), background var(--transition);
 }
-.nav-links a::after {
-  content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
-  width: 0; height: 3px; background: var(--red);
-  transition: width var(--transition);
+.nav-links a::after { display: none; }
+.nav-links a:hover, .nav-links a.active {
+  color: var(--red);
+  background: rgba(200, 0, 10, 0.08);
 }
-.nav-links a:hover, .nav-links a.active { color: var(--red); }
-.nav-links a:hover::after, .nav-links a.active::after { width: calc(100% - 44px); }
 
 .nav-cta {
-  background: var(--red); color: var(--white) !important;
-  padding: 10px 22px !important; font-size: 14px !important; font-weight: 600;
-  border-radius: 2px; margin-left: 10px;
-  transition: background var(--transition);
+  background: linear-gradient(145deg, #D3000B, #8F0006); color: var(--white) !important;
+  padding: 11px 22px !important; font-size: 13px !important; font-weight: 700;
+  border-radius: 999px; margin-left: 8px;
+  letter-spacing: 0.08em;
+  box-shadow: 0 10px 20px rgba(200, 0, 10, 0.24);
+  transition: transform var(--transition), box-shadow var(--transition), filter var(--transition);
 }
 .nav-cta::after { display: none !important; }
-.nav-cta:hover { background: var(--red-dark); }
+.nav-cta:hover { transform: translateY(-1px); box-shadow: 0 14px 26px rgba(200, 0, 10, 0.3); filter: brightness(1.03); }
 
 /* 汉堡菜单 */
 .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; }
@@ -162,9 +170,10 @@ button { cursor: pointer; border: none; outline: none; font-family: var(--font-z
 
 /* ---- 响应式 ---- */
 @media (max-width: 768px) {
-  .nav-links { display: none; position: fixed; top: 72px; left: 0; right: 0; background: var(--white); flex-direction: column; padding: 20px; border-top: 1px solid var(--gray-200); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+  .nav-inner { padding: 0 20px; height: 72px; }
+  .nav-links { display: none; position: fixed; top: 72px; left: 0; right: 0; background: rgba(255, 255, 255, 0.96); flex-direction: column; padding: 20px; border-top: 1px solid var(--gray-200); box-shadow: 0 14px 30px rgba(0,0,0,0.1); }
   .nav-links.open { display: flex; }
-  .nav-links a { padding: 14px 0; width: 100%; border-bottom: 1px solid var(--gray-200); }
+  .nav-links a { padding: 14px 0; width: 100%; border-radius: 0; border-bottom: 1px solid var(--gray-200); }
   .hamburger { display: flex; }
   .page-hero { padding: 120px 20px 60px; }
   .page-hero h1 { font-size: 32px; }
