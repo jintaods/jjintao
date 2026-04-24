@@ -3,979 +3,591 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>上海京涛营销策划公司 - 高端品牌营销策划</title>
-    <meta name="keywords" content="上海京涛,营销策划,品牌策划,新品策划,策划公司,上海策划公司">
-    <meta name="description" content="上海京涛品牌策划公司 — 十五年国际品牌策划经验，中国高端营销策划领先机构。">
-    <meta name="version" content="20250421-1636">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>上海京涛营销策划 - 品牌战略与营销推广专家</title>
+    <meta name="keywords" content="上海京涛,营销策划,品牌策划,新品策划,策划公司">
+    <meta name="description" content="上海京涛营销策划公司，十五年品牌策划经验，服务迪士尼、中国银联等500+品牌">
     <style>
-        /* ===== 基础重置 ===== */
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        html { font-size: 16px; scroll-behavior: smooth; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
-            font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", sans-serif;
-            font-size: 14px;
-            line-height: 1.7;
-            color: #ccc;
-            background: #111;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #fff;
+            color: #333;
+            line-height: 1.6;
         }
-
-        a { text-decoration: none; color: inherit; transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1); }
+        
+        a { text-decoration: none; color: inherit; }
         img { max-width: 100%; display: block; }
-
-        /* ===== 红色顶栏 ===== */
-        .top-bar {
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, #b01830 0%, #e63946 40%, #c41e3a 70%, #b01830 100%);
-            position: relative;
-        }
-        .top-bar::after {
-            content: '';
-            position: absolute;
-            bottom: -3px; left: 0; right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, rgba(196,30,58,0.15), transparent);
-        }
-
-        /* ===== 容器 ===== */
-        .container { width: 1080px; margin: 0 auto; padding: 0 20px; }
-
-        /* ===== 头部 - 精致大气版 ===== */
+        
+        /* ===== 页眉 ===== */
         .header {
-            padding: 0;
-            background: #111;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.5);
-            position: relative;
-            z-index: 100;
-        }
-        .header-inner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 70px;
+            background: #fff;
+            border-bottom: 1px solid #eee;
+            z-index: 1000;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            height: 72px;
+            padding: 0 60px;
         }
-        .logo { 
+        
+        .logo {
             display: flex;
             align-items: center;
+            gap: 10px;
         }
-        .logo img {
-            height: 46px;
-            filter: brightness(0) invert(1); 
-            object-fit: contain;
-            transition: opacity 0.3s ease;
-        }
-        .logo:hover img { opacity: 0.8; }
-
-        .nav-menu {
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #c41e3a, #8b1528);
+            border-radius: 6px;
             display: flex;
-            gap: 0;
-            flex: 1;
+            align-items: center;
             justify-content: center;
+            color: #fff;
+            font-weight: 700;
+            font-size: 16px;
         }
-        .nav-menu a {
-            font-size: 14.5px;
-            color: #ccc;
-            padding: 0 26px;
-            height: 72px;
-            line-height: 72px;
-            position: relative;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            transition: all 0.3s ease;
-        }
-        .nav-menu a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #c41e3a, #e63946);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            transform: translateX(-50%);
-            border-radius: 2px 2px 0 0;
-        }
-        .nav-menu a:hover { 
-            color: #fff; 
-            background: rgba(255,255,255,0.08);
-        }
-        .nav-menu a:hover::after {
-            width: 60%;
-        }
-        .nav-menu a.active { 
-            color: #fff; 
-            font-weight: 600;
-        }
-        .nav-menu a.active::after {
-            width: 60%;
-        }
-
-        .tel-icon { 
-            display: flex; 
-            align-items: center;
-            padding-left: 25px;
-            border-left: 1px solid #333;
-            margin-left: 15px;
-            height: 36px;
-        }
-        .tel-icon img { height: 34px; filter: brightness(0) invert(1); opacity: 0.9; transition: opacity 0.3s; }
-        .tel-icon:hover img { opacity: 1; }
-
-        /* ===== 轮播图 - 精致版 ===== */
-        .slider-wrapper {
-            width: 100%;
-            height: 520px;
-            overflow: hidden;
-            position: relative;
-            background: #1a1a1a;
-        }
-        .slider-inner { width: 100%; height: 100%; position: relative; }
-
-        .slide-item {
-            position: absolute; top: 0; left: 0;
-            width: 100%; height: 100%;
-            opacity: 0;
-            transition: opacity 0.8s ease-in-out;
-            z-index: 1;
-        }
-        .slide-item.active { 
-            opacity: 1; 
-            z-index: 10;
-        }
-        .slide-item img {
-            width: 100%;
-            height: 520px;
-            object-fit: cover;
-            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
-            animation: subtleZoom 8s ease-out forwards;
-        }
-        @keyframes subtleZoom {
-            0% { transform: scale(1.08); }
-            100% { transform: scale(1); }
-        }
-        /* 轮播底部渐变遮罩 */
-        .slider-wrapper::before {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 0; right: 0;
-            height: 150px;
-            background: linear-gradient(transparent, rgba(0,0,0,0.6));
-            z-index: 5;
-            pointer-events: none;
-        }
-
-        .slider-dots {
-            position: absolute;
-            bottom: 22px; left: 50%;
-            transform: translateX(-50%);
-            display: flex; gap: 9px;
-            z-index: 20;
-        }
-        .slider-dots span {
-            width: 10px; height: 10px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.45);
-            cursor: pointer;
-            border: 1.5px solid rgba(255,255,255,0.7);
-            transition: all 0.35s ease;
-        }
-        .slider-dots span:hover { background: rgba(255,255,255,0.75); transform: scale(1.2); }
-        .slider-dots span.active {
-            background: #e63946;
-            border-color: #e63946;
-            transform: scale(1.25);
-            box-shadow: 0 0 12px rgba(230,57,70,0.55);
-        }
-
-        /* ===== 快速入口 - 卡片式 ===== */
-        .quick-nav {
-            padding: 45px 0 40px;
-            text-align: center;
-            background: #1a1a1a;
-        }
-        .quick-nav table { margin: 0 auto; border-collapse: separate; border-spacing: 35px 0; }
-        .quick-nav td { 
-            padding: 0; 
-            text-align: center;
-        }
-        .quick-nav a {
-            display: block;
-            padding: 18px 22px;
-            background: #111;
-            border-radius: 16px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: 1px solid #333;
-        }
-        .quick-nav a:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 45px rgba(196,30,58,0.15);
-            border-color: rgba(196,30,58,0.1);
-        }
-        .quick-nav img {
-            width: 90px; height: 90px;
-            border-radius: 12px;
-            margin: 0 auto 10px;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-        .quick-nav a:hover img {
-            transform: scale(1.05);
-        }
-        .quick-nav .nav-label {
-            font-size: 13px;
-            color: #ccc;
-            font-weight: 500;
-            letter-spacing: 1px;
-        }
-
-        /* ===== 内容区域 ===== */
-        .content-area { padding: 40px 0 50px; background: #0d0d0d; }
-
-        .section-title {
+        
+        .logo-text {
             font-size: 20px;
             font-weight: 700;
-            color: #eee;
-            padding-bottom: 14px;
-            margin-bottom: 35px;
+            color: #1a1a1a;
             letter-spacing: 2px;
-            position: relative;
+        }
+        
+        .nav {
+            display: flex;
+            gap: 40px;
+        }
+        
+        .nav a {
+            font-size: 15px;
+            color: #666;
+            font-weight: 500;
+            padding: 8px 0;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s;
+        }
+        
+        .nav a:hover,
+        .nav a.active {
+            color: #c41e3a;
+            border-bottom-color: #c41e3a;
+        }
+        
+        .header-contact {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 20px;
         }
-        .section-title::before {
-            content: '';
-            width: 4px;
-            height: 22px;
-            background: linear-gradient(180deg, #c41e3a, #e63946);
-            border-radius: 2px;
-        }
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 0;
-            width: 60px; height: 3px;
-            background: linear-gradient(90deg, #c41e3a, #e63946);
-            border-radius: 2px;
-        }
-
-        /* 文章项 - 卡片式 */
-        .article-item {
-            margin-bottom: 30px;
-            padding: 28px 32px;
-            background: #111;
-            border-radius: 12px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.25);
-            border: 1px solid #222;
-            position: relative;
-            transition: all 0.35s ease;
-        }
-        .article-item:hover {
-            box-shadow: 0 8px 30px rgba(0,0,0,0.35);
-            border-color: #333;
-            transform: translateY(-2px);
-        }
-        .article-item::before {
-            content: '';
-            position: absolute;
-            left: 0; top: 28px;
-            width: 3px; height: 24px;
-            background: linear-gradient(180deg, #c41e3a, #e63946);
-            border-radius: 0 2px 2px 0;
-            transition: height 0.35s ease;
-        }
-        .article-item:hover::before { height: 40px; }
-
-        .article-title {
-            font-size: 16.5px;
-            font-weight: 600;
-            margin-bottom: 8px;
-            line-height: 1.55;
-        }
-        .article-title a {
-            color: #fff;
-            position: relative;
-            display: inline-block;
-        }
-        .article-title a::before {
-            content: '';
-            position: absolute;
-            bottom: 1px; left: 0;
-            width: 0; height: 2px;
-            background: #c41e3a;
-            transition: width 0.3s ease;
-        }
-        .article-title a:hover { color: #c41e3a; }
-        .article-title a:hover::before { width: 100%; }
-
-        .article-meta {
-            font-size: 12.5px;
-            color: #aaa;
-            margin-bottom: 14px;
-            letter-spacing: 0.5px;
-        }
-        .article-meta a { color: #c41e3a; font-weight: 500; }
-
-        .article-body {
-            text-align: center;
-            margin-top: 16px;
-        }
-        .article-body img {
-            max-width: 100%;
-            width: 100%;
-            max-height: 320px;
-            margin: 0 auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            display: block;
-            object-fit: cover;
-            background: linear-gradient(135deg, #1a1a1a, #222);
-        }
-        .article-item:hover .article-body img {
-            transform: translateY(-4px) scale(1.01);
-            box-shadow: 0 12px 35px rgba(0,0,0,0.4);
-        }
-        .article-body a {
-            display: block;
-            text-align: center;
-        }
-
-        .read-more {
-            display: inline-block;
+        
+        .phone {
+            display: flex;
+            align-items: center;
+            gap: 8px;
             color: #c41e3a;
             font-weight: 600;
-            font-size: 13px;
-            padding: 8px 24px;
-            margin-top: 10px;
-            border: 2px solid #555;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-            letter-spacing: 0.5px;
+            font-size: 15px;
         }
-        .read-more:hover {
-            background: linear-gradient(135deg, #c41e3a, #d62839);
-            color: #fff !important;
-            border-color: transparent;
-            box-shadow: 0 4px 15px rgba(196,30,58,0.3);
-            transform: translateY(-1px);
-        }
-
-        .article-body p {
-            font-size: 13.5px;
-            color: #aaa;
-            line-height: 2;
-            padding: 0 6px;
-            text-align: justify;
-        }
-
-        /* ===== 分页 ===== */
-        .pagination {
-            text-align: center;
-            padding: 35px 0;
-            font-size: 13px;
-        }
-        .pagination a, .pagination span {
-            display: inline-block;
-            padding: 9px 16px;
-            margin: 0 4px;
-            border: 1px solid #333;
-            color: #bbb;
-            background: #1a1a1a;
-            border-radius: 8px;
+        
+        .cta-btn {
+            background: #c41e3a;
+            color: #fff;
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-size: 14px;
             font-weight: 500;
-            transition: all 0.3s ease;
-            min-width: 40px;
+            transition: all 0.3s;
         }
-        .pagination a:hover {
-            background: linear-gradient(135deg, #c41e3a, #d62839);
-            color: #fff;
-            border-color: transparent;
-            box-shadow: 0 6px 18px rgba(196,30,58,0.25);
-            transform: translateY(-3px);
+        
+        .cta-btn:hover {
+            background: #a01830;
         }
-        .pagination .current {
-            background: linear-gradient(135deg, #c41e3a, #d62839);
-            color: #fff;
-            border-color: transparent;
-            font-weight: 600;
-            box-shadow: 0 4px 12px rgba(196,30,58,0.25);
-        }
-        .pagination .extend { border: none; background: none; color: #999; }
-
-        /* ===== 友情链接 ===== */
-        .friend-links {
-            padding: 20px 0;
-            font-size: 12.5px;
-            border-top: 1px solid #333;
-            margin-top: 10px;
-            color: #888;
+        
+        /* ===== 轮播 ===== */
+        .hero {
+            margin-top: 70px;
+            height: 500px;
+            position: relative;
+            overflow: hidden;
             background: #1a1a1a;
-            padding: 20px 0;
         }
-        .friend-links a { margin-right: 20px; color: #999; }
-        .friend-links a:hover { color: #c41e3a; }
-
-        /* ===== 页脚 - 精致版 ===== */
-        .footer {
-            background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%);
-            padding: 40px 0 30px;
-            text-align: center;
-            position: relative;
-        }
-        .footer::before {
-            content: '';
+        
+        .hero-slide {
             position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, #c41e3a, #e63946, #c41e3a, transparent);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s;
         }
-        .footer p {
-            color: #aaa;
+        
+        .hero-slide.active {
+            opacity: 1;
+        }
+        
+        .hero-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.5));
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+        }
+        
+        .hero-title {
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+        }
+        
+        .hero-subtitle {
+            font-size: 18px;
+            opacity: 0.9;
+            letter-spacing: 2px;
+        }
+        
+        .hero-dots {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+        
+        .hero-dots span {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.4);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .hero-dots span.active {
+            background: #c41e3a;
+            transform: scale(1.2);
+        }
+        
+        /* ===== 数据统计 ===== */
+        .stats {
+            background: #1a1a1a;
+            padding: 60px;
+            display: flex;
+            justify-content: center;
+            gap: 100px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            color: #fff;
+        }
+        
+        .stat-num {
+            font-size: 48px;
+            font-weight: 700;
+            color: #c41e3a;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: #999;
+            margin-top: 8px;
+            letter-spacing: 2px;
+        }
+        
+        /* ===== 服务 ===== */
+        .services {
+            padding: 80px 60px;
+            background: #fafafa;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+        
+        .section-desc {
+            color: #999;
+            font-size: 14px;
+        }
+        
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .service-card {
+            background: #fff;
+            padding: 40px 30px;
+            text-align: center;
+            border-radius: 8px;
+            transition: all 0.3s;
+            border: 1px solid #eee;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: #c41e3a;
+        }
+        
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #c41e3a, #8b1528);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 24px;
+            color: #fff;
+        }
+        
+        .service-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+        
+        .service-card p {
             font-size: 13px;
-            line-height: 28px;
-            letter-spacing: 0.5px;
+            color: #999;
+            line-height: 1.8;
         }
-        .footer a {
-            color: #ccc;
-            margin: 0 14px;
+        
+        /* ===== 案例 ===== */
+        .cases {
+            padding: 80px 60px;
+            background: #fff;
+        }
+        
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .case-card {
             position: relative;
-            font-size: 13.5px;
-            transition: color 0.3s ease;
+            overflow: hidden;
+            border-radius: 8px;
+            aspect-ratio: 4/3;
         }
-        .footer a:hover { 
-            color: #e63946; 
+        
+        .case-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
         }
-
-        /* ===== 响应式 - 平板 ===== */
-        @media (max-width: 1100px) {
-            .container { width: 96%; padding: 0 15px; }
-            .header-inner { flex-wrap: wrap; justify-content: center; gap: 12px; }
-            .nav-menu { order: 3; width: 100%; justify-content: center; padding-top: 14px; gap: 22px; }
-            .nav-menu a { font-size: 13.5px; }
-            .quick-nav td { padding: 0 14px; }
-            .quick-nav img { width: 78px; height: 78px; }
-            .slider-wrapper, .slide-item img { height: 380px; }
+        
+        .case-card:hover img {
+            transform: scale(1.1);
         }
-
-        /* ===== 响应式 - 手机 ===== */
+        
+        .case-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: #fff;
+        }
+        
+        .case-info h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        
+        .case-info p {
+            font-size: 13px;
+            opacity: 0.8;
+        }
+        
+        /* ===== 页脚 ===== */
+        .footer {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 60px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+        }
+        
+        .footer-brand h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .footer-brand p {
+            color: #999;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+        
+        .footer-col h4 {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        
+        .footer-col a {
+            display: block;
+            color: #999;
+            font-size: 14px;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+        
+        .footer-col a:hover {
+            color: #c41e3a;
+        }
+        
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 40px auto 0;
+            padding-top: 30px;
+            border-top: 1px solid #333;
+            text-align: center;
+            color: #666;
+            font-size: 13px;
+        }
+        
+        /* ===== 响应式 ===== */
         @media (max-width: 768px) {
-            .container { width: 100%; padding: 0 15px; }
-            
-            /* 头部 */
-            .header { box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
-            .header-inner { 
-                flex-direction: column; 
-                gap: 0;
-                height: auto;
-                padding: 10px 0;
-            }
-            .logo img { height: 40px; }
-            .nav-menu { 
-                flex-wrap: wrap; 
-                gap: 0;
-                padding-top: 8px;
-                width: 100%;
-            }
-            .nav-menu a { 
-                font-size: 13px; 
-                padding: 8px 14px;
-                height: auto;
-                line-height: 1.5;
-            }
-            .nav-menu a::after { display: none; }
-            .tel-icon { display: none; }
-            
-            /* 轮播图 */
-            .slider-wrapper, .slide-item img { height: 200px; }
-            
-            /* 快速入口 */
-            .quick-nav { padding: 20px 0; }
-            .quick-nav table { width: 100%; border-spacing: 8px 0; }
-            .quick-nav td { width: 25%; }
-            .quick-nav a { padding: 12px 8px; border-radius: 12px; }
-            .quick-nav img { width: 60px; height: 60px; }
-            .quick-nav .nav-label { font-size: 11px; }
-            
-            /* 内容区 */
-            .content-area { padding: 25px 0; }
-            .section-title { 
-                font-size: 17px; 
-                padding-bottom: 10px;
-                margin-bottom: 20px;
-            }
-            .section-title::before { height: 18px; }
-            
-            /* 文章项 */
-            .article-item { 
-                margin-bottom: 20px; 
-                padding: 20px 18px;
-                border-radius: 10px;
-            }
-            .article-item::before { top: 20px; }
-            .article-title { font-size: 14.5px; line-height: 1.5; }
-            .article-meta { font-size: 12px; }
-            .article-body img { 
-                max-height: 180px; 
-                border-radius: 8px;
-            }
-            .read-more { 
-                font-size: 12px; 
-                padding: 6px 18px;
-            }
-            
-            /* 分页 */
-            .pagination { padding: 25px 0; }
-            .pagination a, .pagination span {
-                padding: 7px 12px;
-                margin: 0 2px;
-                font-size: 12px;
-            }
-            
-            /* 底部 */
-            .footer { padding: 30px 0 25px; }
-            .footer p { font-size: 12px; }
-            .footer a { margin: 0 8px; font-size: 12px; }
+            .header { padding: 0 20px; }
+            .nav { display: none; }
+            .hero-title { font-size: 28px; }
+            .stats { flex-wrap: wrap; gap: 40px; padding: 40px 20px; }
+            .service-grid { grid-template-columns: 1fr; }
+            .case-grid { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-<!-- 红色渐变顶栏 -->
-<div class="top-bar"></div>
-
-<!-- 头部导航 -->
-<div class="header">
-    <div class="container header-inner">
-        <div class="logo"><a href="index.html"><img src="all_extracted_images/首页_logo.gif.gif" alt="京涛策划"></a></div>
-        <div class="nav-menu">
-            <a href="index.html" class="active">首&nbsp;&nbsp;页</a>
-            <a href="cases.html">案例中心</a>
-            <a href="news.html">公司新闻</a>
-            <a href="views.html">京涛观点</a>
-            <a href="services.html">服务项目</a>
-            <a href="about.html">关于我们</a>
-            <a href="contact.html">联系我们</a>
+<!-- 页眉 -->
+<header class="header">
+    <a href="index.html" class="logo">
+        <div class="logo-icon">JT</div>
+        <span class="logo-text">京涛策划</span>
+    </a>
+    
+    <nav class="nav">
+        <a href="index.html" class="active">首页</a>
+        <a href="cases.html">案例中心</a>
+        <a href="services.html">服务项目</a>
+        <a href="news.html">公司新闻</a>
+        <a href="views.html">京涛观点</a>
+        <a href="about.html">关于我们</a>
+        <a href="contact.html">联系我们</a>
+    </nav>
+    
+    <div class="header-contact">
+        <div class="phone">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            021-6288 8888
         </div>
-        <div class="tel-icon"><img src="all_extracted_images/首页_tel1.gif.gif" alt="电话"></div>
+        <a href="contact.html" class="cta-btn">立即咨询</a>
     </div>
-</div>
+</header>
 
-<!-- 轮播图 -->
-<div class="slider-wrapper">
-    <div class="slider-inner" id="sliderInner">
-        <div class="slide-item active"><img src="all_extracted_images/首页_i1.jpg.jpg" alt=""></div>
-        <div class="slide-item"><img src="all_extracted_images/首页_i2.jpg.jpg" alt=""></div>
-        <div class="slide-item"><img src="all_extracted_images/首页_i3.jpg.jpg" alt=""></div>
-        <div class="slide-item"><img src="all_extracted_images/首页_i4.jpg.jpg" alt=""></div>
-        <div class="slide-item"><img src="all_extracted_images/首页_i5.jpg.jpg" alt=""></div>
-        <div class="slide-item"><img src="all_extracted_images/首页_i7.jpg.jpg" alt=""></div>
-        <div class="slide-item"><img src="all_extracted_images/首页_i8.jpg.jpg" alt=""></div>
-        <div class="slide-item"><img src="all_extracted_images/首页_i9.jpg.jpg" alt=""></div>
-        <div class="slide-item"><img src="all_extracted_images/首页_i10.jpg.jpg" alt=""></div>
-        <div class="slide-item"><img src="all_extracted_images/首页_i12.jpg.jpg" alt=""></div>
-        <div class="slide-item"><img src="all_extracted_images/首页_i13.jpg.jpg" alt=""></div>
+<!-- 轮播 -->
+<section class="hero">
+    <div class="hero-slide active"><img src="all_extracted_images/首页_i1.jpg.jpg" alt=""></div>
+    <div class="hero-slide"><img src="all_extracted_images/首页_i2.jpg.jpg" alt=""></div>
+    <div class="hero-slide"><img src="all_extracted_images/首页_i3.jpg.jpg" alt=""></div>
+    <div class="hero-slide"><img src="all_extracted_images/首页_i4.jpg.jpg" alt=""></div>
+    
+    <div class="hero-overlay">
+        <h1 class="hero-title">智造品牌 · 创赢未来</h1>
+        <p class="hero-subtitle">十五年专注品牌战略与营销推广全案服务</p>
     </div>
-    <div class="slider-dots" id="sliderDots"></div>
-</div>
+    
+    <div class="hero-dots" id="heroDots"></div>
+</section>
 
-<!-- 快速入口 -->
-<div class="quick-nav">
-    <table border="0">
-        <tr>
-            <td><a href="news.html"><img src="all_extracted_images/首页_ad_04.jpg.jpg" alt="新闻"><div class="nav-label">新闻动态</div></a></td>
-            <td><a href="cases.html"><img src="all_extracted_images/首页_ad_02.jpg.jpg" alt="案例"><div class="nav-label">案例中心</div></a></td>
-            <td><a href="services.html"><img src="all_extracted_images/首页_ad_03.jpg.jpg" alt="服务"><div class="nav-label">服务项目</div></a></td>
-            <td><a href="views.html"><img src="all_extracted_images/首页_ad_01.jpg.jpg" alt="观点"><div class="nav-label">京涛观点</div></a></td>
-        </tr>
-    </table>
-</div>
+<!-- 数据统计 -->
+<section class="stats">
+    <div class="stat-item">
+        <div class="stat-num">15+</div>
+        <div class="stat-label">年行业经验</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-num">500+</div>
+        <div class="stat-label">服务品牌</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-num">98%</div>
+        <div class="stat-label">客户满意度</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-num">50+</div>
+        <div class="stat-label">专业团队</div>
+    </div>
+</section>
 
-<!-- 内容列表 -->
-<div class="container content-area">
-
-<h2 class="section-title">最新案例与动态</h2>
-
-    <!-- 案例1 -->
-    <div class="article-item">
-        <h3 class="article-title">
-            <a href="case-disney.html" target="_blank">迪斯尼上海度假区品牌合作（品牌咨询、授权珠宝产品创意设计、园区导示）</a>
-        </h3>
-        <p class="article-meta">
-            <span class="category"><a href="cases.html">案例中心</a></span> &nbsp;|&nbsp;
-            浏览量：1286
-        </p>
-        <div class="article-body">
-            <a href="case-disney.html" target="_blank">
-                <img src="all_extracted_images/首页_i1.jpg.jpg" alt="迪斯尼上海度假区">
-                <br><span class="read-more">Read More..</span>
-            </a>
+<!-- 服务 -->
+<section class="services">
+    <div class="section-header">
+        <h2 class="section-title">服务项目</h2>
+        <p class="section-desc">全方位品牌营销解决方案</p>
+    </div>
+    
+    <div class="service-grid">
+        <div class="service-card">
+            <div class="service-icon">品</div>
+            <h3>品牌策划</h3>
+            <p>品牌定位、品牌战略、品牌价值体系构建</p>
         </div>
-    </div>
-
-    <!-- 案例2 -->
-    <div class="article-item">
-        <h3 class="article-title">
-            <a href="case-changfeng.html" target="_blank">上海长风生态商务区（品牌策划、营销推广、创意设计、空间导示）</a>
-        </h3>
-        <p class="article-meta">
-            <span class="category"><a href="cases.html">案例中心</a></span> &nbsp;|&nbsp;
-            浏览量：986
-        </p>
-        <div class="article-body">
-            <a href="case-changfeng.html" target="_blank">
-                <img src="all_extracted_images/首页__E4_BA_AC_E6_B6_9B_E9_95_BF_E9_A3_8E_E9_A6_96.jpg.jpg" alt="">
-                <br><span class="read-more">Read More..</span>
-            </a>
+        <div class="service-card">
+            <div class="service-icon">视</div>
+            <h3>视觉设计</h3>
+            <p>VI设计、包装设计、空间导示系统</p>
         </div>
-    </div>
-
-    <!-- 案例3 -->
-    <div class="article-item">
-        <h3 class="article-title">
-            <a href="case-zhongji.html" target="_blank">中国中集车辆集团（集团CIS、VIS、品牌策划、产品定位、传播创意）</a>
-        </h3>
-        <p class="article-meta">
-            <span class="category"><a href="cases.html">案例中心</a></span> &nbsp;|&nbsp;
-            浏览量：756
-        </p>
-        <div class="article-body">
-            <a href="case-zhongji.html" target="_blank">
-                <img src="all_extracted_images/首页__E6_B9_98_E9_84_82_E8_B5_A3_E7_89_8C.jpg.jpg" alt="">
-                <br><span class="read-more">Read More..</span>
-            </a>
+        <div class="service-card">
+            <div class="service-icon">营</div>
+            <h3>营销推广</h3>
+            <p>整合营销、新媒体运营、活动策划执行</p>
+        </div>
+        <div class="service-card">
+            <div class="service-icon">新</div>
+            <h3>新品策划</h3>
+            <p>新品定位、产品策略、上市推广全案</p>
         </div>
     </div>
+</section>
 
-    <!-- 案例4 -->
-    <div class="article-item">
-        <h3 class="article-title">
-            <a href="case-liangxin.html" target="_blank">上海良信电器股份有限公司（企业文化、品牌策略、视觉系统、传播规划）</a>
-        </h3>
-        <p class="article-meta">
-            <span class="category"><a href="cases.html">案例中心</a></span> &nbsp;|&nbsp;
-            浏览量：654
-        </p>
-        <div class="article-body">
-            <a href="case-liangxin.html" target="_blank">
-                <img src="all_extracted_images/首页_kljkhgfd.png.png" alt="">
-                <br><span class="read-more">Read More..</span>
-            </a>
-        </div>
+<!-- 案例 -->
+<section class="cases">
+    <div class="section-header">
+        <h2 class="section-title">精选案例</h2>
+        <p class="section-desc">见证品牌成长的力量</p>
     </div>
-
-    <!-- 案例5 -->
-    <div class="article-item">
-        <h3 class="article-title">
-            <a href="case-tiffany.html" target="_blank">蒂芙尼珠宝（美国时尚珠宝品牌，全案策划）</a>
-        </h3>
-        <p class="article-meta">
-            <span class="category"><a href="cases.html">案例中心</a></span> &nbsp;|&nbsp;
-            浏览量：2341
-        </p>
-        <div class="article-body">
-            <a href="case-tiffany.html" target="_blank">
-                <img src="all_extracted_images/首页_201105301853486831.jpg.jpg" alt="">
-                <br><span class="read-more">Read More..</span>
-            </a>
-        </div>
+    
+    <div class="case-grid">
+        <a href="case-disney.html" class="case-card">
+            <img src="all_extracted_images/首页_i1.jpg.jpg" alt="迪士尼">
+            <div class="case-info">
+                <h3>迪士尼上海度假区</h3>
+                <p>品牌咨询 · 授权产品设计</p>
+            </div>
+        </a>
+        <a href="case-changfeng.html" class="case-card">
+            <img src="all_extracted_images/首页_i2.jpg.jpg" alt="长风商务区">
+            <div class="case-info">
+                <h3>上海长风生态商务区</h3>
+                <p>品牌策划 · 营销推广</p>
+            </div>
+        </a>
+        <a href="cases.html" class="case-card">
+            <img src="all_extracted_images/首页_i3.jpg.jpg" alt="更多案例">
+            <div class="case-info">
+                <h3>更多案例</h3>
+                <p>查看全部品牌案例</p>
+            </div>
+        </a>
     </div>
-
-    <!-- 案例6 -->
-    <div class="article-item">
-        <h3 class="article-title">
-            <a href="case-damiani.html" target="_blank">Damiani 奢侈品 — 营销策划、品牌策划全案</a>
-        </h3>
-        <p class="article-meta">
-            <span class="category"><a href="cases.html">案例中心</a></span> &nbsp;|&nbsp;
-            浏览量：1876
-        </p>
-        <div class="article-body">
-            <a href="case-damiani.html" target="_blank">
-                <img src="all_extracted_images/首页__E5_BE_B7_E7_B1_B3_E4_BA_9A_E5_B0_BC.jpg.jpg" alt="">
-                <br><span class="read-more">Read More..</span>
-            </a>
-        </div>
-    </div>
-
-    <!-- 案例7 -->
-    <div class="article-item">
-        <h3 class="article-title">
-            <a href="case-jimofan.html" target="_blank">意大利纪莫凡奢侈品（欧洲经典奢侈品牌，全案营销策划）</a>
-        </h3>
-        <p class="article-meta">
-            <span class="category"><a href="cases.html">案例中心</a></span> &nbsp;|&nbsp;
-            浏览量：1123
-        </p>
-        <div class="article-body">
-            <a href="case-jimofan.html" target="_blank">
-                <img src="all_extracted_images/首页_201112071916444880.jpg.jpg" alt="">
-                <br><span class="read-more">Read More..</span>
-            </a>
-        </div>
-    </div>
-
-    <!-- 案例8 -->
-    <div class="article-item">
-        <h3 class="article-title">
-            <a href="case-derain.html" target="_blank">DERAIN珠宝（中国知名珠宝品牌，新品牌推广营销策划）</a>
-        </h3>
-        <p class="article-meta">
-            <span class="category"><a href="cases.html">案例中心</a></span> &nbsp;|&nbsp;
-            浏览量：987
-        </p>
-        <div class="article-body">
-            <a href="case-derain.html" target="_blank">
-                <img src="all_extracted_images/首页_201105301949557715.jpg.jpg" alt="">
-                <br><span class="read-more">Read More..</span>
-            </a>
-        </div>
-    </div>
-
-    <!-- 案例9 -->
-    <div class="article-item">
-        <h3 class="article-title">
-            <a href="case-honda.html" target="_blank">广州本田（华南最大汽车合资品牌，新品策划）</a>
-        </h3>
-        <p class="article-meta">
-            <span class="category"><a href="cases.html">案例中心</a></span> &nbsp;|&nbsp;
-            浏览量：1456
-        </p>
-        <div class="article-body">
-            <a href="case-honda.html" target="_blank">
-                <img src="all_extracted_images/首页_201105301242258634.jpg.jpg" alt="">
-                <br><span class="read-more">Read More..</span>
-            </a>
-        </div>
-    </div>
-
-    <!-- 案例10 -->
-    <div class="article-item">
-        <h3 class="article-title">
-            <a href="case-dunhill.html" target="_blank">DUNHILL（英国顶级男士高端时尚品牌，品牌策划全案）</a>
-        </h3>
-        <p class="article-meta">
-            <span class="category"><a href="cases.html">案例中心</a></span> &nbsp;|&nbsp;
-            浏览量：2134
-        </p>
-        <div class="article-body">
-            <a href="case-dunhill.html" target="_blank">
-                <img src="all_extracted_images/首页_DUNHILL.jpg.jpg" alt="">
-                <br><span class="read-more">Read More..</span>
-            </a>
-        </div>
-    </div>
-
-    <!-- 案例11 -->
-    <div class="article-item">
-        <h3 class="article-title">
-            <a href="case-fendi.html" target="_blank">意大利FENDI（高端时尚品牌，视觉创意及网络营销品牌策划）</a>
-        </h3>
-        <p class="article-meta">
-            <span class="category"><a href="cases.html">案例中心</a></span> &nbsp;|&nbsp;
-            浏览量：1876
-        </p>
-        <div class="article-body">
-            <a href="case-fendi.html" target="_blank">
-                <img src="all_extracted_images/首页_FENDI.jpg.jpg" alt="">
-                <br><span class="read-more">Read More..</span>
-            </a>
-        </div>
-    </div>
-
-    <!-- 案例12 -->
-    <div class="article-item">
-        <h3 class="article-title">
-            <a href="case-coach.html" target="_blank">寇驰（时尚品牌，品牌策划创意设计）</a>
-        </h3>
-        <p class="article-meta">
-            <span class="category"><a href="cases.html">案例中心</a></span> &nbsp;|&nbsp;
-            浏览量：1654
-        </p>
-        <div class="article-body">
-            <a href="case-coach.html" target="_blank">
-                <img src="all_extracted_images/首页_201112111135175744.jpg.jpg" alt="">
-                <br><span class="read-more">Read More..</span>
-            </a>
-        </div>
-    </div>
-
-    <!-- 案例13 -->
-    <div class="article-item">
-        <h3 class="article-title">
-            <a href="case-chery.html" target="_blank">奇瑞汽车（中国自主汽车品牌，新品上市营销策划）</a>
-        </h3>
-        <p class="article-meta">
-            <span class="category"><a href="cases.html">案例中心</a></span> &nbsp;|&nbsp;
-            浏览量：1234
-        </p>
-        <div class="article-body">
-            <a href="case-chery.html" target="_blank">
-                <img src="all_extracted_images/首页_201111241016233805.jpg.jpg" alt="">
-                <br><span class="read-more">Read More..</span>
-            </a>
-        </div>
-    </div>
-
-    <!-- 案例14 -->
-    <div class="article-item">
-        <h3 class="article-title">
-            <a href="case-yili.html" target="_blank">伊利牛奶（中国最大牛奶品牌，新品上市策划）</a>
-        </h3>
-        <p class="article-meta">
-            <span class="category"><a href="cases.html">案例中心</a></span> &nbsp;|&nbsp;
-            浏览量：2156
-        </p>
-        <div class="article-body">
-            <a href="case-yili.html" target="_blank">
-                <img src="all_extracted_images/首页_201105271924245480.jpg.jpg" alt="">
-                <br><span class="read-more">Read More..</span>
-            </a>
-        </div>
-    </div>
-
-    <!-- 案例15 -->
-    <div class="article-item">
-        <h3 class="article-title">
-            <a href="case-kimberlite.html" target="_blank">金伯利钻石（上海知名珠宝品牌，整体营销策划）</a>
-        </h3>
-        <p class="article-meta">
-            <span class="category"><a href="cases.html">案例中心</a></span> &nbsp;|&nbsp;
-            浏览量：1987
-        </p>
-        <div class="article-body">
-            <a href="case-kimberlite.html" target="_blank">
-                <img src="all_extracted_images/首页_201105301854498701.jpg.jpg" alt="">
-                <br><span class="read-more">Read More..</span>
-            </a>
-        </div>
-    </div>
-
-    <!-- 新闻1 -->
-    <div class="article-item">
-        <h3 class="article-title">
-            <a href="news-changtai.html" target="_blank">最新项目策划动态：京涛策划公司为上海长泰商业广场进行新型创意酒吧街的整体策划</a>
-        </h3>
-        <p class="article-meta">
-            <span class="category"><a href="news.html">公司新闻</a></span> &nbsp;|&nbsp;
-            浏览量：876
-        </p>
-        <div class="article-body">
-            <a href="news-changtai.html" target="_blank">
-                <p style="font-size:13.5px;color:#999;line-height:2;padding:0 8px;">上海浦东金科路的长泰商业广场是整个张江高科区域乃至浦东区域的一个新型购物商圈，集结了大量国际知名品牌进驻，同时也吸引着广大的年轻人前往消费。长泰商业希望在此基础上，于2016年10月打造一条更具人气和标志性商业氛围的酒吧街，共容纳数十家不同个性的时尚酒吧风格的餐饮品牌...</p>
-                <br><span class="read-more">Read More..</span>
-            </a>
-        </div>
-    </div>
-
-    <!-- 新闻2 -->
-    <div class="article-item">
-        <h3 class="article-title">
-            <a href="news-henghaida.html" target="_blank">最新项目策划动态：上海京涛策划公司与国际珠宝品牌恒海达展开高端彩宝项目的全案合作</a>
-        </h3>
-        <p class="article-meta">
-            <span class="category"><a href="news.html">公司新闻</a></span> &nbsp;|&nbsp;
-            浏览量：765
-        </p>
-        <div class="article-body">
-            <a href="news-henghaida.html" target="_blank">
-                <p style="font-size:13.5px;color:#999;line-height:2;padding:0 8px;">7月8日下午，上海京涛策划公司品牌总监一行前往广州恒海达珠宝有限公司，双方就新品牌策划项目的合作进行了沟通。京涛策划作为中国最知名的高端品牌策划公司，与恒海达的牵手是强强联合。恒海达是中国乃至世界最著名的稀有彩宝品牌，最早成立于1992年...</p>
-                <br><span class="read-more">Read More..</span>
-            </a>
-        </div>
-    </div>
-
-    <!-- 新闻3 -->
-    <div class="article-item">
-        <h3 class="article-title">
-            <a href="news-disney-launch.html" target="_blank">最新策划项目动态：奇幻之旅，曼妙启航 —— 京涛策划公司为上海迪斯尼乐园设计的珠宝银饰产品举行盛大新品发布会</a>
-        </h3>
-        <p class="article-meta">
-            <span class="category"><a href="news.html">公司新闻</a></span> &nbsp;|&nbsp;
-            浏览量：1234
-        </p>
-        <div class="article-body">
-            <a href="news-disney-launch.html" target="_blank">
-                <p style="font-size:13.5px;color:#999;line-height:2;padding:0 8px;">6日晚，由上海京涛策划公司精心参与打造的上海迪斯尼珠宝银饰品牌系列产品，正式拉开全国发布的帷幕，奇幻之旅正式曼妙启航。这是一场属于中国品牌界的盛会，也是中国珠宝行业的盛会，是中国策划界的荣誉，更是上海京涛策划公司的荣幸。通过数月的努力，京涛策划公司完成了数十款迪斯尼珠宝产品的创意设计...</p>
-                <br><span class="read-more">Read More..</span>
-            </a>
-        </div>
-    </div>
-
-    <!-- 分页 -->
-    <div class="pagination">
-        分页：
-        <a href="index.html">« 首页</a>
-        <span class="extend">...</span>
-        <span class="current">1</span>
-        <a href="page2.html">[2]</a>
-        <a href="page3.html">[3]</a>
-        <a href="page4.html">[4]</a>
-        <a href="page5.html">[5]</a>
-        <a href="page6.html">[6]</a>
-        <a href="page7.html">[7]</a>
-        <a href="page8.html">[8]</a>
-        <a href="page9.html">[9]</a>
-        <a href="page10.html">[10]</a>
-        <a href="page2.html">»</a>
-        <span class="extend">...</span>
-        <a href="page28.html">尾页 »</a>
-    </div>
-
-    <!-- 友情链接 -->
-    <div class="friend-links">
-        友情链接：<a href="https://www.weibo.com/" target="_blank">微博营销</a>
-        <a href="index.html">上海策划公司</a><a href="index.html">上海品牌策划公司</a>
-    </div>
-
-</div><!-- end container -->
+</section>
 
 <!-- 页脚 -->
-<div class="footer">
-    <div class="container">
-        <p>Copyright 2006-2026 jintao.cn. All Rights Reserved &nbsp;&nbsp;|&nbsp;&nbsp; 上海京涛企业管理咨询有限公司</p>
-        <p style="margin-top:10px;">
-            <a href="index.html">首页</a>
-            <a href="cases.html">案例中心</a>
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-brand">
+            <h3>京涛策划</h3>
+            <p>上海京涛营销策划有限公司<br>专注品牌战略与营销推广全案服务<br>服务迪士尼、中国银联等500+品牌</p>
+        </div>
+        <div class="footer-col">
+            <h4>服务项目</h4>
+            <a href="services.html">品牌策划</a>
+            <a href="services.html">视觉设计</a>
+            <a href="services.html">营销推广</a>
+            <a href="services.html">新品策划</a>
+        </div>
+        <div class="footer-col">
+            <h4>关于我们</h4>
+            <a href="about.html">公司介绍</a>
             <a href="news.html">公司新闻</a>
             <a href="views.html">京涛观点</a>
-            <a href="services.html">服务项目</a>
-            <a href="about.html">关于我们</a>
-            <a href="contact.html">联系我们</a>
-        </p>
+            <a href="cases.html">成功案例</a>
+        </div>
+        <div class="footer-col">
+            <h4>联系我们</h4>
+            <a href="tel:021-62888888">021-6288 8888</a>
+            <a href="contact.html">上海市普陀区</a>
+            <a href="contact.html">在线咨询</a>
+        </div>
     </div>
-</div>
+    <div class="footer-bottom">
+        Copyright 2006-2026 jintao.cn · 上海京涛企业管理咨询有限公司
+    </div>
+</footer>
 
 <script>
+// 轮播
 (function() {
-    var slides = document.querySelectorAll('.slide-item');
-    var total = slides.length;
+    var slides = document.querySelectorAll('.hero-slide');
+    var dotsContainer = document.getElementById('heroDots');
     var current = 0;
-
-    var dotsContainer = document.getElementById('sliderDots');
-    for(var i = 0; i < total; i++) (function(idx) {
+    
+    for (var i = 0; i < slides.length; i++) {
         var dot = document.createElement('span');
-        dot.onclick = function() { goTo(idx); };
-        if(dotsContainer) dotsContainer.appendChild(dot);
-    })(i);
-
-    function update() {
-        for(var i = 0; i < total; i++) slides[i].classList.remove('active');
-        slides[current].classList.add('active');
-        var d = dotsContainer.children;
-        for(var i = 0; i < d.length; i++) d[i].className = '';
-        if(d[current]) d[current].className = 'active';
+        dot.onclick = (function(idx) { return function() { goTo(idx); }; })(i);
+        if (i === 0) dot.className = 'active';
+        dotsContainer.appendChild(dot);
     }
-    function goTo(n) { current = n; update(); }
-    function next() { current = (current + 1) % total; update(); }
-    update();
-    setInterval(next, 4500);
+    
+    function goTo(n) {
+        slides[current].classList.remove('active');
+        dotsContainer.children[current].classList.remove('active');
+        current = n;
+        slides[current].classList.add('active');
+        dotsContainer.children[current].classList.add('active');
+    }
+    
+    setInterval(function() { goTo((current + 1) % slides.length); }, 4000);
 })();
 </script>
 
