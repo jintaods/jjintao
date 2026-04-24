@@ -1,5 +1,5 @@
 /* =============================================
-   涓婃捣浜稕钀ラ攢绛栧垝 - 鍏叡鏍峰紡琛?
+   上海京涛营销策划 - 公共样式表
    ============================================= */
 
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
@@ -11,82 +11,45 @@ ul{list-style:none}
 img{max-width:100%;display:block}
 button{cursor:pointer;border:none;outline:none;font-family:inherit}
 
-/* ==================== 瀵艰埅 ==================== */
-.navbar{
-  position:fixed;top:0;left:0;right:0;z-index:1000;
-  background:var(--white);
-  border-bottom:2px solid var(--red);
-}
-.nav-inner{
-  max-width:var(--max-w);margin:0 auto;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 44px;height:72px;
-}
-.logo{
-  display:flex;align-items:center;gap:12px;
-  font-size:18px;font-weight:800;letter-spacing:.1em;
-}
-.logo-mark{
-  width:40px;height:40px;
-  background:var(--red);color:var(--white);
-  display:flex;align-items:center;justify-content:center;
-  font-size:16px;font-weight:900;
-  border:2px solid var(--red);flex-shrink:0;
-}
+/* 导航 */
+.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--white);border-bottom:2px solid var(--red)}
+.nav-inner{max-width:var(--max-w);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 44px;height:72px}
+.logo{display:flex;align-items:center;gap:12px;font-size:18px;font-weight:800;letter-spacing:.1em}
+.logo-mark{width:40px;height:40px;background:var(--red);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;border:2px solid var(--red);flex-shrink:0}
 .logo-sub{display:flex;flex-direction:column;line-height:1.1}
 .logo-sub .cn{font-size:18px;font-weight:800;color:var(--black);letter-spacing:.1em}
 .logo-sub .en{font-size:9px;font-weight:600;color:var(--gray-400);letter-spacing:.25em;text-transform:uppercase;margin-top:1px}
-
 .nav-links{display:flex;gap:0;align-items:center}
-.nav-links a{
-  display:block;padding:24px 20px;
-  font-size:14px;font-weight:600;color:var(--black);
-  position:relative;transition:color var(--t);
-  letter-spacing:.05em;
-}
-.nav-links a::after{
-  content:"";position:absolute;bottom:0;left:20px;right:20px;
-  height:2px;background:var(--red);
-  transform:scaleX(0);transition:transform var(--t);
-}
+.nav-links a{display:block;padding:24px 20px;font-size:14px;font-weight:600;color:var(--black);position:relative;transition:color var(--t);letter-spacing:.05em}
+.nav-links a::after{content:"";position:absolute;bottom:0;left:20px;right:20px;height:2px;background:var(--red);transform:scaleX(0);transition:transform var(--t)}
 .nav-links a:hover,.nav-links a.active{color:var(--red)}
 .nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1)}
-
-.nav-cta{
-  background:var(--red);color:var(--white);
-  padding:9px 22px;font-size:13px;font-weight:700;
-  letter-spacing:.08em;transition:background var(--t);
-  margin-left:10px;
-}
+.nav-cta{background:var(--red);color:var(--white);padding:9px 22px;font-size:13px;font-weight:700;letter-spacing:.08em;transition:background var(--t);margin-left:10px}
 .nav-cta:hover{background:var(--red-dark)}
 .nav-cta::after{display:none!important}
-
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:5px}
 .hamburger span{width:24px;height:2px;background:var(--black);transition:var(--t)}
 .hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
 .hamburger.open span:nth-child(2){opacity:0}
 .hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
 
-/* ==================== 椤甸潰鍏叡澶撮儴 ==================== */
+/* 页面公共头部 */
 .page-hero{padding:140px 40px 80px;background:var(--red);color:var(--white);text-align:center}
 .page-hero h1{font-size:48px;font-weight:900;letter-spacing:.1em;margin-bottom:16px}
 .page-hero p{font-size:18px;opacity:.85;max-width:600px;margin:0 auto}
 
-/* ==================== 閫氱敤瀹瑰櫒 ==================== */
+/* 通用容器 */
 .container{max-width:var(--max-w);margin:0 auto;padding:0 40px}
 
-/* ==================== Section 閫氱敤 ==================== */
+/* Section通用 */
 .section{padding:100px 0}
 .section-gray{background:var(--gray-100)}
-.section-label{
-  font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--red);margin-bottom:12px;display:flex;align-items:center;gap:10px;
-}
+.section-label{font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:12px;display:flex;align-items:center;gap:10px}
 .section-label::before{content:"";width:30px;height:2px;background:var(--red)}
 .section-title{font-size:38px;font-weight:900;line-height:1.2;color:var(--black);margin-bottom:20px;letter-spacing:.02em}
 .section-desc{font-size:17px;color:var(--gray-600);max-width:600px;line-height:1.8}
 
-/* ==================== 鎸夐挳 ==================== */
+/* 按钮 */
 .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 36px;font-size:15px;font-weight:700;border-radius:2px;transition:all var(--t);letter-spacing:.05em}
 .btn-red{background:var(--red);color:var(--white)}
 .btn-red:hover{background:var(--red-dark);transform:translateY(-1px);box-shadow:0 8px 24px rgba(200,0,10,.3)}
@@ -95,7 +58,7 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
 .btn-white{background:var(--white);color:var(--red)}
 .btn-white:hover{background:var(--gray-100)}
 
-/* ==================== Footer ==================== */
+/* Footer */
 .footer{background:var(--black);color:var(--white);padding:60px 0 30px}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;margin-bottom:50px}
 .footer-brand .logo{color:var(--white);margin-bottom:16px}
@@ -107,11 +70,11 @@ button{cursor:pointer;border:none;outline:none;font-family:inherit}
 .footer ul li a:hover{color:var(--red)}
 .footer-bottom{border-top:1px solid #333;padding-top:24px;display:flex;justify-content:space-between;align-items:center;color:var(--gray-400);font-size:13px}
 
-/* ==================== 婊氬姩鍔ㄧ敾 ==================== */
+/* 滚动动画 */
 .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
 
-/* ==================== 鍝嶅簲寮?==================== */
+/* 响应式 */
 @media(max-width:768px){
   .nav-inner{padding:0 20px;height:72px}
   .nav-links{display:none;position:fixed;top:72px;left:0;right:0;background:var(--white);flex-direction:column;padding:20px;border-top:2px solid var(--red);box-shadow:0 10px 30px rgba(0,0,0,.1)}
