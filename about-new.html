@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>关于我们 — 京涛策划</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--black:#111;--white:#fff;--gold:#C9A84C;--gray:#666;--light:#F5F5F5;}
+body{font-family:"PingFang SC","Microsoft YaHei",Arial,sans-serif;color:var(--black);background:var(--white);}
+header{background:var(--black);color:var(--white);padding:0 60px;display:flex;align-items:center;justify-content:space-between;height:70px;position:sticky;top:0;z-index:100;}
+.logo{font-size:20px;font-weight:bold;letter-spacing:2px;}
+.logo span{color:var(--gold);}
+nav{display:flex;gap:36px;list-style:none;}
+nav a{color:var(--white);text-decoration:none;font-size:14px;letter-spacing:1px;transition:color .3s;}
+nav a:hover,nav a.active{color:var(--gold);}
+.nav-tel{font-size:14px;color:var(--gold);letter-spacing:1px;}
+
+.page-hero{background:var(--black);padding:80px 60px;text-align:center;}
+.page-hero h1{color:var(--white);font-size:36px;letter-spacing:4px;margin-bottom:10px;}
+.page-hero p{color:#666;font-size:13px;letter-spacing:2px;}
+
+.content{padding:60px;max-width:900px;margin:0 auto;}
+.content h2{font-size:22px;letter-spacing:2px;margin-bottom:16px;border-left:3px solid var(--gold);padding-left:14px;}
+.content p{font-size:14px;color:var(--gray);line-height:2;margin-bottom:14px;}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:40px 60px;background:var(--light);}
+.stat{text-align:center;}
+.stat-num{font-size:36px;color:var(--gold);font-weight:bold;font-family:Georgia,serif;}
+.stat-label{font-size:12px;color:var(--gray);letter-spacing:1px;margin-top:6px;}
+
+footer{background:var(--black);color:#666;padding:30px 60px;display:flex;justify-content:space-between;align-items:center;font-size:12px;letter-spacing:1px;}
+footer a{color:#666;text-decoration:none;}
+footer a:hover{color:var(--gold);}
+
+@media(max-width:768px){
+  header{padding:0 20px;}
+  nav{display:none;}
+  .page-hero{padding:50px 20px;}
+  .content{padding:40px 20px;}
+  .stats{grid-template-columns:repeat(2,1fr);padding:30px 20px;}
+  footer{flex-direction:column;gap:10px;text-align:center;}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">京涛<span>.</span></div>
+  <nav>
+    <a href="index-new.html">首页</a>
+    <a href="about-new.html" class="active">关于我们</a>
+    <a href="services-new.html">服务项目</a>
+    <a href="cases-new.html">案例中心</a>
+    <a href="news-new.html">京涛观点</a>
+    <a href="contact-new.html">联系我们</a>
+  </nav>
+  <span class="nav-tel">400-888-8888</span>
+</header>
+
+<div class="page-hero">
+  <h1>关于京涛</h1>
+  <p>BRAND STRATEGY & MARKETING</p>
+</div>
+
+<div class="stats">
+  <div class="stat"><div class="stat-num">200+</div><div class="stat-label">服务品牌</div></div>
+  <div class="stat"><div class="stat-num">9年</div><div class="stat-label">行业深耕</div></div>
+  <div class="stat"><div class="stat-num">50+</div><div class="stat-label">行业覆盖</div></div>
+  <div class="stat"><div class="stat-num">90%</div><div class="stat-label">续约率</div></div>
+</div>
+
+<div class="content">
+  <h2>我们是谁</h2>
+  <p>京涛策划成立于2015年，是一家以品牌战略为核心的综合营销咨询公司。我们相信：每一个品牌都有独特的市场位置，关键在于找到它、说清楚它、坚持传播它。</p>
+  <h2>我们的理念</h2>
+  <p>我们不做流水线服务，坚持每一个项目深度参与、策略先行。品牌不是设计出来的，是战略沉淀出来的。我们用策略驱动增长，用创意创造价值，用结果验证承诺。</p>
+  <h2>我们的服务</h2>
+  <p>覆盖品牌战略定位、整合营销传播、视觉形象设计、数字营销推广、营销物料制作、年度品牌顾问等全链路服务，为企业提供从战略到执行的一体化品牌解决方案。</p>
+</div>
+
+<footer>
+  <div>© 2024 京涛策划 jintaocehua.com</div>
+  <div><a href="index-new.html">返回首页</a></div>
+</footer>
+</body>
+</html>
