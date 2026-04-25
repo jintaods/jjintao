@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>京涛策划 — 品牌战略与营销咨询</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600&family=Noto+Sans+SC:wght@300;400&family=Inter:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+/* ─── 变量 ─── */
+:root{
+  --ink:#1C1A17;
+  --ink-soft:#4A4640;
+  --ink-faint:#9A9590;
+  --gold:#B08D55;
+  --gold-lt:#D4B87A;
+  --gold-dim:rgba(176,141,85,0.15);
+  --cream:#F6F1E9;
+  --cream-deep:#EDE7DB;
+  --white:#FDFCFA;
+  --line:#E5DFD6;
+  --bg:#FDFCFA;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+
+body{
+  font-family:'Inter','Noto Sans SC','PingFang SC',sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  font-weight:300;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  cursor:default;
+}
+
+/* ─── 字体 ─── */
+.serif{font-family:'Noto Serif SC','Songti SC',serif;}
+.sans{font-family:'Inter','Noto Sans SC',sans-serif;}
+
+/* ─── 滚动条 ─── */
+::-webkit-scrollbar{width:3px;}
+::-webkit-scrollbar-track{background:var(--cream);}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px;}
+
+/* ─── 选中文本 ─── */
+::selection{background:var(--gold-dim);}
+
+/* ═══════════════════════════════════════════
+   通用入场动画
+═══════════════════════════════════════════ */
+.reveal{
+  opacity:0;
+  transform:translateY(24px);
+  transition:opacity .9s cubic-bezier(.25,.46,.45,.94),
+              transform .9s cubic-bezier(.25,.46,.45,.94);
+}
+.reveal.vd{transform:translateY(0);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.rd1{transition-delay:.1s;}
+.rd2{transition-delay:.2s;}
+.rd3{transition-delay:.3s;}
+.rd4{transition-delay:.4s;}
+
+/* ═══════════════════════════════════════════
+   导航
+═══════════════════════════════════════════ */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 72px;height:68px;
+  background:rgba(246,241,233,0.9);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(229,223,214,0.5);
+  transition:all .4s;
+}
+.nav.srolled{
+  background:rgba(246,241,233,0.97);
+  box-shadow:0 1px 30px rgba(28,26,23,0.05);
+}
+.nav-logo{
+  font-family:'Noto Serif SC',serif;
+  font-size:18px;font-weight:600;letter-spacing:6px;
+  color:var(--ink);cursor:pointer;
+}
+.nav-logo span{color:var(--gold);}
+.nav-links{display:flex;gap:36px;list-style:none;}
+.nav-links a{
+  font-size:10px;letter-spacing:2.5px;color:var(--ink-faint);
+  text-decoration:none;text-transform:uppercase;
+  position:relative;transition:color .3s;
+}
+.nav-links a::after{
+  content:"";position:absolute;bottom:-4px;left:0;
+  width:0;height:1px;background:var(--gold);
+  transition:width .4s cubic-bezier(.25,.46,.45,.94);
+}
+.nav-links a:hover{color:var(--ink);}
+.nav-links a:hover::after{width:100%;}
+.nav-cta{
+  font-size:10px;letter-spacing:2px;color:var(--ink);
+  border:1px solid var(--gold);padding:8px 20px;
+  text-decoration:none;text-transform:uppercase;
+  transition:background .3s,color .3s;
+}
+.nav-cta:hover{background:var(--gold);color:var(--white);}
+
+/* ═══════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════ */
+.hero{
+  min-height:100vh;
+  background:var(--cream);
+  position:relative;
+  overflow:hidden;
+  display:flex;flex-direction:column;
+}
+
+/* 背景大字 — 水墨质感 */
+.hero-bg-char{
+  position:absolute;inset:0;
+  display:flex;align-items:center;justify-content:center;
+  pointer-events:none;user-select:none;
+}
+.hero-bg-char span{
+  font-family:'Noto Serif SC',serif;
+  font-size:clamp(280px,42vw,560px);
+  font-weight:600;
+  color:rgba(176,141,85,0.07);
+  line-height:1;
+  letter-spacing:-20px;
+  animation:bgCharIn 2s 0.5s ease both;
+}
+@keyframes bgCharIn{
+  from{opacity:0;letter-spacing:60px;}
+  to{opacity:1;letter-spacing:-20px;}
+}
+
+/* 左侧内容 */
+.hero-content{
+  flex:1;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:120px 72px 80px;
+  position:relative;z-index:2;
+  max-width:58%;
+}
+.hero-eyebrow{
+  font-size:10px;letter-spacing:4px;color:var(--gold);
+  text-transform:uppercase;
+  display:flex;align-items:center;gap:16px;
+  margin-bottom:48px;
+  opacity:0;
+  animation:eyebrowIn .8s 1.4s ease both;
+}
+.hero-eyebrow-line{
+  width:0;height:1px;background:var(--gold);
+  display:inline-block;
+  animation:lineExpand 1s 1.4s ease forwards;
+}
+.hero-eyebrow-text{opacity:0;animation:fadeIn .6s 1.7s ease both;}
+@keyframes eyebrowIn{to{opacity:1;}}
+@keyframes lineExpand{to{width:40px;}}
+@keyframes fadeIn{to{opacity:1;}}
+
+.hero-title{
+  font-family:'Noto Serif SC',serif;
+  font-size:clamp(48px,5.5vw,80px);
+  font-weight:300;
+  line-height:1.1;
+  color:var(--ink);
+  margin-bottom:40px;
+  letter-spacing:-1px;
+}
+.hero-title .t-line{
+  display:block;
+  overflow:hidden;
+  line-height:1.2;
+}
+.hero-title .t-line-inner{
+  display:block;
+  transform:translateY(110%);
+  animation:tLineIn .85s cubic-bezier(.25,.46,.45,.94) forwards;
+}
+.hero-title .t-line:nth-child(1) .t-line-inner{animation-delay:1.6s;}
+.hero-title .t-line:nth-child(2) .t-line-inner{animation-delay:1.75s;}
+.hero-title .t-line:nth-child(3) .t-line-inner{animation-delay:1.9s;}
+.hero-title .t-line:nth-child(4) .t-line-inner{animation-delay:2.05s;}
+@keyframes tLineIn{
+  to{transform:translateY(0);}
+}
+.hero-title em{
+  font-style:normal;
+  color:var(--gold);
+}
+.hero-title em::after{
+  content:"";display:inline-block;
+  width:100%;height:2px;
+  background:var(--gold);
+  vertical-align:bottom;
+  transform:scaleX(0);transform-origin:left;
+  animation:goldLine 1.2s 2.9s ease forwards;
+}
+@keyframes goldLine{to{transform:scaleX(1);}}
+
+.hero-sub{
+  font-size:14px;color:var(--ink-soft);line-height:2.4;
+  max-width:380px;margin-bottom:56px;
+  opacity:0;animation:fadeIn .8s 2.2s ease both;
+}
+.hero-actions{
+  display:flex;gap:32px;align-items:center;
+  opacity:0;animation:fadeIn .8s 2.4s ease both;
+}
+.btn-pri{
+  font-size:10.5px;letter-spacing:3px;color:var(--white);
+  background:var(--ink);border:1px solid var(--ink);
+  padding:14px 32px;text-decoration:none;text-transform:uppercase;
+  display:inline-flex;align-items:center;gap:12px;
+  transition:background .35s,border-color .35s,box-shadow .35s;
+  position:relative;overflow:hidden;
+}
+.btn-pri::after{
+  content:"";position:absolute;
+  inset:0;background:var(--gold);
+  transform:translateX(-102%);
+  transition:transform .4s cubic-bezier(.25,.46,.45,.94);
+  z-index:0;
+}
+.btn-pri:hover::after{transform:translateX(0);}
+.btn-pri:hover{border-color:var(--gold);}
+.btn-pri:hover span{color:var(--white);}
+.btn-pri span{position:relative;z-index:1;transition:color .3s;}
+.btn-pri:hover svg{transform:translateX(4px);}
+.btn-pri svg{position:relative;z-index:1;transition:transform .35s;fill:currentColor;}
+
+.btn-line{
+  font-size:10.5px;letter-spacing:2.5px;color:var(--ink-soft);
+  text-decoration:none;text-transform:uppercase;
+  display:inline-flex;align-items:center;gap:10px;
+  transition:color .3s,gap .3s;
+}
+.btn-line:hover{color:var(--ink);gap:14px;}
+.btn-line svg{transition:transform .3s;fill:currentColor;}
+.btn-line:hover svg{transform:translateX(4px);}
+
+/* 右侧视觉 — 简约优雅 */
+.hero-visual{
+  position:absolute;right:0;top:0;bottom:0;
+  width:44%;
+  background:var(--ink);
+  overflow:hidden;
+}
+.hero-visual::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(ellipse at 30% 50%,#2A2420 0%,#141210 60%);
+}
+.hero-visual::after{
+  content:"";position:absolute;inset:0;
+  background:url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23B08D55' stroke-opacity='0.07'%3E%3Cpath d='M0 40h80M40 0v80'/%3E%3C/g%3E%3C/svg%3E");
+  background-size:80px 80px;
+}
+/* 金色装饰线 */
+.hero-deco{
+  position:absolute;inset:0;z-index:1;
+}
+.h-deco-h{
+  position:absolute;left:0;right:0;height:1px;
+  background:var(--gold);opacity:.1;
+}
+.h-deco-h:nth-child(1){top:20%;}
+.h-deco-h:nth-child(2){top:50%;}
+.h-deco-h:nth-child(3){top:80%;}
+.h-deco-v{
+  position:absolute;top:0;bottom:0;width:1px;
+  background:var(--gold);opacity:.1;
+}
+.h-deco-v:nth-child(4){left:25%;}
+.h-deco-v:nth-child(5){left:50%;}
+.h-deco-v:nth-child(6){left:75%;}
+/* 装饰字 */
+.hero-deco-txt{
+  position:absolute;z-index:2;
+  font-family:'Noto Serif SC',serif;
+  font-size:clamp(60px,8vw,100px);
+  font-weight:600;
+  color:rgba(176,141,85,0.06);
+  letter-spacing:8px;
+  animation:fadeIn 1s 2.5s ease both;opacity:0;
+}
+.hd-tl{top:8%;left:8%;}
+.hd-br{bottom:8%;right:8%;text-align:right;}
+/* 竖排 */
+.hero-vtext{
+  position:absolute;right:20px;top:50%;
+  transform:translateY(-50%);
+  z-index:3;
+  font-size:9px;letter-spacing:6px;
+  color:rgba(176,141,85,0.3);
+  text-transform:uppercase;writing-mode:vertical-rl;
+  animation:fadeIn .8s 2.8s ease both;opacity:0;
+}
+.hero-vtext::before{
+  content:"";display:block;
+  width:1px;height:36px;
+  background:rgba(176,141,85,0.3);
+  margin:0 auto 14px;
+}
+/* 年份 */
+.hero-year{
+  position:absolute;bottom:48px;left:50%;
+  transform:translateX(-50%);
+  z-index:3;
+  font-family:'Noto Serif SC',serif;
+  font-size:clamp(40px,6vw,72px);
+  font-weight:200;
+  color:rgba(255,255,255,0.04);
+  letter-spacing:8px;
+  animation:fadeIn 1s 2.2s ease both;opacity:0;
+}
+
+/* 底部信息栏 */
+.hero-bar{
+  position:relative;z-index:3;
+  display:flex;
+  border-top:1px solid var(--line);
+  background:var(--cream);
+  opacity:0;animation:fadeIn .8s 2.6s ease both;
+}
+.hero-bar-item{
+  flex:1;padding:20px 40px;
+  border-right:1px solid var(--line);
+  font-size:10px;letter-spacing:2px;color:var(--ink-faint);
+  text-transform:uppercase;
+  display:flex;align-items:center;gap:10px;
+}
+.hero-bar-item:last-child{border-right:none;}
+.hero-bar-item strong{
+  font-family:'Noto Serif SC',serif;
+  font-size:16px;font-weight:400;color:var(--ink);
+}
+.hero-bar-item span{font-weight:300;}
+
+/* ═══════════════════════════════════════════
+   关于
+═══════════════════════════════════════════ */
+.about{
+  padding:140px 72px;
+  display:grid;grid-template-columns:1.1fr 0.9fr;
+  gap:100px;align-items:center;
+  background:var(--white);
+}
+.about-tag{
+  font-size:9px;letter-spacing:5px;color:var(--gold);
+  text-transform:uppercase;
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:28px;
+}
+.about-tag::before{
+  content:"";display:inline-block;
+  width:28px;height:1px;background:var(--gold);
+}
+.about-h2{
+  font-family:'Noto Serif SC',serif;
+  font-size:clamp(26px,2.8vw,38px);font-weight:300;
+  line-height:1.5;margin-bottom:36px;
+  letter-spacing:-0.3px;
+}
+.about-h2 em{font-style:normal;color:var(--gold);}
+.about-text{
+  font-size:13.5px;color:var(--ink-soft);line-height:2.5;
+  margin-bottom:16px;
+}
+.about-link{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:10px;letter-spacing:3px;color:var(--ink);
+  text-decoration:none;text-transform:uppercase;
+  margin-top:32px;
+  transition:color .3s,gap .3s;
+}
+.about-link:hover{color:var(--gold);gap:16px;}
+.about-link svg{transition:transform .3s;fill:currentColor;}
+.about-link:hover svg{transform:translateX(3px);}
+
+/* 关于右侧 — 引用卡 */
+.about-card{
+  background:var(--cream);
+  padding:60px 52px;
+  position:relative;
+  border:1px solid var(--line);
+  transition:box-shadow .5s,transform .5s;
+}
+.about-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-4px);}
+.about-quote{
+  font-family:'Noto Serif SC',serif;
+  font-size:20px;font-weight:300;line-height:2.1;
+  border-left:2px solid var(--gold);
+  padding-left:28px;
+  margin-bottom:32px;
+  color:var(--ink);
+  transition:border-color .3s;
+}
+.about-card:hover .about-quote{border-color:var(--gold-lt);}
+.about-quote-author{
+  font-size:10px;letter-spacing:2px;color:var(--ink-faint);
+  text-transform:uppercase;padding-left:28px;
+}
+.about-card-lines{
+  position:absolute;bottom:24px;right:24px;
+  display:grid;grid-template-columns:repeat(4,5px);gap:5px;
+}
+.about-card-lines .dot{width:5px;height:5px;border-radius:50%;background:var(--gold);opacity:.2;transition:opacity .3s;}
+.about-card:hover .about-card-lines .dot{opacity:.4;}
+/* 装饰 */
+.about-deco{
+  position:absolute;top:-12px;right:-12px;
+  width:60px;height:60px;
+  border-top:2px solid var(--gold);
+  border-right:2px solid var(--gold);
+  opacity:.3;
+}
+
+/* ═══════════════════════════════════════════
+   分隔
+═══════════════════════════════════════════ */
+.section-mark{
+  display:flex;align-items:center;
+  padding:0 72px;
+  background:var(--white);
+}
+.section-mark::before,.section-mark::after{
+  content:"";flex:1;height:1px;
+  background:linear-gradient(90deg,transparent,var(--line),transparent);
+}
+.section-mark span{
+  font-size:8px;letter-spacing:6px;color:var(--ink-faint);
+  text-transform:uppercase;white-space:nowrap;
+  padding:0 32px;opacity:.6;
+}
+
+/* ═══════════════════════════════════════════
+   服务
+═══════════════════════════════════════════ */
+.services{
+  padding:120px 72px;
+  background:var(--bg);
+}
+.services-hd{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  margin-bottom:60px;
+}
+.services-title{
+  font-family:'Noto Serif SC',serif;
+  font-size:clamp(22px,2.4vw,34px);font-weight:300;
+  letter-spacing:-0.3px;
+}
+.services-sub{font-size:10px;letter-spacing:2px;color:var(--ink-faint);}
+
+.services-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--line);
+  border:1px solid var(--line);
+}
+.service-card{
+  background:var(--bg);
+  padding:48px 40px;
+  transition:background .4s,box-shadow .4s;
+  cursor:pointer;
+  position:relative;overflow:hidden;
+}
+.service-card::before{
+  content:"";position:absolute;
+  top:0;left:0;right:0;
+  height:0;
+  background:linear-gradient(to bottom,var(--cream),rgba(237,231,219,0.4));
+  transition:height .5s cubic-bezier(.25,.46,.45,.94);
+  z-index:0;
+}
+.service-card:hover::before{height:100%;}
+.service-card:hover{background:transparent;box-shadow:inset 0 0 60px rgba(237,231,219,0.5);}
+.service-inner{position:relative;z-index:1;}
+.service-num{
+  font-family:'Noto Serif SC',serif;
+  font-size:9px;letter-spacing:4px;color:var(--gold);
+  margin-bottom:24px;
+  display:flex;align-items:center;gap:10px;
+  transition:gap .3s;
+}
+.service-card:hover .service-num{gap:16px;}
+.service-num::after{
+  content:"";display:inline-block;
+  width:16px;height:1px;background:var(--gold);
+  transition:width .3s;
+}
+.service-card:hover .service-num::after{width:28px;}
+.service-title{
+  font-family:'Noto Serif SC',serif;
+  font-size:17px;font-weight:400;
+  margin-bottom:14px;letter-spacing:.5px;
+  transition:color .3s;
+}
+.service-card:hover .service-title{color:var(--gold);}
+.service-desc{
+  font-size:12.5px;color:var(--ink-soft);line-height:2;
+  transition:color .3s;
+}
+.service-card:hover .service-desc{color:var(--ink-faint);}
+.service-cta{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:9.5px;letter-spacing:2px;color:var(--gold);
+  text-transform:uppercase;margin-top:28px;
+  opacity:0;transform:translateX(-8px);
+  transition:opacity .35s,transform .35s;
+}
+.service-card:hover .service-cta{opacity:1;transform:translateX(0);}
+.service-cta-line{
+  display:inline-block;width:20px;height:1px;
+  background:var(--gold);
+  transition:width .3s;
+}
+.service-card:hover .service-cta-line{width:32px;}
+
+/* ═══════════════════════════════════════════
+   案例
+═══════════════════════════════════════════ */
+.cases{
+  padding:120px 72px;
+  background:var(--white);
+}
+.cases-hd{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  margin-bottom:60px;
+}
+.cases-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+.case-card{
+  cursor:pointer;position:relative;overflow:hidden;
+  aspect-ratio:3/4;
+}
+.case-inner{
+  width:100%;height:100%;
+  background:linear-gradient(160deg,#1E1B17,#100F0D);
+  display:flex;align-items:center;justify-content:center;
+  transition:transform .7s cubic-bezier(.25,.46,.45,.94);
+  position:relative;
+}
+.case-card:hover .case-inner{transform:scale(1.04);}
+/* 背景光效 */
+.case-inner::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(ellipse at 40% 40%,rgba(176,141,85,0.1) 0%,transparent 60%);
+  transition:opacity .5s;
+}
+.case-card:hover .case-inner::before{opacity:1.3;}
+/* 斜线 */
+.case-lines{
+  position:absolute;inset:0;opacity:.08;
+}
+.case-lines::before,.case-lines::after{
+  content:"";position:absolute;
+  background:var(--gold);transition:all 1s;
+}
+.case-lines::before{
+  width:1px;height:0;left:20%;top:0;
+}
+.case-lines::after{
+  width:0;height:1px;left:0;bottom:30%;
+}
+.case-card:hover .case-lines::before{height:100%;}
+.case-card:hover .case-lines::after{width:100%;}
+/* 星星 */
+.case-star{
+  font-size:28px;color:rgba(176,141,85,0.12);
+  transition:color .5s,transform .6s;
+  position:relative;z-index:1;
+}
+.case-card:hover .case-star{
+  color:rgba(176,141,85,0.2);
+  transform:scale(1.2) rotate(8deg);
+}
+/* 编号 */
+.case-no{
+  position:absolute;top:20px;right:20px;
+  font-family:'Noto Serif SC',serif;
+  font-size:44px;font-weight:200;
+  color:rgba(255,255,255,0.05);
+  line-height:1;
+  transition:color .5s;
+}
+.case-card:hover .case-no{color:rgba(255,255,255,0.09);}
+/* 底部遮罩 */
+.case-info{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:28px 24px;
+  background:linear-gradient(to top,rgba(6,5,4,0.92) 0%,transparent 100%);
+  opacity:0;
+  transition:opacity .5s;
+}
+.case-card:hover .case-info{opacity:1;}
+/* 遮罩内部文字分层 */
+.case-info .case-name,
+.case-info .case-tags,
+.case-info .case-link{
+  transform:translateY(14px);
+  opacity:0;
+  transition:transform .45s,opacity .45s;
+}
+.case-info .case-name{
+  font-family:'Noto Serif SC',serif;
+  font-size:13px;font-weight:400;color:#fff;
+  letter-spacing:2px;margin-bottom:8px;
+  transition-delay:.05s;
+}
+.case-info .case-tags{
+  font-size:9.5px;letter-spacing:1.5px;color:var(--gold-lt);
+  transition-delay:.12s;
+}
+.case-info .case-link{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:9px;letter-spacing:2px;color:var(--gold-lt);
+  text-transform:uppercase;margin-top:14px;
+  transition-delay:.2s;
+}
+.case-card:hover .case-info .case-name,
+.case-card:hover .case-info .case-tags,
+.case-card:hover .case-info .case-link{
+  transform:translateY(0);opacity:1;
+}
+.case-link-ln{
+  display:inline-block;width:16px;height:1px;
+  background:currentColor;transition:width .3s;
+}
+.case-card:hover .case-link-ln{width:26px;}
+
+/* ═══════════════════════════════════════════
+   观点
+═══════════════════════════════════════════ */
+.insights{
+  padding:120px 72px;
+  background:var(--cream);
+}
+.insights-hd{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  margin-bottom:60px;
+}
+.insights-list{display:flex;flex-direction:column;}
+.insight-row{
+  display:grid;grid-template-columns:160px 1fr auto;
+  gap:48px;align-items:center;
+  padding:32px 0;
+  border-bottom:1px solid var(--line);
+  cursor:pointer;
+  transition:background .3s;
+  position:relative;
+}
+.insight-row::before{
+  content:"";position:absolute;
+  top:0;left:0;right:0;
+  height:0;
+  background:linear-gradient(to right,var(--gold-dim),transparent);
+  transition:height .4s;
+}
+.insight-row:hover::before{height:100%;}
+.insight-row:hover{padding-left:8px;}
+.insight-date{font-size:10px;letter-spacing:2px;color:var(--ink-faint);}
+.insight-title{
+  font-family:'Noto Serif SC',serif;
+  font-size:18px;font-weight:400;
+  line-height:1.5;letter-spacing:.3px;
+  transition:color .3s;
+}
+.insight-row:hover .insight-title{color:var(--gold);}
+.insight-cat{font-size:9px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;white-space:nowrap;}
+.insight-arrow{
+  width:32px;height:1px;
+  background:var(--gold);position:relative;
+  opacity:0;transition:opacity .3s,width .4s;
+}
+.insight-arrow::after{
+  content:"";position:absolute;
+  right:0;top:-3px;
+  width:6px;height:6px;
+  border-right:1px solid var(--gold);
+  border-top:1px solid var(--gold);
+  transform:rotate(45deg);
+}
+.insight-row:hover .insight-arrow{opacity:1;width:48px;}
+
+/* ═══════════════════════════════════════════
+   合作伙伴 LOGO 栏
+═══════════════════════════════════════════ */
+.partners{
+  padding:80px 72px;
+  background:var(--white);
+  text-align:center;
+}
+.partners-label{
+  font-size:9px;letter-spacing:5px;color:var(--ink-faint);
+  text-transform:uppercase;margin-bottom:40px;
+}
+.partners-logos{
+  display:flex;justify-content:center;align-items:center;
+  gap:64px;flex-wrap:wrap;
+  opacity:.35;
+}
+.partner-name{
+  font-family:'Noto Serif SC',serif;
+  font-size:15px;font-weight:400;
+  letter-spacing:4px;color:var(--ink);
+  transition:opacity .3s;
+}
+.partner-name:hover{opacity:.7;}
+
+/* ═══════════════════════════════════════════
+   CTA
+═══════════════════════════════════════════ */
+.cta{
+  padding:140px 72px;
+  background:var(--ink);
+  text-align:center;
+  position:relative;overflow:hidden;
+}
+.cta::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(ellipse at 50% 60%,rgba(176,141,85,0.1) 0%,transparent 60%);
+}
+.cta::after{
+  content:"";position:absolute;inset:0;
+  background:url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Ccircle cx='20' cy='20' r='.5' fill='%23B08D55' fill-opacity='0.15'/%3E%3C/g%3E%3C/svg%3E");
+  background-size:40px 40px;
+}
+.cta-inner{position:relative;z-index:1;}
+.cta-eyebrow{
+  font-size:9px;letter-spacing:6px;color:var(--gold);
+  text-transform:uppercase;margin-bottom:32px;
+  opacity:.7;
+}
+.cta-title{
+  font-family:'Noto Serif SC',serif;
+  font-size:clamp(30px,3.5vw,50px);font-weight:200;
+  color:#fff;line-height:1.4;
+  margin-bottom:24px;
+  letter-spacing:-0.5px;
+}
+.cta-title em{font-style:normal;color:var(--gold);}
+.cta-sub{
+  font-size:13px;color:rgba(255,255,255,0.3);
+  margin-bottom:56px;letter-spacing:1px;
+}
+.cta-btn{
+  display:inline-flex;align-items:center;gap:14px;
+  font-size:10.5px;letter-spacing:3px;color:var(--ink);
+  background:var(--gold);text-decoration:none;text-transform:uppercase;
+  padding:18px 44px;
+  transition:background .35s,box-shadow .35s,transform .35s;
+  position:relative;overflow:hidden;
+}
+.cta-btn::before{
+  content:"";position:absolute;inset:0;
+  background:var(--gold-lt);
+  transform:translateX(-102%);
+  transition:transform .4s cubic-bezier(.25,.46,.45,.94);
+}
+.cta-btn:hover::before{transform:translateX(0);}
+.cta-btn:hover{
+  box-shadow:0 12px 40px rgba(176,141,85,0.35);
+  transform:translateY(-2px);
+}
+.cta-btn span{position:relative;z-index:1;}
+.cta-btn svg{position:relative;z-index:1;transition:transform .35s;fill:currentColor;}
+.cta-btn:hover svg{transform:translateX(5px);}
+
+/* ═══════════════════════════════════════════
+   页脚
+═══════════════════════════════════════════ */
+.footer{
+  background:#0D0C0A;
+  color:rgba(255,255,255,0.28);
+  padding:80px 72px 40px;
+}
+.footer-top{
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:72px;padding-bottom:64px;
+  border-bottom:1px solid rgba(255,255,255,0.05);
+}
+.footer-logo{
+  font-family:'Noto Serif SC',serif;
+  font-size:20px;font-weight:600;letter-spacing:6px;
+  color:#fff;margin-bottom:18px;
+}
+.footer-logo span{color:var(--gold);}
+.footer-desc{font-size:12px;line-height:2.2;color:rgba(255,255,255,0.25);max-width:280px;}
+.footer-col h4{
+  font-size:8.5px;letter-spacing:4px;color:#fff;text-transform:uppercase;
+  margin-bottom:20px;font-weight:400;opacity:.45;
+}
+.footer-col a{
+  display:block;font-size:12px;color:rgba(255,255,255,0.25);
+  text-decoration:none;margin-bottom:12px;
+  transition:color .3s,transform .3s;
+}
+.footer-col a:hover{color:var(--gold-lt);transform:translateX(3px);}
+.footer-btm{
+  padding-top:32px;
+  display:flex;justify-content:space-between;
+  font-size:10.5px;letter-spacing:.5px;
+  align-items:center;
+}
+
+/* ═══════════════════════════════════════════
+   响应式
+═══════════════════════════════════════════ */
+@media(max-width:1100px){
+  .hero-content{max-width:65%;}
+  .hero-visual{width:38%;}
+  .about{grid-template-columns:1fr;gap:48px;padding:100px 48px;}
+  .services-grid{grid-template-columns:repeat(2,1fr);}
+  .cases-grid{grid-template-columns:repeat(2,1fr);aspect-ratio:auto;}
+  .cases-grid .case-card{aspect-ratio:4/3;}
+  .insight-row{grid-template-columns:120px 1fr auto;}
+  .footer-top{grid-template-columns:1fr 1fr;gap:40px;}
+}
+@media(max-width:768px){
+  .nav{padding:0 24px;}
+  .nav-links,.nav-cta{display:none;}
+  .hero-content{max-width:100%;padding:96px 24px 60px;}
+  .hero-visual{display:none;}
+  .hero-bar{flex-wrap:wrap;}
+  .hero-bar-item{flex:1 0 50%;padding:16px 20px;}
+  .about,.services,.cases,.insights,.partners,.cta,.footer{padding-left:24px;padding-right:24px;}
+  .section-mark{padding:0 24px;}
+  .services-grid{grid-template-columns:1fr;}
+  .cases-grid{grid-template-columns:1fr;}
+  .insight-row{grid-template-columns:1fr;gap:8px;}
+  .insight-arrow{display:none;}
+  .footer-top{grid-template-columns:1fr;}
+  .footer-btm{flex-direction:column;gap:10px;text-align:center;}
+}
+</style>
+</head>
+<body>
+
+<!-- 导航 -->
+<nav class="nav" id="nav">
+  <div class="nav-logo">京涛<span>.</span></div>
+  <ul class="nav-links">
+    <li><a href="index-v5.html">首页</a></li>
+    <li><a href="about-v5.html">关于我们</a></li>
+    <li><a href="services-v5.html">服务项目</a></li>
+    <li><a href="cases-v5.html">案例中心</a></li>
+    <li><a href="insights-v5.html">观点洞察</a></li>
+  </ul>
+  <a href="contact-v5.html" class="nav-cta">联系我们</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-char"><span>京涛策划</span></div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span class="hero-eyebrow-line"></span>
+      <span class="hero-eyebrow-text">Brand Strategy &amp; Marketing Consulting</span>
+    </div>
+    <h1 class="hero-title">
+      <span class="t-line"><span class="t-line-inner">让品牌</span></span>
+      <span class="t-line"><span class="t-line-inner">被看见</span></span>
+      <span class="t-line"><span class="t-line-inner">被记住</span></span>
+      <span class="t-line"><span class="t-line-inner"><em>被选择</em></span></span>
+    </h1>
+    <p class="hero-sub">京涛策划创立于上海，专注品牌战略定位与整合营销咨询。<br>用策略驱动增长，用创意创造价值，用结果验证承诺。</p>
+    <div class="hero-actions">
+      <a href="cases-v5.html" class="btn-pri">
+        <span>查看案例</span>
+        <svg width="16" height="10" viewBox="0 0 16 10"><path d="M1 5h14M9 1l5 4-5 4"/></svg>
+      </a>
+      <a href="contact-v5.html" class="btn-line">
+        联系我们
+        <svg width="16" height="10" viewBox="0 0 16 10"><path d="M1 5h14M9 1l5 4-5 4"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="hero-deco">
+      <div class="h-deco-h"></div>
+      <div class="h-deco-h"></div>
+      <div class="h-deco-h"></div>
+      <div class="h-deco-v"></div>
+      <div class="h-deco-v"></div>
+      <div class="h-deco-v"></div>
+    </div>
+    <div class="hero-deco-txt hd-tl">策</div>
+    <div class="hero-deco-txt hd-br">划</div>
+    <div class="hero-vtext">Est. 2009</div>
+    <div class="hero-year">2009</div>
+  </div>
+
+  <div class="hero-bar">
+    <div class="hero-bar-item">
+      <strong>200<span style="color:var(--gold)">+</span></strong>
+      <span>品牌服务经验</span>
+    </div>
+    <div class="hero-bar-item">
+      <strong>50<span style="color:var(--gold)">+</span></strong>
+      <span>行业深度覆盖</span>
+    </div>
+    <div class="hero-bar-item">
+      <strong>90<span style="color:var(--gold)">%</span></strong>
+      <span>客户续约率</span>
+    </div>
+    <div class="hero-bar-item">
+      <strong>24<span style="color:var(--gold)">h</span></strong>
+      <span>极速需求响应</span>
+    </div>
+  </div>
+</section>
+
+<!-- 关于 -->
+<section class="about">
+  <div class="about-left">
+    <div class="about-tag reveal">About Us</div>
+    <h2 class="about-h2 reveal">专注品牌<br>价值<em>增长</em></h2>
+    <p class="about-text reveal">京涛策划成立于2009年，是一家以品牌战略为核心的综合营销咨询公司。我们相信：每一个品牌都有独特的市场位置，关键在于找到它、说清楚它、坚持传播它。</p>
+    <p class="about-text reveal">我们不做流水线服务，坚持每一个项目深度参与、策略先行，用结果验证价值。</p>
+    <a href="about-v5.html" class="about-link reveal">
+      了解更多
+      <svg width="16" height="10" viewBox="0 0 16 10"><path d="M1 5h14M9 1l5 4-5 4"/></svg>
+    </a>
+  </div>
+  <div class="about-card reveal reveal-delay2">
+    <div class="about-deco"></div>
+    <div class="about-quote">
+      "品牌不是设计出来的，<br>是战略沉淀出来的。"
+    </div>
+    <div class="about-quote-author">— 京涛策划创始人</div>
+    <div class="about-card-lines">
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    </div>
+  </div>
+</section>
+
+<div class="section-mark"><span>Services</span></div>
+
+<!-- 服务 -->
+<section class="services">
+  <div class="services-hd">
+    <h2 class="services-title reveal">服务项目</h2>
+    <span class="services-sub reveal">What We Do</span>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-inner">
+        <div class="service-num">01</div>
+        <h3 class="service-title">品牌战略定位</h3>
+        <p class="service-desc">从市场调研到差异化定位，找到品牌独有价值锚点，构建持久竞争力。</p>
+        <div class="service-cta">
+          <span class="service-cta-line"></span>
+          了解详情
+        </div>
+      </div>
+    </div>
+    <div class="service-card reveal rd1">
+      <div class="service-inner">
+        <div class="service-num">02</div>
+        <h3 class="service-title">整合营销传播</h3>
+        <p class="service-desc">线上线下全渠道营销策略，内容创意与媒介投放一体化服务。</p>
+        <div class="service-cta">
+          <span class="service-cta-line"></span>
+          了解详情
+        </div>
+      </div>
+    </div>
+    <div class="service-card reveal rd2">
+      <div class="service-inner">
+        <div class="service-num">03</div>
+        <h3 class="service-title">视觉形象设计</h3>
+        <p class="service-desc">品牌标志、视觉系统、包装设计，打造统一且有辨识度的品牌形象。</p>
+        <div class="service-cta">
+          <span class="service-cta-line"></span>
+          了解详情
+        </div>
+      </div>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-inner">
+        <div class="service-num">04</div>
+        <h3 class="service-title">数字营销推广</h3>
+        <p class="service-desc">抖音、小红书、微信全平台内容营销，助力品牌实现流量转化。</p>
+        <div class="service-cta">
+          <span class="service-cta-line"></span>
+          了解详情
+        </div>
+      </div>
+    </div>
+    <div class="service-card reveal rd1">
+      <div class="service-inner">
+        <div class="service-num">05</div>
+        <h3 class="service-title">营销物料制作</h3>
+        <p class="service-desc">宣传片、广告图、详情页、销售工具等全链路物料输出。</p>
+        <div class="service-cta">
+          <span class="service-cta-line"></span>
+          了解详情
+        </div>
+      </div>
+    </div>
+    <div class="service-card reveal rd2">
+      <div class="service-inner">
+        <div class="service-num">06</div>
+        <h3 class="service-title">年度顾问服务</h3>
+        <p class="service-desc">品牌全年营销顾问陪伴式服务，策略持续迭代，执行不掉链子。</p>
+        <div class="service-cta">
+          <span class="service-cta-line"></span>
+          了解详情
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-mark"><span>Works</span></div>
+
+<!-- 案例 -->
+<section class="cases">
+  <div class="cases-hd">
+    <h2 class="services-title reveal">精选案例</h2>
+    <span class="services-sub reveal">Our Works</span>
+  </div>
+  <div class="cases-grid">
+    <div class="case-card reveal">
+      <div class="case-inner">
+        <div class="case-lines"></div>
+        <div class="case-star">★</div>
+      </div>
+      <div class="case-info">
+        <div class="case-name">老街坊餐饮品牌升级</div>
+        <div class="case-tags">品牌战略 / 视觉设计</div>
+        <div class="case-link">
+          <span class="case-link-ln"></span>
+          查看详情
+        </div>
+      </div>
+      <div class="case-no">01</div>
+    </div>
+    <div class="case-card reveal rd1">
+      <div class="case-inner">
+        <div class="case-lines"></div>
+        <div class="case-star">★</div>
+      </div>
+      <div class="case-info">
+        <div class="case-name">诺梵巧克力新品上市</div>
+        <div class="case-tags">整合营销 / 数字传播</div>
+        <div class="case-link">
+          <span class="case-link-ln"></span>
+          查看详情
+        </div>
+      </div>
+      <div class="case-no">02</div>
+    </div>
+    <div class="case-card reveal rd2">
+      <div class="case-inner">
+        <div class="case-lines"></div>
+        <div class="case-star">★</div>
+      </div>
+      <div class="case-info">
+        <div class="case-name">启明科技品牌定位</div>
+        <div class="case-tags">品牌定位 / 官网设计</div>
+        <div class="case-link">
+          <span class="case-link-ln"></span>
+          查看详情
+        </div>
+      </div>
+      <div class="case-no">03</div>
+    </div>
+  </div>
+</section>
+
+<div class="section-mark"><span>Insights</span></div>
+
+<!-- 观点 -->
+<section class="insights">
+  <div class="insights-hd">
+    <h2 class="services-title reveal">观点洞察</h2>
+    <span class="services-sub reveal">Thoughts</span>
+  </div>
+  <div class="insights-list">
+    <div class="insight-row reveal">
+      <div class="insight-date">2024.03.15</div>
+      <h3 class="insight-title">品牌定位决定市场位置，位置决定流量</h3>
+      <div class="insight-cat">品牌</div>
+      <div class="insight-arrow"></div>
+    </div>
+    <div class="insight-row reveal rd1">
+      <div class="insight-date">2024.02.20</div>
+      <h3 class="insight-title">包装设计：消费者决策的前3秒</h3>
+      <div class="insight-cat">设计</div>
+      <div class="insight-arrow"></div>
+    </div>
+    <div class="insight-row reveal rd2">
+      <div class="insight-date">2024.01.10</div>
+      <h3 class="insight-title">广告语的力量：少即是多</h3>
+      <div class="insight-cat">营销</div>
+      <div class="insight-arrow"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 合作 -->
+<div class="partners">
+  <div class="partners-label reveal">部分服务客户</div>
+  <div class="partners-logos reveal rd1">
+    <span class="partner-name">老街坊</span>
+    <span class="partner-name">诺梵</span>
+    <span class="partner-name">启明科技</span>
+    <span class="partner-name">山水之间</span>
+    <span class="partner-name">观云茶叶</span>
+  </div>
+</div>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-inner">
+    <div class="cta-eyebrow reveal">Let's Work Together</div>
+    <h2 class="cta-title reveal">
+      准备好让品牌<br>创造<em>价值</em>了吗？
+    </h2>
+    <p class="cta-sub reveal">联系我们，开始一次深度品牌咨询</p>
+    <a href="contact-v5.html" class="cta-btn reveal">
+      <span>立即联系</span>
+      <svg width="16" height="10" viewBox="0 0 16 10"><path d="M1 5h14M9 1l5 4-5 4"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- 页脚 -->
+<footer class="footer">
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">京涛<span>.</span></div>
+      <p class="footer-desc">京涛策划创立于上海，专注品牌战略定位与整合营销咨询，为企业提供从战略到执行的一体化品牌解决方案。</p>
+    </div>
+    <div class="footer-col">
+      <h4>服务项目</h4>
+      <a href="services-v5.html">品牌战略定位</a>
+      <a href="services-v5.html">整合营销传播</a>
+      <a href="services-v5.html">视觉形象设计</a>
+    </div>
+    <div class="footer-col">
+      <h4>案例中心</h4>
+      <a href="cases-v5.html">餐饮行业</a>
+      <a href="cases-v5.html">快消品牌</a>
+      <a href="cases-v5.html">科技企业</a>
+    </div>
+    <div class="footer-col">
+      <h4>联系我们</h4>
+      <a href="contact-v5.html">在线留言</a>
+      <a href="contact-v5.html">商务合作</a>
+      <a href="tel:4008888888">400-888-8888</a>
+    </div>
+  </div>
+  <div class="footer-btm">
+    <span>© 2024 京涛策划 jintaocehua.com</span>
+    <span>上海市静安区</span>
+  </div>
+</footer>
+
+<script>
+// 导航滚动
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{
+  nav.classList.toggle('srolled',window.scrollY>50);
+});
+
+// 滚动入场
+const reveals=document.querySelectorAll('.reveal');
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('visible');}
+  });
+},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+reveals.forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
