@@ -3,287 +3,658 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>服务项目 — 京涛策划</title>
+<title>服务项目 | 京涛策划</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#1C1A17;--ink-soft:#4A4640;--ink-faint:#9A9590;--gold:#B08D55;--gold-lt:#D4B87A;--gold-dim:rgba(176,141,85,0.15);--cream:#F6F1E9;--white:#FDFCFA;--line:#E5DFD6;--bg:#FDFCFA;}
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Inter','Noto Sans SC',sans-serif;color:var(--ink);background:var(--bg);font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
-::-webkit-scrollbar{width:3px;}::-webkit-scrollbar-track{background:var(--cream);}::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px;}
-::selection{background:var(--gold-dim);}
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .9s cubic-bezier(.25,.46,.45,.94),transform .9s cubic-bezier(.25,.46,.45,.94);}
-.reveal.visible{opacity:1;transform:translateY(0);}
-.rd1{transition-delay:.1s;}.rd2{transition-delay:.2s;}.rd3{transition-delay:.3s;}
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--ink:#1a1814;--gold:#c8a96e;--gold-light:#dfc48a;--gold-dark:#a08545;--cream:#faf8f5;--gray:#8c8880;--border:#e8e4de;--radius:4px}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans SC',sans-serif;background:var(--cream);color:var(--ink);font-weight:300;line-height:1.8;overflow-x:hidden}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--cream)}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px}
+::selection{background:var(--gold);color:#fff}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
 
-.nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 72px;height:68px;background:rgba(246,241,233,0.9);backdrop-filter:blur(20px);border-bottom:1px solid rgba(229,223,214,0.5);transition:all .4s;}
-.nav.srolled{background:rgba(246,241,233,0.97);box-shadow:0 1px 30px rgba(28,26,23,0.05);}
-.nav-logo{font-family:'Noto Serif SC',serif;font-size:18px;font-weight:600;letter-spacing:6px;color:var(--ink);text-decoration:none;}
-.nav-logo span{color:var(--gold);}
-.nav-links{display:flex;gap:36px;list-style:none;}
-.nav-links a{font-size:10px;letter-spacing:2.5px;color:var(--ink-faint);text-decoration:none;text-transform:uppercase;position:relative;transition:color .3s;}
-.nav-links a::after{content:"";position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--gold);transition:width .4s cubic-bezier(.25,.46,.45,.94);}
-.nav-links a:hover,.nav-links a.active{color:var(--ink);}
-.nav-links a:hover::after,.nav-links a.active::after{width:100%;}
-.nav-cta{font-size:10px;letter-spacing:2px;color:var(--ink);border:1px solid var(--gold);padding:8px 20px;text-decoration:none;text-transform:uppercase;transition:background .3s,color .3s;}
-.nav-cta:hover{background:var(--gold);color:var(--white);}
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:20px 60px;display:flex;align-items:center;justify-content:space-between;transition:all .4s}
+.nav.scrolled{padding:14px 60px;background:rgba(250,248,245,.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(200,169,110,.15)}
+.nav-logo{font-family:'Noto Serif SC',serif;font-size:20px;font-weight:700;letter-spacing:.05em}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;gap:40px;list-style:none;align-items:center}
+.nav-links a{font-size:14px;letter-spacing:.06em;color:var(--gray);transition:color .3s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--gold);transition:width .3s}
+.nav-links a:hover,.nav-links a.active{color:var(--ink)}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-cta{background:var(--ink);color:#fff !important;padding:10px 28px;font-size:13px;letter-spacing:.08em;border-radius:var(--radius);transition:all .3s !important}
+.nav-cta:hover{background:var(--gold) !important}
+.nav-cta::after{display:none !important}
+.nav-phone{font-size:14px;color:var(--gray)}
 
-.page-hero{background:var(--cream);padding:180px 72px 100px;position:relative;overflow:hidden;}
-.page-hero::before{content:"";position:absolute;right:0;top:0;bottom:0;width:40%;background:var(--ink);}
-.page-hero::after{content:"SERVICES";position:absolute;right:60px;top:50%;transform:translateY(-50%);font-family:'Noto Serif SC',serif;font-size:clamp(60px,9vw,120px);font-weight:600;color:rgba(255,255,255,0.04);letter-spacing:10px;}
-.page-eyebrow{font-size:9px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;display:flex;align-items:center;gap:12px;margin-bottom:24px;opacity:0;animation:fadeIn .6s .3s ease both;}
-.page-eyebrow::before{content:"";display:inline-block;width:28px;height:1px;background:var(--gold);}
-@keyframes fadeIn{to{opacity:1;}}
-.page-h1{font-family:'Noto Serif SC',serif;font-size:clamp(36px,4vw,56px);font-weight:300;line-height:1.2;letter-spacing:-0.5px;max-width:560px;opacity:0;animation:fadeUp .8s .5s ease both;}
-@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
-.page-sub{font-size:14px;color:var(--ink-soft);line-height:2.2;max-width:480px;margin-top:24px;opacity:0;animation:fadeIn .8s .8s ease both;}
-.page-hero-bar{position:absolute;bottom:0;left:0;right:0;height:1px;background:var(--line);}
+.page-hero{position:relative;padding:180px 60px 100px;background:var(--ink);overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(200,169,110,.06) 0%,transparent 70%)}
+.page-hero-grid{position:absolute;inset:0;opacity:.4}
+.page-hero-line{position:absolute;background:rgba(200,169,110,.08)}
+.page-hero-line.v{width:1px;height:100%;top:0}
+.page-hero-line.h{height:1px;width:100%;left:0}
+.page-hero-content{position:relative;z-index:2;max-width:800px}
+.page-hero-tag{font-size:11px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-bottom:24px;opacity:0;transform:translateY(20px);transition:all .8s}
+.page-hero-title{font-family:'Noto Serif SC',serif;font-size:clamp(48px,6vw,72px);font-weight:700;color:#fff;line-height:1.15;letter-spacing:-.02em;margin-bottom:20px;opacity:0;transform:translateY(30px);transition:all .8s .1s}
+.page-hero-desc{font-size:17px;color:rgba(255,255,255,.5);line-height:1.9;max-width:560px;opacity:0;transform:translateY(20px);transition:all .8s .2s}
+.page-hero.active .page-hero-tag,
+.page-hero.active .page-hero-title,
+.page-hero.active .page-hero-desc{opacity:1;transform:none}
+.page-hero-year{position:absolute;right:60px;bottom:60px;font-family:'Noto Serif SC',serif;font-size:120px;font-weight:900;color:transparent;-webkit-text-stroke:1px rgba(200,169,110,.15);letter-spacing:-.04em;line-height:1;opacity:.5}
 
-.section-mark{display:flex;align-items:center;padding:0 72px;background:var(--white);}
-.section-mark::before,.section-mark::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);}
-.section-mark span{font-size:8px;letter-spacing:6px;color:var(--ink-faint);text-transform:uppercase;white-space:nowrap;padding:0 32px;opacity:.6;}
+.section{padding:120px 60px;position:relative}
+.section-tag{display:inline-flex;align-items:center;gap:16px;font-size:11px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-bottom:24px}
+.section-tag::before{content:'';width:32px;height:1px;background:var(--gold)}
+.section-title{font-family:'Noto Serif SC',serif;font-size:clamp(32px,4vw,48px);font-weight:700;line-height:1.2;letter-spacing:-.02em;margin-bottom:20px}
+.section-desc{font-size:17px;color:var(--gray);line-height:1.9;max-width:600px}
+.reveal{opacity:0;transform:translateY(40px);transition:all .8s cubic-bezier(.22,1,.36,1)}
+.reveal.visible{opacity:1;transform:none}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+.reveal-delay-4{transition-delay:.4s}
+.arrow-link{display:inline-flex;align-items:center;gap:8px;font-size:14px;letter-spacing:.06em;color:var(--gold);transition:gap .3s}
+.arrow-link:hover{gap:14px}
+.arrow-link svg{transition:transform .3s}
+.arrow-link:hover svg{transform:translateX(4px)}
 
-/* ── Services List ── */
-.services-section{padding:120px 72px;background:var(--white);}
-.services-hd{margin-bottom:64px;display:flex;justify-content:space-between;align-items:flex-end;}
-.services-hd h2{font-family:'Noto Serif SC',serif;font-size:clamp(22px,2.4vw,34px);font-weight:300;letter-spacing:-0.3px;}
-.services-list{display:flex;flex-direction:column;}
+/* SERVICE DETAIL */
+.service-detail{padding:120px 60px;border-bottom:1px solid var(--border)}
+.service-detail:nth-child(even){background:#fff}
+.service-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:100px;align-items:start}
+.service-meta{display:sticky;top:120px}
+.service-num{font-family:'Noto Serif SC',serif;font-size:80px;font-weight:900;color:transparent;-webkit-text-stroke:1px rgba(200,169,110,.2);line-height:1;margin-bottom:16px;letter-spacing:-.03em}
+.service-label{font-size:11px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-bottom:20px}
+.service-title{font-family:'Noto Serif SC',serif;font-size:36px;font-weight:700;line-height:1.2;margin-bottom:20px}
+.service-intro{font-size:16px;color:var(--gray);line-height:1.9;margin-bottom:40px}
+.service-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:40px}
+.service-tag{font-size:12px;padding:6px 16px;border:1px solid var(--border);border-radius:20px;color:var(--ink);transition:all .3s}
+.service-tag:hover{border-color:var(--gold);color:var(--gold-dark)}
+.service-deliverables{background:var(--cream);padding:32px;border-radius:var(--radius)}
+.deliverables-title{font-family:'Noto Serif SC',serif;font-size:14px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:20px;color:var(--gold)}
+.deliverable-item{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid var(--border);font-size:14px;color:var(--gray)}
+.deliverable-item:last-child{border-bottom:none}
+.deliverable-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);margin-top:8px;flex-shrink:0}
 
-.service-row{display:grid;grid-template-columns:80px 1fr 200px 80px;gap:48px;align-items:center;padding:48px 0;border-bottom:1px solid var(--line);cursor:pointer;position:relative;transition:padding-left .3s;}
-.service-row::before{content:"";position:absolute;top:0;left:0;width:0;height:100%;background:var(--gold-dim);transition:width .4s;z-index:-1;}
-.service-row:hover{padding-left:16px;}
-.service-row:hover::before{width:100%;}
-.service-row:hover .srv-num{color:var(--gold);}
-.service-row:hover .srv-title{color:var(--gold);}
-.service-row:hover .srv-arrow{opacity:1;width:48px;}
-.srv-num{font-family:'Noto Serif SC',serif;font-size:9px;letter-spacing:4px;color:var(--ink-faint);transition:color .3s;}
-.srv-content h3{font-family:'Noto Serif SC',serif;font-size:clamp(18px,2vw,24px);font-weight:400;margin-bottom:12px;letter-spacing:.5px;transition:color .3s;}
-.srv-content p{font-size:13px;color:var(--ink-soft);line-height:2;max-width:500px;}
-.srv-tags{display:flex;gap:8px;flex-wrap:wrap;}
-.srv-tag{font-size:9px;letter-spacing:1.5px;color:var(--gold);border:1px solid var(--gold);padding:4px 10px;text-transform:uppercase;}
-.srv-arrow{width:32px;height:1px;background:var(--gold);position:relative;opacity:.3;transition:opacity .3s,width .4s;}
-.srv-arrow::after{content:"";position:absolute;right:0;top:-3px;width:6px;height:6px;border-right:1px solid var(--gold);border-top:1px solid var(--gold);transform:rotate(45deg);}
+.service-body p{font-size:16px;line-height:2;margin-bottom:24px;color:var(--ink)}
+.service-body h3{font-family:'Noto Serif SC',serif;font-size:20px;font-weight:600;margin:40px 0 16px;color:var(--ink)}
+.service-body ul{padding-left:0;list-style:none;margin-bottom:24px}
+.service-body ul li{font-size:15px;padding:8px 0;padding-left:24px;position:relative;color:var(--gray)}
+.service-body ul li::before{content:'';position:absolute;left:0;top:16px;width:8px;height:1px;background:var(--gold)}
+.service-example{background:linear-gradient(135deg,#f5f0e8,var(--cream));border-left:3px solid var(--gold);padding:28px 32px;margin:32px 0;border-radius:0 var(--radius) var(--radius) 0}
+.service-example-label{font-size:11px;letter-spacing:.15em;color:var(--gold);text-transform:uppercase;margin-bottom:10px}
+.service-example-text{font-family:'Noto Serif SC',serif;font-size:17px;line-height:1.7;color:var(--ink)}
 
-/* ── Process ── */
-.process{padding:120px 72px;background:var(--cream);}
-.process-hd{margin-bottom:64px;}
-.process-hd h2{font-family:'Noto Serif SC',serif;font-size:clamp(22px,2.4vw,34px);font-weight:300;letter-spacing:-0.3px;}
-.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
-.step-card{background:var(--cream);padding:44px 32px;transition:background .4s;}
-.step-card:hover{background:var(--cream);}
-.step-num{font-family:'Noto Serif SC',serif;font-size:40px;font-weight:200;color:var(--gold);opacity:.4;margin-bottom:20px;line-height:1;}
-.step-title{font-family:'Noto Serif SC',serif;font-size:15px;font-weight:400;margin-bottom:10px;}
-.step-desc{font-size:12.5px;color:var(--ink-soft);line-height:2;}
+/* PROCESS */
+.process{padding:120px 60px;background:linear-gradient(180deg,var(--cream) 0%,#f2ede4 100%)}
+.process-header{margin-bottom:80px}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;position:relative}
+.process-grid::before{content:'';position:absolute;top:40px;left:10%;right:10%;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);z-index:0}
+.process-step{text-align:center;position:relative;z-index:1}
+.step-num{width:80px;height:80px;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;background:var(--cream);transition:all .4s}
+.step-num span{font-family:'Noto Serif SC',serif;font-size:24px;font-weight:700;color:var(--gold)}
+.process-step:hover .step-num{background:var(--gold)}
+.process-step:hover .step-num span{color:#fff}
+.step-title{font-family:'Noto Serif SC',serif;font-size:18px;font-weight:600;margin-bottom:10px}
+.step-desc{font-size:13px;color:var(--gray);line-height:1.8;max-width:200px;margin:0 auto}
+.step-time{font-size:12px;color:var(--gold);margin-top:12px;letter-spacing:.05em}
 
-/* ── CTA ── */
-.cta{padding:120px 72px;background:var(--ink);text-align:center;position:relative;overflow:hidden;}
-.cta::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 60%,rgba(176,141,85,0.1) 0%,transparent 60%);}
-.cta-inner{position:relative;z-index:1;}
-.cta-eyebrow{font-size:9px;letter-spacing:6px;color:var(--gold);text-transform:uppercase;margin-bottom:32px;opacity:.7;}
-.cta-title{font-family:'Noto Serif SC',serif;font-size:clamp(28px,3vw,44px);font-weight:200;color:#fff;line-height:1.4;margin-bottom:24px;letter-spacing:-0.5px;}
-.cta-title em{font-style:normal;color:var(--gold);}
-.cta-sub{font-size:13px;color:rgba(255,255,255,0.3);margin-bottom:48px;letter-spacing:1px;}
-.cta-btn{display:inline-flex;align-items:center;gap:14px;font-size:10.5px;letter-spacing:3px;color:var(--ink);background:var(--gold);text-decoration:none;text-transform:uppercase;padding:16px 40px;transition:background .35s,box-shadow .35s,transform .35s;position:relative;overflow:hidden;}
-.cta-btn::before{content:"";position:absolute;inset:0;background:var(--gold-lt);transform:translateX(-102%);transition:transform .4s cubic-bezier(.25,.46,.45,.94);}
-.cta-btn:hover::before{transform:translateX(0);}
-.cta-btn:hover{box-shadow:0 12px 40px rgba(176,141,85,0.35);transform:translateY(-2px);}
-.cta-btn span{position:relative;z-index:1;}
+/* PRICING */
+.pricing{padding:120px 60px}
+.pricing-header{margin-bottom:60px}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.price-card{padding:48px 40px;border:1px solid var(--border);border-radius:var(--radius);background:#fff;position:relative;transition:all .5s}
+.price-card.featured{border-color:var(--gold);box-shadow:0 16px 48px rgba(200,169,110,.15)}
+.price-card.featured::before{content:'推荐';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:#fff;font-size:12px;letter-spacing:.1em;padding:4px 20px;border-radius:20px}
+.price-label{font-size:11px;letter-spacing:.15em;color:var(--gold);text-transform:uppercase;margin-bottom:12px}
+.price-name{font-family:'Noto Serif SC',serif;font-size:24px;font-weight:600;margin-bottom:8px}
+.price-desc{font-size:14px;color:var(--gray);margin-bottom:32px;line-height:1.7}
+.price-amount{font-family:'Noto Serif SC',serif;font-size:36px;font-weight:700;color:var(--ink);margin-bottom:4px}
+.price-amount span{font-size:16px;color:var(--gray);font-weight:400}
+.price-note{font-size:12px;color:var(--gray);margin-bottom:32px}
+.price-features{list-style:none;margin-bottom:40px}
+.price-features li{font-size:14px;padding:10px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;color:var(--gray)}
+.price-features li:last-child{border-bottom:none}
+.price-features li::before{content:'✓';color:var(--gold);font-weight:600;flex-shrink:0}
+.price-btn{display:block;text-align:center;padding:14px;border:1px solid var(--border);border-radius:var(--radius);font-size:14px;letter-spacing:.08em;transition:all .3s;color:var(--ink)}
+.price-btn:hover,.price-card.featured .price-btn{background:var(--ink);color:#fff;border-color:var(--ink)}
+.price-card.featured .price-btn:hover{background:var(--gold);border-color:var(--gold);color:var(--ink)}
 
-.footer{background:#0D0C0A;color:rgba(255,255,255,0.28);padding:80px 72px 40px;}
-.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:72px;padding-bottom:64px;border-bottom:1px solid rgba(255,255,255,0.05);}
-.footer-logo{font-family:'Noto Serif SC',serif;font-size:20px;font-weight:600;letter-spacing:6px;color:#fff;margin-bottom:18px;}
-.footer-logo span{color:var(--gold);}
-.footer-desc{font-size:12px;line-height:2.2;color:rgba(255,255,255,0.25);max-width:280px;}
-.footer-col h4{font-size:8.5px;letter-spacing:4px;color:#fff;text-transform:uppercase;margin-bottom:20px;font-weight:400;opacity:.45;}
-.footer-col a{display:block;font-size:12px;color:rgba(255,255,255,0.25);text-decoration:none;margin-bottom:12px;transition:color .3s;}
-.footer-col a:hover{color:var(--gold-lt);}
-.footer-btm{padding-top:32px;display:flex;justify-content:space-between;font-size:10.5px;letter-spacing:.5px;}
+/* CTA */
+.cta{background:var(--ink);padding:120px 60px;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(200,169,110,.08) 0%,transparent 70%)}
+.cta-title{font-family:'Noto Serif SC',serif;font-size:clamp(36px,5vw,64px);font-weight:700;color:#fff;line-height:1.1;letter-spacing:-.03em;margin-bottom:16px}
+.cta-sub{font-size:16px;color:rgba(255,255,255,.4);margin-bottom:40px}
+.cta-btn{background:var(--gold);color:var(--ink);padding:18px 56px;font-size:14px;letter-spacing:.15em;text-transform:uppercase;border:none;border-radius:var(--radius);cursor:pointer;font-family:inherit;font-weight:500;transition:all .4s;display:inline-block}
+.cta-btn:hover{background:var(--gold-light);transform:translateY(-3px);box-shadow:0 12px 40px rgba(200,169,110,.3)}
 
-@media(max-width:1100px){.services-section{padding:80px 48px;}.service-row{grid-template-columns:60px 1fr 80px;}.srv-tags{display:none;}.process-steps{grid-template-columns:repeat(2,1fr);}.footer-top{grid-template-columns:1fr 1fr;gap:40px;}}
+/* FOOTER */
+.footer{padding:80px 60px 40px;background:var(--ink);border-top:1px solid rgba(200,169,110,.15)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:60px;margin-bottom:80px}
+.footer-brand{font-family:'Noto Serif SC',serif;font-size:24px;font-weight:700;color:#fff;margin-bottom:16px}
+.footer-brand span{color:var(--gold)}
+.footer-tagline{font-size:14px;color:rgba(255,255,255,.4);line-height:1.8;margin-bottom:24px}
+.footer-heading{font-family:'Noto Serif SC',serif;font-size:14px;font-weight:600;color:var(--gold);letter-spacing:.1em;margin-bottom:20px;text-transform:uppercase}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:12px}
+.footer-links a{font-size:14px;color:rgba(255,255,255,.5);transition:all .3s}
+.footer-links a:hover{color:var(--gold)}
+.footer-contact-item{margin-bottom:20px}
+.footer-contact-label{font-size:12px;color:rgba(255,255,255,.3);letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+.footer-contact-value{font-size:14px;color:rgba(255,255,255,.7)}
+.footer-bottom{border-top:1px solid rgba(200,169,110,.1);padding-top:32px;display:flex;justify-content:space-between;align-items:center}
+.footer-copy{font-size:13px;color:rgba(255,255,255,.3)}
+.footer-legal{display:flex;gap:24px}
+.footer-legal a{font-size:13px;color:rgba(255,255,255,.3);transition:color .3s}
+.footer-legal a:hover{color:var(--gold)}
+
+@media(max-width:1024px){
+  .nav{padding:16px 30px}
+  .nav.scrolled{padding:12px 30px}
+  .page-hero{padding:160px 30px 80px}
+  .service-detail{padding:80px 30px}
+  .service-grid{grid-template-columns:1fr;gap:48px}
+  .service-meta{position:relative;top:auto}
+  .process,.pricing{padding:80px 30px}
+  .process-grid{grid-template-columns:1fr 1fr;gap:40px}
+  .process-grid::before{display:none}
+  .pricing-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:40px}
+}
 @media(max-width:768px){
-  .nav{padding:0 24px;}.nav-links,.nav-cta{display:none;}
-  .page-hero{padding:140px 24px 80px;}.page-hero::before{display:none;}
-  .services-section,.process,.cta,.footer{padding-left:24px;padding-right:24px;}
-  .service-row{grid-template-columns:1fr;gap:12px;}
-  .srv-arrow{display:none;}
-  .process-steps{grid-template-columns:1fr;}
-  .footer-top{grid-template-columns:1fr;}
+  .nav-links{display:none}
+  .process-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr;gap:32px}
+  .footer-bottom{flex-direction:column;gap:16px;text-align:center}
 }
 </style>
 </head>
 <body>
 
 <nav class="nav" id="nav">
-  <a href="index-v5.html" class="nav-logo">京涛<span>.</span></a>
+  <div class="nav-logo">京涛<span>.</span></div>
   <ul class="nav-links">
     <li><a href="index-v5.html">首页</a></li>
-    <li><a href="about-v5.html">关于我们</a></li>
-    <li><a href="services-v5.html" class="active">服务项目</a></li>
-    <li><a href="cases-v5.html">案例中心</a></li>
-    <li><a href="insights-v5.html">观点洞察</a></li>
+    <li><a href="about-v5.html">关于</a></li>
+    <li><a href="services-v5.html" class="active">服务</a></li>
+    <li><a href="cases-v5.html">案例</a></li>
+    <li><a href="insights-v5.html">观点</a></li>
+    <li><a href="contact-v5.html" class="nav-cta">联系我们</a></li>
   </ul>
-  <a href="contact-v5.html" class="nav-cta">联系我们</a>
+  <div class="nav-phone">+86 10 8888 6688</div>
 </nav>
 
-<section class="page-hero">
-  <div class="page-eyebrow">Services</div>
-  <h1 class="page-h1">六维服务<br>覆盖品牌<em style="font-style:normal;color:var(--gold)">全生命周期</em></h1>
-  <p class="page-sub">从战略定位到落地执行，京涛策划提供全链路品牌服务，每一个环节都做到专业、深度、有结果。</p>
-  <div class="page-hero-bar"></div>
+<section class="page-hero" id="pageHero">
+  <div class="page-hero-grid">
+    <div class="page-hero-line v" style="left:20%"></div>
+    <div class="page-hero-line v" style="left:40%"></div>
+    <div class="page-hero-line v" style="left:60%"></div>
+    <div class="page-hero-line v" style="left:80%"></div>
+    <div class="page-hero-line h" style="top:30%"></div>
+    <div class="page-hero-line h" style="top:60%"></div>
+  </div>
+  <div class="page-hero-content">
+    <div class="page-hero-tag">Our Services</div>
+    <h1 class="page-hero-title">六大核心服务<br>覆盖品牌全生命周期</h1>
+    <p class="page-hero-desc">从品牌战略定位到整合营销传播，从数字增长到视觉创意——京涛策划提供品牌建设全链路专业服务，并根据企业规模和行业特性，提供灵活的服务组合方案。</p>
+  </div>
+  <div class="page-hero-year">Services</div>
 </section>
 
-<section class="services-section">
-  <div class="services-hd">
-    <h2 class="reveal">服务项目</h2>
-    <span class="reveal" style="font-size:10px;letter-spacing:2px;color:var(--ink-faint);">What We Do</span>
-  </div>
-  <div class="services-list">
-    <div class="service-row reveal">
-      <div class="srv-num">01</div>
-      <div class="srv-content">
-        <h3 class="srv-title">品牌战略定位</h3>
-        <p>从市场调研、竞品分析、消费者洞察出发，找到品牌独有价值锚点，构建差异化定位体系，让品牌在市场中清晰占位。</p>
-        <div class="srv-tags" style="margin-top:16px;">
-          <span class="srv-tag">市场调研</span><span class="srv-tag">竞品分析</span><span class="srv-tag">定位战略</span><span class="srv-tag">品牌架构</span>
-        </div>
+<!-- SERVICE 01 -->
+<section class="service-detail" id="service01">
+  <div class="service-grid">
+    <div class="service-meta reveal">
+      <div class="service-num">01</div>
+      <div class="service-label">Core Service</div>
+      <h2 class="service-title">品牌战略咨询</h2>
+      <p class="service-intro">从市场调研、竞品分析、消费者洞察出发，为品牌找到清晰的市场定位与差异化竞争路径，制定3-5年品牌发展规划。</p>
+      <div class="service-tags">
+        <span class="service-tag">品牌诊断</span>
+        <span class="service-tag">竞品分析</span>
+        <span class="service-tag">定位规划</span>
+        <span class="service-tag">品牌架构</span>
+        <span class="service-tag">价值主张</span>
       </div>
-      <div class="srv-tags" style="flex-direction:column;align-items:flex-end;">
-        <span class="srv-tag">品牌战略</span>
+      <div class="service-deliverables">
+        <div class="deliverables-title">交付成果</div>
+        <div class="deliverable-item"><span class="deliverable-dot"></span>品牌现状诊断报告（20-30页）</div>
+        <div class="deliverable-item"><span class="deliverable-dot"></span>竞争格局分析报告</div>
+        <div class="deliverable-item"><span class="deliverable-dot"></span>品牌定位战略白皮书</div>
+        <div class="deliverable-item"><span class="deliverable-dot"></span>3-5年品牌发展规划路线图</div>
+        <div class="deliverable-item"><span class="deliverable-dot"></span>品牌核心信息手册（Key Message）</div>
       </div>
-      <div class="srv-arrow"></div>
     </div>
-    <div class="service-row reveal">
-      <div class="srv-num">02</div>
-      <div class="srv-content">
-        <h3 class="srv-title">整合营销传播</h3>
-        <p>线上线下全渠道营销策略制定，年度整合营销规划，内容创意与媒介投放一体化服务，实现品牌声量与销量双增长。</p>
-        <div class="srv-tags" style="margin-top:16px;">
-          <span class="srv-tag">整合营销</span><span class="srv-tag">内容创意</span><span class="srv-tag">媒介投放</span><span class="srv-tag">KOL合作</span>
-        </div>
+    <div class="service-body reveal reveal-delay-2">
+      <p>品牌战略咨询是京涛策划最核心的服务模块。我们相信：品牌的所有问题，根源都在于战略不够清晰。当一个品牌不知道"自己是谁、为谁服务、为什么而存在"，任何创意和传播都只是在掩盖问题，而不是解决问题。</p>
+
+      <h3>我们做什么</h3>
+      <p>通过定量问卷调研与定性深度访谈，系统了解目标消费者的真实需求、认知与决策路径；通过行业研究与竞品监测，绘制竞争地图，找到品牌的差异化空间；最终提炼出品牌核心价值主张与定位陈述，形成清晰、可执行的品牌战略方向。</p>
+
+      <h3>适合什么样的企业</h3>
+      <ul>
+        <li>新品牌进入市场，需要系统建立品牌定位</li>
+        <li>老品牌需要重新定位或品牌升级</li>
+        <li>业务扩张，原有品牌定位无法支撑新战略</li>
+        <li>B2B企业需要建立专业的品牌认知体系</li>
+        <li>企业内部对品牌方向存在分歧，需要第三方专业判断</li>
+      </ul>
+
+      <div class="service-example">
+        <div class="service-example-label">项目案例参考</div>
+        <div class="service-example-text">为某火锅连锁品牌完成"从川味快餐到朋友聚会场景"的重新定位，3个月内帮助其在同类竞争中建立清晰差异化，加盟咨询量提升280%。</div>
       </div>
-      <div class="srv-tags" style="flex-direction:column;align-items:flex-end;">
-        <span class="srv-tag">营销传播</span>
-      </div>
-      <div class="srv-arrow"></div>
-    </div>
-    <div class="service-row reveal">
-      <div class="srv-num">03</div>
-      <div class="srv-content">
-        <h3 class="srv-title">视觉形象设计</h3>
-        <p>品牌标志、视觉识别系统（VI）、包装设计、空间导视，打造统一且有辨识度的品牌形象，让品牌在每个触点都散发专业气场。</p>
-        <div class="srv-tags" style="margin-top:16px;">
-          <span class="srv-tag">LOGO设计</span><span class="srv-tag">VI系统</span><span class="srv-tag">包装设计</span><span class="srv-tag">画册设计</span>
-        </div>
-      </div>
-      <div class="srv-tags" style="flex-direction:column;align-items:flex-end;">
-        <span class="srv-tag">视觉设计</span>
-      </div>
-      <div class="srv-arrow"></div>
-    </div>
-    <div class="service-row reveal">
-      <div class="srv-num">04</div>
-      <div class="srv-content">
-        <h3 class="srv-title">数字营销推广</h3>
-        <p>抖音、小红书、微信、微博全平台内容营销策略，精准投放与用户运营，助力品牌在数字渠道建立持续影响力。</p>
-        <div class="srv-tags" style="margin-top:16px;">
-          <span class="srv-tag">抖音</span><span class="srv-tag">小红书</span><span class="srv-tag">微信</span><span class="srv-tag">信息流广告</span>
-        </div>
-      </div>
-      <div class="srv-tags" style="flex-direction:column;align-items:flex-end;">
-        <span class="srv-tag">数字营销</span>
-      </div>
-      <div class="srv-arrow"></div>
-    </div>
-    <div class="service-row reveal">
-      <div class="srv-num">05</div>
-      <div class="srv-content">
-        <h3 class="srv-title">营销物料制作</h3>
-        <p>品牌官网、宣传片、电商详情页、广告KV、销售工具等全链路物料创意与制作，让品牌在每一个对外窗口都保持专业输出。</p>
-        <div class="srv-tags" style="margin-top:16px;">
-          <span class="srv-tag">官网制作</span><span class="srv-tag">宣传片</span><span class="srv-tag">详情页</span><span class="srv-tag">广告KV</span>
-        </div>
-      </div>
-      <div class="srv-tags" style="flex-direction:column;align-items:flex-end;">
-        <span class="srv-tag">物料制作</span>
-      </div>
-      <div class="srv-arrow"></div>
-    </div>
-    <div class="service-row reveal">
-      <div class="srv-num">06</div>
-      <div class="srv-content">
-        <h3 class="srv-title">年度顾问服务</h3>
-        <p>品牌全年营销顾问陪伴式服务，策略持续迭代，执行不掉链子。从年初规划到季度复盘，从创意评审到媒介决策，全程深度陪跑。</p>
-        <div class="srv-tags" style="margin-top:16px;">
-          <span class="srv-tag">常年顾问</span><span class="srv-tag">季度复盘</span><span class="srv-tag">创意评审</span><span class="srv-tag">战略咨询</span>
-        </div>
-      </div>
-      <div class="srv-tags" style="flex-direction:column;align-items:flex-end;">
-        <span class="srv-tag">年度顾问</span>
-      </div>
-      <div class="srv-arrow"></div>
+
+      <p>服务周期通常为4-8周，分为调研诊断期（2-3周）和策略输出期（2-5周）。我们建议在完成品牌战略咨询后，继续推进视觉识别系统升级和整合营销传播策略，确保战略落地的一致性。</p>
     </div>
   </div>
 </section>
 
-<div class="section-mark"><span>Process</span></div>
+<!-- SERVICE 02 -->
+<section class="service-detail" id="service02">
+  <div class="service-grid">
+    <div class="service-meta reveal">
+      <div class="service-num">02</div>
+      <div class="service-label">Core Service</div>
+      <h2 class="service-title">整合营销传播</h2>
+      <p class="service-intro">打通线上与线下、传统与数字媒介，制定全年整合营销传播策略，确保每一次触达都服务于品牌核心目标，避免资源浪费。</p>
+      <div class="service-tags">
+        <span class="service-tag">IMC策略</span>
+        <span class="service-tag">媒介组合</span>
+        <span class="service-tag">传播节奏</span>
+        <span class="service-tag">KOL策略</span>
+        <span class="service-tag">效果评估</span>
+      </div>
+      <div class="service-deliverables">
+        <div class="deliverables-title">交付成果</div>
+        <div class="deliverable-item"><span class="deliverable-dot"></span>全年整合营销传播策略方案</div>
+        <div class="deliverable-item"><span class="deliverable-dot"></span>季度/月度传播节奏规划表</div>
+        <div class="deliverable-item"><span class="deliverable-dot"></span>媒介渠道组合策略建议</div>
+        <div class="deliverable-item"><span class="deliverable-dot"></span>每次传播战役执行方案+物料</div>
+        <div class="deliverable-item"><span class="deliverable-dot"></span>月度效果数据分析报告</div>
+      </div>
+    </div>
+    <div class="service-body reveal reveal-delay-2">
+      <p>整合营销传播（IMC）的核心逻辑是：让品牌在不同触点传递一致的信息，用同一个声音说话。消费者今天可能在电梯里看到你的广告，晚上刷抖音时又刷到你的内容，朋友圈里有人转发你的文章——每一次触达，都是品牌认知的积累或消耗。</p>
 
+      <h3>我们做什么</h3>
+      <p>京涛的整合营销服务，从制定"说什么"（核心信息）开始，到"对谁说"（目标人群）、"通过什么渠道说"（媒介组合）、"怎么说"（创意内容形式），再到"说得怎么样"（效果追踪），形成完整的传播闭环。</p>
+      <p>我们不迷信单一渠道的流量神话，而是根据品牌特性和目标用户触媒习惯，科学分配媒介预算，追求传播效率最大化。传统媒体与数字媒体、付费媒体与自有媒体、品牌广告与效果广告——各司其职、相互配合。</p>
+
+      <h3>媒介渠道覆盖</h3>
+      <ul>
+        <li>数字媒体：抖音、小红书、微博、微信、知乎、B站</li>
+        <li>传统媒体：电梯媒体、户外大屏、机场广告、杂志</li>
+        <li>KOL/KOC：头部达人、腰部达人、素人种草矩阵</li>
+        <li>内容营销：品牌官网、公众号、 EDM、私域社群</li>
+        <li>电商内容：天猫/京东详情页、直播间、短视频</li>
+      </ul>
+
+      <div class="service-example">
+        <div class="service-example-label">项目案例参考</div>
+        <div class="service-example-text">为某新式茶饮品牌制定全年整合营销方案，在3个月内完成品牌定位、视觉升级、抖音+小红书种草+电商直播的全链路打通，首月GMV突破1200万。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE 03 -->
+<section class="service-detail" id="service03">
+  <div class="service-grid">
+    <div class="service-meta reveal">
+      <div class="service-num">03</div>
+      <div class="service-label">Digital Service</div>
+      <h2 class="service-title">数字营销与社交媒体</h2>
+      <p class="service-intro">抖音、小红书、微信、微博全域社交媒体运营，精准投放策略、KOL合作矩阵、私域流量搭建与转化，用数字驱动品牌增长。</p>
+      <div class="service-tags">
+        <span class="service-tag">抖音运营</span>
+        <span class="service-tag">小红书种草</span>
+        <span class="service-tag">私域搭建</span>
+        <span class="service-tag">精准投放</span>
+        <span class="service-tag">直播策划</span>
+      </div>
+      <div class="service-deliverables">
+        <div class="deliverables-title">交付成果</div>
+        <div class="deliverable-item"><span class="deliverable-dot"></span>社交媒体账号定位与内容策略</div>
+        <div class="deliverable-item"><span class="deliverable-dot"></span>月度内容日历（每月不少于25条）</div>
+        <div class="deliverable-item"><span class="deliverable-dot"></span>原创图文/短视频内容制作</div>
+        <div class="deliverable-item"><span class="deliverable-dot"></span>KOL合作矩阵方案与执行</div>
+        <div class="deliverable-item"><span class="deliverable-dot"></span>月度数据复盘报告</div>
+      </div>
+    </div>
+    <div class="service-body reveal reveal-delay-2">
+      <p>数字营销不是简单的"发发抖音、投投广告"，而是一套以数据为基础、以转化为目标、以内容为载体的系统性工程。京涛的数字营销团队，既有策略思维，也有内容能力，更有投放优化的实战经验。</p>
+
+      <h3>抖音营销</h3>
+      <p>从账号定位、内容策划、视频拍摄剪辑，到信息流广告投放、达人合作、直播间运营，我们提供抖音营销的全链路服务。我们不做无效的粉丝量堆积，而是追求真实的用户互动和转化价值。</p>
+
+      <h3>小红书种草</h3>
+      <p>小红书是消费决策影响力最大的平台之一。我们建立覆盖头部、中腰部和素人的完整种草矩阵，通过真实、有价值的笔记内容影响用户的心智。好的小红书种草，是让人看完觉得"这就是真实用户的使用感受"，而不是明显的广告。</p>
+
+      <h3>私域流量运营</h3>
+      <p>公域流量越来越贵，私域流量成为品牌的核心资产。我们帮助品牌搭建从引流到沉淀到激活到转化的完整私域运营体系，用企业微信群、小程序商城、公众号，形成持续触达、反复转化的用户经营闭环。</p>
+
+      <div class="service-example">
+        <div class="service-example-label">项目案例参考</div>
+        <div class="service-example-text">为某家居品牌搭建小红书+抖音+私域全链路运营体系，6个月内小红书自然搜索增长300%，618大促GMV 520万，私域沉淀用户超8万人。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE 04 -->
+<section class="service-detail" id="service04">
+  <div class="service-grid">
+    <div class="service-meta reveal">
+      <div class="service-num">04</div>
+      <div class="service-label">Creative Service</div>
+      <h2 class="service-title">视觉创意与内容制作</h2>
+      <p class="service-intro">品牌视觉识别系统（VI）设计、创意物料制作、视频广告拍摄、直播内容策划与执行——全链路视觉输出，让品牌形象与战略高度一致。</p>
+      <div class="service-tags">
+        <span class="service-tag">VI设计</span>
+        <span class="service-tag">logo设计</span>
+        <span class="service-tag">视频制作</span>
+        <span class="service-tag">包装设计</span>
+        <span class="service-tag">物料设计</span>
+      </div>
+      <div class="service-deliverables">
+        <div class="deliverables-title">交付成果</div>
+        <div class="deliverable-item"><span class="deliverable-dot"></span>品牌视觉识别系统手册（VI手册）</div>
+        <div class="deliverable-item"><span class="deliverable-dot"></span>完整品牌应用设计文件（源文件）</div>
+        <div class="deliverable-item"><span class="deliverable-dot"></span>品牌官网视觉设计稿</div>
+        <div class="deliverable-item"><span class="deliverable-dot"></span>系列短视频/广告片（按项目约定）</div>
+        <div class="deliverable-item"><span class="deliverable-dot"></span>全套营销物料设计文件</div>
+      </div>
+    </div>
+    <div class="service-body reveal reveal-delay-2">
+      <p>视觉是品牌最直观的外在表达。一个Logo、一个配色、一套字体、一张海报——这些视觉元素在每一次触达中积累着消费者对品牌的感知。我们相信：视觉不是装饰，是战略的视觉化。</p>
+
+      <h3>品牌视觉识别系统（VI）</h3>
+      <p>从Logo设计到基础识别系统（标准色彩、标准字体、辅助图形、图形规范），再到应用识别系统（办公用品、包装、媒体广告、店面设计等），我们为品牌建立一套完整、可落地、可持续的视觉语言体系。</p>
+
+      <h3>创意内容制作</h3>
+      <p>品牌TVC、产品视频、抖音短视频、种草图文、直播背景物料——京涛创意团队覆盖从策略到执行的完整内容生产链路。我们不外包核心创意，每一份内容都经过内部策略审核。</p>
+
+      <h3>我们的视觉风格</h3>
+      <p>我们追求"精准克制"的东方美学——不是元素的堆砌，而是对品牌精神的精准提炼和克制表达。好看的设计很多，有灵魂的设计很少。我们的目标，是让你的品牌视觉经得起时间考验，不因流行趋势变化而贬值。</p>
+
+      <div class="service-example">
+        <div class="service-example-label">项目案例参考</div>
+        <div class="service-example-text">为某原创家具品牌完成全套VI视觉升级，涵盖Logo、品牌色、辅助图形、产品包装、门店SI系统、官网视觉，成为其获得天猫年度原创设计品牌奖的重要支撑。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE 05 -->
+<section class="service-detail" id="service05">
+  <div class="service-grid">
+    <div class="service-meta reveal">
+      <div class="service-num">05</div>
+      <div class="service-label">Event Service</div>
+      <h2 class="service-title">公关活动策划与执行</h2>
+      <p class="service-intro">品牌发布会、新品上市路演、线下体验活动、展会策划执行——从创意策划到现场执行，提供全流程专业服务，让每一场活动都成为品牌加分项。</p>
+      <div class="service-tags">
+        <span class="service-tag">发布会</span>
+        <span class="service-tag">路演活动</span>
+        <span class="service-tag">展会策划</span>
+        <span class="service-tag">快闪店</span>
+        <span class="service-tag">启动仪式</span>
+      </div>
+      <div class="service-deliverables">
+        <div class="deliverables-title">交付成果</div>
+        <div class="deliverable-item"><span class="deliverable-dot"></span>活动整体创意策划方案</div>
+        <div class="deliverable-item"><span class="deliverable-dot"></span>场地、搭建、供应商资源对接</div>
+        <div class="deliverable-item"><span class="deliverable-dot"></span>现场执行脚本与物料清单</div>
+        <div class="deliverable-item"><span class="deliverable-dot"></span>活动预热+传播+后续传播方案</div>
+        <div class="deliverable-item"><span class="deliverable-dot"></span>活动总结报告（含数据与媒体反馈）</div>
+      </div>
+    </div>
+    <div class="service-body reveal reveal-delay-2">
+      <p>线下活动是品牌与用户建立深度连接的重要场景。一场精心策划的品牌发布会，能够在媒体和目标用户心中建立清晰的高端认知；一次有创意的线下快闪，能够在社交媒体引发自然传播。活动的价值，不只在活动本身，更在于它能辐射到的人群和后续影响。</p>
+
+      <h3>我们做什么</h3>
+      <ul>
+        <li>品牌年度发布会/战略发布会：整体策划、物料设计、场地搭建、嘉宾邀请、媒体传播</li>
+        <li>新品上市路演：全国巡回路演策划执行，现场互动装置设计，销售转化支持</li>
+        <li>线下体验活动/快闪店：场景策划、用户体验设计、现场运营</li>
+        <li>行业展会策划：展位设计、参展方案、招商物料</li>
+        <li>私域线下见面会：社群用户的线下深度连接活动策划</li>
+      </ul>
+
+      <h3>为什么选择京涛</h3>
+      <p>很多活动公司擅长执行但不擅策划，很多策划公司有创意但不懂传播。我们是少数兼具策略思维和执行能力的团队——我们的每一场活动，都从"这场活动要达成什么目标"开始，确保活动创意服务于传播目标，而不是为了创意而创意。</p>
+
+      <div class="service-example">
+        <div class="service-example-label">项目案例参考</div>
+        <div class="service-example-text">为某科技品牌策划年度战略发布会，200人规模，现场获得8家媒体报道，线上直播观看超50万人次，会后一周内官网询盘量增长180%。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE 06 -->
+<section class="service-detail" id="service06">
+  <div class="service-grid">
+    <div class="service-meta reveal">
+      <div class="service-num">06</div>
+      <div class="service-label">Annual Service</div>
+      <h2 class="service-title">年度品牌管理服务</h2>
+      <p class="service-intro">常驻式品牌管家服务，深度陪伴企业成长。每月策略复盘、内容规划、效果追踪——让品牌建设成为企业持续积累的核心竞争力，而不是一次性工程。</p>
+      <div class="service-tags">
+        <span class="service-tag">月度策略</span>
+        <span class="service-tag">内容规划</span>
+        <span class="service-tag">效果追踪</span>
+        <span class="service-tag">品牌培训</span>
+        <span class="service-tag">危机公关</span>
+      </div>
+      <div class="service-deliverables">
+        <div class="deliverables-title">交付成果</div>
+        <div class="deliverable-item"><span class="deliverable-dot"></span>每月品牌策略复盘与下月规划</div>
+        <div class="deliverable-item"><span class="deliverable-dot"></span>月度内容日历与素材制作</div>
+        <div class="deliverable-item"><span class="deliverable-dot"></span>月度传播效果数据报告</div>
+        <div class="deliverable-item"><span class="deliverable-dot"></span>季度品牌健康度调研</div>
+        <div class="deliverable-item"><span class="deliverable-dot"></span>7×24小时品牌危机响应</div>
+      </div>
+    </div>
+    <div class="service-body reveal reveal-delay-2">
+      <p>品牌建设是一场马拉松，不是一场发布会。京涛的年度品牌管理服务，是为那些真正重视品牌建设、希望建立长期竞争优势的企业提供的深度陪伴式服务。</p>
+
+      <h3>我们的工作方式</h3>
+      <p>每月中旬，我们会与客户进行月度品牌策略会议，回顾上月传播数据、分析竞争动态、调整下月传播策略。我们不只是执行者，更是品牌的外部战略顾问——当你面临品牌相关决策时，我们随时可以提供专业意见。</p>
+
+      <h3>服务内容覆盖</h3>
+      <ul>
+        <li>月度品牌传播策略制定与内容日历规划</li>
+        <li>社交媒体账号（抖音/小红书/微信）内容运营</li>
+        <li>品牌官方物料（海报、长图、文案）设计制作</li>
+        <li>媒介投放策略制定与效果优化</li>
+        <li>季度品牌健康度调研（认知度、美誉度、忠诚度）</li>
+        <li>品牌公关稿件、创始人IP内容策划</li>
+        <li>竞品动态监测与应对策略</li>
+        <li>7×24小时品牌危机响应</li>
+        <li>品牌团队内部培训（让客户品牌团队真正成长）</li>
+      </ul>
+
+      <h3>为什么年度服务更有效</h3>
+      <p>品牌认知的建立需要持续积累。任何碎片化的单次合作，都难以形成系统的品牌资产。年度服务让我们真正理解你的业务，与你共同成长，并在每个关键节点提供及时的战略支持。</p>
+
+      <div class="service-example">
+        <div class="service-example-label">客户评价</div>
+        <div class="service-example-text">"京涛不只是在做内容，更像是我们品牌团队的一部分。每个月的复盘会议让我们真正看清品牌建设的进展和方向。"——某原创家居品牌创始人</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
 <section class="process">
-  <div class="process-hd">
-    <div style="font-size:9px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;display:flex;align-items:center;gap:12px;margin-bottom:12px;">How We Work</div>
-    <h2 class="reveal">我们的工作方法</h2>
+  <div class="process-header">
+    <div class="section-tag reveal">工作流程</div>
+    <h2 class="section-title reveal reveal-delay-1">标准四步，高效落地</h2>
+    <p class="section-desc reveal reveal-delay-2">每项目都遵循严格的策略→创意→执行→复盘工作流程</p>
   </div>
-  <div class="process-steps">
-    <div class="step-card reveal">
-      <div class="step-num">01</div>
-      <div class="step-title">深度调研</div>
-      <div class="step-desc">市场研究、竞品扫描、消费者访谈，找到真实的商业问题与机会点。</div>
+  <div class="process-grid">
+    <div class="process-step reveal">
+      <div class="step-num"><span>01</span></div>
+      <h3 class="step-title">深度调研</h3>
+      <p class="step-desc">市场研究、竞品监测、消费者访谈，定量与定性结合，摸清真实情况</p>
+      <div class="step-time">1-2 周</div>
     </div>
-    <div class="step-card reveal rd1">
-      <div class="step-num">02</div>
-      <div class="step-title">策略制定</div>
-      <div class="step-desc">基于调研结论，制定差异化品牌定位与整合营销策略，明确方向与路径。</div>
+    <div class="process-step reveal reveal-delay-1">
+      <div class="step-num"><span>02</span></div>
+      <h3 class="step-title">策略制定</h3>
+      <p class="step-desc">品牌定位、核心信息、传播策略、创意方向，全局规划清晰路径</p>
+      <div class="step-time">2-4 周</div>
     </div>
-    <div class="step-card reveal rd2">
-      <div class="step-num">03</div>
-      <div class="step-title">创意执行</div>
-      <div class="step-desc">视觉设计、内容创意、媒介规划，全链路执行策略落地，确保品质与一致性。</div>
+    <div class="process-step reveal reveal-delay-2">
+      <div class="step-num"><span>03</span></div>
+      <h3 class="step-title">创意执行</h3>
+      <p class="step-desc">视觉设计、内容制作、媒介投放，多团队协作，高效落地</p>
+      <div class="step-time">按项目周期</div>
     </div>
-    <div class="step-card reveal rd3">
-      <div class="step-num">04</div>
-      <div class="step-title">复盘迭代</div>
-      <div class="step-desc">数据监测、效果复盘、策略迭代，让品牌持续优化，积累长期价值。</div>
+    <div class="process-step reveal reveal-delay-3">
+      <div class="step-num"><span>04</span></div>
+      <h3 class="step-title">效果优化</h3>
+      <p class="step-desc">数据监测、效果评估、策略迭代，持续优化ROI与品牌资产</p>
+      <div class="step-time">持续追踪</div>
     </div>
   </div>
 </section>
 
+<!-- PRICING -->
+<section class="pricing">
+  <div class="pricing-header">
+    <div class="section-tag reveal">服务模式</div>
+    <h2 class="section-title reveal reveal-delay-1">灵活的服务组合方案</h2>
+    <p class="section-desc reveal reveal-delay-2">根据企业规模、品牌阶段和预算，提供最适合的服务组合</p>
+  </div>
+  <div class="pricing-grid">
+    <div class="price-card reveal">
+      <div class="price-label">项目制</div>
+      <div class="price-name">单项目合作</div>
+      <p class="price-desc">适合有明确需求的企业，按项目签署合同，聚焦单一目标交付。</p>
+      <div class="price-amount">面议 <span>/ 项目</span></div>
+      <p class="price-note">根据项目类型与范围定价</p>
+      <ul class="price-features">
+        <li>品牌战略咨询项目</li>
+        <li>品牌视觉升级项目</li>
+        <li>整合营销传播战役</li>
+        <li>单次传播活动策划执行</li>
+        <li>年度视觉物料设计套餐</li>
+      </ul>
+      <a href="contact-v5.html" class="price-btn">咨询详情</a>
+    </div>
+    <div class="price-card featured reveal reveal-delay-1">
+      <div class="price-label">年度服务</div>
+      <div class="price-name">品牌管家年度服务</div>
+      <p class="price-desc">深度陪伴式服务，覆盖品牌建设全年需求，让品牌建设成为持续积累。</p>
+      <div class="price-amount">¥12万 <span>起 / 年</span></div>
+      <p class="price-note">标准年度服务套餐，可按需定制</p>
+      <ul class="price-features">
+        <li>月度品牌策略会议与规划</li>
+        <li>全年社交媒体内容运营</li>
+        <li>每月品牌物料设计制作</li>
+        <li>全年媒介投放策略支持</li>
+        <li>季度品牌健康度调研</li>
+        <li>7×24危机公关响应</li>
+        <li>优先项目资源支持</li>
+      </ul>
+      <a href="contact-v5.html" class="price-btn">预约咨询</a>
+    </div>
+    <div class="price-card reveal reveal-delay-2">
+      <div class="price-label">战略合作</div>
+      <div class="price-name">常驻团队服务</div>
+      <p class="price-desc">京涛团队常驻客户，按需坐班，提供最及时的品牌支持。</p>
+      <div class="price-amount">面议 <span>/ 月</span></div>
+      <p class="price-note">适合大型企业或集团客户</p>
+      <ul class="price-features">
+        <li>专属品牌团队常驻服务</li>
+        <li>不限次数策略咨询服务</li>
+        <li>全渠道品牌内容输出</li>
+        <li>多品牌管理支持</li>
+        <li>战略级资源对接</li>
+        <li>品牌团队培训赋能</li>
+      </ul>
+      <a href="contact-v5.html" class="price-btn">商务洽谈</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
 <section class="cta">
-  <div class="cta-inner">
-    <div class="cta-eyebrow reveal">Start A Project</div>
-    <h2 class="cta-title reveal">告诉我们您的品牌挑战<br>我们一起<em>找到出路</em></h2>
-    <p class="cta-sub reveal">每一次合作都从一次深度对话开始</p>
-    <a href="contact-v5.html" class="cta-btn reveal"><span>立即联系</span></a>
-  </div>
+  <h2 class="cta-title reveal">不确定需要什么服务？<br>先聊聊</h2>
+  <p class="cta-sub reveal reveal-delay-1">首次沟通免费。我们会根据你的实际情况，推荐最适合的服务方案。</p>
+  <a href="contact-v5.html" class="cta-btn reveal reveal-delay-2">立即预约咨询</a>
 </section>
 
+<!-- FOOTER -->
 <footer class="footer">
-  <div class="footer-top">
+  <div class="footer-grid">
     <div>
-      <div class="footer-logo">京涛<span>.</span></div>
-      <p class="footer-desc">京涛策划创立于上海，专注品牌战略定位与整合营销咨询。</p>
+      <div class="footer-brand">京涛<span>.</span></div>
+      <p class="footer-tagline">品牌战略 × 整合营销传播<br>让品牌自己开口说话</p>
     </div>
-    <div class="footer-col"><h4>服务项目</h4><a href="services-v5.html">品牌战略定位</a><a href="services-v5.html">整合营销传播</a><a href="services-v5.html">视觉形象设计</a></div>
-    <div class="footer-col"><h4>案例中心</h4><a href="cases-v5.html">餐饮行业</a><a href="cases-v5.html">快消品牌</a><a href="cases-v5.html">科技企业</a></div>
-    <div class="footer-col"><h4>联系我们</h4><a href="contact-v5.html">在线留言</a><a href="tel:4008888888">400-888-8888</a></div>
+    <div>
+      <div class="footer-heading">导航</div>
+      <ul class="footer-links">
+        <li><a href="index-v5.html">首页</a></li>
+        <li><a href="about-v5.html">关于我们</a></li>
+        <li><a href="services-v5.html">服务项目</a></li>
+        <li><a href="cases-v5.html">案例中心</a></li>
+        <li><a href="insights-v5.html">观点洞察</a></li>
+        <li><a href="contact-v5.html">联系我们</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">服务</div>
+      <ul class="footer-links">
+        <li><a href="#service01">品牌战略咨询</a></li>
+        <li><a href="#service02">整合营销传播</a></li>
+        <li><a href="#service03">数字营销</a></li>
+        <li><a href="#service04">视觉创意设计</a></li>
+        <li><a href="#service05">公关活动执行</a></li>
+        <li><a href="#service06">年度品牌管理</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">联系方式</div>
+      <div class="footer-contact-item">
+        <div class="footer-contact-label">地址</div>
+        <div class="footer-contact-value">北京市朝阳区建国路88号<br>SOHO现代城A座1608</div>
+      </div>
+      <div class="footer-contact-item">
+        <div class="footer-contact-label">电话</div>
+        <div class="footer-contact-value">+86 10 8888 6688</div>
+      </div>
+      <div class="footer-contact-item">
+        <div class="footer-contact-label">邮箱</div>
+        <div class="footer-contact-value">hello@jjintao.com</div>
+      </div>
+    </div>
   </div>
-  <div class="footer-btm"><span>© 2024 京涛策划 jintaocehua.com</span><span>上海市静安区</span></div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2024 京涛策划 Jingtao Planning. 保留所有权利。</div>
+    <div class="footer-legal">
+      <a href="#">隐私政策</a>
+      <a href="#">使用条款</a>
+      <a href="#">京ICP备XXXXXXXX号</a>
+    </div>
+  </div>
 </footer>
 
 <script>
-const nav=document.getElementById('nav');
-window.addEventListener('scroll',()=>{nav.classList.toggle('srolled',window.scrollY>50);});
-const reveals=document.querySelectorAll('.reveal');
-const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');}}});},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
-reveals.forEach(el=>io.observe(el));
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); });
+window.addEventListener('load', () => { setTimeout(() => document.getElementById('pageHero').classList.add('active'), 100); });
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);} });
+}, { threshold:0.1, rootMargin:'0px 0px -60px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
