@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>观点洞察 — 京涛策划</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1C1A17;--ink-soft:#4A4640;--ink-faint:#9A9590;--gold:#B08D55;--gold-lt:#D4B87A;--gold-dim:rgba(176,141,85,0.15);--cream:#F6F1E9;--white:#FDFCFA;--line:#E5DFD6;--bg:#FDFCFA;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter','Noto Sans SC',sans-serif;color:var(--ink);background:var(--bg);font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+::-webkit-scrollbar{width:3px;}::-webkit-scrollbar-track{background:var(--cream);}::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px;}
+::selection{background:var(--gold-dim);}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .9s cubic-bezier(.25,.46,.45,.94),transform .9s cubic-bezier(.25,.46,.45,.94);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.rd1{transition-delay:.1s;}.rd2{transition-delay:.2s;}.rd3{transition-delay:.3s;}
+
+.nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 72px;height:68px;background:rgba(246,241,233,0.9);backdrop-filter:blur(20px);border-bottom:1px solid rgba(229,223,214,0.5);transition:all .4s;}
+.nav.srolled{background:rgba(246,241,233,0.97);box-shadow:0 1px 30px rgba(28,26,23,0.05);}
+.nav-logo{font-family:'Noto Serif SC',serif;font-size:18px;font-weight:600;letter-spacing:6px;color:var(--ink);text-decoration:none;}
+.nav-logo span{color:var(--gold);}
+.nav-links{display:flex;gap:36px;list-style:none;}
+.nav-links a{font-size:10px;letter-spacing:2.5px;color:var(--ink-faint);text-decoration:none;text-transform:uppercase;position:relative;transition:color .3s;}
+.nav-links a::after{content:"";position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--gold);transition:width .4s cubic-bezier(.25,.46,.45,.94);}
+.nav-links a:hover,.nav-links a.active{color:var(--ink);}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%;}
+.nav-cta{font-size:10px;letter-spacing:2px;color:var(--ink);border:1px solid var(--gold);padding:8px 20px;text-decoration:none;text-transform:uppercase;transition:background .3s,color .3s;}
+.nav-cta:hover{background:var(--gold);color:var(--white);}
+
+.page-hero{background:var(--cream);padding:180px 72px 100px;position:relative;overflow:hidden;}
+.page-hero::before{content:"";position:absolute;right:0;top:0;bottom:0;width:40%;background:var(--ink);}
+.page-hero::after{content:"INSIGHTS";position:absolute;right:60px;top:50%;transform:translateY(-50%);font-family:'Noto Serif SC',serif;font-size:clamp(50px,8vw,100px);font-weight:600;color:rgba(255,255,255,0.04);letter-spacing:8px;}
+.page-eyebrow{font-size:9px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;display:flex;align-items:center;gap:12px;margin-bottom:24px;opacity:0;animation:fadeIn .6s .3s ease both;}
+.page-eyebrow::before{content:"";display:inline-block;width:28px;height:1px;background:var(--gold);}
+@keyframes fadeIn{to{opacity:1;}}
+.page-h1{font-family:'Noto Serif SC',serif;font-size:clamp(36px,4vw,56px);font-weight:300;line-height:1.2;letter-spacing:-0.5px;max-width:560px;opacity:0;animation:fadeUp .8s .5s ease both;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+.page-sub{font-size:14px;color:var(--ink-soft);line-height:2.2;max-width:480px;margin-top:24px;opacity:0;animation:fadeIn .8s .8s ease both;}
+.page-hero-bar{position:absolute;bottom:0;left:0;right:0;height:1px;background:var(--line);}
+
+.insights-section{padding:120px 72px;background:var(--white);}
+
+/* Featured article */
+.featured{background:var(--cream);border:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;margin-bottom:80px;transition:box-shadow .4s;}
+.featured:hover{box-shadow:0 12px 48px rgba(20,20,20,0.08);}
+.featured-img{background:linear-gradient(160deg,#1E1B17,#100F0D);display:flex;align-items:center;justify-content:center;min-height:360px;position:relative;overflow:hidden;}
+.featured-img::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 40% 50%,rgba(176,141,85,0.12) 0%,transparent 60%);}
+.featured-star{font-family:'Noto Serif SC',serif;font-size:clamp(80px,10vw,120px);color:rgba(176,141,85,0.08);line-height:1;}
+.featured-label{position:absolute;top:24px;left:24px;font-size:9px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;border:1px solid var(--gold);padding:4px 12px;}
+.featured-content{padding:52px 48px;display:flex;flex-direction:column;justify-content:center;}
+.featured-meta{display:flex;align-items:center;gap:16px;margin-bottom:20px;}
+.featured-date{font-size:10px;letter-spacing:2px;color:var(--ink-faint);}
+.featured-cat{font-size:9px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;}
+.featured-dot{width:3px;height:3px;border-radius:50%;background:var(--gold);}
+.featured-title{font-family:'Noto Serif SC',serif;font-size:clamp(20px,2.4vw,28px);font-weight:400;line-height:1.5;margin-bottom:20px;letter-spacing:.3px;transition:color .3s;}
+.featured:hover .featured-title{color:var(--gold);}
+.featured-excerpt{font-size:13px;color:var(--ink-soft);line-height:2.2;margin-bottom:28px;}
+.featured-read{display:inline-flex;align-items:center;gap:10px;font-size:10px;letter-spacing:3px;color:var(--ink);text-transform:uppercase;transition:color .3s,gap .3s;}
+.featured:hover .featured-read{color:var(--gold);gap:16px;}
+.featured-read-line{display:inline-block;width:24px;height:1px;background:currentColor;transition:width .3s;}
+.featured:hover .featured-read-line{width:36px;}
+
+/* Articles list */
+.articles-hd{margin-bottom:0;display:flex;justify-content:space-between;align-items:flex-end;border-bottom:1px solid var(--line);padding-bottom:20px;}
+.articles-hd h2{font-family:'Noto Serif SC',serif;font-size:clamp(20px,2vw,28px);font-weight:300;letter-spacing:-0.2px;}
+.articles-hd span{font-size:10px;letter-spacing:2px;color:var(--ink-faint);}
+.articles-list{display:flex;flex-direction:column;margin-top:0;}
+.article-row{display:grid;grid-template-columns:140px 1fr auto;gap:48px;align-items:center;padding:36px 0;border-bottom:1px solid var(--line);cursor:pointer;position:relative;transition:padding-left .3s;}
+.article-row::before{content:"";position:absolute;top:0;left:0;width:0;height:100%;background:var(--gold-dim);transition:width .4s;z-index:-1;}
+.article-row:hover{padding-left:12px;}
+.article-row:hover::before{width:100%;}
+.article-date{font-size:10px;letter-spacing:2px;color:var(--ink-faint);flex-shrink:0;}
+.article-title{font-family:'Noto Serif SC',serif;font-size:clamp(15px,1.8vw,20px);font-weight:400;line-height:1.5;letter-spacing:.3px;transition:color .3s;}
+.article-row:hover .article-title{color:var(--gold);}
+.article-cat{font-size:9px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;white-space:nowrap;}
+.article-arrow{width:28px;height:1px;background:var(--gold);position:relative;opacity:0;transition:opacity .3s,width .4s;}
+.article-arrow::after{content:"";position:absolute;right:0;top:-3px;width:6px;height:6px;border-right:1px solid var(--gold);border-top:1px solid var(--gold);transform:rotate(45deg);}
+.article-row:hover .article-arrow{opacity:1;width:44px;}
+
+/* Newsletter */
+.newsletter{padding:120px 72px;background:var(--cream);text-align:center;}
+.newsletter h2{font-family:'Noto Serif SC',serif;font-size:clamp(22px,2.4vw,32px);font-weight:300;margin-bottom:16px;letter-spacing:-0.3px;}
+.newsletter p{font-size:13px;color:var(--ink-soft);margin-bottom:40px;}
+.newsletter-form{display:flex;gap:12px;max-width:480px;margin:0 auto;}
+.newsletter-input{flex:1;padding:14px 20px;border:1px solid var(--line);background:var(--white);font-family:'Inter',sans-serif;font-size:13px;color:var(--ink);outline:none;transition:border-color .3s;}
+.newsletter-input:focus{border-color:var(--gold);}
+.newsletter-input::placeholder{color:var(--ink-faint);}
+.newsletter-btn{padding:14px 28px;background:var(--ink);color:var(--white);border:1px solid var(--ink);font-size:10px;letter-spacing:3px;text-transform:uppercase;cursor:pointer;transition:background .3s;}
+.newsletter-btn:hover{background:var(--gold);border-color:var(--gold);}
+
+/* CTA */
+.cta{padding:120px 72px;background:var(--ink);text-align:center;position:relative;overflow:hidden;}
+.cta::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 60%,rgba(176,141,85,0.1) 0%,transparent 60%);}
+.cta-inner{position:relative;z-index:1;}
+.cta-eyebrow{font-size:9px;letter-spacing:6px;color:var(--gold);text-transform:uppercase;margin-bottom:32px;opacity:.7;}
+.cta-title{font-family:'Noto Serif SC',serif;font-size:clamp(28px,3vw,44px);font-weight:200;color:#fff;line-height:1.4;margin-bottom:24px;letter-spacing:-0.5px;}
+.cta-title em{font-style:normal;color:var(--gold);}
+.cta-sub{font-size:13px;color:rgba(255,255,255,0.3);margin-bottom:48px;letter-spacing:1px;}
+.cta-btn{display:inline-flex;align-items:center;gap:14px;font-size:10.5px;letter-spacing:3px;color:var(--ink);background:var(--gold);text-decoration:none;text-transform:uppercase;padding:16px 40px;transition:background .35s,box-shadow .35s,transform .35s;position:relative;overflow:hidden;}
+.cta-btn::before{content:"";position:absolute;inset:0;background:var(--gold-lt);transform:translateX(-102%);transition:transform .4s cubic-bezier(.25,.46,.45,.94);}
+.cta-btn:hover::before{transform:translateX(0);}
+.cta-btn:hover{box-shadow:0 12px 40px rgba(176,141,85,0.35);transform:translateY(-2px);}
+.cta-btn span{position:relative;z-index:1;}
+
+.footer{background:#0D0C0A;color:rgba(255,255,255,0.28);padding:80px 72px 40px;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:72px;padding-bottom:64px;border-bottom:1px solid rgba(255,255,255,0.05);}
+.footer-logo{font-family:'Noto Serif SC',serif;font-size:20px;font-weight:600;letter-spacing:6px;color:#fff;margin-bottom:18px;}
+.footer-logo span{color:var(--gold);}
+.footer-desc{font-size:12px;line-height:2.2;color:rgba(255,255,255,0.25);max-width:280px;}
+.footer-col h4{font-size:8.5px;letter-spacing:4px;color:#fff;text-transform:uppercase;margin-bottom:20px;font-weight:400;opacity:.45;}
+.footer-col a{display:block;font-size:12px;color:rgba(255,255,255,0.25);text-decoration:none;margin-bottom:12px;transition:color .3s;}
+.footer-col a:hover{color:var(--gold-lt);}
+.footer-btm{padding-top:32px;display:flex;justify-content:space-between;font-size:10.5px;letter-spacing:.5px;}
+
+@media(max-width:1100px){.featured{grid-template-columns:1fr;}.featured-img{min-height:240px;}.article-row{grid-template-columns:100px 1fr auto;gap:24px;}.footer-top{grid-template-columns:1fr 1fr;gap:40px;}}
+@media(max-width:768px){
+  .nav{padding:0 24px;}.nav-links,.nav-cta{display:none;}
+  .page-hero{padding:140px 24px 80px;}.page-hero::before{display:none;}
+  .insights-section,.newsletter,.cta,.footer{padding-left:24px;padding-right:24px;}
+  .featured-content{padding:32px 24px;}
+  .article-row{grid-template-columns:1fr;gap:8px;}
+  .article-arrow,.article-cat{display:none;}
+  .newsletter-form{flex-direction:column;}
+  .footer-top{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a href="index-v5.html" class="nav-logo">京涛<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="index-v5.html">首页</a></li>
+    <li><a href="about-v5.html">关于我们</a></li>
+    <li><a href="services-v5.html">服务项目</a></li>
+    <li><a href="cases-v5.html">案例中心</a></li>
+    <li><a href="insights-v5.html" class="active">观点洞察</a></li>
+  </ul>
+  <a href="contact-v5.html" class="nav-cta">联系我们</a>
+</nav>
+
+<section class="page-hero">
+  <div class="page-eyebrow">Insights</div>
+  <h1 class="page-h1">十五年实战<br>沉淀<em style="font-style:normal;color:var(--gold)">品牌方法论</em></h1>
+  <p class="page-sub">不追热点，只写经过验证的判断。每篇文章背后，都是真实的项目经验与深度思考。</p>
+  <div class="page-hero-bar"></div>
+</section>
+
+<section class="insights-section">
+
+  <div class="featured reveal">
+    <div class="featured-img">
+      <div class="featured-star">★</div>
+      <div class="featured-label">精选</div>
+    </div>
+    <div class="featured-content">
+      <div class="featured-meta">
+        <span class="featured-date">2024.03.15</span>
+        <div class="featured-dot"></div>
+        <span class="featured-cat">品牌</span>
+      </div>
+      <h2 class="featured-title">品牌定位决定市场位置，位置决定流量</h2>
+      <p class="featured-excerpt">每个品牌都有属于自己的独特价值，关键在于如何用简洁有力的语言说出来，并在每一个触点上一致传达。定位不是一句口号，是整套战略系统的底层逻辑。</p>
+      <a href="#" class="featured-read">
+        <span class="featured-read-line"></span>
+        阅读全文
+      </a>
+    </div>
+  </div>
+
+  <div class="articles-hd reveal">
+    <h2>更多观点</h2>
+    <span>All Articles</span>
+  </div>
+
+  <div class="articles-list">
+    <div class="article-row reveal">
+      <div class="article-date">2024.02.20</div>
+      <h3 class="article-title">包装设计：消费者决策的前3秒</h3>
+      <div class="article-cat">设计</div>
+      <div class="article-arrow"></div>
+    </div>
+    <div class="article-row reveal">
+      <div class="article-date">2024.01.10</div>
+      <h3 class="article-title">广告语的力量：少即是多</h3>
+      <div class="article-cat">营销</div>
+      <div class="article-arrow"></div>
+    </div>
+    <div class="article-row reveal rd1">
+      <div class="article-date">2023.12.05</div>
+      <h3 class="article-title">品牌老化不是危言耸听：三个信号判断你的品牌是否需要焕新</h3>
+      <div class="article-cat">品牌</div>
+      <div class="article-arrow"></div>
+    </div>
+    <div class="article-row reveal rd1">
+      <div class="article-date">2023.11.18</div>
+      <h3 class="article-title">从0到1：新消费品牌如何在成熟市场找到切入点</h3>
+      <div class="article-cat">战略</div>
+      <div class="article-arrow"></div>
+    </div>
+    <div class="article-row reveal rd2">
+      <div class="article-date">2023.10.30</div>
+      <h3 class="article-title">内容营销的本质：不是流量工具，是信任建筑</h3>
+      <div class="article-cat">营销</div>
+      <div class="article-arrow"></div>
+    </div>
+    <div class="article-row reveal rd2">
+      <div class="article-date">2023.09.22</div>
+      <h3 class="article-title">为什么你的VI系统落地总打折扣</h3>
+      <div class="article-cat">设计</div>
+      <div class="article-arrow"></div>
+    </div>
+    <div class="article-row reveal rd3">
+      <div class="article-date">2023.08.15</div>
+      <h3 class="article-title">小红书种草的底层逻辑：不是投放，是内容资产</h3>
+      <div class="article-cat">数字营销</div>
+      <div class="article-arrow"></div>
+    </div>
+    <div class="article-row reveal rd3">
+      <div class="article-date">2023.07.08</div>
+      <h3 class="article-title">年度营销规划怎么做：从目标倒推策略</h3>
+      <div class="article-cat">战略</div>
+      <div class="article-arrow"></div>
+    </div>
+  </div>
+</section>
+
+<section class="newsletter">
+  <h2 class="reveal">订阅观点通讯</h2>
+  <p class="reveal">每月一期，分享品牌实战洞察与方法论，不发垃圾邮件</p>
+  <div class="newsletter-form reveal">
+    <input type="email" class="newsletter-input" placeholder="输入您的邮箱地址">
+    <button class="newsletter-btn">订阅</button>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="cta-inner">
+    <div class="cta-eyebrow reveal">Work Together</div>
+    <h2 class="cta-title reveal">把洞察变成<br>您品牌的<em>竞争力</em></h2>
+    <p class="cta-sub reveal">联系我们，开启深度品牌咨询</p>
+    <a href="contact-v5.html" class="cta-btn reveal"><span>立即联系</span></a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">京涛<span>.</span></div>
+      <p class="footer-desc">京涛策划创立于上海，专注品牌战略定位与整合营销咨询。</p>
+    </div>
+    <div class="footer-col"><h4>服务项目</h4><a href="services-v5.html">品牌战略定位</a><a href="services-v5.html">整合营销传播</a><a href="services-v5.html">视觉形象设计</a></div>
+    <div class="footer-col"><h4>案例中心</h4><a href="cases-v5.html">餐饮行业</a><a href="cases-v5.html">快消品牌</a><a href="cases-v5.html">科技企业</a></div>
+    <div class="footer-col"><h4>联系我们</h4><a href="contact-v5.html">在线留言</a><a href="tel:4008888888">400-888-8888</a></div>
+  </div>
+  <div class="footer-btm"><span>© 2024 京涛策划 jintaocehua.com</span><span>上海市静安区</span></div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('srolled',window.scrollY>50);});
+const reveals=document.querySelectorAll('.reveal');
+const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');}}});},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+reveals.forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
