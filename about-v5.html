@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>关于我们 — 京涛策划</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1C1A17;--ink-soft:#4A4640;--ink-faint:#9A9590;
+  --gold:#B08D55;--gold-lt:#D4B87A;--gold-dim:rgba(176,141,85,0.15);
+  --cream:#F6F1E9;--cream-deep:#EDE7DB;--white:#FDFCFA;
+  --line:#E5DFD6;--bg:#FDFCFA;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter','Noto Sans SC',sans-serif;color:var(--ink);background:var(--bg);font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+::-webkit-scrollbar{width:3px;}
+::-webkit-scrollbar-track{background:var(--cream);}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px;}
+::selection{background:var(--gold-dim);}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .9s cubic-bezier(.25,.46,.45,.94),transform .9s cubic-bezier(.25,.46,.45,.94);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.rd1{transition-delay:.1s;}.rd2{transition-delay:.2s;}.rd3{transition-delay:.3s;}.rd4{transition-delay:.4s;}
+
+.nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 72px;height:68px;background:rgba(246,241,233,0.9);backdrop-filter:blur(20px);border-bottom:1px solid rgba(229,223,214,0.5);transition:all .4s;}
+.nav.srolled{background:rgba(246,241,233,0.97);box-shadow:0 1px 30px rgba(28,26,23,0.05);}
+.nav-logo{font-family:'Noto Serif SC',serif;font-size:18px;font-weight:600;letter-spacing:6px;color:var(--ink);}
+.nav-logo span{color:var(--gold);}
+.nav-links{display:flex;gap:36px;list-style:none;}
+.nav-links a{font-size:10px;letter-spacing:2.5px;color:var(--ink-faint);text-decoration:none;text-transform:uppercase;position:relative;transition:color .3s;}
+.nav-links a::after{content:"";position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--gold);transition:width .4s cubic-bezier(.25,.46,.45,.94);}
+.nav-links a:hover,.nav-links a.active{color:var(--ink);}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%;}
+.nav-cta{font-size:10px;letter-spacing:2px;color:var(--ink);border:1px solid var(--gold);padding:8px 20px;text-decoration:none;text-transform:uppercase;transition:background .3s,color .3s;}
+.nav-cta:hover{background:var(--gold);color:var(--white);}
+
+/* ── Page Hero ── */
+.page-hero{background:var(--cream);padding:180px 72px 100px;position:relative;overflow:hidden;}
+.page-hero::before{content:"";position:absolute;right:0;top:0;bottom:0;width:40%;background:var(--ink);}
+.page-hero::after{content:"ABOUT";position:absolute;right:60px;top:50%;transform:translateY(-50%);font-family:'Noto Serif SC',serif;font-size:clamp(80px,12vw,160px);font-weight:600;color:rgba(255,255,255,0.04);letter-spacing:10px;}
+.page-eyebrow{font-size:9px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;display:flex;align-items:center;gap:12px;margin-bottom:24px;opacity:0;animation:fadeIn .6s .3s ease both;}
+.page-eyebrow::before{content:"";display:inline-block;width:28px;height:1px;background:var(--gold);}
+@keyframes fadeIn{to{opacity:1;}}
+.page-h1{font-family:'Noto Serif SC',serif;font-size:clamp(36px,4vw,56px);font-weight:300;line-height:1.2;letter-spacing:-0.5px;max-width:560px;opacity:0;animation:fadeUp .8s .5s ease both;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+.page-sub{font-size:14px;color:var(--ink-soft);line-height:2.2;max-width:480px;margin-top:24px;opacity:0;animation:fadeIn .8s .8s ease both;}
+.page-hero-bar{position:absolute;bottom:0;left:0;right:0;height:1px;background:var(--line);}
+
+/* ── Section mark ── */
+.section-mark{display:flex;align-items:center;padding:0 72px;background:var(--white);}
+.section-mark::before,.section-mark::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);}
+.section-mark span{font-size:8px;letter-spacing:6px;color:var(--ink-faint);text-transform:uppercase;white-space:nowrap;padding:0 32px;opacity:.6;}
+
+/* ── About Story ── */
+.story{padding:120px 72px;display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center;background:var(--white);}
+.story-text .eyebrow{font-size:9px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;display:flex;align-items:center;gap:12px;margin-bottom:28px;}
+.story-text .eyebrow::before{content:"";display:inline-block;width:28px;height:1px;background:var(--gold);}
+.story-text h2{font-family:'Noto Serif SC',serif;font-size:clamp(26px,2.8vw,38px);font-weight:300;line-height:1.5;margin-bottom:36px;letter-spacing:-0.3px;}
+.story-text h2 em{font-style:normal;color:var(--gold);}
+.story-text p{font-size:13.5px;color:var(--ink-soft);line-height:2.5;margin-bottom:16px;}
+.story-quote{background:var(--cream);padding:48px 44px;border-left:2px solid var(--gold);position:relative;}
+.story-quote blockquote{font-family:'Noto Serif SC',serif;font-size:20px;font-weight:300;line-height:2.1;color:var(--ink);margin-bottom:20px;}
+.story-quote cite{font-size:10px;letter-spacing:2px;color:var(--ink-faint);text-transform:uppercase;font-style:normal;}
+.story-quote-deco{position:absolute;top:-10px;right:-10px;width:50px;height:50px;border-top:2px solid var(--gold);border-right:2px solid var(--gold);opacity:.3;}
+
+/* ── Stats ── */
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);background:var(--ink);}
+.stat-item{padding:56px 40px;border-right:1px solid rgba(255,255,255,0.06);}
+.stat-item:last-child{border-right:none;}
+.stat-num{font-family:'Noto Serif SC',serif;font-size:52px;font-weight:200;color:#fff;margin-bottom:8px;line-height:1;}
+.stat-unit{font-size:20px;color:var(--gold);}
+.stat-label{font-size:9.5px;letter-spacing:3px;color:rgba(255,255,255,0.3);text-transform:uppercase;margin-top:8px;}
+
+/* ── Values ── */
+.values{padding:120px 72px;background:var(--cream);}
+.values-hd{margin-bottom:60px;}
+.values-hd h2{font-family:'Noto Serif SC',serif;font-size:clamp(22px,2.4vw,34px);font-weight:300;letter-spacing:-0.3px;}
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+.value-card{background:var(--cream);padding:44px 36px;transition:background .4s;}
+.value-card:hover{background:var(--cream-deep);}
+.value-icon{font-family:'Noto Serif SC',serif;font-size:32px;color:var(--gold);margin-bottom:20px;display:block;}
+.value-card h3{font-family:'Noto Serif SC',serif;font-size:16px;font-weight:400;margin-bottom:14px;letter-spacing:.5px;}
+.value-card p{font-size:12.5px;color:var(--ink-soft);line-height:2;}
+
+/* ── Team ── */
+.team{padding:120px 72px;background:var(--white);}
+.team-hd{margin-bottom:60px;display:flex;justify-content:space-between;align-items:flex-end;}
+.team-hd h2{font-family:'Noto Serif SC',serif;font-size:clamp(22px,2.4vw,34px);font-weight:300;letter-spacing:-0.3px;}
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+.member-card{text-align:center;cursor:default;}
+.member-avatar{width:100%;aspect-ratio:1;background:linear-gradient(160deg,#1E1B17,#100F0D);display:flex;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;}
+.member-avatar::before{content:"";position:absolute;inset:0;background:rgba(176,141,85,0.05);opacity:0;transition:opacity .4s;}
+.member-card:hover .member-avatar::before{opacity:1;}
+.member-init{font-family:'Noto Serif SC',serif;font-size:clamp(28px,3vw,40px);font-weight:300;color:rgba(176,141,85,0.15);}
+.member-name{font-family:'Noto Serif SC',serif;font-size:15px;font-weight:400;margin-bottom:4px;}
+.member-role{font-size:10px;letter-spacing:2px;color:var(--ink-faint);text-transform:uppercase;}
+
+/* ── CTA ── */
+.cta{padding:120px 72px;background:var(--ink);text-align:center;position:relative;overflow:hidden;}
+.cta::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 60%,rgba(176,141,85,0.1) 0%,transparent 60%);}
+.cta-inner{position:relative;z-index:1;}
+.cta-eyebrow{font-size:9px;letter-spacing:6px;color:var(--gold);text-transform:uppercase;margin-bottom:32px;opacity:.7;}
+.cta-title{font-family:'Noto Serif SC',serif;font-size:clamp(28px,3vw,44px);font-weight:200;color:#fff;line-height:1.4;margin-bottom:24px;letter-spacing:-0.5px;}
+.cta-title em{font-style:normal;color:var(--gold);}
+.cta-sub{font-size:13px;color:rgba(255,255,255,0.3);margin-bottom:48px;letter-spacing:1px;}
+.cta-btn{display:inline-flex;align-items:center;gap:14px;font-size:10.5px;letter-spacing:3px;color:var(--ink);background:var(--gold);text-decoration:none;text-transform:uppercase;padding:16px 40px;transition:background .35s,box-shadow .35s,transform .35s;position:relative;overflow:hidden;}
+.cta-btn::before{content:"";position:absolute;inset:0;background:var(--gold-lt);transform:translateX(-102%);transition:transform .4s cubic-bezier(.25,.46,.45,.94);}
+.cta-btn:hover::before{transform:translateX(0);}
+.cta-btn:hover{box-shadow:0 12px 40px rgba(176,141,85,0.35);transform:translateY(-2px);}
+.cta-btn span{position:relative;z-index:1;}
+
+/* ── Footer ── */
+.footer{background:#0D0C0A;color:rgba(255,255,255,0.28);padding:80px 72px 40px;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:72px;padding-bottom:64px;border-bottom:1px solid rgba(255,255,255,0.05);}
+.footer-logo{font-family:'Noto Serif SC',serif;font-size:20px;font-weight:600;letter-spacing:6px;color:#fff;margin-bottom:18px;}
+.footer-logo span{color:var(--gold);}
+.footer-desc{font-size:12px;line-height:2.2;color:rgba(255,255,255,0.25);max-width:280px;}
+.footer-col h4{font-size:8.5px;letter-spacing:4px;color:#fff;text-transform:uppercase;margin-bottom:20px;font-weight:400;opacity:.45;}
+.footer-col a{display:block;font-size:12px;color:rgba(255,255,255,0.25);text-decoration:none;margin-bottom:12px;transition:color .3s;}
+.footer-col a:hover{color:var(--gold-lt);}
+.footer-btm{padding-top:32px;display:flex;justify-content:space-between;font-size:10.5px;letter-spacing:.5px;}
+
+@media(max-width:1100px){
+  .story{grid-template-columns:1fr;gap:48px;padding:80px 48px;}
+  .stats-bar{grid-template-columns:repeat(2,1fr);}
+  .values-grid{grid-template-columns:repeat(2,1fr);}
+  .team-grid{grid-template-columns:repeat(2,1fr);}
+  .footer-top{grid-template-columns:1fr 1fr;gap:40px;}
+}
+@media(max-width:768px){
+  .nav{padding:0 24px;}.nav-links,.nav-cta{display:none;}
+  .page-hero{padding:140px 24px 80px;}
+  .page-hero::before{display:none;}
+  .story,.values,.team,.cta,.footer{padding-left:24px;padding-right:24px;}
+  .stats-bar{grid-template-columns:1fr 1fr;}
+  .values-grid{grid-template-columns:1fr;}
+  .team-grid{grid-template-columns:1fr 1fr;}
+  .footer-top{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a href="index-v5.html" class="nav-logo">京涛<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="index-v5.html">首页</a></li>
+    <li><a href="about-v5.html" class="active">关于我们</a></li>
+    <li><a href="services-v5.html">服务项目</a></li>
+    <li><a href="cases-v5.html">案例中心</a></li>
+    <li><a href="insights-v5.html">观点洞察</a></li>
+  </ul>
+  <a href="contact-v5.html" class="nav-cta">联系我们</a>
+</nav>
+
+<section class="page-hero">
+  <div class="page-eyebrow">About Us</div>
+  <h1 class="page-h1">用战略<br>为品牌<em style="font-style:normal;color:var(--gold)">赋值</em></h1>
+  <p class="page-sub">京涛策划成立于2009年，十五年深耕品牌战略咨询领域，用专业创造价值，用结果赢得信任。</p>
+  <div class="page-hero-bar"></div>
+</section>
+
+<section class="story">
+  <div class="story-text reveal">
+    <div class="eyebrow">Our Story</div>
+    <h2>十五年，只做<br>一件事：<em>让品牌值钱</em></h2>
+    <p>京涛策划创立于2009年上海，由一群深耕品牌战略与创意执行的专业人士共同发起。我们相信：品牌的价值不是设计出来的，是战略一点一点沉淀出来的。</p>
+    <p>十五年来，我们服务过200多个品牌横跨餐饮、快消、科技、制造等多个行业，深度参与每一个品牌的战略制定与落地执行，拒绝流水线、拒绝模板化。</p>
+    <p>我们的方法论来自实战，每一个策略背后都有数据支撑与逻辑推演，每一次创意输出都服务于商业目标。我们不是供应商，是陪跑者。</p>
+  </div>
+  <div class="story-quote reveal rd2">
+    <div class="story-quote-deco"></div>
+    <blockquote>"品牌不是设计出来的，是战略沉淀出来的。品牌价值 = 战略清晰度 × 执行一致性 × 时间累积。"</blockquote>
+    <cite>— 京涛策划创始人</cite>
+  </div>
+</section>
+
+<div class="section-mark"><span>Milestones</span></div>
+
+<div class="stats-bar">
+  <div class="stat-item reveal">
+    <div class="stat-num">200<span class="stat-unit">+</span></div>
+    <div class="stat-label">品牌服务经验</div>
+  </div>
+  <div class="stat-item reveal rd1">
+    <div class="stat-num">50<span class="stat-unit">+</span></div>
+    <div class="stat-label">行业深度覆盖</div>
+  </div>
+  <div class="stat-item reveal rd2">
+    <div class="stat-num">90<span class="stat-unit">%</span></div>
+    <div class="stat-label">客户续约率</div>
+  </div>
+  <div class="stat-item reveal rd3">
+    <div class="stat-num">15<span class="stat-unit">年</span></div>
+    <div class="stat-label">行业深耕</div>
+  </div>
+</div>
+
+<div class="section-mark"><span>Values</span></div>
+
+<section class="values">
+  <div class="values-hd reveal">
+    <div class="eyebrow" style="font-size:9px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;display:flex;align-items:center;gap:12px;margin-bottom:12px;">Our Values</div>
+    <h2>我们的价值观</h2>
+  </div>
+  <div class="values-grid">
+    <div class="value-card reveal">
+      <span class="value-icon">策</span>
+      <h3>策略先行</h3>
+      <p>每一个项目从深度市场调研与消费者洞察开始，找到品牌的独特定位，再谈创意与执行。策略不对，执行越用力越危险。</p>
+    </div>
+    <div class="value-card reveal rd1">
+      <span class="value-icon">琢</span>
+      <h3>深度参与</h3>
+      <p>我们不做流水线服务，每一个项目都有核心团队深度参与。用精品项目替代多而快的流水线，是我们一直坚守的原则。</p>
+    </div>
+    <div class="value-card reveal rd2">
+      <span class="value-icon">果</span>
+      <h3>结果导向</h3>
+      <p>创意服务于商业目标，策略落地要能带来可衡量的增长。用结果验证承诺，是我们与客户的共同语言。</p>
+    </div>
+  </div>
+</section>
+
+<div class="section-mark"><span>Team</span></div>
+
+<section class="team">
+  <div class="team-hd">
+    <h2 class="reveal">核心团队</h2>
+    <span class="reveal" style="font-size:10px;letter-spacing:2px;color:var(--ink-faint);">Our Team</span>
+  </div>
+  <div class="team-grid">
+    <div class="member-card reveal">
+      <div class="member-avatar"><span class="member-init">涛</span></div>
+      <div class="member-name">李京涛</div>
+      <div class="member-role">创始人 · 品牌战略</div>
+    </div>
+    <div class="member-card reveal rd1">
+      <div class="member-avatar"><span class="member-init">瑾</span></div>
+      <div class="member-name">张瑾仪</div>
+      <div class="member-role">策略总监</div>
+    </div>
+    <div class="member-card reveal rd2">
+      <div class="member-avatar"><span class="member-init">文</span></div>
+      <div class="member-name">王文棠</div>
+      <div class="member-role">创意总监</div>
+    </div>
+    <div class="member-card reveal rd3">
+      <div class="member-avatar"><span class="member-init">宁</span></div>
+      <div class="member-name">周宁</div>
+      <div class="member-role">客户总监</div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="cta-inner">
+    <div class="cta-eyebrow reveal">Join Us</div>
+    <h2 class="cta-title reveal">了解我们如何<br>为您的品牌<em>创造价值</em></h2>
+    <p class="cta-sub reveal">一次深度沟通，了解更多合作方式</p>
+    <a href="contact-v5.html" class="cta-btn reveal"><span>立即联系</span></a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">京涛<span>.</span></div>
+      <p class="footer-desc">京涛策划创立于上海，专注品牌战略定位与整合营销咨询，为企业提供从战略到执行的一体化品牌解决方案。</p>
+    </div>
+    <div class="footer-col">
+      <h4>服务项目</h4>
+      <a href="services-v5.html">品牌战略定位</a>
+      <a href="services-v5.html">整合营销传播</a>
+      <a href="services-v5.html">视觉形象设计</a>
+    </div>
+    <div class="footer-col">
+      <h4>案例中心</h4>
+      <a href="cases-v5.html">餐饮行业</a>
+      <a href="cases-v5.html">快消品牌</a>
+      <a href="cases-v5.html">科技企业</a>
+    </div>
+    <div class="footer-col">
+      <h4>联系我们</h4>
+      <a href="contact-v5.html">在线留言</a>
+      <a href="contact-v5.html">商务合作</a>
+      <a href="tel:4008888888">400-888-8888</a>
+    </div>
+  </div>
+  <div class="footer-btm">
+    <span>© 2024 京涛策划 jintaocehua.com</span>
+    <span>上海市静安区</span>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('srolled',window.scrollY>50);});
+const reveals=document.querySelectorAll('.reveal');
+const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');}}});},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+reveals.forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
