@@ -67,7 +67,7 @@ img{max-width:100%;display:block}
 .cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .case-card{position:relative;overflow:hidden;cursor:pointer;aspect-ratio:3/4;background:#1a1814;border-radius:var(--radius)}
 .case-card::after{content:'';position:absolute;inset:0;z-index:2;background:linear-gradient(to top,rgba(26,24,20,.95) 0%,rgba(26,24,20,.3) 50%,transparent 100%)}
-.case-img{position:absolute;top:0;left:0;width:100%;height:100%;background-size:cover;background-position:center;transition:transform .8s cubic-bezier(.22,1,.36,1)}
+.case-img{position:absolute;top:0;left:0;width:100%;height:100%;background-repeat:no-repeat;background-size:cover;background-position:center;transition:transform .8s cubic-bezier(.22,1,.36,1)}
 .case-card:hover .case-img{transform:scale(1.05)}
 .case-info{position:absolute;bottom:0;left:0;right:0;z-index:3;padding:32px;transform:translateY(40px);transition:transform .5s cubic-bezier(.22,1,.36,1)}
 .case-card:hover .case-info{transform:none}
@@ -92,8 +92,8 @@ img{max-width:100%;display:block}
 .featured-case{padding:120px 60px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;background:linear-gradient(180deg,var(--cream) 0%,#f2ede4 100%)}
 .featured-case:nth-child(even){background:linear-gradient(180deg,#f2ede4 0%,var(--cream) 100%)}
 .featured-visuals{position:relative}
-.featured-img-main{width:100%;aspect-ratio:4/3;border-radius:var(--radius);overflow:hidden}
-.featured-img-inner{width:100%;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding:40px;position:relative}
+.featured-img-main{width:100%;aspect-ratio:4/3;border-radius:var(--radius);overflow:hidden;position:relative}
+.featured-img-inner{width:100%;height:100%;min-height:360px;display:flex;flex-direction:column;justify-content:flex-end;padding:40px;position:relative;background-repeat:no-repeat;background-size:cover;background-position:center}
 .featured-img-inner::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,24,20,.8),rgba(26,24,20,.4))}
 .featured-img-text{position:relative;z-index:1}
 .featured-img-label{font-size:11px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-bottom:12px}
@@ -240,7 +240,7 @@ img{max-width:100%;display:block}
 <section class="cases-section">
   <div class="cases-grid">
     <div class="case-card reveal">
-      <div class="case-img" style="background-image:url('assets/cases/case-1-hotpot.jpg?v=2');background-size:cover;background-position:center;background-color:#2a2520"></div>
+      <div class="case-img" style="background-image:url('https://jt.jjintao.pages.dev/assets/cases/case-1-hotpot.jpg?v=2');background-size:cover;background-position:center;background-color:#2a2520"></div>
       <div class="case-line tl"></div><div class="case-line tr"></div>
       <div class="case-line bl"></div><div class="case-line br"></div>
       <div class="case-info">
@@ -259,7 +259,7 @@ img{max-width:100%;display:block}
       </div>
     </div>
     <div class="case-card reveal reveal-delay-1">
-      <div class="case-img" style="background-image:url('assets/cases/case-2-tea.jpg?v=2');background-size:cover;background-position:center;background-color:#2a2520"></div>
+      <div class="case-img" style="background-image:url('https://jt.jjintao.pages.dev/assets/cases/case-2-tea.jpg?v=2');background-size:cover;background-position:center;background-color:#2a2520"></div>
       <div class="case-line tl"></div><div class="case-line tr"></div>
       <div class="case-line bl"></div><div class="case-line br"></div>
       <div class="case-info">
@@ -278,7 +278,7 @@ img{max-width:100%;display:block}
       </div>
     </div>
     <div class="case-card reveal reveal-delay-2">
-      <div class="case-img" style="background-image:url('assets/cases/case-3-tech.jpg?v=2');background-size:cover;background-position:center;background-color:#2a2520"></div>
+      <div class="case-img" style="background-image:url('https://jt.jjintao.pages.dev/assets/cases/case-3-tech.jpg?v=2');background-size:cover;background-position:center;background-color:#2a2520"></div>
       <div class="case-line tl"></div><div class="case-line tr"></div>
       <div class="case-line bl"></div><div class="case-line br"></div>
       <div class="case-info">
@@ -297,7 +297,7 @@ img{max-width:100%;display:block}
       </div>
     </div>
     <div class="case-card reveal">
-      <div class="case-img" style="background-image:url('assets/cases/case-4-furniture.jpg?v=2');background-size:cover;background-position:center;background-color:#2a2520"></div>
+      <div class="case-img" style="background-image:url('https://jt.jjintao.pages.dev/assets/cases/case-4-furniture.jpg?v=2');background-size:cover;background-position:center;background-color:#2a2520"></div>
       <div class="case-line tl"></div><div class="case-line tr"></div>
       <div class="case-line bl"></div><div class="case-line br"></div>
       <div class="case-info">
@@ -316,7 +316,7 @@ img{max-width:100%;display:block}
       </div>
     </div>
     <div class="case-card reveal reveal-delay-1">
-      <div class="case-img" style="background-image:url('assets/cases/case-5-beauty.jpg?v=2');background-size:cover;background-position:center;background-color:#2a2520"></div>
+      <div class="case-img" style="background-image:url('https://jt.jjintao.pages.dev/assets/cases/case-5-beauty.jpg?v=2');background-size:cover;background-position:center;background-color:#2a2520"></div>
       <div class="case-line tl"></div><div class="case-line tr"></div>
       <div class="case-line bl"></div><div class="case-line br"></div>
       <div class="case-info">
@@ -335,7 +335,7 @@ img{max-width:100%;display:block}
       </div>
     </div>
     <div class="case-card reveal reveal-delay-2">
-      <div class="case-img" style="background-image:url('assets/cases/case-6-industrial.jpg?v=2');background-size:cover;background-position:center;background-color:#2a2520"></div>
+      <div class="case-img" style="background-image:url('https://jt.jjintao.pages.dev/assets/cases/case-6-industrial.jpg?v=2');background-size:cover;background-position:center;background-color:#2a2520"></div>
       <div class="case-line tl"></div><div class="case-line tr"></div>
       <div class="case-line bl"></div><div class="case-line br"></div>
       <div class="case-info">
@@ -360,7 +360,7 @@ img{max-width:100%;display:block}
 <section class="featured-case" id="featured01">
   <div class="featured-visuals reveal">
     <div class="featured-img-main">
-      <div class="featured-img-inner" style="background-image:url('assets/cases/case-1-hotpot.jpg?v=2');background-size:cover;background-position:center;background-color:#2a2520">
+      <div class="featured-img-inner" style="background-image:url('https://jt.jjintao.pages.dev/assets/cases/case-1-hotpot.jpg?v=2');background-size:cover;background-position:center;background-color:#2a2520">
         <div class="featured-img-text">
           <div class="featured-img-label">Featured Case 01</div>
           <div class="featured-img-title">秦记老灶火锅<br>品牌战略升级</div>
@@ -478,7 +478,7 @@ img{max-width:100%;display:block}
   </div>
   <div class="featured-visuals reveal reveal-delay-2">
     <div class="featured-img-main">
-      <div class="featured-img-inner" style="background-image:url('assets/cases/case-2-tea.jpg?v=2');background-size:cover;background-position:center;background-color:#2a2520">
+      <div class="featured-img-inner" style="background-image:url('https://jt.jjintao.pages.dev/assets/cases/case-2-tea.jpg?v=2');background-size:cover;background-position:center;background-color:#2a2520">
         <div class="featured-img-text">
           <div class="featured-img-label">Featured Case 02</div>
           <div class="featured-img-title">清象茶饮<br>新消费品牌增长</div>
@@ -496,7 +496,7 @@ img{max-width:100%;display:block}
 <section class="featured-case">
   <div class="featured-visuals reveal">
     <div class="featured-img-main">
-      <div class="featured-img-inner" style="background-image:url('assets/cases/case-3-tech.jpg?v=2');background-size:cover;background-position:center;background-color:#2a2520">
+      <div class="featured-img-inner" style="background-image:url('https://jt.jjintao.pages.dev/assets/cases/case-3-tech.jpg?v=2');background-size:cover;background-position:center;background-color:#2a2520">
         <div class="featured-img-text">
           <div class="featured-img-label">Featured Case 03</div>
           <div class="featured-img-title">云栖智造<br>B端品牌全面升级</div>
