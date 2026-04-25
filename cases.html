@@ -1,80 +1,479 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>成功案例 | 京涛品牌策划</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>案例中心 - 上海京涛营销策划公司</title>
+    <meta name="keywords" content="上海京涛案例,营销策划案例,品牌策划案例,策划案例">
+    <meta name="description" content="上海京涛策划案例中心 — 迈斯尼上海度假区、长风生态商务区、中集车辆集团、良信电器等高端品牌全案策划案例。">
+    <style>
+        /* ===== 基础重置 ===== */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        html { font-size: 16px; scroll-behavior: smooth; }
+        
+        body {
+            font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.8;
+            color: #333;
+            background: #fff;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { text-decoration: none; color: inherit; transition: color 0.2s; }
+        a:hover { color: #c41e3a; }
+        img { max-width: 100%; display: block; border: 0; margin: 0 auto; }
+
+        /* ===== 红色顶栏 ===== */
+        .top-bar {
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #b01830 0%, #e63946 40%, #c41e3a 70%, #b01830 100%);
+        }
+
+        /* ===== 容器 ===== */
+        .container { width: 980px; margin: 0 auto; padding: 0 15px; }
+
+        /* ===== 头部（与首页/关于我们一致） ===== */
+        .header {
+            background: #fff;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        .header table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .header td {
+            vertical-align: bottom;
+            padding: 12px 0;
+        }
+        .header td:first-child {
+            width: 220px;
+        }
+        .header td:first-child img {
+            height: 52px;
+            object-fit: contain;
+        }
+        .nav-link {
+            font-size: 14px;
+            color: #333;
+            padding: 8px 16px;
+            display: inline-block;
+            white-space: nowrap;
+        }
+        .nav-link:hover,
+        .nav-link.active {
+            color: #c41e3a;
+            font-weight: bold;
+        }
+        .header td:last-child {
+            width: 100px;
+            text-align: right;
+        }
+        .header td:last-child img {
+            height: 52px;
+            vertical-align: bottom;
+        }
+        @media(max-width:768px){
+            .container{width:100%;padding:0 10px}
+            .header table{table-layout:fixed}
+            .header td{padding:8px 2px}
+            .header td:first-child{width:120px}
+            .nav-link{padding:6px 4px;font-size:12px}
+            .header td:first-child img{height:36px}
+            .header td:last-child{width:60px}
+            .header td:last-child img{height:40px}
+        }
+
+        /* ===== 主体区域 ===== */
+        .main-body {
+            padding: 20px 0 50px;
+            background: #fafafa;
+            min-height: 600px;
+        }
+
+        /* ===== 轮播/横幅图 ===== */
+        .banner-area {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .banner-area img {
+            margin: 0 auto;
+            border: 1px solid #ddd;
+        }
+
+        /* ===== 四个圆形图标导航 ===== */
+        .icon-nav {
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            padding: 25px 0;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .icon-nav-inner {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+        }
+        .icon-nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+        }
+        .icon-nav-item img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            margin-bottom: 8px;
+            border: 2px solid #f0f0f0;
+            transition: border-color 0.2s;
+        }
+        .icon-nav-item:hover img {
+            border-color: #c41e3a;
+        }
+        .icon-nav-item span {
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* ===== 案例列表区域 ===== */
+        .case-list-area {
+            background: #fff;
+            padding: 25px 35px 35px;
+            border: 1px solid #e8e8e8;
+        }
+
+        /* 列表标题 */
+        .section-head {
+            font-size: 16px;
+            font-weight: bold;
+            color: #222;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* 单个案例条目 */
+        .case-item {
+            margin-bottom: 35px;
+            padding-bottom: 30px;
+            border-bottom: 1px dashed #ddd;
+        }
+        .case-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        /* 案例标题 */
+        .case-title {
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+        .case-title a {
+            color: #222;
+        }
+        .case-title a:hover {
+            color: #c41e3a;
+        }
+
+        /* 案例信息（分类） */
+        .case-meta {
+            font-size: 12px;
+            color: #999;
+            margin-bottom: 12px;
+        }
+        .case-meta .category {
+            color: #c41e3a;
+        }
+        .case-meta .category a {
+            color: #c41e3a;
+        }
+
+        /* 案例图片 */
+        .case-image {
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        .case-image img {
+            max-width: 950px;
+            width: 100%;
+            height: auto;
+            border: 1px solid #eee;
+            margin: 0 auto;
+            display: block;
+        }
+
+        /* Read More 链接 */
+        .read-more {
+            display: inline-block;
+            font-size: 13px;
+            color: #c41e3a;
+            font-weight: bold;
+            padding: 3px 0;
+        }
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== 页脚 ===== */
+        .footer {
+            background: #333;
+            color: #aaa;
+            padding: 25px 0;
+            text-align: center;
+            font-size: 12px;
+            line-height: 22px;
+        }
+        .footer a {
+            color: #ccc;
+            margin: 0 8px;
+        }
+        .footer a:hover {
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
-<nav>
-  <div class="logo">京涛<span>品牌策划</span></div>
-  <ul class="nav-links">
-    <li><a href="index.html">首页</a></li><li><a href="brand.html">品牌理念</a></li>
-    <li><a href="news.html">策划新闻</a></li><li><a href="cases.html">成功案例</a></li>
-    <li><a href="services.html">服务内容</a></li><li><a href="contact.html">联系我们</a></li>
-  </ul>
-  <button class="nav-cta" onclick="location.href='contact.html'">立即咨询</button>
-</nav>
 
-<div style="background:var(--red);color:#fff;padding:80px 60px;text-align:center;">
-  <h1 style="font-size:56px;font-weight:900;margin-bottom:16px;">成功案例</h1>
-  <p style="font-size:18px;opacity:0.8;">真实数据 · 真实效果 · 已脱敏展示</p>
+<!-- 红色顶栏 -->
+<div class="top-bar"></div>
+
+<!-- 头部 -->
+<div class="header">
+    <div class="container">
+        <table>
+            <tr>
+                <td><a href="index.html"><img src="all_extracted_images/logo.gif.gif" alt="上海京涛策划"></a></td>
+                <td><span class="nav-link"><a href="index.html">首&nbsp;&nbsp;页</a></span></td>
+                <td><span class="nav-link active"><a href="cases.html">案例中心</a></span></td>
+                <td><span class="nav-link"><a href="news.html">公司新闻</a></span></td>
+                <td><span class="nav-link"><a href="views.html">京涛观点</a></span></td>
+                <td><span class="nav-link"><a href="services.html">服务项目</a></span></td>
+                <td><span class="nav-link"><a href="about.html">关于我们</a></span></td>
+                <td><span class="nav-link"><a href="contact.html">联系我们</a></span></td>
+                <td><img src="all_extracted_images/tel.gif.gif" alt="联系电话"></td>
+            </tr>
+        </table>
+    </div>
 </div>
 
-<section class="section">
-  <div style="max-width:1100px;margin:0 auto;">
-    <div class="section-label">全部案例</div>
-    <h2 class="section-title">这些品牌都在用我们的策略打仗</h2>
-    <p class="section-sub">以下案例均已脱敏处理，数据真实可查。</p>
-    <div class="cases-grid">
-      <div class="case-card"><div class="case-img">食</div><div class="case-info"><div class="case-tag">快消品 · 品牌全案</div><h3>某食品品牌战略升级</h3><p>从区域品牌到全国布局，品牌定位重构后，年销售额增长240%，经销商数量从30家扩展至200+家。</p></div></div>
-      <div class="case-card"><div class="case-img">美</div><div class="case-info"><div class="case-tag">美妆 · 私域运营</div><h3>美妆新品牌冷启动</h3><p>小红书种草+私域转化，首年GMV突破3000万，复购率达35%，获客成本较行业均值低42%。</p></div></div>
-      <div class="case-card"><div class="case-img">家</div><div class="case-info"><div class="case-tag">家居 · 渠道扩张</div><h3>家居品牌全国招商</h3><p>重新梳理品牌定位，制定渠道策略，6个月内签约经销商突破100家，进驻红星美凯龙、居然之家等主流卖场。</p></div></div>
-      <div class="case-card"><div class="case-img">饮</div><div class="case-info"><div class="case-tag">餐饮 · 品牌升级</div><h3>餐饮连锁品牌升级</h3><p>从视觉到产品线全面升级，客单价提升18%，翻台率提高25%，排队等位成为常态。</p></div></div>
-      <div class="case-card"><div class="case-img">教</div><div class="case-info"><div class="case-tag">教育 · 营销增长</div><h3>教育机构招生增长</h3><p>私域+社群+裂变组合打法，3个月新增学员2000+，获客成本下降60%，续费率提升至82%。</p></div></div>
-      <div class="case-card"><div class="case-img">数</div><div class="case-info"><div class="case-tag">科技 · 品牌从0到1</div><h3>科技品牌初创定位</h3><p>从命名到定位到传播全案，快速在垂直领域建立品牌认知，6个月内获得天使轮融资，估值3000万。</p></div></div>
-    </div>
-  </div>
-</section>
+<!-- 主体内容 -->
+<div class="main-body">
+    <div class="container">
 
-<section class="section light-bg">
-  <div style="max-width:900px;margin:0 auto;">
-    <div class="section-label">案例方法论</div>
-    <h2 class="section-title">我们怎么做到的</h2>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;">
-      <div style="text-align:center;padding:40px;background:#fff;">
-        <div style="font-size:48px;font-weight:900;color:var(--red);margin-bottom:16px;">01</div>
-        <h3 style="font-size:18px;font-weight:700;margin-bottom:12px;">深度调研，找准核心问题</h3>
-        <p style="font-size:13px;color:var(--gray);line-height:1.9;">不是拍脑袋给方案，而是通过消费者访谈、竞品拆解、市场数据分析，找到真正的核心问题所在。</p>
-      </div>
-      <div style="text-align:center;padding:40px;background:#fff;">
-        <div style="font-size:48px;font-weight:900;color:var(--red);margin-bottom:16px;">02</div>
-        <h3 style="font-size:18px;font-weight:700;margin-bottom:12px;">大胆定位，建立差异化壁垒</h3>
-        <p style="font-size:13px;color:var(--gray);line-height:1.9;">不是跟随竞品，而是创造独特的品牌价值主张，让消费者在第一时间就记住你、选择你。</p>
-      </div>
-      <div style="text-align:center;padding:40px;background:#fff;">
-        <div style="font-size:48px;font-weight:900;color:var(--red);margin-bottom:16px;">03</div>
-        <h3 style="font-size:18px;font-weight:700;margin-bottom:12px;">全程陪跑，确保落地效果</h3>
-        <p style="font-size:13px;color:var(--gray);line-height:1.9;">方案只是起点，执行才是关键。我们陪客户一起打仗，遇到问题随时调整，直到目标达成。</p>
-      </div>
-    </div>
-  </div>
-</section>
+        <!-- 轮播/横幅图 -->
+        <div class="banner-area">
+            <img src="all_extracted_images/案例_i10.jpg.jpg" alt="京涛策划" width="950" height="371">
+        </div>
 
-<div class="cta-banner">
-  <h2>你的品牌，下一个成功故事</h2>
-  <p>说出你的现状，我们帮你找到突破口</p>
-  <button class="btn-white" onclick="location.href='contact.html'" style="color:var(--red);">立即咨询</button>
+        <!-- 四个圆形图标导航 -->
+        <div class="icon-nav">
+            <div class="icon-nav-inner">
+                <a href="news.html" class="icon-nav-item">
+                    <img src="all_extracted_images/案例_ad_04.jpg.jpg" alt="新闻">
+                    <span>新闻</span>
+                </a>
+                <a href="cases.html" class="icon-nav-item">
+                    <img src="all_extracted_images/案例_ad_02.jpg.jpg" alt="案例">
+                    <span>案例</span>
+                </a>
+                <a href="services.html" class="icon-nav-item">
+                    <img src="all_extracted_images/案例_ad_03.jpg.jpg" alt="服务">
+                    <span>服务</span>
+                </a>
+                <a href="views.html" class="icon-nav-item">
+                    <img src="all_extracted_images/案例_ad_01.jpg.jpg" alt="观点">
+                    <span>观点</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- 案例列表 -->
+        <div class="case-list-area">
+
+            <h2 class="sectionhead section-head">Latest Entry</h2>
+
+            <!-- 案例1：迈斯尼上海度假区 -->
+            <div class="case-item">
+                <h2 class="case-title"><a href="#">迈斯尼上海度假区品牌工作(品牌咨询、授权珠宝产品创意设计、园区导示)</a></h2>
+                <p class="case-meta">
+                    <span class="category"><a href="#">案例中心</a></span>
+                </p>
+                <div class="case-image">
+                    <img src="all_extracted_images/案例_201105301853486831.jpg.jpg" alt="迈斯尼上海度假区" width="950" height="428">
+                </div>
+                <a href="#" class="read-more">Read More..</a>
+            </div>
+
+            <!-- 案例2：上海长风生态商务区 -->
+            <div class="case-item">
+                <h2 class="case-title"><a href="#">上海长风生态商务区(品牌策划、营销推广、创意设计、空间导示)</a></h2>
+                <p class="case-meta">
+                    <span class="category"><a href="#">案例中心</a></span>
+                </p>
+                <div class="case-image">
+                    <img src="all_extracted_images/案例_kljkhgfd.png.png" alt="上海长风生态商务区" width="950" height="432">
+                </div>
+                <a href="#" class="read-more">Read More..</a>
+            </div>
+
+            <!-- 案例3：中国中集车辆集团 -->
+            <div class="case-item">
+                <h2 class="case-title"><a href="#">中国中集车辆集团(集团CIS、VIS、品牌策划、产品定位、传播创意)</a></h2>
+                <p class="case-meta">
+                    <span class="category"><a href="#">案例中心</a></span>
+                </p>
+                <div class="case-image">
+                    <img src="all_extracted_images/案例_201105241757146531.jpg.jpg" alt="中国中集车辆集团" width="950" height="428">
+                </div>
+                <a href="#" class="read-more">Read More..</a>
+            </div>
+
+            <!-- 案例4：上海良信电器股份有限公司 -->
+            <div class="case-item">
+                <h2 class="case-title"><a href="#">上海良信电器股份有限公司(企业文化、品牌策划、视觉系统、传播规划)</a></h2>
+                <p class="case-meta">
+                    <span class="category"><a href="#">案例中心</a></span>
+                </p>
+                <div class="case-image">
+                    <img src="all_extracted_images/案例_201105301854498701.jpg.jpg" alt="良信电器" width="950" height="432">
+                </div>
+                <a href="#" class="read-more">Read More..</a>
+            </div>
+
+            <!-- 案例5：莎芘妮翡翠珠宝 -->
+            <div class="case-item">
+                <h2 class="case-title"><a href="#">莎芘妮翡翠珠宝(美国时尚翡翠珠宝品牌，全案策划)</a></h2>
+                <p class="case-meta">
+                    <span class="category"><a href="#">案例中心</a></span>
+                </p>
+                <div class="case-image">
+                    <img src="all_extracted_images/案例_DUNHILL.jpg.jpg" alt="莎芘妮翡翠珠宝" width="950" height="428">
+                </div>
+                <a href="#" class="read-more">Read More..</a>
+            </div>
+
+            <!-- 案例6：Damiani 奢侈品品牌 -->
+            <div class="case-item">
+                <h2 class="case-title"><a href="#">Damiani 奢侈品品牌 营销策划、品牌策划</a></h2>
+                <p class="case-meta">
+                    <span class="category"><a href="#">案例中心</a></span>
+                </p>
+                <div class="case-image">
+                    <img src="all_extracted_images/案例_FENDI.jpg.jpg" alt="Damiani奢侈品品牌" width="950" height="428">
+                </div>
+                <a href="#" class="read-more">Read More..</a>
+            </div>
+
+            <!-- 案例7：意大利红玛琍奢侈品品牌 -->
+            <div class="case-item">
+                <h2 class="case-title"><a href="#">意大利红玛琍奢侈品品牌(欧洲经典奢侈品品牌，全案营销策划)</a></h2>
+                <p class="case-meta">
+                    <span class="category"><a href="#">案例中心</a></span>
+                </p>
+                <div class="case-image">
+                    <img src="all_extracted_images/案例_201112071916444880.jpg.jpg" alt="意大利红玛琍" width="950" height="428">
+                </div>
+                <a href="#" class="read-more">Read More..</a>
+            </div>
+
+            <!-- 案例8：DERAIN珠宝 -->
+            <div class="case-item">
+                <h2 class="case-title"><a href="#">DERAIN珠宝(中国知名珠宝品牌，新品策划推广营销策划)</a></h2>
+                <p class="case-meta">
+                    <span class="category"><a href="#">案例中心</a></span>
+                </p>
+                <div class="case-image">
+                    <img src="all_extracted_images/案例_201105301949557715.jpg.jpg" alt="DERAIN珠宝" width="950" height="428">
+                </div>
+                <a href="#" class="read-more">Read More..</a>
+            </div>
+
+            <!-- 案例9：广州本田 -->
+            <div class="case-item">
+                <h2 class="case-title"><a href="#">广州本田(华南最大汽车后市场资源品牌，新品策划)</a></h2>
+                <p class="case-meta">
+                    <span class="category"><a href="#">案例中心</a></span>
+                </p>
+                <div class="case-image">
+                    <img src="all_extracted_images/案例_201105271947281187.jpg.jpg" alt="广州本田" width="950" height="428">
+                </div>
+                <a href="#" class="read-more">Read More..</a>
+            </div>
+
+            <!-- 案例10：DUNHILL英国顶级男士时尚品牌 -->
+            <div class="case-item">
+                <h2 class="case-title"><a href="#">DUNHILL(英国顶级男士时尚品牌, 品牌策划全案)</a></h2>
+                <p class="case-meta">
+                    <span class="category"><a href="#">案例中心</a></span>
+                </p>
+                <div class="case-image">
+                    <img src="all_extracted_images/案例_DUNHILL.jpg.jpg" alt="DUNHILL" width="950" height="428">
+                </div>
+                <a href="#" class="read-more">Read More..</a>
+            </div>
+
+            <!-- 案例11：意大利FENDI -->
+            <div class="case-item">
+                <h2 class="case-title"><a href="#">意大利FENDI (高端时尚品牌，视觉创意及网络营销品牌策划)</a></h2>
+                <p class="case-meta">
+                    <span class="category"><a href="#">案例中心</a></span>
+                </p>
+                <div class="case-image">
+                    <img src="all_extracted_images/案例_FENDI.jpg.jpg" alt="FENDI" width="950" height="428">
+                </div>
+                <a href="#" class="read-more">Read More..</a>
+            </div>
+
+            <!-- 案例12：寇馳 -->
+            <div class="case-item">
+                <h2 class="case-title"><a href="#">寇馳(时尚品牌，品牌策划创意设计)</a></h2>
+                <p class="case-meta">
+                    <span class="category"><a href="#">案例中心</a></span>
+                </p>
+                <div class="case-image">
+                    <img src="all_extracted_images/案例_201112111135175744.jpg.jpg" alt="寇馳" width="950" height="428">
+                </div>
+                <a href="#" class="read-more">Read More..</a>
+            </div>
+
+            <!-- 案例13：奇瑞汽车 -->
+            <div class="case-item">
+                <h2 class="case-title"><a href="#">奇瑞汽车(中国自主汽车品牌，新品上市营销策划)</a></h2>
+                <p class="case-meta">
+                    <span class="category"><a href="#">案例中心</a></span>
+                </p>
+                <div class="case-image">
+                    <img src="all_extracted_images/案例_201111241016233805.jpg.jpg" alt="奇瑞汽车" width="950" height="428">
+                </div>
+                <a href="#" class="read-more">Read More..</a>
+            </div>
+
+        </div><!-- end case-list-area -->
+
+    </div><!-- end container -->
+</div><!-- end main-body -->
+
+<!-- 页脚 -->
+<div class="footer">
+    <div class="container">
+        <p>Copyright 2006-2026 jintao.cn. All Rights Reserved &nbsp;&nbsp;|&nbsp;&nbsp; 上海京涛企业管理咨询有限公司</p>
+        <p style="margin-top:8px;">
+            <a href="index.html">首页</a>
+            <a href="cases.html">案例中心</a>
+            <a href="news.html">公司新闻</a>
+            <a href="views.html">京涛观点</a>
+            <a href="services.html">服务项目</a>
+            <a href="about.html">关于我们</a>
+            <a href="contact.html">联系我们</a>
+        </p>
+    </div>
 </div>
 
-<footer>
-  <div class="footer-top">
-    <div class="footer-brand"><div class="logo" style="color:#fff;">京涛<span>品牌策划</span></div><p>上海京涛品牌策划<br>专注品牌战略与营销传播<br>20年实战经验，200+品牌服务</p></div>
-    <div class="footer-col"><h4>快速导航</h4><ul><li><a href="index.html">首页</a></li><li><a href="brand.html">品牌理念</a></li><li><a href="news.html">策划新闻</a></li><li><a href="cases.html">成功案例</a></li></ul></div>
-    <div class="footer-col"><h4>服务内容</h4><ul><li><a href="services.html">品牌战略定位</a></li><li><a href="services.html">营销渠道建设</a></li><li><a href="services.html">全案服务</a></li><li><a href="services.html">视觉传达设计</a></li></ul></div>
-    <div class="footer-col"><h4>联系我们</h4><ul><li><a href="contact.html">立即咨询</a></li><li><a href="services.html">服务报价</a></li><li><a href="cases.html">案例展示</a></li></ul></div>
-  </div>
-  <div class="footer-bottom"><span>© 2026 上海京涛品牌策划 保留所有权利</span><span>沪ICP备XXXXXXXX号</span></div>
-</footer>
-</body></html>
+</body>
+</html>
