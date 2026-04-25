@@ -910,7 +910,7 @@ const countObserver = new IntersectionObserver((entries) => {
       countObserver.unobserve(el);
     }
   });
-}, { threshold: 0.5 });
+}, { threshold: 0.2 });
 document.querySelectorAll('.count').forEach(el => countObserver.observe(el));
 
 // Active nav link
