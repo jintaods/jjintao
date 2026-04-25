@@ -1,595 +1,94 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>上海京涛营销策划 - 品牌战略与营销推广专家</title>
-    <meta name="keywords" content="上海京涛,营销策划,品牌策划,新品策划,策划公司">
-    <meta name="description" content="上海京涛营销策划公司，十五年品牌策划经验，服务迪士尼、中国银联等500+品牌">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
-            background: #fff;
-            color: #333;
-            line-height: 1.6;
-        }
-        
-        a { text-decoration: none; color: inherit; }
-        img { max-width: 100%; display: block; }
-        
-        /* ===== 页眉 ===== */
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 70px;
-            background: #fff;
-            border-bottom: 1px solid #eee;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 60px;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, #c41e3a, #8b1528);
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-weight: 700;
-            font-size: 16px;
-        }
-        
-        .logo-text {
-            font-size: 20px;
-            font-weight: 700;
-            color: #1a1a1a;
-            letter-spacing: 2px;
-        }
-        
-        .nav {
-            display: flex;
-            gap: 40px;
-        }
-        
-        .nav a {
-            font-size: 15px;
-            color: #666;
-            font-weight: 500;
-            padding: 8px 0;
-            border-bottom: 2px solid transparent;
-            transition: all 0.3s;
-        }
-        
-        .nav a:hover,
-        .nav a.active {
-            color: #c41e3a;
-            border-bottom-color: #c41e3a;
-        }
-        
-        .header-contact {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-        
-        .phone {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: #c41e3a;
-            font-weight: 600;
-            font-size: 15px;
-        }
-        
-        .cta-btn {
-            background: #c41e3a;
-            color: #fff;
-            padding: 10px 24px;
-            border-radius: 4px;
-            font-size: 14px;
-            font-weight: 500;
-            transition: all 0.3s;
-        }
-        
-        .cta-btn:hover {
-            background: #a01830;
-        }
-        
-        /* ===== 轮播 ===== */
-        .hero {
-            margin-top: 70px;
-            height: 500px;
-            position: relative;
-            overflow: hidden;
-            background: #1a1a1a;
-        }
-        
-        .hero-slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 1s;
-        }
-        
-        .hero-slide.active {
-            opacity: 1;
-        }
-        
-        .hero-slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.5));
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: #fff;
-            text-align: center;
-        }
-        
-        .hero-title {
-            font-size: 48px;
-            font-weight: 700;
-            letter-spacing: 4px;
-            margin-bottom: 20px;
-        }
-        
-        .hero-subtitle {
-            font-size: 18px;
-            opacity: 0.9;
-            letter-spacing: 2px;
-        }
-        
-        .hero-dots {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 10px;
-        }
-        
-        .hero-dots span {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.4);
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .hero-dots span.active {
-            background: #c41e3a;
-            transform: scale(1.2);
-        }
-        
-        /* ===== 数据统计 ===== */
-        .stats {
-            background: #1a1a1a;
-            padding: 60px;
-            display: flex;
-            justify-content: center;
-            gap: 100px;
-        }
-        
-        .stat-item {
-            text-align: center;
-            color: #fff;
-        }
-        
-        .stat-num {
-            font-size: 48px;
-            font-weight: 700;
-            color: #c41e3a;
-        }
-        
-        .stat-label {
-            font-size: 14px;
-            color: #999;
-            margin-top: 8px;
-            letter-spacing: 2px;
-        }
-        
-        /* ===== 服务 ===== */
-        .services {
-            padding: 80px 60px;
-            background: #fafafa;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        
-        .section-title {
-            font-size: 32px;
-            font-weight: 700;
-            color: #1a1a1a;
-            margin-bottom: 10px;
-        }
-        
-        .section-desc {
-            color: #999;
-            font-size: 14px;
-        }
-        
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .service-card {
-            background: #fff;
-            padding: 40px 30px;
-            text-align: center;
-            border-radius: 8px;
-            transition: all 0.3s;
-            border: 1px solid #eee;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            border-color: #c41e3a;
-        }
-        
-        .service-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #c41e3a, #8b1528);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 24px;
-            color: #fff;
-        }
-        
-        .service-card h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
-            color: #1a1a1a;
-        }
-        
-        .service-card p {
-            font-size: 13px;
-            color: #999;
-            line-height: 1.8;
-        }
-        
-        /* ===== 案例 ===== */
-        .cases {
-            padding: 80px 60px;
-            background: #fff;
-        }
-        
-        .case-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .case-card {
-            position: relative;
-            overflow: hidden;
-            border-radius: 8px;
-            aspect-ratio: 4/3;
-        }
-        
-        .case-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-        
-        .case-card:hover img {
-            transform: scale(1.1);
-        }
-        
-        .case-info {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 30px;
-            background: linear-gradient(transparent, rgba(0,0,0,0.8));
-            color: #fff;
-        }
-        
-        .case-info h3 {
-            font-size: 18px;
-            margin-bottom: 5px;
-        }
-        
-        .case-info p {
-            font-size: 13px;
-            opacity: 0.8;
-        }
-        
-        /* ===== 页脚 ===== */
-        .footer {
-            background: #1a1a1a;
-            color: #fff;
-            padding: 60px;
-        }
-        
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 60px;
-        }
-        
-        .footer-brand h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-        }
-        
-        .footer-brand p {
-            color: #999;
-            font-size: 14px;
-            line-height: 1.8;
-        }
-        
-        .footer-col h4 {
-            font-size: 16px;
-            margin-bottom: 20px;
-            color: #fff;
-        }
-        
-        .footer-col a {
-            display: block;
-            color: #999;
-            font-size: 14px;
-            margin-bottom: 10px;
-            transition: color 0.3s;
-        }
-        
-        .footer-col a:hover {
-            color: #c41e3a;
-        }
-        
-        .footer-bottom {
-            max-width: 1200px;
-            margin: 40px auto 0;
-            padding-top: 30px;
-            border-top: 1px solid #333;
-            text-align: center;
-            color: #666;
-            font-size: 13px;
-        }
-        
-        /* ===== 响应式 ===== */
-        @media (max-width: 768px) {
-            .header { padding: 0 20px; }
-            .nav { display: none; }
-            .hero-title { font-size: 28px; }
-            .stats { flex-wrap: wrap; gap: 40px; padding: 40px 20px; }
-            .service-grid { grid-template-columns: 1fr; }
-            .case-grid { grid-template-columns: 1fr; }
-            .footer-content { grid-template-columns: 1fr; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>京涛品牌策划 | 让品牌真正值钱</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<nav>
+  <div class="logo">京涛<span>品牌策划</span></div>
+  <ul class="nav-links">
+    <li><a href="index.html">首页</a></li><li><a href="brand.html">品牌理念</a></li>
+    <li><a href="news.html">策划新闻</a></li><li><a href="cases.html">成功案例</a></li>
+    <li><a href="services.html">服务内容</a></li><li><a href="contact.html">联系我们</a></li>
+  </ul>
+  <button class="nav-cta" onclick="location.href='contact.html'">立即咨询</button>
+</nav>
 
-<!-- 页眉 -->
-<header class="header">
-    <a href="index.html" class="logo">
-        <div class="logo-icon">JT</div>
-        <span class="logo-text">京涛策划</span>
-    </a>
-    
-    <nav class="nav">
-        <a href="index.html" class="active">首页</a>
-        <a href="cases.html">案例中心</a>
-        <a href="services.html">服务项目</a>
-        <a href="news.html">公司新闻</a>
-        <a href="views.html">京涛观点</a>
-        <a href="about.html">关于我们</a>
-        <a href="contact.html">联系我们</a>
-    </nav>
-    
-    <div class="header-contact">
-        <div class="phone">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-            021-6288 8888
-        </div>
-        <a href="contact.html" class="cta-btn">立即咨询</a>
-    </div>
-</header>
-
-<!-- 轮播 -->
 <section class="hero">
-    <div class="hero-slide active"><img src="all_extracted_images/首页_i1.jpg.jpg" alt=""></div>
-    <div class="hero-slide"><img src="all_extracted_images/首页_i2.jpg.jpg" alt=""></div>
-    <div class="hero-slide"><img src="all_extracted_images/首页_i3.jpg.jpg" alt=""></div>
-    <div class="hero-slide"><img src="all_extracted_images/首页_i4.jpg.jpg" alt=""></div>
-    
-    <div class="hero-overlay">
-        <h1 class="hero-title">智造品牌 · 创赢未来</h1>
-        <p class="hero-subtitle">十五年专注品牌战略与营销推广全案服务</p>
-    </div>
-    
-    <div class="hero-dots" id="heroDots"></div>
+  <div class="hero-tag">上海 · 20年品牌营销经验</div>
+  <h1>让品牌<em>真正值钱</em>，而不是看起来热闹</h1>
+  <p>京涛品牌策划，专注品牌战略定位与营销传播，用大胆创意和精准落地，帮你在红海市场中杀出一条自己的路。</p>
+  <div class="hero-btns">
+    <button class="btn-white" onclick="location.href='cases.html'">查看案例</button>
+    <button class="btn-outline" onclick="location.href='services.html'">了解服务</button>
+  </div>
 </section>
 
-<!-- 数据统计 -->
-<section class="stats">
-    <div class="stat-item">
-        <div class="stat-num">15+</div>
-        <div class="stat-label">年行业经验</div>
+<div class="stats">
+  <div class="stat-item"><div class="stat-num">20+</div><div class="stat-label">年行业经验</div></div>
+  <div class="stat-item"><div class="stat-num">200+</div><div class="stat-label">服务品牌数</div></div>
+  <div class="stat-item"><div class="stat-num">50+</div><div class="stat-label">战略合作客户</div></div>
+  <div class="stat-item"><div class="stat-num">98%</div><div class="stat-label">客户续约率</div></div>
+</div>
+
+<section class="section">
+  <div class="section-label">品牌理念</div>
+  <h2 class="section-title">不做好看的方案<br>只做能打仗的策略</h2>
+  <p class="section-sub">我们不堆砌术语，不写没人看的PPT。每一套方案，都以市场结果为导向。</p>
+  <div class="phil-grid">
+    <div class="phil-img"></div>
+    <div class="phil-text">
+      <h2>定位对了<br><span class="red">增长自然来</span></h2>
+      <p>市场从不缺产品，缺的是让人记住的品牌。我们通过深度市场洞察，找到你与竞争对手的本质差异。</p>
+      <p>叶茂中说："冲突是营销的灵魂。"我们深以为然。找到冲突，放大冲突，让品牌成为消费者心中的唯一选择。</p>
     </div>
-    <div class="stat-item">
-        <div class="stat-num">500+</div>
-        <div class="stat-label">服务品牌</div>
-    </div>
-    <div class="stat-item">
-        <div class="stat-num">98%</div>
-        <div class="stat-label">客户满意度</div>
-    </div>
-    <div class="stat-item">
-        <div class="stat-num">50+</div>
-        <div class="stat-label">专业团队</div>
-    </div>
+  </div>
 </section>
 
-<!-- 服务 -->
-<section class="services">
-    <div class="section-header">
-        <h2 class="section-title">服务项目</h2>
-        <p class="section-desc">全方位品牌营销解决方案</p>
-    </div>
-    
-    <div class="service-grid">
-        <div class="service-card">
-            <div class="service-icon">品</div>
-            <h3>品牌策划</h3>
-            <p>品牌定位、品牌战略、品牌价值体系构建</p>
-        </div>
-        <div class="service-card">
-            <div class="service-icon">视</div>
-            <h3>视觉设计</h3>
-            <p>VI设计、包装设计、空间导示系统</p>
-        </div>
-        <div class="service-card">
-            <div class="service-icon">营</div>
-            <h3>营销推广</h3>
-            <p>整合营销、新媒体运营、活动策划执行</p>
-        </div>
-        <div class="service-card">
-            <div class="service-icon">新</div>
-            <h3>新品策划</h3>
-            <p>新品定位、产品策略、上市推广全案</p>
-        </div>
-    </div>
+<section class="section light-bg">
+  <div class="section-label">核心服务</div>
+  <h2 class="section-title">五大服务体系<br>覆盖品牌全生命周期</h2>
+  <p class="section-sub">从战略到执行，从定位到落地，我们陪跑到底。</p>
+  <div class="service-grid">
+    <div class="service-card"><div class="service-icon">定</div><h3>品牌战略定位</h3><p>市场调研、竞争分析、差异化定位、品牌战略规划，让你的品牌找到属于自己的位置。</p></div>
+    <div class="service-card"><div class="service-icon">创</div><h3>营销渠道建设</h3><p>线上电商、私域流量、线下渠道搭建，全链路营销通路设计，让增长有路可走。</p></div>
+    <div class="service-card"><div class="service-icon">传</div><h3>营销传播推广</h3><p>广告创意、内容营销、社交媒体运营、事件营销，让品牌声量持续爆发。</p></div>
+    <div class="service-card"><div class="service-icon">研</div><h3>市场调研洞察</h3><p>消费者行为研究、行业趋势分析、竞品深度拆解，用数据驱动决策。</p></div>
+    <div class="service-card"><div class="service-icon">全</div><h3>全案服务</h3><p>从0到1品牌建设、年度品牌顾问、产品线规划、品牌升级与重塑。</p></div>
+    <div class="service-card"><div class="service-icon">视</div><h3>视觉传达设计</h3><p>品牌视觉系统、产品包装、传播物料，让品牌形象内外统一，触达人心。</p></div>
+  </div>
 </section>
 
-<!-- 案例 -->
-<section class="cases">
-    <div class="section-header">
-        <h2 class="section-title">精选案例</h2>
-        <p class="section-desc">见证品牌成长的力量</p>
-    </div>
-    
-    <div class="case-grid">
-        <a href="case-disney.html" class="case-card">
-            <img src="all_extracted_images/首页_i1.jpg.jpg" alt="迪士尼">
-            <div class="case-info">
-                <h3>迪士尼上海度假区</h3>
-                <p>品牌咨询 · 授权产品设计</p>
-            </div>
-        </a>
-        <a href="case-changfeng.html" class="case-card">
-            <img src="all_extracted_images/首页_i2.jpg.jpg" alt="长风商务区">
-            <div class="case-info">
-                <h3>上海长风生态商务区</h3>
-                <p>品牌策划 · 营销推广</p>
-            </div>
-        </a>
-        <a href="cases.html" class="case-card">
-            <img src="all_extracted_images/首页_i3.jpg.jpg" alt="更多案例">
-            <div class="case-info">
-                <h3>更多案例</h3>
-                <p>查看全部品牌案例</p>
-            </div>
-        </a>
-    </div>
+<section class="section">
+  <div class="section-label">部分案例</div>
+  <h2 class="section-title">这些品牌<br>都在用我们的策略打仗</h2>
+  <p class="section-sub">真实案例，真实数据，以下均为已脱敏展示。</p>
+  <div class="cases-grid">
+    <div class="case-card"><div class="case-img">食</div><div class="case-info"><div class="case-tag">快消品 · 品牌全案</div><h3>某食品品牌战略升级</h3><p>从区域品牌到全国布局，品牌定位重构后，年销售额增长240%。</p></div></div>
+    <div class="case-card"><div class="case-img">美</div><div class="case-info"><div class="case-tag">美妆 · 私域运营</div><h3>美妆新品牌冷启动</h3><p>小红书种草+私域转化，首年GMV突破3000万，复购率达35%。</p></div></div>
+    <div class="case-card"><div class="case-img">家</div><div class="case-info"><div class="case-tag">家居 · 渠道扩张</div><h3>家居品牌全国招商</h3><p>重新梳理品牌定位，制定渠道策略，6个月内签约经销商突破100家。</p></div></div>
+    <div class="case-card"><div class="case-img">饮</div><div class="case-info"><div class="case-tag">餐饮 · 品牌升级</div><h3>餐饮连锁品牌升级</h3><p>从视觉到产品线全面升级，客单价提升18%，排队等位成为常态。</p></div></div>
+    <div class="case-card"><div class="case-img">教</div><div class="case-info"><div class="case-tag">教育 · 营销增长</div><h3>教育机构招生增长</h3><p>私域+社群+裂变组合打法，3个月新增学员2000+，获客成本下降60%。</p></div></div>
+    <div class="case-card"><div class="case-img">数</div><div class="case-info"><div class="case-tag">科技 · 品牌从0到1</div><h3>科技品牌初创定位</h3><p>从命名到定位到传播全案，快速在垂直领域建立品牌认知，获首轮融资。</p></div></div>
+  </div>
 </section>
 
-<!-- 页脚 -->
-<footer class="footer">
-    <div class="footer-content">
-        <div class="footer-brand">
-            <h3>京涛策划</h3>
-            <p>上海京涛营销策划有限公司<br>专注品牌战略与营销推广全案服务<br>服务迪士尼、中国银联等500+品牌</p>
-        </div>
-        <div class="footer-col">
-            <h4>服务项目</h4>
-            <a href="services.html">品牌策划</a>
-            <a href="services.html">视觉设计</a>
-            <a href="services.html">营销推广</a>
-            <a href="services.html">新品策划</a>
-        </div>
-        <div class="footer-col">
-            <h4>关于我们</h4>
-            <a href="about.html">公司介绍</a>
-            <a href="news.html">公司新闻</a>
-            <a href="views.html">京涛观点</a>
-            <a href="cases.html">成功案例</a>
-        </div>
-        <div class="footer-col">
-            <h4>联系我们</h4>
-            <a href="tel:021-62888888">021-6288 8888</a>
-            <a href="contact.html">上海市普陀区</a>
-            <a href="contact.html">在线咨询</a>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        Copyright 2006-2026 jintao.cn · 上海京涛企业管理咨询有限公司
-    </div>
+<div class="cta-banner">
+  <h2>准备好让你的品牌值钱起来了吗？</h2>
+  <p>第一次咨询免费，说说你的品牌现状，我们一起找到突破口。</p>
+  <button class="btn-white" onclick="location.href='contact.html'" style="color:var(--red);">立即开始对话</button>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand"><div class="logo" style="color:#fff;">京涛<span>品牌策划</span></div><p>上海京涛品牌策划<br>专注品牌战略与营销传播<br>20年实战经验，200+品牌服务</p></div>
+    <div class="footer-col"><h4>快速导航</h4><ul><li><a href="index.html">首页</a></li><li><a href="brand.html">品牌理念</a></li><li><a href="news.html">策划新闻</a></li><li><a href="cases.html">成功案例</a></li></ul></div>
+    <div class="footer-col"><h4>服务内容</h4><ul><li><a href="services.html">品牌战略定位</a></li><li><a href="services.html">营销渠道建设</a></li><li><a href="services.html">全案服务</a></li><li><a href="services.html">视觉传达设计</a></li></ul></div>
+    <div class="footer-col"><h4>联系我们</h4><ul><li><a href="contact.html">立即咨询</a></li><li><a href="services.html">服务报价</a></li><li><a href="cases.html">案例展示</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 上海京涛品牌策划 保留所有权利</span><span>沪ICP备XXXXXXXX号</span></div>
 </footer>
-
-<script>
-// 轮播
-(function() {
-    var slides = document.querySelectorAll('.hero-slide');
-    var dotsContainer = document.getElementById('heroDots');
-    var current = 0;
-    
-    for (var i = 0; i < slides.length; i++) {
-        var dot = document.createElement('span');
-        dot.onclick = (function(idx) { return function() { goTo(idx); }; })(i);
-        if (i === 0) dot.className = 'active';
-        dotsContainer.appendChild(dot);
-    }
-    
-    function goTo(n) {
-        slides[current].classList.remove('active');
-        dotsContainer.children[current].classList.remove('active');
-        current = n;
-        slides[current].classList.add('active');
-        dotsContainer.children[current].classList.add('active');
-    }
-    
-    setInterval(function() { goTo((current + 1) % slides.length); }, 4000);
-})();
-</script>
-
-</body>
-</html>
+</body></html>
