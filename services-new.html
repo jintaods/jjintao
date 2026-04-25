@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>服务项目 — 京涛策划</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--black:#111;--white:#fff;--gold:#C9A84C;--gray:#666;--light:#F5F5F5;}
+body{font-family:"PingFang SC","Microsoft YaHei",Arial,sans-serif;color:var(--black);background:var(--white);}
+header{background:var(--black);color:var(--white);padding:0 60px;display:flex;align-items:center;justify-content:space-between;height:70px;position:sticky;top:0;z-index:100;}
+.logo{font-size:20px;font-weight:bold;letter-spacing:2px;}
+.logo span{color:var(--gold);}
+nav{display:flex;gap:36px;list-style:none;}
+nav a{color:var(--white);text-decoration:none;font-size:14px;letter-spacing:1px;transition:color .3s;}
+nav a:hover,nav a.active{color:var(--gold);}
+.nav-tel{font-size:14px;color:var(--gold);letter-spacing:1px;}
+.page-hero{background:var(--black);padding:80px 60px;text-align:center;}
+.page-hero h1{color:var(--white);font-size:36px;letter-spacing:4px;margin-bottom:10px;}
+.page-hero p{color:#666;font-size:13px;letter-spacing:2px;}
+.section{padding:60px;max-width:1100px;margin:0 auto;}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.card{background:var(--light);padding:36px 28px;transition:transform .3s,box-shadow .3s;position:relative;overflow:hidden;}
+.card::before{content:"";position:absolute;top:0;left:0;width:3px;height:0;background:var(--gold);transition:height .3s;}
+.card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.08);}
+.card:hover::before{height:100%;}
+.card-icon{font-size:32px;margin-bottom:14px;color:var(--gold);}
+.card h3{font-size:15px;letter-spacing:2px;margin-bottom:10px;}
+.card p{font-size:13px;color:var(--gray);line-height:1.8;}
+.card-tag{display:inline-block;margin-top:12px;font-size:11px;color:var(--gold);border:1px solid var(--gold);padding:3px 10px;letter-spacing:1px;}
+footer{background:var(--black);color:#666;padding:30px 60px;display:flex;justify-content:space-between;align-items:center;font-size:12px;letter-spacing:1px;}
+footer a{color:#666;text-decoration:none;}
+footer a:hover{color:var(--gold);}
+@media(max-width:768px){header{padding:0 20px;}nav{display:none;}.page-hero{padding:50px 20px;}.section{padding:40px 20px;}.grid{grid-template-columns:1fr;}footer{flex-direction:column;gap:10px;text-align:center;}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">京涛<span>.</span></div>
+  <nav>
+    <a href="index-new.html">首页</a>
+    <a href="about-new.html">关于我们</a>
+    <a href="services-new.html" class="active">服务项目</a>
+    <a href="cases-new.html">案例中心</a>
+    <a href="news-new.html">京涛观点</a>
+    <a href="contact-new.html">联系我们</a>
+  </nav>
+  <span class="nav-tel">400-888-8888</span>
+</header>
+<div class="page-hero"><h1>服务项目</h1><p>WHAT WE DO</p></div>
+<div class="section">
+  <div class="grid">
+    <div class="card"><div class="card-icon">&#9670;</div><h3>品牌战略定位</h3><p>从市场调研到差异化定位，找到品牌独有价值锚点，构建持久竞争力。</p><span class="card-tag">Brand Strategy</span></div>
+    <div class="card"><div class="card-icon">&#9651;</div><h3>整合营销传播</h3><p>线上线下全渠道营销策略，内容创意+媒介投放一体化服务。</p><span class="card-tag">IMC Marketing</span></div>
+    <div class="card"><div class="card-icon">&#9733;</div><h3>视觉形象设计</h3><p>品牌标志、视觉系统、包装设计，打造统一且有辨识度的品牌形象。</p><span class="card-tag">Visual Identity</span></div>
+    <div class="card"><div class="card-icon">&#9679;</div><h3>数字营销推广</h3><p>抖音、小红书、微信全平台内容营销，助力品牌实现流量转化。</p><span class="card-tag">Digital Marketing</span></div>
+    <div class="card"><div class="card-icon">&#9650;</div><h3>营销物料制作</h3><p>宣传片、广告图、详情页、销售工具等全链路物料输出。</p><span class="card-tag">Creative Production</span></div>
+    <div class="card"><div class="card-icon">&#9672;</div><h3>年度顾问服务</h3><p>品牌全年营销顾问陪伴式服务，策略持续迭代，执行不掉链子。</p><span class="card-tag">Annual Consulting</span></div>
+  </div>
+</div>
+<footer><div>© 2024 京涛策划 jintaocehua.com</div><div><a href="index-new.html">返回首页</a></div></footer>
+</body>
+</html>
