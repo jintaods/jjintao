@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>京涛策划 — 品牌战略与营销咨询</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+:root{
+  --cream:#F8F6F1;
+  --white:#FFFFFF;
+  --charcoal:#1A1A1A;
+  --warm-gray:#8A8680;
+  --gold:#B8985A;
+  --gold-light:#D4B87A;
+  --line:#E5E0D8;
+  --bg:#FAFAF8;
+}
+
+html{scroll-behavior:smooth;}
+
+body{
+  font-family:'Inter','PingFang SC','Microsoft YaHei',Arial,sans-serif;
+  color:var(--charcoal);
+  background:var(--white);
+  line-height:1.8;
+  font-weight:300;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ── 导航 ── */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 60px;height:72px;
+  background:rgba(248,246,241,0.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(229,224,216,0.5);
+  transition:background .4s;
+}
+.nav-logo{
+  font-family:'Noto Serif SC',serif;
+  font-size:18px;font-weight:600;letter-spacing:3px;
+  color:var(--charcoal);
+}
+.nav-logo span{color:var(--gold);}
+.nav-links{display:flex;gap:40px;list-style:none;}
+.nav-links a{
+  font-size:12px;letter-spacing:2px;color:var(--warm-gray);
+  text-decoration:none;transition:color .3s;font-weight:400;
+  text-transform:uppercase;
+}
+.nav-links a:hover{color:var(--charcoal);}
+.nav-tel{font-size:12px;letter-spacing:1px;color:var(--warm-gray);}
+
+/* ── 顶部大图 ── */
+.hero{
+  min-height:100vh;
+  background:var(--cream);
+  display:grid;grid-template-columns:1fr 1fr;
+  position:relative;overflow:hidden;
+}
+.hero-left{
+  display:flex;flex-direction:column;justify-content:center;
+  padding:120px 80px 80px 60px;
+}
+.hero-eyebrow{
+  font-size:11px;letter-spacing:4px;color:var(--gold);
+  text-transform:uppercase;margin-bottom:32px;
+  display:flex;align-items:center;gap:12px;
+}
+.hero-eyebrow::before{
+  content:"";display:inline-block;
+  width:32px;height:1px;background:var(--gold);
+}
+.hero-title{
+  font-family:'Noto Serif SC',serif;
+  font-size:clamp(36px,4vw,56px);font-weight:300;
+  line-height:1.25;letter-spacing:1px;
+  color:var(--charcoal);margin-bottom:32px;
+}
+.hero-title em{font-style:normal;color:var(--gold);}
+.hero-sub{
+  font-size:14px;color:var(--warm-gray);line-height:2;
+  margin-bottom:48px;max-width:380px;
+}
+.hero-cta{
+  display:flex;gap:20px;align-items:center;
+}
+.btn-line{
+  font-size:12px;letter-spacing:3px;color:var(--charcoal);
+  text-decoration:none;display:inline-flex;align-items:center;gap:10px;
+  text-transform:uppercase;font-weight:400;
+  border-bottom:1px solid var(--charcoal);padding-bottom:4px;
+  transition:color .3s,border-color .3s;
+}
+.btn-line:hover{color:var(--gold);border-color:var(--gold);}
+.btn-ghost{
+  font-size:12px;letter-spacing:2px;color:var(--warm-gray);
+  text-decoration:none;text-transform:uppercase;
+  transition:color .3s;
+}
+.btn-ghost:hover{color:var(--charcoal);}
+
+.hero-right{
+  position:relative;overflow:hidden;
+  background:linear-gradient(160deg,#1A1A1A 0%,#2C2825 100%);
+}
+.hero-right-inner{
+  position:absolute;inset:0;
+  display:flex;align-items:center;justify-content:center;
+}
+.hero-big-num{
+  font-family:'Noto Serif SC',serif;
+  font-size:clamp(120px,18vw,220px);font-weight:600;
+  color:rgba(184,152,90,0.08);line-height:1;
+  user-select:none;
+}
+.hero-center-text{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:16px;
+}
+.hero-center-text .line{
+  width:1px;height:48px;background:rgba(184,152,90,0.3);
+}
+.hero-center-text span{
+  font-size:11px;letter-spacing:4px;color:rgba(184,152,90,0.5);
+  text-transform:uppercase;writing-mode:vertical-rl;
+}
+
+/* ── 数字区 ── */
+.stats-bar{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border-bottom:1px solid var(--line);
+}
+.stat-item{
+  padding:48px 40px;
+  border-right:1px solid var(--line);
+  transition:background .3s;
+}
+.stat-item:last-child{border-right:none;}
+.stat-item:hover{background:var(--cream);}
+.stat-num{
+  font-family:'Noto Serif SC',serif;
+  font-size:44px;font-weight:300;color:var(--charcoal);
+  margin-bottom:6px;line-height:1;
+}
+.stat-unit{font-size:16px;color:var(--gold);}
+.stat-label{
+  font-size:11px;letter-spacing:2px;color:var(--warm-gray);
+  text-transform:uppercase;margin-top:4px;
+}
+
+/* ── 关于 ── */
+.about{padding:120px 60px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.about-left{position:relative;}
+.about-tag{
+  font-size:11px;letter-spacing:4px;color:var(--gold);
+  text-transform:uppercase;margin-bottom:24px;
+}
+.about-title{
+  font-family:'Noto Serif SC',serif;
+  font-size:clamp(28px,3vw,40px);font-weight:300;
+  line-height:1.35;margin-bottom:28px;letter-spacing:1px;
+}
+.about-desc{
+  font-size:14px;color:var(--warm-gray);line-height:2.2;
+  margin-bottom:16px;
+}
+.about-link{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:12px;letter-spacing:2px;color:var(--charcoal);
+  text-decoration:none;text-transform:uppercase;
+  border-bottom:1px solid var(--charcoal);padding-bottom:4px;
+  margin-top:12px;transition:color .3s,border-color .3s;
+}
+.about-link:hover{color:var(--gold);border-color:var(--gold);}
+.about-right{
+  background:var(--cream);padding:60px;
+  position:relative;
+}
+.about-quote{
+  font-family:'Noto Serif SC',serif;
+  font-size:20px;font-weight:300;line-height:2;
+  color:var(--charcoal);margin-bottom:24px;
+  border-left:2px solid var(--gold);padding-left:24px;
+}
+.about-sign{
+  font-size:12px;letter-spacing:2px;color:var(--warm-gray);
+  text-transform:uppercase;
+}
+.about-deco{
+  position:absolute;top:30px;right:30px;
+  font-size:80px;color:rgba(184,152,90,0.1);
+  font-family:'Noto Serif SC',serif;line-height:1;
+}
+
+/* ── 分割线 ── */
+.divider{
+  height:1px;background:var(--line);
+  margin:0 60px;
+}
+
+/* ── 服务 ── */
+.services{padding:100px 60px;background:var(--bg);}
+.services-header{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  margin-bottom:60px;
+}
+.services-title{
+  font-family:'Noto Serif SC',serif;
+  font-size:clamp(24px,2.5vw,36px);font-weight:300;
+  letter-spacing:1px;
+}
+.services-sub{font-size:12px;color:var(--warm-gray);letter-spacing:2px;text-transform:uppercase;}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+.service-item{
+  background:var(--white);padding:48px 36px;
+  border:1px solid var(--line);
+  transition:all .4s;cursor:pointer;
+  position:relative;overflow:hidden;
+}
+.service-item::after{
+  content:"";position:absolute;bottom:0;left:0;
+  width:0;height:2px;background:var(--gold);
+  transition:width .4s;
+}
+.service-item:hover::after{width:100%;}
+.service-item:hover{
+  background:var(--cream);transform:translateY(-4px);
+  box-shadow:0 12px 40px rgba(0,0,0,0.06);
+}
+.service-num{
+  font-size:11px;letter-spacing:3px;color:var(--gold);
+  margin-bottom:20px;font-weight:400;
+}
+.service-title{
+  font-family:'Noto Serif SC',serif;
+  font-size:18px;font-weight:400;margin-bottom:14px;
+  letter-spacing:1px;
+}
+.service-desc{
+  font-size:13px;color:var(--warm-gray);line-height:1.9;
+}
+
+/* ── 案例 ── */
+.cases{padding:100px 60px;}
+.cases-header{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  margin-bottom:60px;
+}
+.cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.case-item{
+  cursor:pointer;position:relative;overflow:hidden;
+  aspect-ratio:4/3;
+}
+.case-img{
+  width:100%;height:100%;
+  background:linear-gradient(135deg,#2C2825,#1A1A1A);
+  display:flex;align-items:center;justify-content:center;
+  transition:transform .6s;
+}
+.case-item:hover .case-img{transform:scale(1.04);}
+.case-icon{font-size:48px;color:rgba(184,152,90,0.2);}
+.case-info{
+  position:absolute;bottom:0;left:0;right:0;
+  background:linear-gradient(transparent,rgba(0,0,0,0.85));
+  padding:40px 24px 24px;
+  opacity:0;transform:translateY(10px);
+  transition:opacity .4s,transform .4s;
+}
+.case-item:hover .case-info{opacity:1;transform:translateY(0);}
+.case-name{color:#fff;font-size:14px;letter-spacing:2px;margin-bottom:4px;}
+.case-tag{color:var(--gold-light);font-size:11px;letter-spacing:1px;}
+
+/* ── 观点 ── */
+.insights{padding:100px 60px;background:var(--bg);}
+.insights-header{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  margin-bottom:60px;
+}
+.insights-list{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+.insight-item{
+  background:var(--white);padding:36px 28px;
+  border:1px solid var(--line);
+  transition:all .3s;cursor:pointer;
+}
+.insight-item:hover{background:var(--cream);border-color:var(--gold-light);}
+.insight-date{font-size:11px;color:var(--warm-gray);letter-spacing:2px;margin-bottom:16px;}
+.insight-title{
+  font-family:'Noto Serif SC',serif;
+  font-size:16px;font-weight:400;line-height:1.6;
+  margin-bottom:14px;letter-spacing:.5px;
+}
+.insight-excerpt{font-size:13px;color:var(--warm-gray);line-height:1.9;}
+.insight-more{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:11px;color:var(--gold);letter-spacing:2px;
+  margin-top:20px;text-transform:uppercase;
+  text-decoration:none;transition:gap .3s;
+}
+.insight-item:hover .insight-more{gap:10px;}
+
+/* ── 底部 ── */
+.footer{
+  background:var(--charcoal);color:rgba(255,255,255,0.5);
+  padding:80px 60px 40px;
+}
+.footer-top{
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:60px;padding-bottom:60px;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+.footer-logo{
+  font-family:'Noto Serif SC',serif;
+  font-size:20px;font-weight:600;letter-spacing:3px;
+  color:#fff;margin-bottom:16px;
+}
+.footer-logo span{color:var(--gold);}
+.footer-desc{font-size:13px;line-height:2;color:rgba(255,255,255,0.4);max-width:280px;}
+.footer-col h4{
+  font-size:11px;letter-spacing:3px;color:#fff;text-transform:uppercase;
+  margin-bottom:20px;font-weight:400;
+}
+.footer-col a{
+  display:block;font-size:13px;color:rgba(255,255,255,0.4);
+  text-decoration:none;margin-bottom:12px;
+  transition:color .3s;
+}
+.footer-col a:hover{color:var(--gold-light);}
+.footer-bottom{
+  padding-top:30px;display:flex;justify-content:space-between;
+  font-size:12px;letter-spacing:1px;
+}
+
+/* ── 响应式 ── */
+@media(max-width:1024px){
+  .hero{grid-template-columns:1fr;}
+  .hero-right{height:50vh;}
+  .stats-bar{grid-template-columns:repeat(2,1fr);}
+  .about{grid-template-columns:1fr;gap:40px;}
+  .services-grid{grid-template-columns:repeat(2,1fr);}
+  .cases-grid{grid-template-columns:repeat(2,1fr);}
+  .insights-list{grid-template-columns:1fr;}
+  .footer-top{grid-template-columns:1fr 1fr;gap:40px;}
+}
+@media(max-width:768px){
+  .nav{padding:0 24px;}
+  .nav-links,.nav-tel{display:none;}
+  .hero-left{padding:100px 24px 60px;}
+  .hero-title{font-size:32px;}
+  .stats-bar{grid-template-columns:1fr 1fr;}
+  .stat-item{padding:32px 20px;}
+  .about,.services,.cases,.insights,.footer{padding-left:24px;padding-right:24px;}
+  .services-grid{grid-template-columns:1fr;}
+  .cases-grid{grid-template-columns:1fr;}
+  .footer-top{grid-template-columns:1fr;}
+  .footer-bottom{flex-direction:column;gap:10px;text-align:center;}
+}
+</style>
+</head>
+<body>
+
+<!-- 导航 -->
+<nav class="nav">
+  <div class="nav-logo">京涛<span>.</span></div>
+  <ul class="nav-links">
+    <li><a href="index-v2.html">首页</a></li>
+    <li><a href="about-v2.html">关于我们</a></li>
+    <li><a href="services-v2.html">服务项目</a></li>
+    <li><a href="cases-v2.html">案例中心</a></li>
+    <li><a href="insights-v2.html">观点洞察</a></li>
+    <li><a href="contact-v2.html">联系我们</a></li>
+  </ul>
+  <div class="nav-tel">400-888-8888</div>
+</nav>
+
+<!-- 顶部大图 -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Brand Strategy & Marketing</div>
+    <h1 class="hero-title">让品牌<br>被看见<br><em>被记住</em></h1>
+    <p class="hero-sub">京涛策划创立于上海，专注品牌战略定位与整合营销咨询。<br>用策略驱动增长，用创意创造价值，用结果验证承诺。</p>
+    <div class="hero-cta">
+      <a href="cases-v2.html" class="btn-line">查看案例</a>
+      <a href="contact-v2.html" class="btn-ghost">联系我们</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-right-inner">
+      <div class="hero-big-num">JT</div>
+    </div>
+    <div class="hero-center-text">
+      <div class="line"></div>
+      <span>Est. 2015</span>
+      <div class="line"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 数字 -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <div class="stat-num">200<span class="stat-unit">+</span></div>
+    <div class="stat-label">品牌服务经验</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">50<span class="stat-unit">+</span></div>
+    <div class="stat-label">行业深度覆盖</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">90<span class="stat-unit">%</span></div>
+    <div class="stat-label">客户续约率</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">24<span class="stat-unit">h</span></div>
+    <div class="stat-label">极速需求响应</div>
+  </div>
+</div>
+
+<!-- 关于 -->
+<section class="about">
+  <div class="about-left">
+    <div class="about-tag">About Us</div>
+    <h2 class="about-title">专注品牌价值增长</h2>
+    <p class="about-desc">京涛策划成立于2015年，是一家以品牌战略为核心的综合营销咨询公司。我们相信：每一个品牌都有独特的市场位置，关键在于找到它、说清楚它、坚持传播它。</p>
+    <p class="about-desc">我们不做流水线服务，坚持每一个项目深度参与、策略先行，用结果验证价值。</p>
+    <a href="about-v2.html" class="about-link">了解更多 →</a>
+  </div>
+  <div class="about-right">
+    <div class="about-quote">
+      "品牌不是设计出来的，<br>是战略沉淀出来的。"
+    </div>
+    <div class="about-sign">— 京涛策划创始人</div>
+    <div class="about-deco">"</div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- 服务 -->
+<section class="services">
+  <div class="services-header">
+    <h2 class="services-title">服务项目</h2>
+    <span class="services-sub">What We Do</span>
+  </div>
+  <div class="services-grid">
+    <div class="service-item">
+      <div class="service-num">01</div>
+      <h3 class="service-title">品牌战略定位</h3>
+      <p class="service-desc">从市场调研到差异化定位，找到品牌独有价值锚点，构建持久竞争力。</p>
+    </div>
+    <div class="service-item">
+      <div class="service-num">02</div>
+      <h3 class="service-title">整合营销传播</h3>
+      <p class="service-desc">线上线下全渠道营销策略，内容创意与媒介投放一体化服务。</p>
+    </div>
+    <div class="service-item">
+      <div class="service-num">03</div>
+      <h3 class="service-title">视觉形象设计</h3>
+      <p class="service-desc">品牌标志、视觉系统、包装设计，打造统一且有辨识度的品牌形象。</p>
+    </div>
+    <div class="service-item">
+      <div class="service-num">04</div>
+      <h3 class="service-title">数字营销推广</h3>
+      <p class="service-desc">抖音、小红书、微信全平台内容营销，助力品牌实现流量转化。</p>
+    </div>
+    <div class="service-item">
+      <div class="service-num">05</div>
+      <h3 class="service-title">营销物料制作</h3>
+      <p class="service-desc">宣传片、广告图、详情页、销售工具等全链路物料输出。</p>
+    </div>
+    <div class="service-item">
+      <div class="service-num">06</div>
+      <h3 class="service-title">年度顾问服务</h3>
+      <p class="service-desc">品牌全年营销顾问陪伴式服务，策略持续迭代，执行不掉链子。</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- 案例 -->
+<section class="cases">
+  <div class="cases-header">
+    <h2 class="services-title">精选案例</h2>
+    <span class="services-sub">Our Works</span>
+  </div>
+  <div class="cases-grid">
+    <div class="case-item">
+      <div class="case-img"><div class="case-icon">★</div></div>
+      <div class="case-info">
+        <div class="case-name">老街坊餐饮品牌升级</div>
+        <div class="case-tag">品牌战略 / 视觉设计</div>
+      </div>
+    </div>
+    <div class="case-item">
+      <div class="case-img"><div class="case-icon">★</div></div>
+      <div class="case-info">
+        <div class="case-name">诺梵巧克力新品上市</div>
+        <div class="case-tag">整合营销 / 数字传播</div>
+      </div>
+    </div>
+    <div class="case-item">
+      <div class="case-img"><div class="case-icon">★</div></div>
+      <div class="case-info">
+        <div class="case-name">启明科技品牌定位</div>
+        <div class="case-tag">品牌定位 / 官网设计</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- 观点 -->
+<section class="insights">
+  <div class="insights-header">
+    <h2 class="services-title">观点洞察</h2>
+    <span class="services-sub">Insights</span>
+  </div>
+  <div class="insights-list">
+    <div class="insight-item">
+      <div class="insight-date">2024.03.15</div>
+      <h3 class="insight-title">品牌定位决定市场位置，位置决定流量</h3>
+      <p class="insight-excerpt">每个品牌都有属于自己的独特价值，关键在于如何用简洁有力的语言说出来，并在每一个触点上一致传达。</p>
+      <a href="insights-v2.html" class="insight-more">阅读 →</a>
+    </div>
+    <div class="insight-item">
+      <div class="insight-date">2024.02.20</div>
+      <h3 class="insight-title">包装设计：消费者决策的前3秒</h3>
+      <p class="insight-excerpt">在货架上，包装就是品牌的脸。好包装不靠花哨，靠准确。颜色、文字、结构，缺一不可。</p>
+      <a href="insights-v2.html" class="insight-more">阅读 →</a>
+    </div>
+    <div class="insight-item">
+      <div class="insight-date">2024.01.10</div>
+      <h3 class="insight-title">广告语的力量：少即是多</h3>
+      <p class="insight-excerpt">好的广告语不需要解释，一说出来就能在消费者心中占位。字数越少，要求越高。</p>
+      <a href="insights-v2.html" class="insight-more">阅读 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- 底部 -->
+<footer class="footer">
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">京涛<span>.</span></div>
+      <p class="footer-desc">京涛策划创立于上海，专注品牌战略定位与整合营销咨询，为企业提供从战略到执行的一体化品牌解决方案。</p>
+    </div>
+    <div class="footer-col">
+      <h4>服务项目</h4>
+      <a href="services-v2.html">品牌战略定位</a>
+      <a href="services-v2.html">整合营销传播</a>
+      <a href="services-v2.html">视觉形象设计</a>
+    </div>
+    <div class="footer-col">
+      <h4>案例中心</h4>
+      <a href="cases-v2.html">餐饮行业</a>
+      <a href="cases-v2.html">快消品牌</a>
+      <a href="cases-v2.html">科技企业</a>
+    </div>
+    <div class="footer-col">
+      <h4>联系我们</h4>
+      <a href="contact-v2.html">在线留言</a>
+      <a href="contact-v2.html">商务合作</a>
+      <a href="tel:4008888888">400-888-8888</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2024 京涛策划 jintaocehua.com</span>
+    <span>上海市静安区</span>
+  </div>
+</footer>
+
+</body>
+</html>
